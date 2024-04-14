@@ -1,0 +1,22 @@
+
+.container {
+    max-width: $width-container;
+    margin: 0 auto;
+}
+
+%background-dark {
+    background-image: url(../img/hero-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    
+    @media screen and (min-width: $breakpoint-md) {
+        background-image: url(../img/hero-bg-xl.jpg);
+    }
+}
+
+%margin-mobile {
+    @media screen and (max-width: $breakpoint-md) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}

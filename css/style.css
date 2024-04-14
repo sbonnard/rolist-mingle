@@ -1,0 +1,158 @@
+:root {
+    font-size: 16px;
+    --primary: #FFD95C;
+    --secondary: #25241F;
+    --white: #F8F8F8;
+}
+
+body {
+    color: var(--white);
+    background-color: var(--secondary);
+    font-family: 'roboto' ;
+    font-size: 1rem;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'roboto';
+    src: url(/fonts/roboto-regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-bold';
+    src: url(/fonts/roboto-bold-webfont.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'khyay';
+    src: url(/fonts/khyay-regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oooh-baby';
+    src: url(/fonts/ooohbaby-regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* RESET  */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Utils */
+
+.users-counter {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin: 2rem;
+}
+
+/* Container */
+
+.container__mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 1rem 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 1350px;
+    }
+}
+
+/* Hero-Banner */
+
+.hero-banner {
+    height: 100vh;
+    background-position: top;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #FFD95C;
+}
+
+.hero-banner__img {
+    width: min(100vmin, 500px);
+    margin-top: -3rem;
+}
+
+.hero-banner__btn {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 2rem;
+}
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 0rem 0rem;
+}
+
+/* .header__hamburger {
+} */
+
+/* Nav */
+
+.nav__btn {
+            font-size: 3rem;
+}
+
+/* Logo */
+
+.logo__ttl {
+    font-family: 'khyay';
+    font-size: 2rem;
+    margin-top: -1rem;
+}
+
+.logo__tagline {
+    font-family: 'oooh-baby';
+    font-size: 1.5rem;
+}
+
+/* Titles */
+
+.ttl__secondary {
+    font-family: 'khyay';
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+}
+
+.ttl__small {
+    font-family: 'khyay';
+    text-transform: uppercase;
+}

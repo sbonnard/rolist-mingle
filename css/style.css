@@ -98,6 +98,7 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 2rem;
     border-bottom: 1px solid #FFD95C;
 }
 
@@ -110,7 +111,7 @@ button {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
 }
 /* Header */
 

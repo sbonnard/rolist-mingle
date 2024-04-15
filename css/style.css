@@ -135,6 +135,7 @@ button {
 .logo__ttl {
     font-family: 'khyay';
     font-size: 2rem;
+    text-transform: uppercase;
     margin-top: -1rem;
 }
 

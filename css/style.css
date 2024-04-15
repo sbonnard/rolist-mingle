@@ -98,8 +98,6 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    margin-bottom: 2rem;
     border-bottom: 1px solid #FFD95C;
 }
 

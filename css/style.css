@@ -105,12 +105,17 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
+<<<<<<< HEAD
     justify-content: center;
     border-bottom: 2px solid #FFD95C;
     background-image: url(/img/hero-banner-texture.png);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+=======
+    padding-top: 2rem;
+    border-bottom: 1px solid #FFD95C;
+>>>>>>> b63e0ed9124203f3d2484d43244291241bba4034
 }
 
 .hero-banner__img {
@@ -122,7 +127,7 @@ button {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
 }
 
 /* Header */
@@ -164,6 +169,7 @@ button {
 .logo__ttl {
     font-family: 'khyay';
     font-size: 2rem;
+    text-transform: uppercase;
     margin-top: -1rem;
 }
 

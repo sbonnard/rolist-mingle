@@ -3,6 +3,7 @@
     --primary: #FFD95C;
     --secondary: #25241F;
     --white: #F8F8F8;
+    --deep-black: #11110E;
     --black50: rgb(37, 36, 31, 0.5);
 }
 
@@ -73,11 +74,12 @@ button {
 .users-counter {
     font-size: 1.25rem;
     color: var(--primary);
-    margin: 2rem;
+    border: 2px solid var(--primary);
+    padding: 0.5rem;
 }
 
 .page-content {
-    background-image: url(/img/background-dark-pages.png);
+    background-image: url(/img/background-dark-pages.webp);
     background-size: cover;
 }
 
@@ -88,7 +90,6 @@ button {
     flex-direction: column;
     align-items: center;
     margin: 0rem 1.25rem 0 1.25rem;
-    padding-top: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -105,7 +106,7 @@ button {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-image: url(/img/hero-banner-texture.png);
+    background-image: url(/img/hero-banner-texture.webp);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -141,7 +142,8 @@ button {
 
 .header__ttl {
     font-family: 'khyay';
-    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
     padding-top: 0.25rem;
 }
 
@@ -178,10 +180,48 @@ button {
 .ttl__secondary {
     font-family: 'khyay';
     font-size: 1.25rem;
-    padding-bottom: 1.5rem;
+    padding : 4rem 0 1.5rem 0;
+    text-transform: uppercase;
 }
 
-.ttl__small {
-    font-family: 'khyay';
-    text-transform: uppercase;
+/* Concept */
+
+.concept-dice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.concept-dice__txt {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.concept-dice__sub-ttl {
+    padding-top: 1.5rem;
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--deep-black) ;
+    border-top: 2px solid var(--primary);
+    padding: 1.5rem 0;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 1rem;
+}
+
+.footer__lnk {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.footer__lnk:not(:last-child)::after {
+    content: "|";
+    padding: 0.5rem;
 }

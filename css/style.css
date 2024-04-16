@@ -215,13 +215,17 @@ button {
     padding: 0 1rem;
 }
 
-.footer__lnk {
+.footer-legal {
     display: flex;
     justify-content: center;
     padding-top: 1.5rem;
 }
 
-.footer__lnk:not(:last-child)::after {
+.footer-legal__lnk:hover {
+    color: var(--primary);
+}
+
+.footer-legal__lnk:not(:last-child)::after {
     content: "|";
     padding: 0.5rem;
 }

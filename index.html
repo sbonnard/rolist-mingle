@@ -28,13 +28,13 @@
 
         <div class="page-content">
             <section class="container__mobile">
-                <h3 class="ttl__secondary">nombre d'inscrits</h3>
+                <h3 class="ttl">nombre d'inscrits</h3>
                 <p class="users-counter">999999</p>
                 <img src="img/logo-amelie.webp" alt="Bouclier avec les différents dés de jeux de rôle.">
             </section>
 
             <section class="container__mobile" id="concept" aria-labelledby="concept">
-                <h2 class="ttl__secondary">Le concept</h2>
+                <h2 class="ttl">Le concept</h2>
                 <p>Rolist-Mingle a pour vocation d'aider à la rencontre de rôlistes, confirmés ou non. Pour tout ceux
                     qui souhaiteraient jouer plus ou se lancer dans le Jeu de Rôle sur table ou à distance,
                     Rolist-Mingle se
@@ -47,82 +47,84 @@
 
             <section class="container__mobile concept-dice" aria-labelledby="dice100"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl__secondary" id="dice100">Dé 100</h4>
+                <h4 class="ttl" id="dice100">Dé 100</h4>
                 <img src="icones/dé100.webp" alt="dé 100 de JDR">
                 <p class="concept-dice__txt">Maître du Jeu<br>cherche joueurs</p>
-                <h5 class="ttl__secondary concept-dice__sub-ttl">Dominateur</h5>
+                <h5 class="ttl concept-dice__sub-ttl">Dominateur</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice20"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl__secondary" id="dice20">Dé 20</h4>
+                <h4 class="ttl" id="dice20">Dé 20</h4>
                 <img src="icones/dé20.webp" alt="dé 20 de JDR">
-                <p class="concept-dice__txt">Cherche 
-                    <br>sa moitié</p>
-                <h5 class="ttl__secondary concept-dice__sub-ttl">Sérieux</h5>
+                <p class="concept-dice__txt">Cherche
+                    <br>sa moitié
+                </p>
+                <h5 class="ttl concept-dice__sub-ttl">Sérieux</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice12"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl__secondary" id="dice12">Dé 12</h4>
+                <h4 class="ttl" id="dice12">Dé 12</h4>
                 <img src="icones/dé12.webp" alt="dé 12 de JDR">
                 <p class="concept-dice__txt">Cherche plan
-                    <br>JDR régulier</p>
-                <h5 class="ttl__secondary concept-dice__sub-ttl">Veut s'amuser</h5>
+                    <br>JDR régulier
+                </p>
+                <h5 class="ttl concept-dice__sub-ttl">Veut s'amuser</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice8"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl__secondary" id="dice8">Dé 8</h4>
+                <h4 class="ttl" id="dice8">Dé 8</h4>
                 <img src="icones/dé8.webp" alt="dé 8 de JDR">
-                <p class="concept-dice__txt">Cherche JDR court 
-                    <br>voire très court</p>
-                <h5 class="ttl__secondary concept-dice__sub-ttl">Plus si affinité</h5>
+                <p class="concept-dice__txt">Cherche JDR court
+                    <br>voire très court
+                </p>
+                <h5 class="ttl concept-dice__sub-ttl">Plus si affinité</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice4"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl__secondary" id="dice4">Dé 4</h4>
+                <h4 class="ttl" id="dice4">Dé 4</h4>
                 <img src="icones/dé4.webp" alt="dé 4 de JDR">
-                <p class="concept-dice__txt">Juste pour un soir 
-                    <br>en one-shot</p>
-                <h5 class="ttl__secondary concept-dice__sub-ttl">JDR sans lendemain</h5>
+                <p class="concept-dice__txt">Juste pour un soir
+                    <br>en one-shot
+                </p>
+                <h5 class="ttl concept-dice__sub-ttl">JDR sans lendemain</h5>
             </section>
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <section class="container__mobile" aria-labelledby="connexion">
+                <h2 class="ttl ttl--primary" id="connexion">connexion</h2>
+                <form action="" method="get" aria-label="Formulaire de connexion">
+                    <ul class="form__container">
+                        <li class="form__itm">
+                            <label for="username">Nom d'utilisateur</label>
+                            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" required>
+                        </li>
+                        <li class="form__itm">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" name="password" id="password" placeholder="***********" required>
+                        </li>
+                    </ul>
+                    <div class="form__container">
+                        <input class="button" type="submit" value="Se connecter">
+                        <p>Pas encore de compte ?</p>
+                        <button class="button button--empty"><a href="#create-account">Créer un compte</a></button>
+                    </div>
+                </form>
+            </section>
         </div>
         <footer class="footer">
             <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
                 <ul class="footer__social">
-                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="icône instagram"></a></li>
-                    <li><a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.svg" alt="icône facebook"></a></li>
-                    <li><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/" target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
-                    <li><a href="https://github.com/sbonnard/" target="_blank"><img src="img/github.svg" alt="icône github"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg"
+                                alt="icône instagram"></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.svg"
+                                alt="icône facebook"></a></li>
+                    <li><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/" target="_blank"><img
+                                src="img/linkedin.svg" alt="icône linkedin"></a></li>
+                    <li><a href="https://github.com/sbonnard/" target="_blank"><img src="img/github.svg"
+                                alt="icône github"></a></li>
                 </ul>
             </nav>
             <nav aria-label="navigation vers mentions légales du site">

@@ -1,7 +1,7 @@
 :root {
     font-size: 16px;
     --primary: #FFD95C;
-    --secondary: #25241F;
+    --secondary: #0B0B0B;
     --white: #F8F8F8;
     --deep-black: #11110E;
     --black50: rgb(37, 36, 31, 0.5);
@@ -177,11 +177,15 @@ button {
 
 /* Titles */
 
-.ttl__secondary {
+.ttl {
     font-family: 'khyay';
     font-size: 1.25rem;
     padding : 4rem 0 1.5rem 0;
     text-transform: uppercase;
+}
+
+.ttl--primary {
+    color: var(--primary);
 }
 
 /* Concept */
@@ -201,12 +205,50 @@ button {
     padding-top: 1.5rem;
 }
 
+/* Buttons */
+
+.button {
+    width: 17rem;
+    font-size: 1.25rem;
+    padding: 1rem 0.75rem;
+    border-radius: 1.25rem;
+    background-color: var(--primary);
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.button:hover {
+    opacity: 50%;
+}
+
+.button--empty {
+    background-color: var(--secondary);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Forms */
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.form__itm {
+display: flex;
+flex-direction: column;
+}
+
 /* Footer */
 
 .footer {
     background-color: var(--deep-black) ;
     border-top: 2px solid var(--primary);
     padding: 1.5rem 0;
+    margin-top: 1.5rem;
 }
 
 .footer__social {

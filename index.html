@@ -45,52 +45,52 @@
                     joueur plus souvent !</p>
             </section>
 
-            <section class="container__mobile concept-dice" aria-labelledby="dice100"
+            <section class="container__mobile concept-dice js-concept-dice" aria-labelledby="dice100"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl" id="dice100">Dé 100</h4>
+                <h4 class="ttl" id="dice100" data-concept-dice="">Dé 100</h4>
                 <img src="icones/dé100.webp" alt="dé 100 de JDR">
                 <p class="concept-dice__txt">Maître du Jeu<br>cherche joueurs</p>
-                <h5 class="ttl concept-dice__sub-ttl">Dominateur</h5>
+                <h5 class="ttl concept-dice__sub-ttl" data-concept-dice="">Dominateur</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice20"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl" id="dice20">Dé 20</h4>
+                <h4 class="ttl" id="dice20" data-concept-dice="">Dé 20</h4>
                 <img src="icones/dé20.webp" alt="dé 20 de JDR">
                 <p class="concept-dice__txt">Cherche
                     <br>sa moitié
                 </p>
-                <h5 class="ttl concept-dice__sub-ttl">Sérieux</h5>
+                <h5 class="ttl concept-dice__sub-ttl" data-concept-dice="">Sérieux</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice12"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl" id="dice12">Dé 12</h4>
+                <h4 class="ttl" id="dice12" data-concept-dice="">Dé 12</h4>
                 <img src="icones/dé12.webp" alt="dé 12 de JDR">
                 <p class="concept-dice__txt">Cherche plan
                     <br>JDR régulier
                 </p>
-                <h5 class="ttl concept-dice__sub-ttl">Veut s'amuser</h5>
+                <h5 class="ttl concept-dice__sub-ttl" data-concept-dice="">Veut s'amuser</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice8"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl" id="dice8">Dé 8</h4>
+                <h4 class="ttl" id="dice8" data-concept-dice="">Dé 8</h4>
                 <img src="icones/dé8.webp" alt="dé 8 de JDR">
                 <p class="concept-dice__txt">Cherche JDR court
                     <br>voire très court
                 </p>
-                <h5 class="ttl concept-dice__sub-ttl">Plus si affinité</h5>
+                <h5 class="ttl concept-dice__sub-ttl" data-concept-dice="">Plus si affinité</h5>
             </section>
 
             <section class="container__mobile concept-dice" aria-labelledby="dice4"
                 aria-label="Présentation des profils de rôlistes types.">
-                <h4 class="ttl" id="dice4">Dé 4</h4>
+                <h4 class="ttl" id="dice4" data-concept-dice="">Dé 4</h4>
                 <img src="icones/dé4.webp" alt="dé 4 de JDR">
                 <p class="concept-dice__txt">Juste pour un soir
                     <br>en one-shot
                 </p>
-                <h5 class="ttl concept-dice__sub-ttl">JDR sans lendemain</h5>
+                <h5 class="ttl concept-dice__sub-ttl" data-concept-dice="">JDR sans lendemain</h5>
             </section>
 
             <section class="container__mobile" aria-labelledby="connexion">
@@ -103,17 +103,19 @@
                         </li>
                         <li class="form__itm">
                             <label class="input__label" for="password">Mot de passe</label>
-                            <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required>
+                            <input class="input" href="flow.html" type="password" name="password" id="password" placeholder="•••••••••••" required>
                         </li>
                     </ul>
                     <div class="form__container">
+                        <p class="lnk--underlined"><a href="forgotten-password.html">Mot de passe oublié ?</a></p>
                         <input class="button" type="submit" value="Se connecter">
                         <p>Pas encore de compte ?</p>
-                        <button class="button button--empty button--padding"><a href="#create-account">Créer un compte</a></button>
+                        <button class="button button--empty button--padding"><a href="create-account.html">Créer un compte</a></button>
                     </div>
                 </form>
             </section>
         </div>
+        <script src="js/script.js"></script>
     </body>
     <footer class="footer">
         <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">

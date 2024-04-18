@@ -118,9 +118,17 @@ button {
     border-bottom: 1px solid #FFD95C;
 }
 
+.hero-banner--smaller {
+    height: 25vh;
+}
+
 .hero-banner__img {
     width: min(100vmin, 500px);
     margin-top: -3rem;
+}
+
+.hero-banner__img--smaller {
+    width: min(50vmin);
 }
 
 .hero-banner__btn {
@@ -144,6 +152,10 @@ button {
     background-color: var(--black50);
 }
 
+.header--minimalist{
+    background-color: transparent;
+}
+
 .header__ttl {
     font-family: 'khyay';
     text-transform: uppercase;
@@ -165,6 +177,15 @@ button {
     font-size: 3rem;
 }
 
+/* Links */
+
+.lnk--underlined {
+border-bottom: 1px solid var(--white);}
+
+.lnk--underlined:hover {
+    color: var(--primary);
+border-color: var(--primary);}
+
 /* Logo */
 
 .logo__ttl {
@@ -185,7 +206,12 @@ button {
     font-family: 'khyay';
     font-size: 1.25rem;
     padding: 4rem 0 1.5rem 0;
+    text-align: center;
     text-transform: uppercase;
+}
+
+.ttl--big {
+    font-size: 1.5rem;
 }
 
 .ttl--primary {
@@ -264,6 +290,10 @@ input::placeholder{
     font-size: 1.25rem;
     color: var(--light-grey);
     line-height: 0;
+}
+
+input:focus-visible {
+outline-color: var(--primary);
 }
 
 .input__label {

@@ -4,6 +4,7 @@
     --secondary: #0B0B0B;
     --white: #F8F8F8;
     --deep-black: #11110E;
+    --light-grey: #979797;
     --black50: rgb(37, 36, 31, 0.5);
 }
 
@@ -73,7 +74,7 @@ button {
 
 .users-counter {
     font-size: 1.25rem;
-    color: var(--primary);
+    color: var(--white);
     border: 2px solid var(--primary);
     padding: 0.5rem;
 }
@@ -81,6 +82,8 @@ button {
 .page-content {
     background-image: url(/img/background-dark-pages.webp);
     background-size: cover;
+    background-attachment: fixed;
+    letter-spacing : 0.10rem;
 }
 
 /* Container */
@@ -110,6 +113,7 @@ button {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     padding-top: 2rem;
     border-bottom: 1px solid #FFD95C;
 }
@@ -180,7 +184,7 @@ button {
 .ttl {
     font-family: 'khyay';
     font-size: 1.25rem;
-    padding : 4rem 0 1.5rem 0;
+    padding: 4rem 0 1.5rem 0;
     text-transform: uppercase;
 }
 
@@ -227,6 +231,10 @@ button {
     color: var(--primary);
 }
 
+.button--padding {
+    margin-bottom: 1.5rem;
+}
+
 /* Forms */
 
 .form__container {
@@ -238,23 +246,42 @@ button {
 }
 
 .form__itm {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs */
+
+.input {
+    appearance: none;
+    width: 20.5rem;
+    font-size: 1.25rem;
+    background-color: var(--white);
+    padding: 1rem;
+}
+
+input::placeholder{
+    font-size: 1.25rem;
+    color: var(--light-grey);
+    line-height: 0;
+}
+
+.input__label {
+    padding: 0 0.75rem 0.75rem 0.75rem;
 }
 
 /* Footer */
 
 .footer {
-    background-color: var(--deep-black) ;
-    border-top: 2px solid var(--primary);
-    padding: 1.5rem 0;
-    margin-top: 1.5rem;
+    background-color: var(--deep-black);
+    padding-bottom: 1.5rem;
 }
 
 .footer__social {
     display: flex;
     justify-content: space-around;
-    padding: 0 1rem;
+    padding: 1.5rem 1rem 0rem 1rem;
+    border-top: 2px solid var(--primary);
 }
 
 .footer-legal {

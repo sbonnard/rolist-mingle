@@ -152,7 +152,7 @@ button {
     background-color: var(--black50);
 }
 
-.header--minimalist{
+.header--minimalist {
     background-color: transparent;
 }
 
@@ -167,9 +167,14 @@ button {
     max-width: 3rem;
 }
 
+/* Hamburger */
 
-/* .header__hamburger {
-} */
+.hamburger {
+}
+
+.hamburger__link {
+    font-size: 1.25rem;
+}
 
 /* Nav */
 
@@ -245,6 +250,7 @@ border-color: var(--primary);}
     background-color: var(--primary);
     border: 1px solid var(--secondary);
     color: var(--secondary);
+    cursor: pointer;
 }
 
 .button:hover {

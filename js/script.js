@@ -1,5 +1,13 @@
-document.querySelector('.js-concept-dice').addEventListener("mouseover", function(){
-    document.querySelector('[data-concept-dice]').classList.toggle('ttl--primary')
-})
+// Concept Dice Responsive //
 
-console.log(document.querySelectorAll('[data-concept-dice]'));
+const conceptDiceElements = document.querySelectorAll('[data-concept-dice]');
+
+conceptDiceElements.forEach(function(element) {
+    element.addEventListener("mouseover", function() {
+        element.classList.add('ttl--primary');
+    });
+    
+    element.addEventListener("mouseout", function() {
+        element.classList.remove('ttl--primary');
+    });
+});

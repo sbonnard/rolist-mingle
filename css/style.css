@@ -132,10 +132,29 @@ button {
 }
 
 .hero-banner__btn {
+    background-color: var(--primary);
+    font-size: 5rem;
+    font-weight: 900;
+    width: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     bottom: 1rem;
+    transition: all 300ms ease-in-out;
+}
+
+
+@media screen and (min-width: 768px) {
+    .hero-banner__btn {
+        background-color: var(--white);
+    }
+
+    .hero-banner__btn:hover{
+        background-color: var(--primary);
+    }
 }
 
 /* Header */
@@ -169,30 +188,6 @@ button {
 
 /* Hamburger */
 
-/* .hamburger ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        margin: 0;
-        right: 0;
-        top: 0;
-        min-width: 50vw;
-        height: 100vh;
-    }
-
-.hamburger__responsive {
-        display : block;
-        position: absolute;
-        right   : 0;
-        top     : 0;
-        margin  : 0;
-        width   : 100vw;
-        height  : 100vh;
-        z-index: 99;
-        transform-origin: 0% 0%;
-        transform       : translate(200%, 0);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    } */
 
 
 .hamburger__link {

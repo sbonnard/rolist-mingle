@@ -1,3 +1,19 @@
+// Hamburger Navigation //
+
+const hamburgerIcon = document.getElementById('hamburger-menu-icon');
+const hamburgerNav = document.getElementById('hamburger-menu');
+
+function showHamburgerMenu() {
+    if(hamburgerNav === ""){
+        hamburgerNav.className = 'open';
+        hamburgerIcon.className = 'open';
+    }
+    else{
+        hamburgerNav.className = "";
+        hamburgerIcon.className = "";
+    }
+}
+
 // Concept Dice Responsive //
 
 const conceptDiceElements = document.querySelectorAll('[data-concept-dice]');

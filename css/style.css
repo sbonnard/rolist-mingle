@@ -79,6 +79,11 @@ button {
     padding: 0.5rem;
 }
 
+.users-counter__img{
+    padding-top: 1.5rem;
+    border-radius: 100%;
+}
+
 .page-content {
     background-image: url(/img/background-dark-pages.webp);
     background-size: cover;
@@ -194,6 +199,27 @@ button {
 .hamburger__link {
     font-size: 1.25rem;
 }
+
+.hamburger__menu {
+    z-index: 1;
+    min-width: 100%;
+    min-height: 60%;
+    position: fixed;
+    top: 5rem;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding-top: 1.25rem;
+    transition: all 0.3s ease-in-out;
+}
+  
+    .hamburger__menu.overlay {
+      visibility: visible;
+      opacity: 1;
+      padding-top: 6rem;
+      background: var(--black50);
+    }
 
 /* Nav */
 

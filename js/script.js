@@ -1,18 +1,15 @@
 // Hamburger Navigation //
 
-const hamburgerIcon = document.getElementById('hamburger-menu-icon');
-const hamburgerNav = document.getElementById('hamburger-menu');
+const burgerMenu = document.getElementById('hamburger-menu-icon');
 
-function showHamburgerMenu() {
-    if(hamburgerNav === ""){
-        hamburgerNav.className = 'open';
-        hamburgerIcon.className = 'open';
-    }
-    else{
-        hamburgerNav.className = "";
-        hamburgerIcon.className = "";
-    }
-}
+const overlay = document.getElementById('menu');
+
+const burgerOverlayClosingButton = document.getElementById('close-buger');
+
+burgerMenu.addEventListener('click', function() {
+  this.classList.toggle("close");
+  overlay.classList.toggle("overlay");
+});
 
 // Concept Dice Responsive //
 

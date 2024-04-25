@@ -10,19 +10,32 @@
 </head>
 
 <body>
-    <header class="header">
-        <img class="header__img" src="logo/logo-rolist-mingle.svg"
-            alt="logo de rolist-mingle représentant un dé 20 de JDR">
-        <h2 class="header__ttl">Rolist-Mingle</h2>
-        <img class="header__hamburger" src="img/hamburger.svg" alt="Menu Hamburger">
+    <header class="header header--minimalist">
+        <a href="index.html"><img class="header__img" src="logo/logo-rolist-mingle.svg"
+                alt="logo de rolist-mingle représentant un dé 20 de JDR"></a>
     </header>
+
 
     <main>
         <a href="index.html" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
-            <h1 class="logo__ttl">Rolist-Mingle</h1>
+            <h2 class="logo__ttl">Rolist-Mingle</h1>
             <h2 class="logo__tagline">Don't Roll Single</h2>
         </a>
+
+        <div class="page-content">
+        <section>
+            <h1 class="ttl ttl--big">Créer ton compte</h1>
+        </section>
+        <form action="get" aria-label="Formulaire de création de compte">
+            <ul class="form__container">
+                <li class="form__itm">
+                    <label class="input__label" for="username">Nom d'utilisateur</label>
+                    <input class="input" type="text" name="username" id="username"
+                        placeholder="Nom d'utilisateur" required>
+                </li>
+        </form>
+        </div>
 
 </main>
 </body>

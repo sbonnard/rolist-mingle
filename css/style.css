@@ -189,6 +189,16 @@ button {
     font-size: 1.5rem;
 }
 
+@media screen and (min-width: 768px) {
+    .logo__ttl{
+        font-size: 3.5rem;
+    }
+
+    .logo__tagline{
+        font-size: 2.75rem;
+    }
+}
+
 /* Header */
 
 .header {
@@ -214,32 +224,50 @@ button {
     max-width: 3rem;
 }
 
+@media screen and (min-width: 768px) {
+    .header {
+        padding: 0.75rem;
+    }
+
+    .header__ttl {
+        font-size: 2.5rem;
+    }
+}
+
 /* Hamburger */
 
-.hamburger__link {
-    font-size: 1.25rem;
+@media screen and (max-width: 768px) {
+    .hamburger__link {
+        font-size: 1.25rem;
+    }
+
+    .hamburger__menu {
+        z-index: 1;
+        min-width: 100%;
+        min-height: 55%;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        text-align: center;
+        padding-top: 1.25rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger__menu.overlay {
+        visibility: visible;
+        opacity: 1;
+        background: var(--black75);
+        line-height: 4;
+    }
 }
 
-.hamburger__menu {
-    z-index: 1;
-    min-width: 100%;
-    min-height: 40%;
-    position: fixed;
-    top: 5rem;
-    left: 0;
-    height: 0;
-    visibility: hidden;
-    opacity: 0;
-    text-align: center;
-    padding-top: 1.25rem;
-    transition: all 0.3s ease-in-out;
-}
-
-.hamburger__menu.overlay {
-    visibility: visible;
-    opacity: 1;
-    background: var(--black75);
-    line-height: 4;
+@media screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
 }
 
 /* Nav */
@@ -251,6 +279,7 @@ button {
 .nav__lnk {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 2rem;
     margin: 0 6rem;
 }
@@ -263,6 +292,17 @@ button {
 .nav__lnk--current {
     font-weight: bold;
     color: var(--primary);
+}
+
+@media screen and (min-width: 768px) {
+    .nav__lst {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__lnk {
+        margin: 0 2rem;
+    }
 }
 
 /* Links */

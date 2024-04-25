@@ -8,6 +8,12 @@
     --black75: rgb(37, 36, 31, 0.75);
 }
 
+@media screen and (min-width: 768px) {
+    :root{
+        font-size: 20px;
+    }
+}
+
 body {
     color: var(--white);
     background-color: var(--secondary);
@@ -164,13 +170,6 @@ button {
     filter: drop-shadow(0 0 1rem var(--primary));
 }
 
-@media screen and (min-width: 768px) {
-    .hero-banner__btn {
-        background-color: var(--primary);
-        width: 5rem;
-    }
-}
-
 /* Logo */
 
 .logo__ttl {
@@ -226,11 +225,12 @@ button {
 
 @media screen and (min-width: 768px) {
     .header {
-        padding: 0.75rem;
+        padding: 0.5rem;
+        border-bottom: 2px solid var(--primary);
     }
 
     .header__ttl {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
 

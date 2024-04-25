@@ -28,4 +28,17 @@ conceptDiceElements.forEach(function(element) {
 
 // Favourite Universe
 
-const favouriteList = document.getElementById('favourite-universe');
+const rpgList = document.getElementById('rpg-universe');
+console.log(rpgList);
+
+const personnalList = document.getElementById('personnal-list');
+console.log(personnalList);
+
+const templateRPGList = document.querySelector('[data-favourite-rpg]');
+
+rpgList.addEventListener('click', function(event){
+    for(const rpg of rpgList){
+        templateRPGList.innerText = rpg.querySelector('[value]');
+        personnalList.appendChild(templateRPGList)
+    }
+})

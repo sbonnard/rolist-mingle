@@ -10,10 +10,40 @@
 </head>
 
 <body>
-    <header class="header header--minimalist">
+    <header class="header">
         <a href="#"><img class="header__img" src="logo/logo-rolist-mingle.svg"
                 alt="logo de rolist-mingle représentant un dé 20 de JDR"></a>
-    </header>
+                <a href="#">
+                    <h2 class="header__ttl">Rolist-Mingle</h2>
+                </a>
+                <a href="#menu" id="hamburger-menu-icon">
+            <img class="header__hamburger" src="img/hamburger.svg" alt="Menu Hamburger">
+    
+            <nav class="nav hamburger__menu" id="menu" aria-label="Main navigation menu">
+                <ul class="nav__lst" id="nav-list">
+                    <li class="nav__itm nav__lnk--current">
+                        <a href="flow.html" class="nav__lnk" aria-current="page">Accueil<img src="icones/home.svg"
+                                alt="icone accueil"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
+                                alt="icone parties dés de JDR"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
+                                alt="icone messagerie"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
+                                alt="icone agenda"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="my-account.html" class="nav__lnk">Mon compte <img class="nav__avatar" src="img/avatar.webp"
+                                alt="icones personnelles"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
 
     <main>
@@ -53,16 +83,18 @@
                                 required>
                         </li>
                         <li>
-                            <p class="form__question" for="ideal">Déterminons ensemble ton profil de rôliste <span class="input__required"
-                                    aria-hidden="true">*</span> :</p>
+                            <p class="form__question" for="ideal">Déterminons ensemble ton profil de rôliste <span
+                                    class="input__required" aria-hidden="true">*</span> :</p>
                             <p class="form__itm">
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice1" name="player-type" value="MJ Dé 100">
+                                <input class="form__radio" type="radio" id="choice1" name="player-type"
+                                    value="MJ Dé 100">
                                 <label for="choice1">Moi, MJ, dominant mes joueurs par ma toute puissance
                                     sadique!</label>
                             </div>
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice2" name="player-type" value="Sérieux Dé 20">
+                                <input class="form__radio" type="radio" id="choice2" name="player-type"
+                                    value="Sérieux Dé 20">
                                 <label for="choice2">Recherche une relation de jeu durable pour une histoire sans
                                     fin.</label>
                             </div>
@@ -83,9 +115,11 @@
                             </p>
                         </li>
                         <li class="form__itm">
-                            <label class="form__question" for="favourite-universe">Quelles sont tes univers de jeu préférés ?</label>
-                            <select class="input" type="select" name="favourite-universe" id="favourite-universe">
-                                <option class="input__select-placeholder" value="exemple">L'Oeil noir, le livre des règles</option>
+                            <label class="form__question" for="favourite-universe">Quelles sont tes univers de jeu
+                                préférés ?</label>
+                            <select class="input input__select" type="select" name="favourite-universe"
+                                id="favourite-universe">
+                                <option value="exemple">Mes univers</option>
                                 <option value="Medieval Fantasy">Medieval Fantasy</option>
                                 <option value="Post-Apocalyptique">Post-Apocalyptique</option>
                                 <option value="Horreur">Horreur</option>
@@ -95,21 +129,25 @@
                                 <option value="Steampunk">Steampunk</option>
                                 <option value="Historique">Historique</option>
                                 <option value="Mythologique">Mythologique</option>
-                                <option value="L'Oeil noir, le livre des règles">L'Oeil noir, le livre des règles</option>
-                                <option value="D&D1">Donjons et Dragons 1</option>
-                                <option value="D&D2">Donjons et Dragons 2</option>
-                                <option value="D&D3">Donjons et Dragons 3</option>
-                                <option value="D&D4">Donjons et Dragons 4</option>
-                                <option value="D&D5">Donjons et Dragons 5</option>
-                                <option value="persp">JDR personnalisé</option>
+                                <option value="L'Oeil noir, le livre des règles">L'Oeil noir, le livre des règles
+                                </option>
+                                <option value="Donjons et Dragons 1">Donjons et Dragons 1</option>
+                                <option value="Donjons et Dragons 2">Donjons et Dragons 2</option>
+                                <option value="Donjons et Dragons 3">Donjons et Dragons 3</option>
+                                <option value="Donjons et Dragons 4">Donjons et Dragons 4</option>
+                                <option value="Donjons et Dragons 5">Donjons et Dragons 5</option>
+                                <option value="personnalisé">JDR personnalisé</option>
                                 <option value="Star Wars D6">Star Wars D6</option>
                                 <option value="Star Wars D20">Star Wars D20</option>
                                 <option value="Star Wars FFG">Star Wars FFG</option>
                                 <option value="Star Wars confins">Star Wars aux confins de l'empire</option>
                                 <option value="Runequest">Runequest</option>
-                                <option value="L'Appel de Cthulhu : 6ème Édition">L'Appel de Cthulhu : 6ème Édition</option>
-                                <option value="Achtung! Cthulhu: le guide de l'investigateur">Achtung! Cthulhu: le guide de l'investigateur</option>
-                                <option value="In Nomine Satanis / Magna Veritas - 3ème Édition">In Nomine Satanis / Magna Veritas - 3ème Édition</option>
+                                <option value="L'Appel de Cthulhu : 6ème Édition">L'Appel de Cthulhu : 6ème Édition
+                                </option>
+                                <option value="Achtung! Cthulhu: le guide de l'investigateur">Achtung! Cthulhu: le guide
+                                    de l'investigateur</option>
+                                <option value="In Nomine Satanis / Magna Veritas - 3ème Édition">In Nomine Satanis /
+                                    Magna Veritas - 3ème Édition</option>
                                 <option value="Shadowrun">Shadowrun</option>
                                 <option value="Warhammer">Warhammer</option>
                                 <option value="Warhammer 40K">Warhammer 40K</option>
@@ -130,24 +168,51 @@
                                 <option value="La methode du docteur chestel">La methode du docteur chestel</option>
                                 <option value="Maléfices">Maléfices</option>
                                 <option value="Cyberpunk 2020">Cyberpunk 2020</option>
-                                <option value="Cyberpunk 2020"> Jeu de rôle des Terres du Milieu</option>
+                                <option value="Terres du Milieu"> Jeu de rôle des Terres du Milieu</option>
                             </select>
                         </li>
+                        <ul>
+
+                        </ul>
+                        <p class="input__required--txt" aria-hidden="true">Les champs marqués d’une <span
+                                class="input__required">*</span> sont obligatoires.
+                        </p>
+                        <input class="button button--padding" type="submit" value="Créer mon Compte">
                     </ul>
 
 
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <p class="input__required--txt" aria-hidden="true">Les champs marqués d’une <span
-                            class="input__required">*</span> sont obligatoires.
-                    </p>
+                    <template>
+                        <li class="favourites">
+                            <button class="button--minus" data-favourite-minus=""></button>
+                            <p class="txt--bigger" data-favourite-rpg="">Patate</p>
+                        </li>
+                    </template>
+
                 </form>
             </section>
         </div>
 
     </main>
+    <footer class="footer">
+        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
+            <ul class="footer__social">
+                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
+                            src="img/instagram.svg" alt="icône instagram"></a></li>
+                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
+                            src="img/facebook.svg" alt="icône facebook"></a></li>
+                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
+                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
+                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
+                            src="img/github.svg" alt="icône github"></a>
+                </li>
+            </ul>
+        </nav>
+        <nav aria-label="navigation vers mentions légales du site">
+            <ul class="footer-legal">
+                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
+                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="js/script.js"></script>
 </body>

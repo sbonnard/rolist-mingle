@@ -54,7 +54,8 @@ body {
 }
 
 ul,
-ol {
+ol,
+li {
     list-style: none;
 }
 
@@ -89,6 +90,10 @@ button {
     background-size: cover;
     background-attachment: fixed;
     letter-spacing: 0.10rem;
+}
+
+.txt--bigger {
+    font-size: 1.25rem;
 }
 
 /* Container */
@@ -196,10 +201,6 @@ button {
     z-index: 100;
     padding: 1rem;
     background-color: var(--black75);
-}
-
-.header--minimalist {
-    background-color: transparent;
 }
 
 .header__ttl {
@@ -339,6 +340,17 @@ button {
     margin-bottom: 1.5rem;
 }
 
+.button--minus {
+    /* color: var(--secondary);
+    font-weight: 900;
+    font-size: 1.5rem; */
+    width: 1rem;
+    height: 1rem;
+    background-image: url(/img/minus-btn.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Forms */
 
 .form__container {
@@ -362,15 +374,15 @@ button {
 
 .form__radio {
     appearance: none;
-    content:url(/img/radiobox.svg);
+    content: url(/img/radiobox.svg);
 }
 
-.form__radio:checked{
+.form__radio:checked {
     content: url(/img/radiobox-checked.svg);
     filter: drop-shadow(0 0 0.75rem var(--primary));
 }
 
-.form__question{
+.form__question {
     padding: 0.75rem;
 }
 
@@ -404,6 +416,20 @@ input:focus-visible {
 
 .input__required--txt {
     font-size: 0.75rem;
+}
+
+.input__select {
+    background-image: url(/img/angle-down.svg);
+    background-repeat: no-repeat;
+    background-position: right 0.5rem bottom 0.75rem;
+}
+
+/* Favourites list */
+
+.favourites {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 /* Footer */

@@ -11,6 +11,7 @@ burgerMenu.addEventListener('click', function() {
   overlay.classList.toggle("overlay");
 });
 
+
 // Concept Dice Responsive //
 
 const conceptDiceElements = document.querySelectorAll('[data-concept-dice]');
@@ -24,3 +25,7 @@ conceptDiceElements.forEach(function(element) {
         element.classList.remove('ttl--primary');
     });
 });
+
+// Favourite Universe
+
+const favouriteList = document.getElementById('favourite-universe');

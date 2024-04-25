@@ -254,7 +254,7 @@ button {
     margin: 0 6rem;
 }
 
-.nav__avatar{
+.nav__avatar {
     height: 100%;
     margin-top: 0.75rem;
 }
@@ -352,6 +352,26 @@ button {
 .form__itm {
     display: flex;
     flex-direction: column;
+}
+
+.form__itm--box {
+    display: flex;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.form__radio {
+    appearance: none;
+    content:url(/img/radiobox.svg);
+}
+
+.form__radio:checked{
+    content: url(/img/radiobox-checked.svg);
+    filter: drop-shadow(0 0 0.75rem var(--primary));
+}
+
+.form__question{
+    padding: 0.75rem;
 }
 
 /* Inputs */

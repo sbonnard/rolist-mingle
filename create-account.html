@@ -11,31 +11,143 @@
 
 <body>
     <header class="header header--minimalist">
-        <a href="index.html"><img class="header__img" src="logo/logo-rolist-mingle.svg"
+        <a href="#"><img class="header__img" src="logo/logo-rolist-mingle.svg"
                 alt="logo de rolist-mingle représentant un dé 20 de JDR"></a>
     </header>
 
 
     <main>
         <a href="index.html" class="hero-banner hero-banner--smaller">
-            <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
+            <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg"
+                alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h2 class="logo__ttl">Rolist-Mingle</h1>
-            <h2 class="logo__tagline">Don't Roll Single</h2>
+                <h2 class="logo__tagline">Don't Roll Single</h2>
         </a>
 
         <div class="page-content">
-        <section>
-            <h1 class="ttl ttl--big">Créer ton compte</h1>
-        </section>
-        <form action="get" aria-label="Formulaire de création de compte">
-            <ul class="form__container">
-                <li class="form__itm">
-                    <label class="input__label" for="username">Nom d'utilisateur</label>
-                    <input class="input" type="text" name="username" id="username"
-                        placeholder="Nom d'utilisateur" required>
-                </li>
-        </form>
+            <section class="container__mobile" aria-labelledby="#create-account">
+                <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>
+                <form action="get" aria-label="Formulaire de création de compte">
+                    <ul class="form__container">
+                        <li class="form__itm">
+                            <label class="input__label" for="username">Nom d'utilisateur <span class="input__required"
+                                    aria-hidden="true">*</span></label>
+                            <input class="input" type="text" name="username" id="username"
+                                placeholder="Nom d'utilisateur" required>
+                        </li>
+                        <li class="form__itm">
+                            <label class="input__label" for="email">Ton Email <span class="input__required"
+                                    aria-hidden="true">*</span></label>
+                            <input class="input" type="email" name="email" id="email" placeholder="exemple@email.com"
+                                aria-label="Renseigne l'email lié à ton compte" required>
+                        </li>
+                        <li class="form__itm">
+                            <label class="input__label" for="locality">Localité</label>
+                            <input class="input" type="text" name="locality" id="locality" placeholder="CAEN"
+                                autocapitalize="" autocomplete="address-level2">
+                        </li>
+                        <li class="form__itm">
+                            <label class="input__label" for="password">Mot de passe <span class="input__required"
+                                    aria-hidden="true">*</span></label>
+                            <input class="input" type="password" name="password" id="password" placeholder="•••••••••••"
+                                required>
+                        </li>
+                        <li>
+                            <p class="form__question" for="ideal">Déterminons ensemble ton profil de rôliste <span class="input__required"
+                                    aria-hidden="true">*</span> :</p>
+                            <p class="form__itm">
+                            <div class="form__itm--box">
+                                <input class="form__radio" type="radio" id="choice1" name="player-type" value="MJ Dé 100">
+                                <label for="choice1">Moi, MJ, dominant mes joueurs par ma toute puissance
+                                    sadique!</label>
+                            </div>
+                            <div class="form__itm--box">
+                                <input class="form__radio" type="radio" id="choice2" name="player-type" value="Sérieux Dé 20">
+                                <label for="choice2">Recherche une relation de jeu durable pour une histoire sans
+                                    fin.</label>
+                            </div>
+                            <div class="form__itm--box">
+                                <input class="form__radio" type="radio" id="choice3" name="player-type" value="MJ">
+                                <label for="choice3">JDR sans lendemain, une partie “quickie”. Je joue le premier
+                                    soir.</label>
+                            </div>
+                            <div class="form__itm--box">
+                                <input class="form__radio" type="radio" id="choice4" name="player-type" value="MJ">
+                                <label for="choice4">Plan jeu régulier, pour s’amuser quelques soirées ensemble.</label>
+                            </div>
+                            <div class="form__itm--box">
+                                <input class="form__radio" type="radio" id="choice5" name="player-type" value="MJ">
+                                <label for="choice5">Une histoire de JDR courte, deux ou trois soirs, plus si
+                                    affinité.</label>
+                            </div>
+                            </p>
+                        </li>
+                        <li class="form__itm">
+                            <label class="form__question" for="favourite-universe">Quelles sont tes univers de jeu préférés ?</label>
+                            <select class="input" type="select" name="favourite-universe" id="favourite-universe">
+                                <option class="input__select-placeholder" value="exemple">L'Oeil noir, le livre des règles</option>
+                                <option value="Medieval Fantasy">Medieval Fantasy</option>
+                                <option value="Post-Apocalyptique">Post-Apocalyptique</option>
+                                <option value="Horreur">Horreur</option>
+                                <option value="Western">Western</option>
+                                <option value="Science-Fiction">Science-Fiction</option>
+                                <option value="Space Opera">Space Opera</option>
+                                <option value="Steampunk">Steampunk</option>
+                                <option value="Historique">Historique</option>
+                                <option value="Mythologique">Mythologique</option>
+                                <option value="L'Oeil noir, le livre des règles">L'Oeil noir, le livre des règles</option>
+                                <option value="D&D1">Donjons et Dragons 1</option>
+                                <option value="D&D2">Donjons et Dragons 2</option>
+                                <option value="D&D3">Donjons et Dragons 3</option>
+                                <option value="D&D4">Donjons et Dragons 4</option>
+                                <option value="D&D5">Donjons et Dragons 5</option>
+                                <option value="persp">JDR personnalisé</option>
+                                <option value="Star Wars D6">Star Wars D6</option>
+                                <option value="Star Wars D20">Star Wars D20</option>
+                                <option value="Star Wars FFG">Star Wars FFG</option>
+                                <option value="Star Wars confins">Star Wars aux confins de l'empire</option>
+                                <option value="Runequest">Runequest</option>
+                                <option value="L'Appel de Cthulhu : 6ème Édition">L'Appel de Cthulhu : 6ème Édition</option>
+                                <option value="Achtung! Cthulhu: le guide de l'investigateur">Achtung! Cthulhu: le guide de l'investigateur</option>
+                                <option value="In Nomine Satanis / Magna Veritas - 3ème Édition">In Nomine Satanis / Magna Veritas - 3ème Édition</option>
+                                <option value="Shadowrun">Shadowrun</option>
+                                <option value="Warhammer">Warhammer</option>
+                                <option value="Warhammer 40K">Warhammer 40K</option>
+                                <option value="Paranoïa">Paranoïa</option>
+                                <option value="Pendragon (1985)">Pendragon (1985)</option>
+                                <option value="Vampire : La Mascarade">Vampire : La Mascarade</option>
+                                <option value="Stormbringer (1981)">Stormbringer (1981)</option>
+                                <option value="C.O.P.S.">C.O.P.S.</option>
+                                <option value="Rêve de Dragon">Rêve de Dragon</option>
+                                <option value="Pavillon Noir : La Révolte">Pavillon Noir : La Révolte</option>
+                                <option value="Animonde">Animonde</option>
+                                <option value="Ars Magica">Ars Magica</option>
+                                <option value="Château Falkenstein">Château Falkenstein</option>
+                                <option value="Château Bitume">Bitume</option>
+                                <option value="Feng Shui">Feng Shui</option>
+                                <option value="Dark Heresy">Dark Heresy</option>
+                                <option value="Ambre">Ambre</option>
+                                <option value="La methode du docteur chestel">La methode du docteur chestel</option>
+                                <option value="Maléfices">Maléfices</option>
+                                <option value="Cyberpunk 2020">Cyberpunk 2020</option>
+                                <option value="Cyberpunk 2020"> Jeu de rôle des Terres du Milieu</option>
+                            </select>
+                        </li>
+                    </ul>
+
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p class="input__required--txt" aria-hidden="true">Les champs marqués d’une <span
+                            class="input__required">*</span> sont obligatoires.
+                    </p>
+                </form>
+            </section>
         </div>
 
-</main>
+    </main>
 </body>

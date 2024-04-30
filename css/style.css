@@ -511,6 +511,13 @@ input:focus-visible {
     background-position: right 0.5rem bottom 0.75rem;
 }
 
+@media screen and (min-width: 768px) {
+    .input__select {
+        width: auto;
+        background-position: right 0.5rem bottom 0.90rem;
+    }
+}
+
 /* Favourites list */
 
 .favourites {

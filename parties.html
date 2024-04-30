@@ -11,43 +11,98 @@
 
 <body>
     <header class="header">
-        <img class="header__img" src="logo/logo-rolist-mingle.svg"
-            alt="logo de rolist-mingle représentant un dé 20 de JDR">
-        <a href="#">
-            <h2 class="header__ttl">Rolist-Mingle</h2>
-        </a>
-        <a class="hamburger" href="#menu" id="hamburger-menu-icon">
-            <img src="img/hamburger.svg" alt="Menu Hamburger">
-        </a>
+        <div class="container__header">
+            <img class="header__img" src="logo/logo-rolist-mingle.svg"
+                alt="logo de rolist-mingle représentant un dé 20 de JDR">
+            <a href="#">
+                <h2 class="header__ttl">Rolist-Mingle</h2>
+            </a>
+            <div class="hamburger">
+                <a href="#menu" id="hamburger-menu-icon">
+                    <img src="img/hamburger.svg" alt="Menu Hamburger">
+                </a>
+            </div>
+            <nav class="nav hamburger__menu" id="menu" aria-label="Main navigation menu">
+                <ul class="nav__lst" id="nav-list">
+                    <li class="nav__itm nav__lnk--current">
+                        <a href="flow.html" class="nav__lnk" aria-current="page">Accueil<img src="icones/home.svg"
+                                alt="icone accueil"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
+                                alt="icone parties dés de JDR"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
+                                alt="icone messagerie"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
+                                alt="icone agenda"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="my-account.html" class="nav__lnk">Mon compte <img class="nav__avatar"
+                                src="img/avatar.webp" alt="icones personnelles"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <nav class="nav hamburger__menu" id="menu" aria-label="Main navigation menu">
-            <ul class="nav__lst" id="nav-list">
-                <li class="nav__itm">
-                    <a href="flow.html" class="nav__lnk">Accueil<img src="icones/home.svg"
-                            alt="icone accueil"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="parties.html" class="nav__lnk nav__lnk--current" aria-current="page">Parties <img src="icones/parties.svg"
-                            alt="icone parties dés de JDR"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
-                            alt="icone messagerie"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
-                            alt="icone agenda"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="my-account.html" class="nav__lnk">Mon compte <img class="nav__avatar" src="img/avatar.webp"
-                            alt="icones personnelles"></a>
+    <main>
+        <div class="page-content">
+            <div class="connection-bar">
+                <p>Connecte-toi !</p>
+                <a href="index.html"><button class="button connection-bar__button">Se connecter</button></a>
+            </div>
+            
+            <h1 class="ttl ttl--big">Parties disponibles</h1>
+
+            <aside class="container friend-suggestion">
+                <h3 class="ttl--small">Les Rôlistes les plus chauds de<br> ta région !</h2>
+                <div class="friend-suggestion__users">
+                    <div class="friend-suggestion__rolist">
+                        <img class="avatar" src="img/avatar-bergueau.webp" alt="avatar de Bergueau">
+                        <h4 class="txt--small">Bergueau</h4>
+                        <img class="rolist-icon" src="icones/dé20.webp" alt="Icône dé 20 'Sérieux'">
+                    </div>
+                    <div class="friend-suggestion__rolist">
+                        <img class="avatar" src="img/avatar-canas.webp" alt="avatar de Canas">
+                        <h4 class="txt--small">Canas</h4>
+                        <img class="rolist-icon" src="icones/dé12.webp" alt="Icône dé 20 'Sérieux'">
+                    </div>
+                </div>
+            </aside>
+
+            <div class="container filter">
+                <h2 class="txt--bigger">Filtrer par préférences</h2>
+                <img src="img/filter.svg" alt="Icône de filtrage">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
+            <ul class="footer__social">
+                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
+                            src="img/instagram.svg" alt="icône instagram"></a></li>
+                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
+                            src="img/facebook.svg" alt="icône facebook"></a></li>
+                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
+                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
+                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
+                            src="img/github.svg" alt="icône github"></a>
                 </li>
             </ul>
         </nav>
-    </header>
+        <nav aria-label="navigation vers mentions légales du site">
+            <ul class="footer-legal">
+                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
+                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
+            </ul>
+        </nav>
+    </footer>
 
-
-
-
-    
-    </body>
+    <script src="js/script.js"></script>
+</body>

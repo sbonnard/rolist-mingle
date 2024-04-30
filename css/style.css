@@ -103,7 +103,6 @@ button {
     font-size: 1.25rem;
 }
 
-
 /* Container */
 
 .container {
@@ -373,6 +372,10 @@ button {
     font-size: 1.5rem;
 }
 
+.ttl--small {
+    font-size: 1rem;
+}
+
 .ttl--primary {
     color: var(--primary);
 }
@@ -524,6 +527,68 @@ input:focus-visible {
     display: flex;
     gap: 1rem;
     align-items: center;
+    color: var(--secondary);
+}
+
+/* Connection bar */
+
+.connection-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding: 0.5rem 1.25rem;
+    margin-top: 5.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .connection-bar__button {
+        width: 10rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .connection-bar {
+        margin-top: 4rem;
+        gap: 3rem;
+    }
+}
+
+/* Friend suggestion */
+
+.friend-suggestion {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem;
+    text-align: center;
+    background-color: var(--deep-black);
+    border: 2px solid var(--primary);
+    margin: 2rem 0;
+}
+
+.friend-suggestion__users {
+    display: flex;
+    gap: 4rem;
+}
+
+.friend-suggestion__rolist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items : center;
+}
+
+/* Rolist Items */
+
+.rolist-icon {
+    width: 3.25rem;
+}
+
+.avatar {
+    width: 4rem;
+    aspect-ratio: 1;
 }
 
 /* Footer */

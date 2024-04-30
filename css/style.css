@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    :root{
+    :root {
         font-size: 20px;
     }
 }
@@ -102,18 +102,55 @@ button {
     font-size: 1.25rem;
 }
 
+
 /* Container */
 
-.container__mobile {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0rem 1.25rem 0 1.25rem;
 }
 
+.container__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 @media screen and (min-width: 768px) {
-    .container {
+    .container__desktop {
+        display: grid;
+        grid-template:
+            "counter form"
+            "concept dices"
+            "concept dices"
+            / 1fr 1fr;
         width: 1350px;
+        margin: auto;
+    }
+
+
+    .grid-counter {
+        grid-area: counter;
+    }
+
+    .grid-form {
+        grid-area: form;
+    }
+
+    .grid-concept {
+        grid-area: concept;
+    }
+
+    .grid-dices {
+        grid-area: dices;
+    }
+
+    .container__header {
+        width: 83rem;
+        margin: auto;
     }
 }
 
@@ -189,11 +226,11 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-    .logo__ttl{
+    .logo__ttl {
         font-size: 3.5rem;
     }
 
-    .logo__tagline{
+    .logo__tagline {
         font-size: 2.75rem;
     }
 }
@@ -201,9 +238,6 @@ button {
 /* Header */
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
@@ -286,7 +320,7 @@ button {
 
 .nav__avatar {
     height: 100%;
-    margin-top: 0.75rem;
+    /* margin-top: 0.75rem; */
 }
 
 .nav__lnk--current {
@@ -302,6 +336,10 @@ button {
 
     .nav__lnk {
         margin: 0 2rem;
+    }
+
+    .nav__lnk:hover {
+        color: var(--primary);
     }
 }
 
@@ -349,6 +387,14 @@ button {
 
 .concept-dice__sub-ttl {
     padding-top: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .concept-dice__container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 440px;
+    }
 }
 
 /* Buttons */
@@ -484,7 +530,6 @@ input:focus-visible {
     justify-content: space-around;
     padding: 1.5rem 1rem 0rem 1rem;
     border-top: 2px solid var(--primary);
-
 }
 
 .footer__social-link:hover {
@@ -504,4 +549,11 @@ input:focus-visible {
 .footer-legal__lnk:not(:last-child)::after {
     content: "|";
     padding: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__social {
+        justify-content: center;
+        gap: 1rem;
+    }
 }

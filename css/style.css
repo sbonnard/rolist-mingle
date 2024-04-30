@@ -603,10 +603,11 @@ input:focus-visible {
     font-family: 'roboto';
     border: 2px solid var(--primary);
     padding: 1.5rem;
+    margin-bottom: 2rem;
     width: 100%;
     background-image: url(/img/filter.svg);
     background-repeat: no-repeat;
-    background-position: right 0.5rem bottom 1.25rem;
+    background-position: right 1.5rem bottom 1.25rem;
 }
 
 /* Footer */

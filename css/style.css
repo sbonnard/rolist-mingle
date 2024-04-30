@@ -96,6 +96,7 @@ button {
     background-size: cover;
     background-attachment: fixed;
     letter-spacing: 0.10rem;
+    padding-bottom: 4rem;
 }
 
 .txt--bigger {
@@ -228,6 +229,10 @@ button {
 @media screen and (min-width: 768px) {
     .logo__ttl {
         font-size: 3.5rem;
+    }
+
+    .logo__ttl--smaller {
+        font-size: 1.75rem;
     }
 
     .logo__tagline {
@@ -420,10 +425,6 @@ button {
     background-color: var(--secondary);
     border: 1px solid var(--primary);
     color: var(--primary);
-}
-
-.button--padding {
-    margin-bottom: 1.5rem;
 }
 
 .button--minus {

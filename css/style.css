@@ -107,6 +107,12 @@ button {
     color: var(--primary);
 }
 
+.swiper {
+    display: flex;
+    overflow-x: scroll;
+    margin-top : 1.5rem;
+}
+
 /* Container */
 
 .container {
@@ -373,6 +379,7 @@ button {
 }
 
 .ttl--big {
+    font-family: 'khyay';
     font-size: 1.5rem;
 }
 
@@ -582,7 +589,7 @@ input:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    align-items : center;
+    align-items: center;
 }
 
 /* Rolist Items */
@@ -594,6 +601,29 @@ input:focus-visible {
 .avatar {
     width: 4rem;
     aspect-ratio: 1;
+}
+
+.user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.party {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 2px solid var(--primary);
+    padding: 0.5rem;
+}
+
+.party__img {
+    width: 20rem;
+    border: 2px solid var(--primary);
 }
 
 /* Filter */

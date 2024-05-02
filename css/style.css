@@ -99,6 +99,10 @@ button {
     padding-bottom: 4rem;
 }
 
+.content-position {
+    margin-top: 5.2rem;
+}
+
 .txt--bigger {
     font-size: 1.25rem;
 }
@@ -107,11 +111,6 @@ button {
     color: var(--primary);
 }
 
-@media screen and (max-width: 768px) {
-    .content-position {
-        margin-top: 5.2rem;
-    }
-}
 
 /* Swiper */
 
@@ -120,8 +119,6 @@ button {
     overflow-x: scroll;
     margin-top: 1.5rem;
 }
-
-.swiper__card {}
 
 /* Container */
 

@@ -107,11 +107,21 @@ button {
     color: var(--primary);
 }
 
+@media screen and (max-width: 768px) {
+    .content-position {
+        margin-top: 5.2rem;
+    }
+}
+
+/* Swiper */
+
 .swiper {
     display: flex;
     overflow-x: scroll;
-    margin-top : 1.5rem;
+    margin-top: 1.5rem;
 }
+
+.swiper__card {}
 
 /* Container */
 
@@ -292,7 +302,7 @@ button {
     .hamburger__menu {
         z-index: 1;
         min-width: 100%;
-        min-height: 55%;
+        min-height: 22.5rem;
         position: fixed;
         top: 5rem;
         left: 0;
@@ -390,6 +400,8 @@ button {
 .ttl--primary {
     color: var(--primary);
 }
+
+.ttl__mobile-gap {}
 
 /* Concept */
 
@@ -624,6 +636,12 @@ input:focus-visible {
 .party__img {
     width: 20rem;
     border: 2px solid var(--primary);
+}
+
+.party__page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 /* Filter */

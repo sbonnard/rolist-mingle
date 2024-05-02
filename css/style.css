@@ -657,12 +657,14 @@ input:focus-visible {
     width: 100%;
     background-image: url(/img/filter.svg);
     background-repeat: no-repeat;
-    background-position: right 1.5rem bottom 1.25rem;
+    background-position: right 1.5rem bottom 1.15rem;
 }
 
 @media screen and (min-width: 768px) {
     .filter {
         width: 19rem;
+        background-position: right 1.5rem bottom 1.5rem;
+
 }
 }
 /* Footer */

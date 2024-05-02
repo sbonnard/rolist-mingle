@@ -11,39 +11,47 @@
 
 <body>
     <header class="header">
-        <img class="header__img" src="logo/logo-rolist-mingle.svg"
-            alt="logo de rolist-mingle représentant un dé 20 de JDR">
-        <a href="#">
-            <h2 class="header__ttl">Rolist-Mingle</h2>
-        </a>
-        <a class="hamburger" href="#menu" id="hamburger-menu-icon">
-            <img src="img/hamburger.svg" alt="Menu Hamburger">
-        </a>
+        <div class="container__header">
+            <img class="header__img" src="logo/logo-rolist-mingle.svg"
+                alt="logo de rolist-mingle représentant un dé 20 de JDR">
+            <a href="#">
+                <h2 class="header__ttl">Rolist-Mingle</h2>
+            </a>
+            <div class="hamburger">
+                <a href="#menu" id="hamburger-menu-icon">
+                    <img src="img/hamburger.svg" alt="Menu Hamburger">
+                </a>
+            </div>
+            <nav class="nav hamburger__menu" id="menu" aria-label="Main navigation menu">
+                <ul class="nav__lst" id="nav-list">
+                    <li class="nav__itm">
+                        <a href="flow.html" class="nav__lnk" aria-current="page">Accueil<img src="icones/home.svg"
+                                alt="icone accueil"></a>
+                    </li>
+                    <li class="nav__itm nav__lnk--current">
+                        <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
+                                alt="icone parties dés de JDR"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
+                                alt="icone messagerie"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
+                                alt="icone agenda"></a>
+                    </li>
+                    <li class="nav__itm">
+                        <a href="my-account.html" class="nav__lnk">Mon compte
+                            <picture>
+                                <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
+                                <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
+                            </picture>
+                        </a>
 
-        <nav class="nav hamburger__menu" id="menu" aria-label="Main navigation menu">
-            <ul class="nav__lst" id="nav-list">
-                <li class="nav__itm">
-                    <a href="flow.html" class="nav__lnk">Accueil<img src="icones/home.svg"
-                            alt="icone accueil"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
-                            alt="icone parties dés de JDR"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="messages.html" class="nav__lnk nav__lnk--current" aria-current="page">Messagerie <img src="icones/messages.svg"
-                            alt="icone messagerie"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
-                            alt="icone agenda"></a>
-                </li>
-                <li class="nav__itm">
-                    <a href="my-account.html" class="nav__lnk">Mon compte <img class="nav__avatar" src="img/avatar.webp"
-                            alt="icones personnelles"></a>
-                </li>
-            </ul>
-        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
 

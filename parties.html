@@ -24,11 +24,11 @@
             </div>
             <nav class="nav hamburger__menu" id="menu" aria-label="Main navigation menu">
                 <ul class="nav__lst" id="nav-list">
-                    <li class="nav__itm nav__lnk--current">
+                    <li class="nav__itm">
                         <a href="flow.html" class="nav__lnk" aria-current="page">Accueil<img src="icones/home.svg"
                                 alt="icone accueil"></a>
                     </li>
-                    <li class="nav__itm">
+                    <li class="nav__itm nav__lnk--current">
                         <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
                                 alt="icone parties dés de JDR"></a>
                     </li>
@@ -41,8 +41,13 @@
                                 alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte <img class="nav__avatar"
-                                src="img/avatar.webp" alt="icones personnelles"></a>
+                        <a href="my-account.html" class="nav__lnk">Mon compte
+                            <picture>
+                                <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
+                                <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
+                            </picture>
+                        </a>
+
                     </li>
                 </ul>
             </nav>
@@ -69,7 +74,10 @@
             <div class="swiper" id="swiper">
                 <section class="container swiper__card">
                     <div class="user">
-                        <img class="avatar" src="img/avatar-slike.webp" alt="Avatar de Slike">
+                        <picture>
+                            <source class="avatar" srcset="img/avatar-slike-m.webp" media="(min-width: 768px)">
+                            <img class="avatar" src="img/avatar-slike.webp" alt="Avatar de Slike">
+                        </picture>
                         <h3 class="ttl--big">Slike</h3>
                         <img class="rolist-icon" src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'">
                     </div>
@@ -85,7 +93,10 @@
 
                 <section class="container">
                     <div class="user">
-                        <img class="avatar" src="img/avatar-edreen.webp" alt="Avatar de Slike">
+                        <picture>
+                            <source class="avatar" srcset="img/avatar-edreen-m.webp" media="(min-width: 768px)">
+                            <img class="avatar" src="img/avatar-edreen.webp" alt="Avatar de Edreen">
+                        </picture>
                         <h3 class="ttl--big">Edreen</h3>
                         <img class="rolist-icon" src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'">
                     </div>
@@ -100,7 +111,10 @@
 
                 <section class="container">
                     <div class="user">
-                        <img class="avatar" src="img/avatar-bergueau.webp" alt="Avatar de Bergueau">
+                        <picture>
+                            <source class="avatar" srcset="img/avatar-bergueau-m.webp" media="(min-width: 768px)">
+                            <img class="avatar" src="img/avatar-bergueau.webp" alt="Avatar de Bergueau">
+                        </picture>
                         <h3 class="ttl--big">Bergueau</h3>
                         <img class="rolist-icon" src="icones/dice12-50x50.svg" alt="Icône dé 20 'Sérieux'">
                     </div>
@@ -116,7 +130,10 @@
 
                 <section class="container">
                     <div class="user">
-                        <img class="avatar" src="img/avatar-canas.webp" alt="Avatar de Canas">
+                        <picture>
+                            <source class="avatar" srcset="img/avatar-canas-m.webp" media="(min-width: 768px)">
+                            <img class="avatar" src="img/avatar-canas.webp" alt="Avatar de Canas">
+                        </picture>
                         <h3 class="ttl--big">Canas</h3>
                         <img class="rolist-icon" src="icones/dice8-50x50.svg" alt="Icône dé 12 'Régulier'">
                     </div>

@@ -624,6 +624,7 @@ input:focus-visible {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 20rem;
     border: 2px solid var(--primary);
     padding: 0.5rem;
 }
@@ -637,6 +638,12 @@ input:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .avatar {
+        width: 3rem;
+    }
 }
 
 /* Filter */
@@ -653,6 +660,11 @@ input:focus-visible {
     background-position: right 1.5rem bottom 1.25rem;
 }
 
+@media screen and (min-width: 768px) {
+    .filter {
+        width: 19rem;
+}
+}
 /* Footer */
 
 .footer {

@@ -158,5 +158,25 @@
     {
         "name": "Dark Heresy",
         "type": "Science-Fiction"
+    },
+    {
+        "name": "Ambre",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "La methode du docteur chestel",
+        "type": "Absurde"
+    },
+    {
+        "name": "Maléfices",
+        "type": "historico-fantastique"
+    },
+    {
+        "name": "Cyberpunk 2020",
+        "type": "Cyberpunk"
+    },
+    {
+        "name": "Terres du Milieu",
+        "type": "Medieval Fantasy"
     }
 ]

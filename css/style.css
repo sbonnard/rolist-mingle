@@ -571,7 +571,7 @@ input:focus-visible {
 
 @media screen and (min-width: 768px) {
     .connection-bar {
-        margin-top: 4rem;
+        margin-top: 4.5rem;
         gap: 3rem;
     }
 }
@@ -664,8 +664,6 @@ input:focus-visible {
 @media screen and (min-width: 768px) {
     .filter {
         width: 19rem;
-        background-position: right 1.5rem bottom 1.5rem;
-
 }
 }
 /* Footer */

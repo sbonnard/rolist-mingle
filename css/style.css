@@ -8,11 +8,11 @@
     --black75: rgb(37, 36, 31, 0.75);
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     :root {
         font-size: 20px;
     }
-}
+} */
 
 body {
     color: var(--white);
@@ -362,6 +362,7 @@ button {
     .nav__lnk:hover {
         color: var(--primary);
     }
+
 }
 
 /* Links */

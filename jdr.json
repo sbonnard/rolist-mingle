@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Medieval Fantasy",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Post-Apocalyptique",
+        "type": "Post-Apocalyptique"
+    },
+    {
+        "name": "Horreur",
+        "type": "Horreur"
+    },
+    {
+        "name": "Western",
+        "type": "Western"
+    },
+    {
+        "name": "Science-Fiction",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Space Opera",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Steampunk",
+        "type": "Fantastique"
+    },
+    {
+        "name": "Historique",
+        "type": "Historique"
+    },
+    {
+        "name": "Mythologique",
+        "type": "Mythologique"
+    },
+    {
+        "name": "L'Oeil noir, le livre des règles",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Donjons et Dragons 1",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Donjons et Dragons 2",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Donjons et Dragons 3",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Donjons et Dragons 4",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Donjons et Dragons 5",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "JDR personnalisé",
+        "type": "JDR personnalisé"
+    },
+    {
+        "name": "Star Wars D6",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Star Wars D20",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Star Wars FFG",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Star Wars aux confins de l'empire",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Runequest",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "L'Appel de Cthulhu : 6ème Édition",
+        "type": "Horreur"
+    },
+    {
+        "name": "Achtung! Cthulhu: le guide de l'investigateur",
+        "type": "Horreur"
+    },
+    {
+        "name": "In Nomine Satanis / Magna Veritas - 3ème Édition",
+        "type": "Humoristique"
+    },
+    {
+        "name": "Shadowrun",
+        "type": "Cyberpunk"
+    },
+    {
+        "name": "Warhammer",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Warhammer 40K",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Paranoïa",
+        "type": "Science-Fiction"
+    },
+    {
+        "name": "Pendragon (1985)",
+        "type": "Historique/Fantastique"
+    },
+    {
+        "name": "Vampire : La Mascarade",
+        "type": "Gothique/punk"
+    },
+    {
+        "name": "Stormbringer (1981)",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "C.O.P.S.",
+        "type": "Cyberpunk"
+    },
+    {
+        "name": "Rêve de Dragon",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Pavillon Noir : La Révolte",
+        "type": "Pirate"
+    },
+    {
+        "name": "Animonde",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Ars Magica",
+        "type": "Medieval Fantasy"
+    },
+    {
+        "name": "Château Falkenstein",
+        "type": "Steampunk"
+    },
+    {
+        "name": "Château Bitume",
+        "type": "Post-Apocalyptique"
+    },
+    {
+        "name": "Feng Shui",
+        "type": "Action"
+    },
+    {
+        "name": "Dark Heresy",
+        "type": "Science-Fiction"
+    }
+]

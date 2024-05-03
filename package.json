@@ -14,8 +14,5 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^5.2.11"
-  },
-  "dependencies": {
-    "swiper": "^11.1.1"
   }
 }

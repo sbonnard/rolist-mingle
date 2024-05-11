@@ -115,6 +115,10 @@ button {
     display: none;
 }
 
+.show {
+    display: block;
+}
+
 /* Swiper */
 
 .swiper {
@@ -408,6 +412,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .concept-dice__txt {
@@ -541,16 +546,9 @@ input:focus-visible {
     padding: 1.5rem;
 }
 
-.input__select {
-    background-image: url(/img/angle-down.svg);
-    background-repeat: no-repeat;
-    background-position: right 0.5rem bottom 0.75rem;
-}
-
 @media screen and (min-width: 768px) {
     .input__select {
         width: auto;
-        background-position: right 0.5rem bottom 0.90rem;
     }
 }
 

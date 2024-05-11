@@ -64,19 +64,19 @@
         <div class="page-content">
             <section class="container" aria-labelledby="#create-account">
                 <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>
-                <form action="get" aria-label="Formulaire de création de compte">
+                <form action="get" aria-label="Formulaire de création de compte" id="create-account-form">
                     <ul class="form__container">
                         <li class="form__itm">
                             <label class="input__label" for="username">Nom d'utilisateur <span class="input__required"
                                     aria-hidden="true">*</span></label>
                             <input class="input" type="text" name="username" id="username"
-                                placeholder="Nom d'utilisateur" required>
+                                placeholder="Nom d'utilisateur" autocomplete="username" required>
                         </li>
                         <li class="form__itm">
                             <label class="input__label" for="email">Ton Email <span class="input__required"
                                     aria-hidden="true">*</span></label>
                             <input class="input" type="email" name="email" id="email" placeholder="exemple@email.com"
-                                aria-label="Renseigne l'email lié à ton compte" required>
+                                aria-label="Renseigne l'email lié à ton compte" autocomplete="email" required>
                         </li>
                         <li class="form__itm">
                             <label class="input__label" for="locality">Localité</label>
@@ -122,10 +122,10 @@
                             </p>
                         </li>
                         <li class="form__itm">
-                            <label class="input__label" class="form__question" for="rpg-universe">Quelles sont tes
+                            <label class="input__label" class="form__question" for="inputField">Quelles sont tes
                                 univers de jeu
                                 préférés ?</label>
-                            <input class="input" type="text" id="inputField" placeholder="Tapez quelque chose...">
+                            <input class="input input__select" type="text" id="inputField" name="inputField" placeholder="Tapez quelque chose..." aria-label="Entre le nom de ton JDR préféré et appuie sur 'entrée' pour valider ton choix">
                             <ul id="selectedItemsList"></ul>
                         </li>
 
@@ -231,14 +231,14 @@
                         <p class="input__required--txt" aria-hidden="true">Les champs marqués d’une <span
                                 class="input__required">*</span> sont obligatoires.
                         </p>
-                        <input class="button" type="submit" value="Créer mon Compte">
+                        <input class="button" id="create-account-btn" type="submit" value="Créer mon Compte">
                     </ul>
 
 
-                    <template>
+                    <template id="favourite-template">
                         <li class="favourites">
                             <button class="button--minus" data-favourite-minus=""></button>
-                            <p class="txt--bigger" data-favourite-rpg="">Patate</p>
+                            <p class="txt--bigger" id="favourite-rpg">Patate</p>
                         </li>
                     </template>
 

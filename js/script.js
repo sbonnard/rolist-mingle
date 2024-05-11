@@ -1,4 +1,4 @@
-import * as JDR from "./jdr.json" with {type : "json" }
+import * as JDR from "./jdr.json" with {type: "json" }
 
 console.log(JDR);
 
@@ -42,9 +42,6 @@ console.log(selectArray);
 const selectedList = document.querySelectorAll('[data-selected]');
 console.log(selectedList);
 
-const templateRPGList = document.querySelector('[data-favourite-rpg]');
-
-
 // rpgList.addEventListener('click', function (event) {
 //     for (const rpg of rpgList) {
 //         templateRPGList.innerText = rpg.querySelector('[value]');
@@ -53,15 +50,29 @@ const templateRPGList = document.querySelector('[data-favourite-rpg]');
 // })
 
 const inputField = document.getElementById('inputField');
-const autocompleteList = document.getElementById('autocompleteList');
 const selectedItemsList = document.getElementById('selectedItemsList');
-const form = document.querySelector('form');
-const submitButton = document.querySelector('input[type="submit"]');
+const form = document.getElementById('create-account-form');
+const submitButton = document.getElementById('create-account-btn');
+const template = document.getElementById("favourite-template")
 
 let selectedRPG = [];
 
-function autoCompleteField(input, array) {
-    inputField.addEventListener("input", funtion(){
+inputField.addEventListener("keyup", function (event) {
+    const inputText = inputField.value.trim();
+    if (inputText !== '') {
+        if (event.key === 'Enter') {
+            const clonedTemplate = template.content.cloneNode(true);
+            clonedTemplate.querySelector('#favourite-rpg').innerText = inputText;
+            selectedItemsList.appendChild(template);
+            inputField.value = '';
+        }
+    }
+});
 
-    })
-};
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+
+submitButton.addEventListener('click', function (event) {
+    form.submit();
+});

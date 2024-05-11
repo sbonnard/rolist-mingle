@@ -231,6 +231,12 @@ button {
     filter: drop-shadow(0 0 1rem var(--primary));
 }
 
+@media screen and (min-width: 768px) {
+    .hero-banner__btn{
+        width: 4rem;
+    }
+}
+
 @media screen and (min-width: 1224px) {
     .hero-banner__img {
         width: min(60vmin, 500px);
@@ -559,6 +565,10 @@ input:focus-visible {
 }
 
 @media screen and (min-width: 768px) {
+    .input{
+        width: 23.75rem;
+    }
+
     .input__select {
         width: auto;
     }
@@ -711,16 +721,12 @@ input:focus-visible {
 .footer-legal {
     display: flex;
     justify-content: center;
+    gap: 3rem;
     padding-top: 1.5rem;
 }
 
 .footer-legal__lnk:hover {
     color: var(--primary);
-}
-
-.footer-legal__lnk:not(:last-child)::after {
-    content: "|";
-    padding: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {

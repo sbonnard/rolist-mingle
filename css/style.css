@@ -111,6 +111,9 @@ button {
     color: var(--primary);
 }
 
+.hidden {
+    display: none;
+}
 
 /* Swiper */
 
@@ -420,7 +423,10 @@ button {
     .concept-dice__container {
         display: grid;
         grid-template-columns: auto auto auto;
+        align-items: baseline;
+        justify-content: center;
         width: 440px;
+        margin: auto;
     }
 }
 
@@ -485,6 +491,11 @@ button {
 .form__radio {
     appearance: none;
     content: url(/img/radiobox.svg);
+    cursor: pointer;
+}
+
+.form__radio:hover {
+    filter: drop-shadow(0 0 0.75rem var(--primary));
 }
 
 .form__radio:checked {
@@ -504,6 +515,7 @@ button {
     font-size: 1.25rem;
     background-color: var(--white);
     padding: 1rem;
+    cursor: pointer;
 }
 
 input::placeholder {
@@ -526,6 +538,7 @@ input:focus-visible {
 
 .input__required--txt {
     font-size: 0.75rem;
+    padding: 1.5rem;
 }
 
 .input__select {
@@ -659,6 +672,7 @@ input:focus-visible {
     background-image: url(/img/filter.svg);
     background-repeat: no-repeat;
     background-position: right 1.5rem bottom 1.15rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

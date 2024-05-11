@@ -1,181 +1,226 @@
 [
     {
+        "id": 1,
         "name": "Medieval Fantasy",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 2,
         "name": "Post-Apocalyptique",
         "type": "Post-Apocalyptique"
     },
     {
+        "id": 3,
         "name": "Horreur",
         "type": "Horreur"
     },
     {
+        "id": 4,
         "name": "Western",
         "type": "Western"
     },
     {
+        "id": 5,
         "name": "Science-Fiction",
         "type": "Science-Fiction"
     },
     {
+        "id": 6,
         "name": "Space Opera",
         "type": "Science-Fiction"
     },
     {
+        "id": 7,
         "name": "Steampunk",
         "type": "Fantastique"
     },
     {
+        "id": 8,
         "name": "Historique",
         "type": "Historique"
     },
     {
+        "id": 9,
         "name": "Mythologique",
         "type": "Mythologique"
     },
     {
+        "id": 10,
         "name": "L'Oeil noir, le livre des règles",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 11,
         "name": "Donjons et Dragons 1",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 12,
         "name": "Donjons et Dragons 2",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 13,
         "name": "Donjons et Dragons 3",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 14,
         "name": "Donjons et Dragons 4",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 15,
         "name": "Donjons et Dragons 5",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 16,
         "name": "JDR personnalisé",
         "type": "JDR personnalisé"
     },
     {
+        "id": 17,
         "name": "Star Wars D6",
         "type": "Science-Fiction"
     },
     {
+        "id": 18,
         "name": "Star Wars D20",
         "type": "Science-Fiction"
     },
     {
+        "id": 19,
         "name": "Star Wars FFG",
         "type": "Science-Fiction"
     },
     {
+        "id": 20,
         "name": "Star Wars aux confins de l'empire",
         "type": "Science-Fiction"
     },
     {
+        "id": 21,
         "name": "Runequest",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 22,
         "name": "L'Appel de Cthulhu : 6ème Édition",
         "type": "Horreur"
     },
     {
+        "id": 23,
         "name": "Achtung! Cthulhu: le guide de l'investigateur",
         "type": "Horreur"
     },
     {
+        "id": 24,
         "name": "In Nomine Satanis / Magna Veritas - 3ème Édition",
         "type": "Humoristique"
     },
     {
+        "id": 25,
         "name": "Shadowrun",
         "type": "Cyberpunk"
     },
     {
+        "id": 26,
         "name": "Warhammer",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 27,
         "name": "Warhammer 40K",
         "type": "Science-Fiction"
     },
     {
+        "id": 28,
         "name": "Paranoïa",
         "type": "Science-Fiction"
     },
     {
+        "id": 29,
         "name": "Pendragon (1985)",
         "type": "Historique/Fantastique"
     },
     {
+        "id": 30,
         "name": "Vampire : La Mascarade",
         "type": "Gothique/punk"
     },
     {
+        "id": 31,
         "name": "Stormbringer (1981)",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 32,
         "name": "C.O.P.S.",
         "type": "Cyberpunk"
     },
     {
+        "id": 33,
         "name": "Rêve de Dragon",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 34,
         "name": "Pavillon Noir : La Révolte",
         "type": "Pirate"
     },
     {
+        "id": 35,
         "name": "Animonde",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 36,
         "name": "Ars Magica",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 37,
         "name": "Château Falkenstein",
         "type": "Steampunk"
     },
     {
+        "id": 38,
         "name": "Château Bitume",
         "type": "Post-Apocalyptique"
     },
     {
+        "id": 39,
         "name": "Feng Shui",
         "type": "Action"
     },
     {
+        "id": 40,
         "name": "Dark Heresy",
         "type": "Science-Fiction"
     },
     {
+        "id": 41,
         "name": "Ambre",
         "type": "Medieval Fantasy"
     },
     {
+        "id": 42,
         "name": "La methode du docteur chestel",
         "type": "Absurde"
     },
     {
+        "id": 43,
         "name": "Maléfices",
         "type": "historico-fantastique"
     },
     {
+        "id": 44,
         "name": "Cyberpunk 2020",
         "type": "Cyberpunk"
     },
     {
+        "id": 45,
         "name": "Terres du Milieu",
         "type": "Medieval Fantasy"
     }

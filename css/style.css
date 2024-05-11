@@ -105,6 +105,7 @@ button {
 
 .txt--bigger {
     font-size: 1.25rem;
+    color: var(--white);
 }
 
 .txt--primary {

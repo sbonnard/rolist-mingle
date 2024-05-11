@@ -1,4 +1,4 @@
-import * as JDR from "./jdr.json" with {type: "json" }
+import JDR from "./jdr.json" with {type: "json" }
 
 console.log(JDR);
 
@@ -53,26 +53,46 @@ const inputField = document.getElementById('inputField');
 const selectedItemsList = document.getElementById('selectedItemsList');
 const form = document.getElementById('create-account-form');
 const submitButton = document.getElementById('create-account-btn');
-const template = document.getElementById("favourite-template")
+const template = document.getElementById("favourite-template");
+const templateContent = document.getElementById('favourite-rpg');
+const suggestions = document.getElementById('suggestions');
+const minusButton = document.querySelector('[data-favourite-minus]');
 
 let selectedRPG = [];
 
-inputField.addEventListener("keyup", function (event) {
+inputField.addEventListener('keyup', function (event) {
     const inputText = inputField.value.trim();
     if (inputText !== '') {
         if (event.key === 'Enter') {
             const clonedTemplate = template.content.cloneNode(true);
-            clonedTemplate.querySelector('#favourite-rpg').innerText = inputText;
-            selectedItemsList.appendChild(template);
+            clonedTemplate.getElementById('favourite-rpg').innerText = inputText;
+            selectedItemsList.appendChild(clonedTemplate);
             inputField.value = '';
+        } else {
+            suggestions.innerHTML = "";
+            let testList = JDR.filter(x => x.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0);
+            testList.forEach(item => {
+                let newItem = document.createElement('p');
+                newItem.classList.add('js-suggestion');
+                newItem.setAttribute('id', item.id);
+                newItem.addEventListener('click', function () {
+                    selectedRPG.push(item);
+                    template.content.getElementById('favourite-rpg').innerHTML = item.name;
+                    let clone = document.importNode(template.content, true);
+                    clone.querySelector('.button--minus').addEventListener('click', function (event) {
+                        console.log(event);
+                        event.target.parentNode.remove()
+                    })
+                    selectedItemsList.appendChild(clone);
+                    newItem.remove();
+                })
+                const textItem = document.createTextNode(item.name);
+                newItem.appendChild(textItem);
+                suggestions.appendChild(newItem);
+                console.log(item.name);
+            })
         }
+    } else {
+        suggestions.innerHTML = '';
     }
-});
-
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-});
-
-submitButton.addEventListener('click', function (event) {
-    form.submit();
 });

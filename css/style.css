@@ -239,7 +239,7 @@ button {
 
 @media screen and (min-width: 1824px) {
     .hero-banner__img {
-        width: min(100vmin, 500px);
+        width: min(100vmin, 600px);
 }
 }
 

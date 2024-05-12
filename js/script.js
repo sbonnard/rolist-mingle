@@ -1,6 +1,5 @@
 import JDR from "./jdr.json" with {type: "json" }
 
-console.log(JDR);
 
 // Hamburger Navigation //
 
@@ -30,33 +29,10 @@ conceptDiceElements.forEach(function (element) {
 
 // Favourite Universe
 
-const rpgList = document.getElementById('rpg-universe');
-console.log(rpgList);
-
-const personnalList = document.getElementById('personnal-list');
-console.log(personnalList);
-
-const selectArray = document.querySelectorAll('[data-select]');
-console.log(selectArray);
-
-const selectedList = document.querySelectorAll('[data-selected]');
-console.log(selectedList);
-
-// rpgList.addEventListener('click', function (event) {
-//     for (const rpg of rpgList) {
-//         templateRPGList.innerText = rpg.querySelector('[value]');
-//         personnalList.appendChild(templateRPGList)
-//     }
-// })
-
 const inputField = document.getElementById('inputField');
 const selectedItemsList = document.getElementById('selectedItemsList');
-const form = document.getElementById('create-account-form');
-const submitButton = document.getElementById('create-account-btn');
 const template = document.getElementById("favourite-template");
-const templateContent = document.getElementById('favourite-rpg');
 const suggestions = document.getElementById('suggestions');
-const minusButton = document.querySelector('[data-favourite-minus]');
 
 let selectedRPG = [];
 
@@ -70,17 +46,16 @@ inputField.addEventListener('keyup', function (event) {
             inputField.value = '';
         } else {
             suggestions.innerHTML = "";
-            let testList = JDR.filter(x => x.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0);
+            let testList = JDR.filter(rpg => rpg.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0);
             testList.forEach(item => {
                 let newItem = document.createElement('p');
-                newItem.classList.add('js-suggestion');
+                newItem.classList.add('js-suggestion', 'suggestions__itm');
                 newItem.setAttribute('id', item.id);
                 newItem.addEventListener('click', function () {
                     selectedRPG.push(item);
                     template.content.getElementById('favourite-rpg').innerHTML = item.name;
                     let clone = document.importNode(template.content, true);
                     clone.querySelector('.button--minus').addEventListener('click', function (event) {
-                        console.log(event);
                         event.target.parentNode.remove()
                     })
                     selectedItemsList.appendChild(clone);
@@ -89,7 +64,6 @@ inputField.addEventListener('keyup', function (event) {
                 const textItem = document.createTextNode(item.name);
                 newItem.appendChild(textItem);
                 suggestions.appendChild(newItem);
-                console.log(item.name);
             })
         }
     } else {

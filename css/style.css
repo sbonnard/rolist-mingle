@@ -233,7 +233,7 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-    .hero-banner__btn{
+    .hero-banner__btn {
         width: 4rem;
     }
 }
@@ -241,13 +241,13 @@ button {
 @media screen and (min-width: 1224px) {
     .hero-banner__img {
         width: min(60vmin, 500px);
-}
+    }
 }
 
 @media screen and (min-width: 1824px) {
     .hero-banner__img {
         width: min(100vmin, 600px);
-}
+    }
 }
 
 /* Logo */
@@ -565,8 +565,12 @@ input:focus-visible {
     padding: 1.5rem;
 }
 
+.input__select {
+    position: relative;
+}
+
 @media screen and (min-width: 768px) {
-    .input{
+    .input {
         width: 23.75rem;
     }
 
@@ -681,6 +685,29 @@ input:focus-visible {
     }
 }
 
+/* Suggestions */
+
+.suggestions {
+    z-index: 1;
+    width: 20.5rem;
+    background-color: var(--black75);
+    border-bottom: 1px solid var(--primary);
+    border-right: 1px solid var(--primary);
+    border-left: 1px solid var(--primary);
+    cursor: pointer;
+}
+
+.suggestions__itm:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+@media screen and (min-width: 768px) {
+    .suggestions {
+        width: 30.70rem;
+    }
+}
+
 /* Filter */
 
 .filter {
@@ -699,8 +726,9 @@ input:focus-visible {
 @media screen and (min-width: 768px) {
     .filter {
         width: 19rem;
+    }
 }
-}
+
 /* Footer */
 
 .footer {

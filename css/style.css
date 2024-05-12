@@ -586,6 +586,7 @@ input:focus-visible {
     gap: 1rem;
     align-items: center;
     color: var(--secondary);
+    padding: 0.5rem;
 }
 
 /* Connection bar */

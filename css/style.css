@@ -575,7 +575,7 @@ input:focus-visible {
     }
 
     .input__select {
-        width: auto;
+        width: 30rem;
     }
 }
 
@@ -705,7 +705,7 @@ input:focus-visible {
 
 @media screen and (min-width: 768px) {
     .suggestions {
-        width: 30.70rem;
+        width: 30rem;
     }
 }
 

@@ -232,12 +232,6 @@ button {
     filter: drop-shadow(0 0 1rem var(--primary));
 }
 
-@media screen and (min-width: 768px) {
-    .hero-banner__btn {
-        width: 4rem;
-    }
-}
-
 @media screen and (min-width: 1224px) {
     .hero-banner__img {
         width: min(60vmin, 500px);

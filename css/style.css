@@ -475,9 +475,6 @@ button {
 }
 
 .button--minus {
-    /* color: var(--secondary);
-    font-weight: 900;
-    font-size: 1.5rem; */
     width: 1rem;
     height: 1rem;
     background-image: url(/img/minus-btn.svg);

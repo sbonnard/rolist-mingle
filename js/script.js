@@ -40,8 +40,8 @@ inputField.addEventListener('keyup', function (event) {
     const inputText = inputField.value.trim();
     if (inputText !== '') {
         suggestions.innerHTML = "";
-        let testList = JDR.filter(rpg => rpg.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10);
-        testList.forEach(item => {
+        let suggestionList = JDR.filter(rpg => rpg.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10);
+        suggestionList.forEach(item => {
             let newItem = document.createElement('p');
             newItem.classList.add('js-suggestion', 'suggestions__itm');
             newItem.setAttribute('id', item.id);
@@ -51,6 +51,7 @@ inputField.addEventListener('keyup', function (event) {
                 let clone = document.importNode(template.content, true);
                 clone.querySelector('.button--minus').addEventListener('click', function (event) {
                     event.target.parentNode.remove();
+                    suggestions.innerHTML = '';
                 });
                 selectedItemsList.appendChild(clone);
                 newItem.remove();

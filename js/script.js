@@ -29,15 +29,15 @@ conceptDiceElements.forEach(function (element) {
 
 // Favourite Universe
 
-const inputField = document.getElementById('inputField');
+const suggestionsField = document.getElementById('suggestionsField');
 const selectedItemsList = document.getElementById('selectedItemsList');
 const template = document.getElementById("favourite-template");
 const suggestions = document.getElementById('suggestions');
 
 let selectedRPG = [];
 
-inputField.addEventListener('keyup', function (event) {
-    const inputText = inputField.value.trim();
+suggestionsField.addEventListener('keyup', function (event) {
+    const inputText = suggestionsField.value.trim();
     if (inputText !== '') {
         suggestions.innerHTML = "";
         let suggestionList = JDR.filter(rpg => rpg.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10);
@@ -49,6 +49,8 @@ inputField.addEventListener('keyup', function (event) {
                 selectedRPG.push(item);
                 template.content.getElementById('favourite-rpg').innerHTML = item.name;
                 let clone = document.importNode(template.content, true);
+                suggestions.innerHTML = '';
+                suggestionsField.value = '';
                 clone.querySelector('.button--minus').addEventListener('click', function (event) {
                     event.target.parentNode.remove();
                     suggestions.innerHTML = '';

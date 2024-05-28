@@ -40,7 +40,7 @@ inputField.addEventListener('keyup', function (event) {
     const inputText = inputField.value.trim();
     if (inputText !== '') {
         suggestions.innerHTML = "";
-        let testList = JDR.filter(rpg => rpg.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name));
+        let testList = JDR.filter(rpg => rpg.name.toLowerCase().includes(inputText.toLowerCase())).sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10);
         testList.forEach(item => {
             let newItem = document.createElement('p');
             newItem.classList.add('js-suggestion', 'suggestions__itm');

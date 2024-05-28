@@ -1,0 +1,19 @@
+services:
+  # Service PHP with Apache
+  php-apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - "8080:80"
+    environment:
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_GROUP: www-data
+      APACHE_LOG_DIR: /var/log/apache2
+      APACHE_RUN_DIR: /var/run/apache2
+      APACHE_LOCK_DIR: /var/lock/apache2
+      PHP_ROOT_DIR: /var/www/html
+    working_dir: /var/www/html

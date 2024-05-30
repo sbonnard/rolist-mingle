@@ -7,25 +7,25 @@
 
 // COMPONENTS //
 
+@import "./components/buttons";
+@import "./components/concept";
+@import "./components/connection-bar";
+@import "./components/container";
+@import "./components/favourites-list";
+@import "./components/filter";
+@import "./components/footer";
+@import "./components/form";
+@import "./components/friends-suggestions";
 @import "./components/hero-banner";
 @import "./components/header";
 @import "./components/hamburger";
-@import "./components/logo";
-@import "./components/utils";
-@import "./components/swiper";
-@import "./components/container";
-@import "./components/nav";
-@import "./components/links";
-@import "./components/titles";
-@import "./components/concept";
-@import "./components/buttons";
-@import "./components/form";
 @import "./components/input";
-@import "./components/favourites-list";
-@import "./components/connection-bar";
-@import "./components/friends-suggestions";
-@import "./components/rolist-items";
+@import "./components/links";
+@import "./components/logo";
+@import "./components/nav";
 @import "./components/party";
+@import "./components/rolist-items";
 @import "./components/suggestions";
-@import "./components/filter";
-@import "./components/footer";
+@import "./components/swiper";
+@import "./components/titles";
+@import "./components/utils";

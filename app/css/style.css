@@ -119,6 +119,67 @@ body {
     width: min(100vmin, 600px);
   }
 }
+/* Header */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  padding: 1rem;
+  background-color: var(--black75);
+}
+
+.header__ttl {
+  font-family: "khyay";
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+.header__img {
+  max-width: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+  .header__ttl {
+    font-size: 2rem;
+  }
+}
+/* Hamburger */
+@media screen and (max-width: 768px) {
+  .hamburger__link {
+    font-size: 1.25rem;
+  }
+  .hamburger__menu {
+    z-index: 1;
+    min-width: 100%;
+    min-height: 22.5rem;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding-top: 1.25rem;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger__menu.overlay {
+    visibility: visible;
+    opacity: 1;
+    background: var(--black75);
+    line-height: 4;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
 /* Logo */
 .logo__ttl {
   font-family: "khyay";
@@ -233,4 +294,70 @@ body {
     width: 83rem;
     margin: auto;
   }
+}
+/* Nav */
+.nav__btn {
+  font-size: 3rem;
+}
+
+.nav__lnk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 6rem;
+}
+
+.nav__avatar {
+  height: 100%;
+  /* margin-top: 0.75rem; */
+}
+
+.nav__lnk--current {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+@media screen and (min-width: 768px) {
+  .nav__lst {
+    display: flex;
+    align-items: center;
+  }
+  .nav__lnk {
+    margin: 0 2rem;
+  }
+  .nav__lnk:hover {
+    color: var(--primary);
+  }
+}
+/* Links */
+.lnk--underlined {
+  border-bottom: 1px solid var(--white);
+}
+
+.lnk--underlined:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Titles */
+.ttl {
+  font-family: "khyay";
+  font-size: 1.25rem;
+  padding: 4rem 0 1.5rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ttl--big {
+  font-family: "khyay";
+  font-size: 1.5rem;
+}
+
+.ttl--small {
+  font-size: 1rem;
+}
+
+.ttl--primary {
+  color: var(--primary);
 }/*# sourceMappingURL=style.css.map */

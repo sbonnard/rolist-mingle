@@ -1,0 +1,22 @@
+/* Party */
+
+.party {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 20rem;
+    border: 2px solid $primary;
+    padding: 0.5rem;
+
+    &__img {
+        width: 20rem;
+        border: 2px solid $primary;
+    }
+
+    &__page-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

@@ -1,0 +1,34 @@
+/* Suggestions */
+
+.suggestions {
+    position: absolute;
+    z-index: 1;
+    bottom: -71.5%;
+    width: 20.5rem;
+    background-color: $black75;
+    border-bottom: 1px solid $primary;
+    border-right: 1px solid $primary;
+    border-left: 1px solid $primary;
+    cursor: pointer;
+
+    &__input {
+        position: relative;
+    }
+
+    &__itm:hover {
+        background-color: $primary;
+        color: $secondary;
+    }
+
+    @media screen and (min-width: 768px) {
+        .suggestions {
+            width: 30rem;
+            bottom: -64.5%;
+
+        }
+
+        &__input {
+            width: 30rem;
+        }
+    }
+}

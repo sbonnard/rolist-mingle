@@ -1,0 +1,28 @@
+/* Concept */
+
+.concept-dice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+
+    &__txt {
+        text-align: center;
+        padding-top: 1.5rem;
+    }
+    
+    &__sub-ttl {
+        padding-top: 1.5rem;
+    }
+    
+    @media screen and (min-width: 768px) {
+        &__container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            align-items: baseline;
+            justify-content: center;
+            width: 440px;
+            margin: auto;
+        }
+    }
+}

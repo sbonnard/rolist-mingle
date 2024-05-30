@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem 1.25rem 0 1.25rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        .container__desktop {
+            display: grid;
+            grid-template:
+                "counter form"
+                "concept dices"
+                "concept dices"
+                / 1fr 1fr;
+            width: 1350px;
+            margin: auto;
+        }
+
+        .container__header {
+            width: 83rem;
+            margin: auto;
+        }
+    }
+}
+
+.grid-counter {
+    grid-area: counter;
+}
+
+.grid-form {
+    grid-area: form;
+}
+
+.grid-concept {
+    grid-area: concept;
+}
+
+.grid-dices {
+    grid-area: dices;
+}

@@ -1,0 +1,12 @@
+/* Links */
+
+.lnk {
+    &--underlined {
+        border-bottom: 1px solid $white;
+    }
+
+    &--underlined:hover {
+        color: $primary;
+        border-color: $primary;
+    }
+}

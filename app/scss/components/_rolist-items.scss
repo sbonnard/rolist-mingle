@@ -1,0 +1,25 @@
+/* Rolist Items */
+
+.rolist-icon {
+    width: 3.25rem;
+}
+
+.avatar {
+    width: 4rem;
+    aspect-ratio: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .avatar {
+        width: 3rem;
+    }
+}
+
+.user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+}

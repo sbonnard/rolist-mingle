@@ -1,0 +1,37 @@
+/* Footer */
+
+.footer {
+    background-color: $deep-black;
+    padding-bottom: 1.5rem;
+
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding: 1.5rem 1rem 0rem 1rem;
+        border-top: 2px solid $primary;
+    }
+    
+    &__social-link:hover {
+        filter: drop-shadow(0 0 0.75rem $primary);
+    }
+    
+    @media screen and (min-width: 768px) {
+    .footer__social {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding-top: 1.5rem;
+
+    &__lnk:hover {
+        color: $primary;
+    }
+}
+
+

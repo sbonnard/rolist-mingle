@@ -1,0 +1,37 @@
+/* Hamburger */
+
+.hamburger {
+    @media screen and (max-width: 768px) {
+        &__link {
+            font-size: 1.25rem;
+        }
+    
+        &__menu {
+            z-index: 1;
+            min-width: 100%;
+            min-height: 22.5rem;
+            position: fixed;
+            top: 5rem;
+            left: 0;
+            height: 0;
+            visibility: hidden;
+            opacity: 0;
+            text-align: center;
+            padding-top: 1.25rem;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        &__menu.overlay {
+            visibility: visible;
+            opacity: 1;
+            background: $black75;
+            line-height: 4;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        .hamburger {
+            display: none;
+        }
+    }
+}

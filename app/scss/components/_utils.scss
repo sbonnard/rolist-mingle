@@ -1,0 +1,47 @@
+/* Utils */
+
+.users-counter {
+    font-size: 1.25rem;
+    color: $white;
+    border: 2px solid $primary;
+    padding: 0.5rem;
+
+    &__img {
+        padding-top: 1.5rem;
+        border-radius: 100%;
+    }
+}
+
+.txt {
+    &--bigger {
+        font-size: 1.25rem;
+        color: $white;
+    }
+
+    &--primary {
+        color: $primary;
+    }
+}
+
+.page-content {
+    background-image: url(/img/background-dark-pages.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    letter-spacing: 0.10rem;
+    padding-bottom: 4rem;
+}
+
+.content-position {
+    margin-top: 5.2rem;
+}
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}

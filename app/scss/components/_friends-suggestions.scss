@@ -1,0 +1,23 @@
+/* Friend suggestion */
+
+.friend-suggestion {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem;
+    text-align: center;
+    background-color: $deep-black;
+    border: 2px solid $primary;
+    margin: 2rem 0;
+
+    &__users {
+        display: flex;
+        gap: 4rem;
+    }
+    
+    &__rolist {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}

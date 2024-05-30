@@ -1,0 +1,42 @@
+/* Forms */
+
+.form {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    &__itm {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__itm--box {
+        display: flex;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+    
+    &__radio {
+        appearance: none;
+        content: url(/img/radiobox.svg);
+        cursor: pointer;
+    }
+    
+    &__radio:hover {
+        filter: drop-shadow(0 0 0.75rem $primary);
+    }
+    
+    &__radio:checked {
+        content: url(/img/radiobox-checked.svg);
+        filter: drop-shadow(0 0 0.75rem $primary);
+    }
+    
+    &__question {
+        padding: 0.75rem;
+    }
+}
+

@@ -1,0 +1,40 @@
+/* Nav */
+
+.nav {
+    &__btn {
+        font-size: 3rem;
+    }
+
+    &__lnk {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        margin: 0 6rem;
+    }
+
+    &__avatar {
+        height: 100%;
+        /* margin-top: 0.75rem; */
+    }
+
+    &__lnk--current {
+        font-weight: bold;
+        color: $primary;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__lst {
+            display: flex;
+            align-items: center;
+        }
+
+        &__lnk {
+            margin: 0 2rem;
+        }
+
+        &__lnk:hover {
+            color: $primary;
+        }
+    }
+}

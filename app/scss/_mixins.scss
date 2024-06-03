@@ -1,0 +1,17 @@
+@mixin mobile-only() {
+	@media screen and (max-width: ($bp-desktop - 1px)) {
+		@content;
+	}
+}
+
+@mixin desktop-only() {
+	@media screen and (min-width: $bp-desktop) {
+		@content;
+	}
+}
+
+@mixin big-desktop-only() {
+	@media screen and (min-width: $bp-big-desktop) {
+		@content;
+	}
+}

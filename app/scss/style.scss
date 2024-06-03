@@ -1,24 +1,25 @@
-@import "reset";
-@import "root";
-@import "fonts";
-@import "body";
 @import "var";
+@import "root";
+@import "reset";
+@import "body";
+@import "fonts";
 @import "breakpoints";
 
 // COMPONENTS //
 
+@import "./components/utils";
+@import "./components/container";
 @import "./components/buttons";
 @import "./components/concept";
 @import "./components/connection-bar";
-@import "./components/container";
 @import "./components/favourites-list";
 @import "./components/filter";
 @import "./components/footer";
 @import "./components/form";
 @import "./components/friends-suggestions";
+@import "./components/hamburger";
 @import "./components/hero-banner";
 @import "./components/header";
-@import "./components/hamburger";
 @import "./components/input";
 @import "./components/links";
 @import "./components/logo";
@@ -28,4 +29,3 @@
 @import "./components/suggestions";
 @import "./components/swiper";
 @import "./components/titles";
-@import "./components/utils";

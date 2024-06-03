@@ -20,7 +20,7 @@
     }
 
     @media screen and (min-width: 768px) {
-        .header {
+        & {
             padding: 0.5rem;
             border-bottom: 2px solid $primary;
         }

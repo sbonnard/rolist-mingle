@@ -29,8 +29,8 @@
         }
     }
     
-    @media screen and (min-width: 768px) {
-        .hamburger {
+    @media screen and (min-width: 764px) {
+        & {
             display: none;
         }
     }

@@ -12,7 +12,7 @@
     }
 
     @media screen and (min-width: 768px) {
-        .container__desktop {
+        &--desktop {
             display: grid;
             grid-template:
                 "counter form"
@@ -23,7 +23,7 @@
             margin: auto;
         }
 
-        .container__header {
+        &__header {
             width: 83rem;
             margin: auto;
         }

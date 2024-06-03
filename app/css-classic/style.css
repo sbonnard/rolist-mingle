@@ -680,7 +680,7 @@ input:focus-visible {
 .suggestions {
     position: absolute;
     z-index: 1;
-    bottom: -71.5%;
+    bottom: -188%;
     width: 20.5rem;
     background-color: var(--black75);
     border-bottom: 1px solid var(--primary);
@@ -701,12 +701,18 @@ input:focus-visible {
 @media screen and (min-width: 768px) {
     .suggestions {
         width: 30rem;
-        bottom: -64.5%;
+        bottom: -125%;
 
     }
 
     .suggestions__input {
         width: 30rem;
+    }
+}
+
+@media screen and (min-width: 1224px) {
+    .suggestions {
+        bottom : -64.5%;
     }
 }
 

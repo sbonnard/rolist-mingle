@@ -3,7 +3,7 @@
 .suggestions {
     position: absolute;
     z-index: 1;
-    bottom: -71.5%;
+    bottom: -188%;
     width: 20.5rem;
     background-color: $black75;
     border-bottom: 1px solid $primary;
@@ -24,11 +24,16 @@
         .suggestions {
             width: 30rem;
             bottom: -64.5%;
-
         }
 
         &__input {
             width: 30rem;
         }
+    }
+}
+
+@media screen and (min-width: 1224px) {
+    .suggestions {
+        bottom : -64.5%;
     }
 }

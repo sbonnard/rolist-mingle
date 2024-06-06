@@ -17,7 +17,7 @@
     }
     
     @media screen and (min-width: 768px) {
-        .connection-bar {
+        & {
             margin-top: 4.5rem;
             gap: 3rem;
         }

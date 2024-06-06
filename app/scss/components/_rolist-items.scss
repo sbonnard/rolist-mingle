@@ -7,13 +7,14 @@
 .avatar {
     width: 4rem;
     aspect-ratio: 1;
-}
 
-@media screen and (min-width: 768px) {
-    .avatar {
-        width: 3rem;
+    @media screen and (min-width: 768px) {
+        & {
+            width: 3rem;
+        }
     }
 }
+
 
 .user {
     display: flex;

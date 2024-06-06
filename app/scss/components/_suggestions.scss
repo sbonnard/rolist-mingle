@@ -21,19 +21,31 @@
     }
 
     @media screen and (min-width: 768px) {
-        .suggestions {
+        & {
             width: 30rem;
-            bottom: -64.5%;
+            bottom: -30%;
         }
 
         &__input {
             width: 30rem;
         }
     }
-}
 
-@media screen and (min-width: 1224px) {
-    .suggestions {
-        bottom : -64.5%;
+    @media screen and (min-width: 1224px) {
+        & {
+            bottom: -74%;
+        }
+    }
+
+    @media screen and (min-width: 1824px) {
+        & {
+            bottom: -30%;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        & {
+            bottom: -116.5%;
+        }
     }
 }

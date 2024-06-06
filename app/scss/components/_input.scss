@@ -21,8 +21,18 @@
         padding: 1.5rem;
     }
 
+    &::placeholder {
+        font-size: 1.25rem;
+        color: $light-grey;
+        line-height: 0;
+    }
+    
+    &:focus-visible {
+        outline-color: $primary;
+    }
+
     @media screen and (min-width: 768px) {
-        .input {
+        & {
             width: 23.75rem;
         }
 
@@ -30,14 +40,4 @@
             width: 30rem;
         }
     }
-}
-
-input::placeholder {
-    font-size: 1.25rem;
-    color: $light-grey;
-    line-height: 0;
-}
-
-input:focus-visible {
-    outline-color: $primary;
 }

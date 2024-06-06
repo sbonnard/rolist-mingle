@@ -11,10 +11,10 @@
     background-repeat: no-repeat;
     background-position: right 1.5rem bottom 1.15rem;
     cursor: pointer;
-}
 
-@media screen and (min-width: 768px) {
-    .filter {
-        width: 19rem;
+    @media screen and (min-width: 768px) {
+        & {
+            width: 19rem;
+        }
     }
 }

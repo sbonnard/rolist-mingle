@@ -22,9 +22,11 @@
             width: 1350px;
             margin: auto;
         }
+    }
 
+    @media screen and (min-width: 1224px) {
         &__header {
-            width: 83rem;
+            width: 88rem;
             margin: auto;
         }
     }

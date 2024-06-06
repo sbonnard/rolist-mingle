@@ -16,7 +16,9 @@ CREATE TABLE chat (
     txt_chat VARCHAR(255),
     name_contact VARCHAR(30) NOT NULL,
     date_chat DATETIME NOT NULL,
-    PRIMARY KEY (id_chat)
+    id_user SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id_chat),
+    FOREIGN KEY (id_user) REFERENCES users(id_user) -- Contact
 );
 
 CREATE TABLE infos (
@@ -58,7 +60,7 @@ CREATE TABLE users (
     id_user SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     name_user VARCHAR(30) NOT NULL,
     email_user VARCHAR(50) NOT NULL,
-    admin_user BOOLEAN DEFAULT false,
+    admin_user BOOLEAN DEFAULT NULL,
     id_role_type SMALLINT UNSIGNED NOT NULL,
     id_localisation SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id_user),

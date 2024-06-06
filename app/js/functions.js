@@ -7,8 +7,8 @@ import JDR from "./jdr.json" with {type: "json" };
  */
 function getFilteredSuggestions(input) {
     return JDR.filter(rpg => rpg.name.toLowerCase().includes(input.toLowerCase()))
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .slice(0, 10);
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .slice(0, 10);
 }
 
 /**

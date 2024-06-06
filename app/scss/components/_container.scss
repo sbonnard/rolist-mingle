@@ -11,6 +11,13 @@
         width: 100%;
     }
 
+    &--swiper {
+        min-width: 100%;
+        scroll-snap-align: start;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
     @media screen and (min-width: 768px) {
         &--desktop {
             display: grid;

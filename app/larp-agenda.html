@@ -28,7 +28,7 @@
                         <a href="flow.html" class="nav__lnk" aria-current="page">Accueil<img src="icones/home.svg"
                                 alt="icone accueil"></a>
                     </li>
-                    <li class="nav__itm nav__lnk--current">
+                    <li class="nav__itm">
                         <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
                                 alt="icone parties dés de JDR"></a>
                     </li>
@@ -36,7 +36,7 @@
                         <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
                                 alt="icone messagerie"></a>
                     </li>
-                    <li class="nav__itm">
+                    <li class="nav__itm nav__lnk--current">
                         <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
@@ -54,8 +54,44 @@
         </div>
     </header>
 
+    <main>
+        <div class="page-content">
+            <!-- THINK TO REMOVE CONNECTION BAR IF USER IS CONNECTER -->
+            <div class="connection-bar">
+                <p>Connecte-toi !</p>
+                <a href="index.html"><button class="button connection-bar__button">Se connecter</button></a>
+            </div>
 
+            <h1 class="ttl ttl--big">Agenda GN</h1>
 
+            <div class="container">
+                <button class="filter txt--bigger txt--primary">Filtrer par préférences</button>
+            </div>
 
-    
-    </body>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
+            <ul class="footer__social">
+                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
+                            src="img/instagram.svg" alt="icône instagram"></a></li>
+                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
+                            src="img/facebook.svg" alt="icône facebook"></a></li>
+                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
+                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
+                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
+                            src="img/github.svg" alt="icône github"></a>
+                </li>
+            </ul>
+        </nav>
+        <nav aria-label="navigation vers mentions légales du site">
+            <ul class="footer-legal">
+                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
+                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script type="module" src="js/script.js"></script>
+</body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Compte | Rolist-Mingle</title>
+    <title>Mon profil | Rolist-Mingle</title>
     <link rel="stylesheet" href="./scss/style.scss">
     <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon">
 </head>
@@ -14,7 +14,7 @@
         <div class="container__header">
             <img class="header__img" src="logo/logo-rolist-mingle.svg"
                 alt="logo de rolist-mingle représentant un dé 20 de JDR">
-            <a href="#">
+            <a href="index.html">
                 <h2 class="header__ttl">Rolist-Mingle</h2>
             </a>
             <div class="hamburger">
@@ -28,7 +28,7 @@
                         <a href="flow.html" class="nav__lnk" aria-current="page">Accueil<img src="icones/home.svg"
                                 alt="icone accueil"></a>
                     </li>
-                    <li class="nav__itm nav__lnk--current">
+                    <li class="nav__itm">
                         <a href="parties.html" class="nav__lnk">Parties <img src="icones/parties.svg"
                                 alt="icone parties dés de JDR"></a>
                     </li>
@@ -40,7 +40,7 @@
                         <a href="larp-agenda.html" class="nav__lnk">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
-                    <li class="nav__itm">
+                    <li class="nav__itm nav__lnk--current">
                         <a href="my-account.html" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
@@ -54,8 +54,82 @@
         </div>
     </header>
 
+    <main>
+        <div class="page-content">
+            <div class="container--desktop">
+
+            <section class="container" aria-labelledby="my-infos">
+                <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
+                <img src="img/avatar-seon.svg" alt="Mon image de profil">
+                <h2 class="ttl--big">SeonPrim</h2>
+                <button class="button--pen"></button>
+                <img src="icones/dé20.webp" alt="Icône rôliste Dé 20 'Sérieux'">
+            </section>
+
+            <form class="container" action="get" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                <h3 id="my-bio" class="ttl--big">Ma bio</h3>
+                <ul class="form__container">
+                    <li class="form__itm">
+                        <textarea class="input input__text-area" name="bio" id="bio"
+                            placeholder="Ma petite vie..."></textarea>
+                    </li>
+                    <li class="form__itm">
+                        <label for="password" class="input__label">Changer le mot de passe</label>
+                        <input type="password" class="input" name="password" placeholder="•••••••••••">
+                    </li>
+
+                    <li class="form__itm form__itm--select">
+                        <label class="input__label form__question" for="suggestionsField">
+                            Quelles sont tes univers de jeu préférés ?
+                        </label>
+                        <input class="input suggestions__input" type="text" id="suggestionsField"
+                            name="suggestionsField" placeholder="Tapez quelque chose..."
+                            aria-label="Entre le nom de ton JDR préféré et appuie sur 'entrée' pour valider ton choix">
+                        <div class="suggestions suggestions--my-account" id="suggestions"></div>
+                        <ul id="selectedItemsList"></ul>
+                    </li>
+
+                </ul>
 
 
+                <!-- Template  -->
 
-    
-    </body>
+                <template id="favourite-template">
+                    <li class="favourites">
+                        <button class="button--minus" data-favourite-minus=""></button>
+                        <p class="txt--bigger" id="favourite-rpg">Patate</p>
+                    </li>
+                </template>
+
+            </form>
+
+        </div>
+
+        </div>
+    </main>
+    <footer class="footer">
+        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
+            <ul class="footer__social">
+                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
+                            src="img/instagram.svg" alt="icône instagram"></a></li>
+                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
+                            src="img/facebook.svg" alt="icône facebook"></a></li>
+                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
+                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
+                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
+                            src="img/github.svg" alt="icône github"></a>
+                </li>
+            </ul>
+        </nav>
+        <nav aria-label="navigation vers mentions légales du site">
+            <ul class="footer-legal">
+                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
+                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

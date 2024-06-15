@@ -26,6 +26,14 @@
         color: $light-grey;
         line-height: 0;
     }
+
+    &__text-area {
+        height: 15rem;
+    }
+
+    &__text-area::placeholder {
+        width: 100%;
+    }
     
     &:focus-visible {
         outline-color: $primary;

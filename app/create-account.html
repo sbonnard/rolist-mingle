@@ -25,19 +25,19 @@
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg"
-                                alt="icone accueil"></a>
+                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg"
-                                alt="icone parties dés de JDR"></a>
+                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img
+                                src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
                         <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
                                 alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
+                        <a href="larp-agenda.html" class="nav__lnk"
+                            aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
@@ -129,10 +129,12 @@
                             <label class="input__label form__question" for="suggestionsField">
                                 Quelles sont tes univers de jeu préférés ?
                             </label>
-                            <input class="input suggestions__input" type="text" id="suggestionsField" name="suggestionsField"
-                                placeholder="Tapez quelque chose..."
+                            <input class="input suggestions__input" type="text" id="suggestionsField"
+                                name="suggestionsField" placeholder="Tapez quelque chose..."
                                 aria-label="Entre le nom de ton JDR préféré et appuie sur 'entrée' pour valider ton choix">
+                            <div class="suggestions__list">
                                 <div class="suggestions" id="suggestions"></div>
+                            </div>
                             <ul id="selectedItemsList"></ul>
                         </li>
 

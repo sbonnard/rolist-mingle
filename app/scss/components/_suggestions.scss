@@ -25,6 +25,16 @@
         position: relative;
     }
 
+    @media screen and (max-width: 768px) {
+        &__list {
+            width: 20.5rem;
+        }
+
+        &__txt {
+            max-width: 18.5rem;
+        }
+    }
+
     @media screen and (min-width: 768px) {
         & {
             width: 30rem;

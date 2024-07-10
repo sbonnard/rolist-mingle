@@ -74,7 +74,8 @@ generateToken();
         </a>
         
         <?php
-         echo fetchRPG($dbCo) ; 
+         echo fetchRPG(); 
+         var_dump(getRPGArray($dbCo));
          ?>
         
         <div class="page-content">

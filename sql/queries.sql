@@ -5,28 +5,27 @@ CREATE DATABASE rolist_mingle;
 
 -- TABLES
 
-CREATE TABLE localisation (
-    id_localisation SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name_localisation VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id_localisation)
+CREATE TABLE place (
+    id_place SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name_place VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_place)
 );
 
 CREATE TABLE chat (
     id_chat SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     txt_chat VARCHAR(255),
-    name_contact VARCHAR(30) NOT NULL,
     date_chat DATETIME NOT NULL,
     id_user SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id_chat),
     FOREIGN KEY (id_user) REFERENCES users(id_user) -- Contact
 );
 
-CREATE TABLE infos (
-    id_infos SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name_infos VARCHAR(100) NOT NULL,
-    description_infos VARCHAR(255) NOT NULL,
-    image_infos VARBINARY NOT NULL,
-    PRIMARY KEY (id_infos)
+CREATE TABLE event (
+    id_event SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name_event VARCHAR(100) NOT NULL,
+    description_ VARCHAR(255) NOT NULL,
+    -- image VARBINARY NOT NULL,
+    PRIMARY KEY (id_event)
 );
 
 CREATE TABLE larp_type (
@@ -38,7 +37,7 @@ CREATE TABLE larp_type (
 CREATE TABLE role_type (
     id_role_type SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     name_role VARCHAR(50) NOT NULL,
-    icone_role VARBINARY NOT NULL,
+    -- icone_role VARBINARY NOT NULL,
     PRIMARY KEY (id_role_type)
 );
 
@@ -58,45 +57,43 @@ CREATE TABLE universe (
 
 CREATE TABLE users (
     id_user SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name_user VARCHAR(30) NOT NULL,
-    email_user VARCHAR(50) NOT NULL,
-    admin_user BOOLEAN DEFAULT NULL,
+    username VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    admin BOOLEAN DEFAULT NULL,
     id_role_type SMALLINT UNSIGNED NOT NULL,
-    id_localisation SMALLINT UNSIGNED NOT NULL,
+    id_place SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id_user),
     FOREIGN KEY (id_role_type) REFERENCES role_type(id_role_type),
-    FOREIGN KEY (id_localisation) REFERENCES localisation(id_localisation)
+    FOREIGN KEY (id_place) REFERENCES place(id_place)
 );
 
 CREATE TABLE party (
     id_party SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     number_players SMALLINT UNSIGNED NOT NULL,
-    id_infos SMALLINT UNSIGNED NOT NULL,
     id_role_type SMALLINT UNSIGNED NOT NULL,
-    id_localisation SMALLINT UNSIGNED NOT NULL,
-    id_user SMALLINT UNSIGNED NOT NULL, -- GAME_MASTER
-    id_universe SMALLINT UNSIGNED NOT NULL,
+    id_user_master SMALLINT UNSIGNED NOT NULL, 
+    id_event SMALLINT UNSIGNED NOT NULL, 
     PRIMARY KEY (id_party),
-    FOREIGN KEY (id_infos) REFERENCES infos(id_infos),
     FOREIGN KEY (id_role_type) REFERENCES role_type(id_role_type),
-    FOREIGN KEY (id_localisation) REFERENCES localisation(id_localisation),
-    FOREIGN KEY (id_user) REFERENCES users(id_user), -- GAME_MASTER
-    FOREIGN KEY (id_universe) REFERENCES universe(id_universe)
+    FOREIGN KEY (id_user_master) REFERENCES users(id_user), -- GAME_MASTER
+    FOREIGN KEY (id_event) REFERENCES users(id_user) -- GAME_MASTER
 );
+
+CREATE TABLE party_users (
+    id_party SMALLINT UNSIGNED NOT NULL,
+    id_user SMALLINT UNSIGNED NOT NULL,
+    FOREIGN KEY (id_party) REFERENCES party(id_party),
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
+)
 
 CREATE TABLE larp (
     id_larp SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     date_start DATE NOT NULL,
     date_end DATE NOT NULL,
-    id_infos SMALLINT UNSIGNED NOT NULL,
-    id_universe SMALLINT UNSIGNED NOT NULL,
-    id_localisation SMALLINT UNSIGNED NOT NULL,
     id_larp_type SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id_larp),
-    FOREIGN KEY (id_infos) REFERENCES infos(id_infos),
-    FOREIGN KEY (id_universe) REFERENCES universe(id_universe),
-    FOREIGN KEY (id_localisation) REFERENCES localisation(id_localisation),
-    FOREIGN KEY (id_larp_type) REFERENCES larp_type(id_larp_type)
+    FOREIGN KEY (id_larp_type) REFERENCES larp_type(id_larp_type),
+    FOREIGN KEY (id_event) REFERENCES event(id_event)
 );
 
 CREATE TABLE selected_universe (

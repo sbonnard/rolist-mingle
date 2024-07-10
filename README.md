@@ -16,13 +16,13 @@ To build images and run all containers and volumes
 docker-compose up -d
 ```
 
-# NPM
+## NPM
 
 ```sh
 npm install
 ```
 
-# COMPOSER
+## COMPOSER
 
 ```sh
 composer install

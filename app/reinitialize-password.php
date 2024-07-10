@@ -1,12 +1,16 @@
+<?php
+require "./includes/_config.php";
+require "./includes/_database.php";
+require "./includes/components/_head.php";
+require "./includes/components/_footer.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réinitialisation Mot de Passe | Rolist-Mingle</title>
-    <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon">
+<? echo fetchHead("Réinitialisation Mot de Passe | Rolist-Mingle");?>
 </head>
 
 <body>
@@ -14,7 +18,7 @@
         <div class="container__header">
             <img class="header__img" src="logo/logo-rolist-mingle.svg"
                 alt="logo de rolist-mingle représentant un dé 20 de JDR">
-            <a href="index.html">
+            <a href="index.php">
                 <h2 class="header__ttl">Rolist-Mingle</h2>
             </a>
             <div class="hamburger">
@@ -25,23 +29,23 @@
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg"
+                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg"
                                 alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg"
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg"
                                 alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
+                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg"
                                 alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte
+                        <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
@@ -54,7 +58,7 @@
     </header>
 
     <main>
-        <a href="index.html" class="hero-banner hero-banner--smaller">
+        <a href="index.php" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg"
                 alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h2 class="logo__ttl logo__ttl--smaller">Rolist-Mingle</h1>
@@ -89,26 +93,10 @@
             </section>
         </div>
     </main>
+
     <footer class="footer">
-        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
-            <ul class="footer__social">
-                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
-                            src="img/instagram.svg" alt="icône instagram"></a></li>
-                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
-                            src="img/facebook.svg" alt="icône facebook"></a></li>
-                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
-                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
-                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
-                            src="img/github.svg" alt="icône github"></a>
-                </li>
-            </ul>
-        </nav>
-        <nav aria-label="navigation vers mentions légales du site">
-            <ul class="footer-legal">
-                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
-                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
-            </ul>
-        </nav>
+        <? echo fetchFooter() ?>
     </footer>
+    
     <script src="js/script.js"></script>
 </body>

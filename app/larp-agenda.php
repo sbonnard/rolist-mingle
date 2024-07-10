@@ -1,12 +1,16 @@
+<?php
+require "./includes/_config.php";
+require "./includes/_database.php";
+require "./includes/components/_head.php";
+require "./includes/components/_footer.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mot de passe oublié | Rolist-Mingle</title>
-    <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon">
+<? echo fetchHead("Agenda GN | Rolist-Mingle");?>
 </head>
 
 <body>
@@ -25,23 +29,23 @@
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm">
-                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg"
+                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg"
                                 alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg"
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg"
                                 alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
+                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg"
                                 alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm nav__lnk--current">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature" aria-current="page">Agenda GNs <img src="icones/agenda.svg"
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature" aria-current="page">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte
+                        <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
@@ -58,7 +62,7 @@
             <!-- THINK TO REMOVE CONNECTION BAR IF USER IS CONNECTER -->
             <div class="connection-bar">
                 <p>Connecte-toi !</p>
-                <a href="index.html"><button class="button connection-bar__button">Se connecter</button></a>
+                <a href="index.php"><button class="button connection-bar__button">Se connecter</button></a>
             </div>
 
             <h1 class="ttl ttl--big">Agenda GN</h1>
@@ -72,25 +76,7 @@
     </main>
 
     <footer class="footer">
-        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
-            <ul class="footer__social">
-                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
-                            src="img/instagram.svg" alt="icône instagram"></a></li>
-                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
-                            src="img/facebook.svg" alt="icône facebook"></a></li>
-                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
-                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
-                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
-                            src="img/github.svg" alt="icône github"></a>
-                </li>
-            </ul>
-        </nav>
-        <nav aria-label="navigation vers mentions légales du site">
-            <ul class="footer-legal">
-                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
-                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
-            </ul>
-        </nav>
+        <? echo fetchFooter() ?>
     </footer>
     <script type="module" src="js/script.js"></script>
 </body>

@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require "./includes/_config.php";
+require "./includes/_database.php";
+require "./includes/components/_head.php";
+require "./includes/components/_footer.php";
+
+?>
+
+<!DOCTYPE php>
+<php lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parties | Rolist-Mingle</title>
-    <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon">
+<? echo fetchHead("Parties | Rolist-Mingle");?>
 </head>
 
 <body>
@@ -25,23 +29,23 @@
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm">
-                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg"
+                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg"
                                 alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm nav__lnk--current">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle" aria-current="page">Parties <img src="icones/parties.svg"
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle" aria-current="page">Parties <img src="icones/parties.svg"
                                 alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
+                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg"
                                 alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte
+                        <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
@@ -58,7 +62,7 @@
         <div class="page-content">
             <div class="connection-bar">
                 <p>Connecte-toi !</p>
-                <a href="index.html"><button class="button connection-bar__button">Se connecter</button></a>
+                <a href="index.php"><button class="button connection-bar__button">Se connecter</button></a>
             </div>
 
             <h1 class="ttl ttl--big">Parties disponibles</h1>
@@ -68,7 +72,7 @@
             </div>
 
             <div class="container">
-                <button class="button"><a href="create-account.html">Créer une partie</a></button>
+                <button class="button"><a href="create-account.php">Créer une partie</a></button>
             </div>
 
             <div class="swiper" id="swiper">
@@ -82,12 +86,12 @@
                         <img class="rolist-icon" src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'">
                     </div>
                     <div class="party">
-                        <a href="party-1.html">
+                        <a href="party-1.php">
                             <h2 class="ttl--big">JDR DnD à Vesoul</h2>
                         </a>
-                        <a href="party-1.html"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
+                        <a href="party-1.php"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
                     </div>
-                    <a href="party-1.html"><img class="party__img" src="img/party1.webp"
+                    <a href="party-1.php"><img class="party__img" src="img/party1.webp"
                             alt="Image médiévale avec château"></a>
                 </section>
 
@@ -101,12 +105,12 @@
                         <img class="rolist-icon" src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'">
                     </div>
                     <div class="party">
-                        <a href="party-2.html">
+                        <a href="party-2.php">
                             <h2 class="ttl--big">Star Wars à Caen</h2>
                         </a>
-                        <a href="party-2.html"><img src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'"></a>
+                        <a href="party-2.php"><img src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'"></a>
                     </div>
-                    <a href="party-2.html"><img class="party__img" src="img/party2.webp" alt="Image Stormtrooper"></a>
+                    <a href="party-2.php"><img class="party__img" src="img/party2.webp" alt="Image Stormtrooper"></a>
                 </section>
 
                 <section class="container container--swiper">
@@ -119,12 +123,12 @@
                         <img class="rolist-icon" src="icones/dice12-50x50.svg" alt="Icône dé 20 'Sérieux'">
                     </div>
                     <div class="party">
-                        <a href="party-3.html">
+                        <a href="party-3.php">
                             <h2 class="ttl--big">JDR Western sur Discord</h2>
                         </a>
-                        <a href="party-3.html"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
+                        <a href="party-3.php"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
                     </div>
-                    <a href="party-3.html"><img class="party__img" src="img/party3.webp"
+                    <a href="party-3.php"><img class="party__img" src="img/party3.webp"
                             alt="Image médiévale avec château"></a>
                 </section>
 
@@ -138,12 +142,12 @@
                         <img class="rolist-icon" src="icones/dice8-50x50.svg" alt="Icône dé 12 'Régulier'">
                     </div>
                     <div class="party">
-                        <a href="party-4.html">
+                        <a href="party-4.php">
                             <h2 class="ttl--big">JDR Chtulu à Chtulouse</h2>
                         </a>
-                        <a href="party-4.html"><img src="icones/dice12-50x50.svg" alt="Icône dé 12 'Régulier'"></a>
+                        <a href="party-4.php"><img src="icones/dice12-50x50.svg" alt="Icône dé 12 'Régulier'"></a>
                     </div>
-                    <a href="party-4.html"><img class="party__img" src="img/party4.webp" alt="Image Chtulu"></a>
+                    <a href="party-4.php"><img class="party__img" src="img/party4.webp" alt="Image Chtulu"></a>
                 </section>
                 <section class="container container--swiper">
                     <div class="user">
@@ -155,12 +159,12 @@
                         <img class="rolist-icon" src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'">
                     </div>
                     <div class="party">
-                        <a href="party-1.html">
+                        <a href="party-1.php">
                             <h2 class="ttl--big">JDR DnD à Vesoul</h2>
                         </a>
-                        <a href="party-1.html"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
+                        <a href="party-1.php"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
                     </div>
-                    <a href="party-1.html"><img class="party__img" src="img/party1.webp"
+                    <a href="party-1.php"><img class="party__img" src="img/party1.webp"
                             alt="Image médiévale avec château"></a>
                 </section>
 
@@ -174,12 +178,12 @@
                         <img class="rolist-icon" src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'">
                     </div>
                     <div class="party">
-                        <a href="party-2.html">
+                        <a href="party-2.php">
                             <h2 class="ttl--big">Star Wars à Caen</h2>
                         </a>
-                        <a href="party-2.html"><img src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'"></a>
+                        <a href="party-2.php"><img src="icones/dice4-50x50.svg" alt="Icône dé 4 'Coquin'"></a>
                     </div>
-                    <a href="party-2.html"><img class="party__img" src="img/party2.webp" alt="Image Stormtrooper"></a>
+                    <a href="party-2.php"><img class="party__img" src="img/party2.webp" alt="Image Stormtrooper"></a>
                 </section>
 
                 <section class="container container--swiper">
@@ -192,12 +196,12 @@
                         <img class="rolist-icon" src="icones/dice12-50x50.svg" alt="Icône dé 20 'Sérieux'">
                     </div>
                     <div class="party">
-                        <a href="party-3.html">
+                        <a href="party-3.php">
                             <h2 class="ttl--big">JDR Western sur Discord</h2>
                         </a>
-                        <a href="party-3.html"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
+                        <a href="party-3.php"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 'Sérieux'"></a>
                     </div>
-                    <a href="party-3.html"><img class="party__img" src="img/party3.webp"
+                    <a href="party-3.php"><img class="party__img" src="img/party3.webp"
                             alt="Image médiévale avec château"></a>
                 </section>
 
@@ -211,37 +215,19 @@
                         <img class="rolist-icon" src="icones/dice8-50x50.svg" alt="Icône dé 12 'Régulier'">
                     </div>
                     <div class="party">
-                        <a href="party-4.html">
+                        <a href="party-4.php">
                             <h2 class="ttl--big">JDR Chtulu à Chtulouse</h2>
                         </a>
-                        <a href="party-4.html"><img src="icones/dice12-50x50.svg" alt="Icône dé 12 'Régulier'"></a>
+                        <a href="party-4.php"><img src="icones/dice12-50x50.svg" alt="Icône dé 12 'Régulier'"></a>
                     </div>
-                    <a href="party-4.html"><img class="party__img" src="img/party4.webp" alt="Image Chtulu"></a>
+                    <a href="party-4.php"><img class="party__img" src="img/party4.webp" alt="Image Chtulu"></a>
                 </section>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
-            <ul class="footer__social">
-                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
-                            src="img/instagram.svg" alt="icône instagram"></a></li>
-                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
-                            src="img/facebook.svg" alt="icône facebook"></a></li>
-                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
-                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
-                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
-                            src="img/github.svg" alt="icône github"></a>
-                </li>
-            </ul>
-        </nav>
-        <nav aria-label="navigation vers mentions légales du site">
-            <ul class="footer-legal">
-                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
-                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
-            </ul>
-        </nav>
+        <? echo fetchFooter() ?>
     </footer>
 
     <script type="module" src="js/script.js"></script>

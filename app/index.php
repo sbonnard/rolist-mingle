@@ -2,6 +2,7 @@
 require "./includes/_config.php";
 require "./includes/_database.php";
 require "./includes/components/_head.php";
+require "./includes/components/_footer.php";
 
 ?>
 
@@ -9,14 +10,13 @@ require "./includes/components/_head.php";
 <html lang="fr">
 
 <head>
-<? echo fetchHead("Rolist-Mingle");?>
+    <? echo fetchHead("Rolist-Mingle"); ?>
 </head>
 
 <body>
     <header class="header">
         <div class="container__header">
-            <img class="header__img" src="logo/logo-rolist-mingle.svg"
-                alt="logo de rolist-mingle représentant un dé 20 de JDR">
+            <img class="header__img" src="logo/logo-rolist-mingle.svg" alt="logo de rolist-mingle représentant un dé 20 de JDR">
             <a href="#">
                 <h2 class="header__ttl">Rolist-Mingle</h2>
             </a>
@@ -28,24 +28,19 @@ require "./includes/components/_head.php";
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.html" class="nav__lnk" aria-current="page">Accueil <img src="icones/home.svg"
-                                alt="icone accueil"></a>
+                        <a href="flow.php" class="nav__lnk" aria-current="page">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img
-                                src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
-                                alt="icone messagerie"></a>
+                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk"
-                            aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
-                                alt="icone agenda"></a>
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte
+                        <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
@@ -74,8 +69,7 @@ require "./includes/components/_head.php";
                 <section class="container grid-counter">
                     <h3 class="ttl ttl--primary">nombre d'inscrits</h3>
                     <p class="users-counter">999999</p>
-                    <img class="users-counter__img" src="img/rolist-inn.webp"
-                        alt="Personnages d'univers variés buvant un verre dans une taverne médiévale.">
+                    <img class="users-counter__img" src="img/rolist-inn.webp" alt="Personnages d'univers variés buvant un verre dans une taverne médiévale.">
 
                     <section class="grid-concept" id="concept" aria-labelledby="concept">
                         <h2 class="ttl ttl--primary">Le concept</h2>
@@ -89,18 +83,15 @@ require "./includes/components/_head.php";
                     </section>
                 </section>
 
-                <div class="concept-dice__container grid-dices"
-                    aria-label="Présentation des différents profils de rôlistes">
-                    <section class="container concept-dice js-concept-dice" data-concept-dice="100"
-                        aria-labelledby="dice100" aria-label="Présentation des profils de rôlistes types.">
+                <div class="concept-dice__container grid-dices" aria-label="Présentation des différents profils de rôlistes">
+                    <section class="container concept-dice js-concept-dice" data-concept-dice="100" aria-labelledby="dice100" aria-label="Présentation des profils de rôlistes types.">
                         <h4 class="ttl" id="dice100">Dé 100</h4>
                         <img src="icones/dé100.webp" alt="dé 100 de JDR">
                         <p class="concept-dice__txt">Maître du Jeu<br>cherche joueurs</p>
                         <h5 class="ttl concept-dice__sub-ttl">Dominateur</h5>
                     </section>
 
-                    <section class="container concept-dice" data-concept-dice="20" aria-labelledby="dice20"
-                        aria-label="Présentation des profils de rôlistes types.">
+                    <section class="container concept-dice" data-concept-dice="20" aria-labelledby="dice20" aria-label="Présentation des profils de rôlistes types.">
                         <h4 class="ttl" id="dice20">Dé 20</h4>
                         <img src="icones/dé20.webp" alt="dé 20 de JDR">
                         <p class="concept-dice__txt">Cherche
@@ -109,8 +100,7 @@ require "./includes/components/_head.php";
                         <h5 class="ttl concept-dice__sub-ttl">Sérieux</h5>
                     </section>
 
-                    <section class="container concept-dice" data-concept-dice="12" aria-labelledby="dice12"
-                        aria-label="Présentation des profils de rôlistes types.">
+                    <section class="container concept-dice" data-concept-dice="12" aria-labelledby="dice12" aria-label="Présentation des profils de rôlistes types.">
                         <h4 class="ttl" id="dice12">Dé 12</h4>
                         <img src="icones/dé12.webp" alt="dé 12 de JDR">
                         <p class="concept-dice__txt">Cherche plan
@@ -119,8 +109,7 @@ require "./includes/components/_head.php";
                         <h5 class="ttl concept-dice__sub-ttl">Veut s'amuser</h5>
                     </section>
 
-                    <section class="container concept-dice" data-concept-dice="8" aria-labelledby="dice8"
-                        aria-label="Présentation des profils de rôlistes types.">
+                    <section class="container concept-dice" data-concept-dice="8" aria-labelledby="dice8" aria-label="Présentation des profils de rôlistes types.">
                         <h4 class="ttl" id="dice8">Dé 8</h4>
                         <img src="icones/dé8.webp" alt="dé 8 de JDR">
                         <p class="concept-dice__txt">Cherche JDR court
@@ -129,8 +118,7 @@ require "./includes/components/_head.php";
                         <h5 class="ttl concept-dice__sub-ttl">Plus si affinité</h5>
                     </section>
 
-                    <section class="container concept-dice" data-concept-dice="4" aria-labelledby="dice4"
-                        aria-label="Présentation des profils de rôlistes types.">
+                    <section class="container concept-dice" data-concept-dice="4" aria-labelledby="dice4" aria-label="Présentation des profils de rôlistes types.">
                         <h4 class="ttl" id="dice4">Dé 4</h4>
                         <img src="icones/dé4.webp" alt="dé 4 de JDR">
                         <p class="concept-dice__txt">Juste pour un soir
@@ -146,18 +134,15 @@ require "./includes/components/_head.php";
                         <ul class="form__container">
                             <li class="form__itm">
                                 <label class="input__label" for="username">Nom d'utilisateur</label>
-                                <input class="input" type="text" name="username" id="username"
-                                    placeholder="Nom d'utilisateur" required
-                                    aria-label="Entrez votre nom d'utilisateur">
+                                <input class="input" type="text" name="username" id="username" placeholder="Nom d'utilisateur" required aria-label="Entrez votre nom d'utilisateur">
                             </li>
                             <li class="form__itm">
                                 <label class="input__label" for="password">Mot de passe</label>
-                                <input class="input" type="password" name="password" id="password"
-                                    placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
+                                <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
                             </li>
                         </ul>
                         <div class="form__container">
-                            <p class="lnk--underlined"><a href="forgotten-password.html">Mot de passe oublié ?</a></p>
+                            <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
                             <input class="button" type="submit" value="Se connecter">
                             <p>Pas encore de compte ?</p>
                             <button class="button button--empty"><a href="create-account.php">Créer un
@@ -170,28 +155,11 @@ require "./includes/components/_head.php";
 
     </main>
     <footer class="footer">
-        <nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
-            <ul class="footer__social">
-                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
-                            src="img/instagram.svg" alt="icône instagram"></a></li>
-                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
-                            src="img/facebook.svg" alt="icône facebook"></a></li>
-                <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
-                        target="_blank"><img src="img/linkedin.svg" alt="icône linkedin"></a></li>
-                <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
-                            src="img/github.svg" alt="icône github"></a>
-                </li>
-            </ul>
-        </nav>
-        <nav aria-label="navigation vers mentions légales du site">
-            <ul class="footer-legal">
-                <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
-                <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>
-            </ul>
-        </nav>
+        <? echo fetchFooter() ?>
     </footer>
 
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 
 </html>

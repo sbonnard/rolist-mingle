@@ -1,6 +1,23 @@
 <?php
 
 /**
+ * Generates a random token for forms to prevent from CSRF. It also generate a new token after 15 minutes.
+ *
+ * @return void
+ */
+function generateToken()
+{
+    if (
+        !isset($_SESSION['token'])
+        || !isset($_SESSION['tokenExpire'])
+        || $_SESSION['tokenExpire'] < time()
+    ) {
+        $_SESSION['token'] = md5(uniqid(mt_rand(), true));
+        $_SESSION['tokenExpire'] = time() + 60 * 15;
+    }
+}
+
+/**
  * Get HTML script to load front-end assets defined in the manifest.json file for entry points given.
  *
  * @param array $entries - A list of JS files to load.
@@ -48,4 +65,25 @@ function checkEnvironment(string $file)
         // Try this way to load assets from manifest.json
         // https://github.com/andrefelipe/vite-php-setup
     }
+}
+
+
+function fetchRPG(PDO $dbCo)
+{
+    $allRPG = "";
+    
+    $query = $dbCo->prepare("SELECT name_universe FROM universe;");
+
+    $query->execute();
+
+    $RPG = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($RPG as $rpg) {
+    
+        if ($RPG) {
+            $allRPG .= '<li>' . htmlspecialchars($rpg['name_universe']) . '</li>';
+        }
+    }
+    
+    return $allRPG;
 }

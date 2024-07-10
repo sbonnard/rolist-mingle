@@ -3,20 +3,28 @@ session_start();
 
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
-include 'includes/_function.php';
-include 'includes/_security.php';
+require_once './includes/_function.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
+    
 <head>
-    <?php
-    echo fetchHead("Créer un compte | Rolist-Mingle");
+    <?php 
+     if ($_ENV['ENV_TYPE'] === 'dev') {
+         // Developement integration for vite with run dev
+         echo fetchHead('Rolist-Mingle');
+    } else if ($_ENV['ENV_TYPE'] === 'prod') {
+        // Production integration for vite with run build
+        echo loadAssets([$file]);
+        // Try this way to load assets from manifest.json
+        // https://github.com/andrefelipe/vite-php-setup
+    }
     ?>
 </head>
 
@@ -58,13 +66,17 @@ generateToken();
             </nav>
         </div>
     </header>
-
+    
     <main>
         <a href="index.html" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h2 class="logo__ttl logo__ttl--smaller">Rolist-Mingle</h1>
         </a>
-
+        
+        <?php
+         echo fetchRPG($dbCo) ; 
+         ?>
+        
         <div class="page-content">
             <section class="container" aria-labelledby="#create-account">
                 <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>

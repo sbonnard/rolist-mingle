@@ -6,7 +6,8 @@ $messages = [
 
 $errors = [
     'csrf' => 'Votre session est invalide.',
-    'referer' => 'D\'où venez vous ?'
+    'referer' => 'D\'où venez vous ?',
+    'no_action' => 'Aucune action détectée.'
 ];
 
 
@@ -19,7 +20,6 @@ $errors = [
 function triggerError(string $error): void
 {
     global $errors;
-    // var_dump($error);
     $response = [
         'isOk' => false,
         'errorMessage' => $errors[$error]

@@ -5,3 +5,25 @@ This is my main project for now. I had the idea of a social media during my dev 
 I want to deal with accessibilty issues on the whole project so it respects the POUR principles : Perceivable, Operable, Understandable, Robust.
 
 I want to go on this project after my school year is over and I hope you will enjoy my work here !
+
+# LAMP ENVIRONMENT
+
+## BUILD AND RUN
+
+To build images and run all containers and volumes
+
+```sh
+docker-compose up -d
+```
+
+# NPM
+
+```sh
+npm install
+```
+
+# COMPOSER
+
+```sh
+composer install
+```

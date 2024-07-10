@@ -91,6 +91,7 @@ CREATE TABLE larp (
     date_start DATE NOT NULL,
     date_end DATE NOT NULL,
     id_larp_type SMALLINT UNSIGNED NOT NULL,
+    id_event SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id_larp),
     FOREIGN KEY (id_larp_type) REFERENCES larp_type(id_larp_type),
     FOREIGN KEY (id_event) REFERENCES event(id_event)
@@ -105,7 +106,7 @@ CREATE TABLE selected_universe (
 
 CREATE TABLE block (
     id_user SMALLINT UNSIGNED NOT NULL, -- Blocked
-    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
 );
 
 CREATE TABLE friend (

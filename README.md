@@ -27,3 +27,13 @@ npm install
 ```sh
 composer install
 ```
+
+# LAUNCH APP FOR DEV
+
+Launch docker container 
+
+& connection with .env 
+
+ ```sh
+& npm run dev
+```

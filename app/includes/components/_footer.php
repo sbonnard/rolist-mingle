@@ -1,6 +1,11 @@
 <?php
 
-function fetchFooter() {
+/**
+ * Get footer content.
+ *
+ * @return void
+ */
+function fetchFooter():string {
 return 
         '<nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
             <ul class="footer__social">

@@ -1,6 +1,14 @@
 <?php
 
-function fetchHead(string $headTitle)
+// include_once 'includes/_functions.php';
+
+/**
+ * Get HTML head content.
+ *
+ * @param string $headTitle - The title in the head element.
+ * @return string - A string of HTML elements.
+ */
+function fetchHead(string $headTitle):string
 {
     return 
         '<meta charset="UTF-8">

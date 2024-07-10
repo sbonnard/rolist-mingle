@@ -1,16 +1,30 @@
 <?php
+session_start();
+
 require "./includes/_config.php";
 require "./includes/_database.php";
+include 'includes/_function.php';
 require "./includes/components/_head.php";
 require "./includes/components/_footer.php";
 
+generateToken();
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Rolist-Mingle"); ?>
+    <?php 
+     if ($_ENV['ENV_TYPE'] === 'dev') {
+        // Developement integration for vite with run dev
+        echo fetchHead('Rolist-Mingle');
+    } else if ($_ENV['ENV_TYPE'] === 'prod') {
+        // Production integration for vite with run build
+        echo loadAssets([$file]);
+        // Try this way to load assets from manifest.json
+        // https://github.com/andrefelipe/vite-php-setup
+    }
+    ?>
 </head>
 
 <body>

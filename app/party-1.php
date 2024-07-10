@@ -1,6 +1,7 @@
 <?php
 require "./includes/_config.php";
 require "./includes/_database.php";
+include 'includes/_function.php';
 require "./includes/components/_head.php";
 require "./includes/components/_footer.php";
 

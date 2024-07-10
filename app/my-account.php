@@ -1,6 +1,7 @@
 <?php
 require "./includes/_config.php";
 require "./includes/_database.php";
+include 'includes/_function.php';
 require "./includes/components/_head.php";
 require "./includes/components/_footer.php";
 
@@ -110,12 +111,13 @@ require "./includes/components/_footer.php";
 
         </div>
     </main>
-    
+
     <footer class="footer">
         <? echo fetchFooter() ?>
     </footer>
 
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/suggestion-bar.js"></script>
 </body>
 
 </html>

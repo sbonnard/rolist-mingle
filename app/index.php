@@ -1,12 +1,15 @@
+<?php
+require "./includes/_config.php";
+require "./includes/_database.php";
+require "./includes/components/_head.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rolist-Mingle</title>
-    <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon">
+<? echo fetchHead("Rolist-Mingle");?>
 </head>
 
 <body>
@@ -29,15 +32,16 @@
                                 alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg"
-                                alt="icone parties dés de JDR"></a>
+                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img
+                                src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
                         <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg"
                                 alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
+                        <a href="larp-agenda.html" class="nav__lnk"
+                            aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg"
                                 alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
@@ -85,7 +89,8 @@
                     </section>
                 </section>
 
-                <div class="concept-dice__container grid-dices" aria-label="Présentation des différents profils de rôlistes">
+                <div class="concept-dice__container grid-dices"
+                    aria-label="Présentation des différents profils de rôlistes">
                     <section class="container concept-dice js-concept-dice" data-concept-dice="100"
                         aria-labelledby="dice100" aria-label="Présentation des profils de rôlistes types.">
                         <h4 class="ttl" id="dice100">Dé 100</h4>
@@ -142,7 +147,8 @@
                             <li class="form__itm">
                                 <label class="input__label" for="username">Nom d'utilisateur</label>
                                 <input class="input" type="text" name="username" id="username"
-                                    placeholder="Nom d'utilisateur" required aria-label="Entrez votre nom d'utilisateur">
+                                    placeholder="Nom d'utilisateur" required
+                                    aria-label="Entrez votre nom d'utilisateur">
                             </li>
                             <li class="form__itm">
                                 <label class="input__label" for="password">Mot de passe</label>
@@ -154,7 +160,7 @@
                             <p class="lnk--underlined"><a href="forgotten-password.html">Mot de passe oublié ?</a></p>
                             <input class="button" type="submit" value="Se connecter">
                             <p>Pas encore de compte ?</p>
-                            <button class="button button--empty"><a href="create-account.html">Créer un
+                            <button class="button button--empty"><a href="create-account.php">Créer un
                                     compte</a></button>
                         </div>
                     </form>

@@ -1,4 +1,5 @@
 import JDR from "./jdr.json" with {type: "json" }
+import './../scss/style.scss';
 
 
 // Hamburger Navigation //

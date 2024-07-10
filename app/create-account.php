@@ -1,12 +1,15 @@
+<?php
+require "./includes/_config.php";
+require "./includes/_database.php";
+require "./includes/components/_head.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un compte | Rolist-Mingle</title>
-    <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon">
+<? echo fetchHead("Rolist-Mingle");?>
 </head>
 
 <body>

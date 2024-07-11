@@ -1,5 +1,7 @@
 <?php
 
+global $dbCo;
+
 $RPG = fetchRPG($dbCo);
 
 
@@ -119,4 +121,4 @@ function getResearcFromServer(PDO $dbCo, $userSearch)
     }
 }
 
-var_dump($RPG); 
+// var_dump($RPG); 

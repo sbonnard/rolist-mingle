@@ -1,32 +1,22 @@
-// import JDR from "./jdr.json" with {type: "json"}
-// import * from "./"
+// THIS IS A WORKING VERSION OF MY SEARCH BAR FUNCTIONS WITHOUT SERVER TRANSMISSION WHEN SEARCH DONE BY USER.
 
 // Favourite Universe
 
-const suggestionsField = document.getElementById('suggestionsField');
-const selectedItemsList = document.getElementById('selectedItemsList');
-const template = document.getElementById("favourite-template");
 const suggestions = document.getElementById('suggestions');
 
 let selectedRPG = [];
 
 /**
  * Fetch RPG data from the server.
- * @param {string} searchTerm - The search term to filter RPGs.
  * @returns {Promise<Array>} - A promise that resolves to the list of RPGs.
  */
-async function fetchRPGData(searchTerm) {
+async function fetchRPGData() {
     try {
-        const url = `../api_rpg.php?search=${encodeURIComponent(searchTerm)}`;
-        
-        const response = await fetch(url);
-        
+        const response = await fetch('../_fetch_rpg.php');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        
         const data = await response.json();
-        
         return data.map(rpg => ({ name: rpg.name_universe }));
     } catch (error) {
         console.error('Failed to fetch RPG data:', error);
@@ -34,9 +24,10 @@ async function fetchRPGData(searchTerm) {
     }
 }
 
+
 /**
  * Get filtered suggestions from suggestions field.
- * @param {string} input - The suggestion field you have to write in to get suggestions.
+ * * @param {string} input - The suggestion field you have to write in to get suggestions.
  * @param {Array} rpgList - The list of all RPGs.
  * @returns {Array} - The filtered RPG suggestions from the text you wrote in the field.
  */
@@ -46,20 +37,14 @@ function getFilteredSuggestions(input, rpgList) {
                   .slice(0, 10);
 }
 
+
 /**
  * Creates a suggestion item in the DOM.
- * @param {Object} item - The item you want to create.
+ * * @param {Object} item - The item you want to create.
  * @returns {Element} - The item in the DOM as a RPG suggestion.
  */
 function createSuggestionItem(item) {
     let newItem = document.createElement('div');
-    newItem.classList.add('js-suggestion', 'suggestions__itm');
-    newItem.setAttribute('id', item.id);
-    newItem.addEventListener('click', function () {
-        addItemToSelectedList(item);
-        clearSuggestionsAndInput();
-        newItem.remove();
-    });
     newItem.appendChild(document.createTextNode(item.name));
     return newItem;
 }
@@ -70,12 +55,6 @@ function createSuggestionItem(item) {
  */
 function addItemToSelectedList(item) {
     selectedRPG.push(item);
-    template.content.getElementById('favourite-rpg').innerHTML = item.name;
-    let clone = document.importNode(template.content, true);
-    clone.querySelector('.button--minus').addEventListener('click', function (event) {
-        event.target.parentNode.remove();
-        suggestions.innerHTML = '';
-    });
     selectedItemsList.appendChild(clone);
 }
 
@@ -88,14 +67,13 @@ function clearSuggestionsAndInput() {
 }
 
 let allRPGData = [];
+console.log(allRPGData);
 
-fetchRPGData('').then(data => {
+fetchRPGData().then(data => {
     allRPGData = data;
-    const suggestionsField = document.getElementById('suggestionsField');
     suggestionsField.addEventListener('keyup', function (event) {
         const inputText = suggestionsField.value.trim();
         if (inputText !== '') {
-            const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = "";
             let suggestionList = getFilteredSuggestions(inputText, allRPGData);
             suggestionList.forEach(item => {
@@ -103,7 +81,6 @@ fetchRPGData('').then(data => {
                 suggestions.appendChild(newItem);
             });
         } else {
-            const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = '';
         }
     });

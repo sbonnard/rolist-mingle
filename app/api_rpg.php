@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 
-require_once './includes/_database.php';
+require_once './includes/_database.php'; 
 require_once './includes/_function.php';
 
 try {

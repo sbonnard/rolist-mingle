@@ -173,4 +173,6 @@ generateToken();
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
     <!-- <script type="module" src="js/full-front_suggestion-bar.js"></script> -->
+    <!-- <script type="module" src="js/working-suggestion-bar.js"></script> -->
+
 </body>

@@ -17,10 +17,10 @@
     
     @media screen and (min-width: 768px) {
         &__container {
-            display: grid;
-            grid-template-columns: auto auto auto;
+            display: flex;
             align-items: baseline;
             justify-content: center;
+            gap: 8rem;
             width: 440px;
             margin: auto;
         }

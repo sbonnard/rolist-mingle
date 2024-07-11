@@ -26,11 +26,18 @@
             display: grid;
             grid-template:
                 "counter form"
-                "concept dices"
-                "concept dices"
+                "concept form"
+                "dices dices"
                 / 1fr 1fr;
             width: 84.375rem;
             margin: auto;
+            gap: 2rem;
+        }
+
+        &--column {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5rem;
         }
     }
 

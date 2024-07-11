@@ -70,20 +70,11 @@ function checkEnvironment(string $file)
 
 function fetchRPG(PDO $dbCo)
 {
-    $allRPG = "";
-    
     $query = $dbCo->prepare("SELECT name_universe FROM universe;");
 
     $query->execute();
 
     $RPG = $query->fetchAll(PDO::FETCH_ASSOC);
-    
-    foreach ($RPG as $rpg) {
-    
-        if ($RPG) {
-            $allRPG .= '<li>' . htmlspecialchars($rpg['name_universe']) . '</li>';
-        }
-    }
-    
-    return $allRPG;
+
+    return $RPG;
 }

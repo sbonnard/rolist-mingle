@@ -43,19 +43,19 @@ generateToken();
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
+                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte
+                        <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
@@ -68,13 +68,13 @@ generateToken();
     </header>
     
     <main>
-        <a href="index.html" class="hero-banner hero-banner--smaller">
+        <a href="index.php" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h2 class="logo__ttl logo__ttl--smaller">Rolist-Mingle</h1>
         </a>
         
         <?php
-         echo fetchRPG($dbCo) ; 
+        //  echo fetchRPG($dbCo) ; 
          ?>
         
         <div class="page-content">
@@ -171,4 +171,5 @@ generateToken();
     </footer>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
+    <!-- <script type="module" src="js/full-front_suggestion-bar.js"></script> -->
 </body>

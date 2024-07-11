@@ -132,11 +132,9 @@ generateToken();
                             </p>
                         </li>
 
-
-
                         <li class="form__itm form__itm--select">
                             <label class="input__label form__question" for="suggestionsField">
-                                Quelles sont tes univers de jeu préférés ?
+                                Quels sont tes univers de jeu préférés ?
                             </label>
                             <input class="input suggestions__input" type="text" id="suggestionsField" name="suggestionsField" placeholder="Tapez quelque chose..." aria-label="Entre le nom de ton JDR préféré et appuie sur 'entrée' pour valider ton choix">
                             <div class="suggestions__list">
@@ -144,8 +142,6 @@ generateToken();
                             </div>
                             <ul id="selectedItemsList"></ul>
                         </li>
-
-
 
                         <p class="input__required--txt" aria-hidden="true">Les champs marqués d’une <span class="input__required">*</span> sont obligatoires.
                         </p>
@@ -157,7 +153,7 @@ generateToken();
                     <template id="favourite-template">
                         <li class="favourites">
                             <button class="button--minus" data-favourite-minus=""></button>
-                            <p class="txt--bigger suggestions__txt" id="favourite-rpg" value="<? $rpg['id_universe'] ?>">Patate</p>
+                            <p class="txt--bigger suggestions__txt" id="favourite-rpg" value="">Univers</p>
                         </li>
                     </template>
 

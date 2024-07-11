@@ -14,8 +14,8 @@ generateToken();
 <html lang="fr">
 
 <head>
-    <?php 
-     if ($_ENV['ENV_TYPE'] === 'dev') {
+    <?php
+    if ($_ENV['ENV_TYPE'] === 'dev') {
         // Developement integration for vite with run dev
         echo fetchHead('Rolist-Mingle');
     } else if ($_ENV['ENV_TYPE'] === 'prod') {
@@ -73,19 +73,19 @@ generateToken();
             <img class="hero-banner__img" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h1 class="logo__ttl">Rolist-Mingle</h1>
             <h2 class="logo__tagline">Don't Roll Single</h2>
-            <a href="#concept" class="hero-banner__btn">
+            <a href="#content" class="hero-banner__btn">
                 <img src="img/angle-down.svg" alt="Bouton vers contenu principal">
             </a>
         </div>
 
-        <div class="page-content">
+        <div class="page-content" id="content">
             <div class="container--desktop">
                 <section class="container grid-counter">
                     <h3 class="ttl ttl--primary">nombre d'inscrits</h3>
                     <p class="users-counter">999999</p>
                     <img class="users-counter__img" src="img/rolist-inn.webp" alt="Personnages d'univers variés buvant un verre dans une taverne médiévale.">
 
-                    <section class="grid-concept" id="concept" aria-labelledby="concept">
+                    <section class="grid-concept" aria-labelledby="concept">
                         <h2 class="ttl ttl--primary">Le concept</h2>
                         <p>Rolist-Mingle a pour vocation d'aider à la rencontre de rôlistes, confirmés ou non. Pour tout
                             ceux qui souhaiteraient jouer plus ou se lancer dans le Jeu de Rôle sur table ou à distance,
@@ -127,8 +127,7 @@ generateToken();
                         <h4 class="ttl" id="dice8">Dé 8</h4>
                         <img src="icones/dé8.webp" alt="dé 8 de JDR">
                         <p class="concept-dice__txt">Cherche JDR court
-                            <br>voire très court
-                        </p>
+                            <br>voire très court</p>
                         <h5 class="ttl concept-dice__sub-ttl">Plus si affinité</h5>
                     </section>
 
@@ -155,14 +154,13 @@ generateToken();
                                 <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
                             </li>
                         </ul>
-                        <div class="form__container">
-                            <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
-                            <input class="button" type="submit" value="Se connecter">
-                            <p>Pas encore de compte ?</p>
-                            <button class="button button--empty"><a href="create-account.php">Créer un
-                                    compte</a></button>
-                        </div>
                     </form>
+                    <div class="form__container">
+                        <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
+                        <input class="button" type="submit" value="Se connecter">
+                        <p>Pas encore de compte ?</p>
+                        <div class="button__txt"><a class="button button--empty" href="create-account.php">Créer un compte</a></div>
+                    </div>
                 </section>
             </div>
         </div>

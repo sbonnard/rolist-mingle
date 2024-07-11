@@ -1,5 +1,4 @@
-// import JDR from "./jdr.json" with {type: "json" }
-
+// import JDR from "./jdr.json" with {type: "json"}
 // import * from "./"
 
 // Favourite Universe
@@ -12,12 +11,17 @@ const suggestions = document.getElementById('suggestions');
 let selectedRPG = [];
 
 /**
- * Fetch RPG data from the server.
+ * Fetch RPG data from the server with optional search term.
+ * @param {string} [searchTerm] - The term to search for.
  * @returns {Promise<Array>} - A promise that resolves to the list of RPGs.
  */
-async function fetchRPGData() {
+async function fetchRPGData(searchTerm = '') {
     try {
-        const response = await fetch('../_fetch_rpg.php');
+        const url = new URL('../api_rpg.php');
+        if (searchTerm) {
+            url.searchParams.append('search', searchTerm);
+        }
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -28,7 +32,6 @@ async function fetchRPGData() {
         return [];
     }
 }
-
 
 /**
  * Get filtered suggestions from suggestions field.
@@ -41,7 +44,6 @@ function getFilteredSuggestions(input, rpgList) {
                   .sort((a, b) => a.name.localeCompare(b.name))
                   .slice(0, 10);
 }
-
 
 /**
  * Creates a suggestion item in the DOM.
@@ -61,7 +63,6 @@ function createSuggestionItem(item) {
     return newItem;
 }
 
-
 /**
  * Adds an item to selected list RPG. Adds an addeventlistener to button--minus to remove the item from selected list.
  * @param {Object} item - The item you want to add to selected list in the DOM.
@@ -72,11 +73,12 @@ function addItemToSelectedList(item) {
     let clone = document.importNode(template.content, true);
     clone.querySelector('.button--minus').addEventListener('click', function (event) {
         event.target.parentNode.remove();
+        // Remove item from selectedRPG array
+        selectedRPG = selectedRPG.filter(rpg => rpg.name !== item.name);
         suggestions.innerHTML = '';
     });
     selectedItemsList.appendChild(clone);
 }
-
 
 /**
  * Clears suggestions you click on any suggestion in the suggestions list.
@@ -86,15 +88,16 @@ function clearSuggestionsAndInput() {
     suggestionsField.value = '';
 }
 
-
 let allRPGData = [];
 console.log(allRPGData);
 
 fetchRPGData().then(data => {
     allRPGData = data;
+    const suggestionsField = document.getElementById('suggestionsField');
     suggestionsField.addEventListener('keyup', function (event) {
         const inputText = suggestionsField.value.trim();
         if (inputText !== '') {
+            const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = "";
             let suggestionList = getFilteredSuggestions(inputText, allRPGData);
             suggestionList.forEach(item => {
@@ -102,6 +105,7 @@ fetchRPGData().then(data => {
                 suggestions.appendChild(newItem);
             });
         } else {
+            const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = '';
         }
     });

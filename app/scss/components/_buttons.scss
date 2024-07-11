@@ -18,8 +18,14 @@
     }
 
     &--empty {
+        display: inline-block;
         background-color: $secondary;
         border: 1px solid $primary;
+        color: $primary;
+        text-align: center;
+    }
+
+    &__txt {
         color: $primary;
     }
     

@@ -2,7 +2,7 @@
 session_start();
 
 include 'includes/_config.php';
-include 'includes/_functions.php';
+include 'includes/_function.php';
 include 'includes/_database.php';
 include 'includes/_messages.php';
 
@@ -17,3 +17,4 @@ if (!isset($inputData['action'])) {
 
 // Check CSRF
 preventFromCSRFAPI($inputData);
+

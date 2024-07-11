@@ -4,6 +4,7 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
+// require_once './api_rpg.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
@@ -156,7 +157,7 @@ generateToken();
                     <template id="favourite-template">
                         <li class="favourites">
                             <button class="button--minus" data-favourite-minus=""></button>
-                            <p class="txt--bigger suggestions__txt" id="favourite-rpg">Patate</p>
+                            <p class="txt--bigger suggestions__txt" id="favourite-rpg" value="<? $rpg['id_universe'] ?>">Patate</p>
                         </li>
                     </template>
 

@@ -78,3 +78,19 @@ function fetchRPG(PDO $dbCo)
 
     return $RPG;
 }
+
+/**
+ * Get RPG array from a query.
+ *
+ * @param PDO $dbCo - The connection to database.
+ * @return void
+ */
+function getRPGArray (PDO $dbCo) {
+    $query = $dbCo->prepare("SELECT name_universe FROM universe;");
+
+    $query->execute();
+
+    $RPG = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($RPG);
+}

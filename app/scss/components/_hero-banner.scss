@@ -11,11 +11,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding-top: 2rem;
+    padding-top: 7rem;
     border-bottom: 2px solid $primary;
 
     &--smaller {
-        height: 45vh;
+        height: 50vh;
     }
 
     &__img {
@@ -26,7 +26,6 @@
     &__img--smaller {
         width: min(40vmin);
         margin-top: -2.5rem;
-
     }
 
     &__btn {
@@ -53,6 +52,10 @@
     @media screen and (min-width: 1224px) {
         &__img {
             width: min(60vmin, 500px);
+        }
+
+        &--smaller {
+            height: 60vh;
         }
     }
 

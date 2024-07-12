@@ -65,7 +65,7 @@ generateToken();
                     <img src="img/avatar-seon.svg" alt="Mon image de profil">
                     <h2 class="ttl--big">SeonPrim</h2>
                     <button class="button--pen"></button>
-                    <img src="icones/dé20.webp" alt="Icône rôliste Dé 20 'Sérieux'">
+                    <img src="icones/dé100.webp" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
                 </section>
 
                 <form class="container" action="get" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">

@@ -18,15 +18,15 @@ let selectedRPG = [];
 async function fetchRPGData(searchTerm) {
     try {
         const url = `../api_rpg.php?search=${encodeURIComponent(searchTerm)}`;
-        
+
         const response = await fetch(url);
-        
+
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        
+
         const data = await response.json();
-        
+
         return data.map(rpg => ({ name: rpg.name_universe }));
     } catch (error) {
         console.error('Failed to fetch RPG data:', error);
@@ -42,8 +42,8 @@ async function fetchRPGData(searchTerm) {
  */
 function getFilteredSuggestions(input, rpgList) {
     return rpgList.filter(rpg => rpg.name.toLowerCase().includes(input.toLowerCase()))
-                  .sort((a, b) => a.name.localeCompare(b.name))
-                  .slice(0, 10);
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .slice(0, 10);
 }
 
 /**
@@ -92,8 +92,8 @@ let allRPGData = [];
 suggestionsField.addEventListener('keyup', function (event) {
     const inputText = suggestionsField.value.trim();
     if (inputText !== '') {
-            fetchRPGData(inputText).then(data => {
-                allRPGData = data;
+        fetchRPGData(inputText).then(data => {
+            allRPGData = data;
             const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = "";
             let suggestionList = getFilteredSuggestions(inputText, allRPGData);
@@ -102,8 +102,9 @@ suggestionsField.addEventListener('keyup', function (event) {
                 suggestions.appendChild(newItem);
             });
         });
-        } else {
-            const suggestions = document.getElementById('suggestions');
-            suggestions.innerHTML = '';
-        }
-    });
+    } else {
+        const suggestions = document.getElementById('suggestions');
+        suggestions.innerHTML = '';
+        clearSuggestionsAndInput();
+    }
+});

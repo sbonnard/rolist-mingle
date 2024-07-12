@@ -49,7 +49,7 @@
         filter: drop-shadow(0 0 1rem $primary);
     }
 
-    @media screen and (min-width: 1224px) {
+    @media screen and (min-width: 768px) {
         &__img {
             width: min(60vmin, 500px);
         }

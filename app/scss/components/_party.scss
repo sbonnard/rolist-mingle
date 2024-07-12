@@ -26,7 +26,12 @@
 
     &__img {
         width: 20rem;
+        height: 50vh;
         border: 2px solid $primary;
+    }
+
+    &__ttl {
+        max-width: 15.625rem;
     }
 
     &__page-content {

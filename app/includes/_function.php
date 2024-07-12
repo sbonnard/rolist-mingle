@@ -126,11 +126,18 @@ function getResearcFromServer(PDO $dbCo, $userSearch)
  * Get datas related to parties from database in a form of an array.
  *
  * @param PDO $dbCo - The connection to database.
- * @return void
+ * @return array
  */
-function getPartyDatas(PDO $dbCo)
+function getPartyDatas(PDO $dbCo):array
 {
-    $queryParty = $dbCo->query("SELECT DISTINCT(id_event) AS event_id, name_event, description_, number_players, id_user_master, id_universe, name_universe, username, u.id_role_type FROM event JOIN party USING (id_event) JOIN universe USING(id_universe) JOIN party_users USING (id_party) JOIN users u USING (id_user);");
+    $queryParty = $dbCo->query("
+    SELECT DISTINCT(id_event) AS event_id, name_event, description_, number_players, id_user_master, id_universe, name_universe, username, u.id_role_type AS user_role, p.id_role_type AS party_type, image 
+    FROM event 
+    JOIN party p USING (id_event) 
+    JOIN universe USING(id_universe) 
+    JOIN party_users USING (id_event) 
+    JOIN users u USING (id_user) 
+    WHERE game_master = 1;");
 
     $party = $queryParty->execute();
 
@@ -148,24 +155,23 @@ function displayParties(array $parties)
             '<section class="container container--swiper">
                 <div class="user">
                     <picture>
-                        <source class="avatar" srcset="img/avatar-slike-m.webp" media="(min-width: 768px)">
-                        <img class="avatar" src="img/avatar-slike.webp" alt="Avatar de Slike">
+                        <img class="avatar avatar--dice20" src="' . $party['image'] . '" alt="Avatar de ' . $party['username'] . '">
                     </picture>
-                    <h3 class="ttl--big">Slike</h3>
-                    <img class="rolist-icon" src="icones/dice20-50x50.svg" alt="Icône dé 20 Sérieux">
+                    <h3 class="ttl--big">' . $party['username'] . '</h3>
+                    <img class="rolist-icon" src="' . defineRoleTypePlayer($parties) . '" alt="Icône dé 20 Sérieux">
                 </div>
                 <div class="party">
                     <a href="party-1.php">
-                        <h2 class="ttl--big">' . $party['name_event'] . '</h2>
+                        <h2 class="ttl--big party__ttl">' . $party['name_event'] . '</h2>
                     </a>
                     <a href="party-1.php"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 Sérieux"></a>
                     <div class="party__universe">
-                         <h3>' . $party['name_universe'] .
-                    '</div>
+                         <h3>' . $party['name_universe'] . '</h3>
+            </div>
                     <div class="party__players">
                         <img src="./img/adventurer.svg" alt="Logo aventuriers, nombre de joueurs">
                         <h4>' . $party['number_players'] .
-                    '</div>
+            '</div>
                 </div>
                 <a href="party-1.php"><img class="party__img" src="img/party1.webp" alt="Image médiévale avec château"></a>
             </section>';
@@ -174,10 +180,19 @@ function displayParties(array $parties)
     return $partyContent;
 }
 
-function getUserMaster(PDO $dbCo){
-    $queryMaster = $dbCo->query("SELECT id_user, username, id_user_master FROM users JOIN party_users USING (id_user) JOIN party USING(id_party) WHERE id_user = id_user_master;");
-}
+// var_dump($parties);
 
-// function defineRoleTypePlayer(array $parties){
-//     return 
-// }
+function defineRoleTypePlayer(array $parties): string
+{
+    if ($parties['user_role'] === 1) {
+        return 'icones/dice100-50x50.svg';
+    } else if ($parties['user_role'] === 2) {
+        return 'icones/dice20-50x50.svg';
+    } else if ($parties['user_role'] === 3) {
+        return 'icones/dice12-50x50.svg';
+    } else if ($parties['user_role'] === 4) {
+        return 'icones/dice8-50x50.svg';
+    } else if ($parties['user_role'] === 5) {
+        return 'icones/dice4-50x50.svg';
+    }
+}

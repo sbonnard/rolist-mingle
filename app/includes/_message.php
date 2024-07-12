@@ -7,7 +7,8 @@ $messages = [
 $errors = [
     'csrf' => 'Votre session est invalide.',
     'referer' => 'D\'où venez vous ?',
-    'no_action' => 'Aucune action détectée.'
+    'no_action' => 'Aucune action détectée.',
+    'no_search' => 'La recherche n\'a rien donné.'
 ];
 
 

@@ -3,6 +3,7 @@
 global $dbCo;
 
 $RPG = fetchRPG($dbCo);
+$parties = getPartyDatas($dbCo);
 
 
 /**
@@ -121,4 +122,62 @@ function getResearcFromServer(PDO $dbCo, $userSearch)
     }
 }
 
-// var_dump($RPG); 
+/**
+ * Get datas related to parties from database in a form of an array.
+ *
+ * @param PDO $dbCo - The connection to database.
+ * @return void
+ */
+function getPartyDatas(PDO $dbCo)
+{
+    $queryParty = $dbCo->query("SELECT DISTINCT(id_event) AS event_id, name_event, description_, number_players, id_user_master, id_universe, name_universe, username, u.id_role_type FROM event JOIN party USING (id_event) JOIN universe USING(id_universe) JOIN party_users USING (id_party) JOIN users u USING (id_user);");
+
+    $party = $queryParty->execute();
+
+    $datas = $queryParty->fetchAll(PDO::FETCH_ASSOC);
+
+    return $datas;
+}
+
+
+function displayParties(array $parties)
+{
+    $partyContent = "";
+    foreach ($parties as $party) {
+        $partyContent .=
+            '<section class="container container--swiper">
+                <div class="user">
+                    <picture>
+                        <source class="avatar" srcset="img/avatar-slike-m.webp" media="(min-width: 768px)">
+                        <img class="avatar" src="img/avatar-slike.webp" alt="Avatar de Slike">
+                    </picture>
+                    <h3 class="ttl--big">Slike</h3>
+                    <img class="rolist-icon" src="icones/dice20-50x50.svg" alt="Icône dé 20 Sérieux">
+                </div>
+                <div class="party">
+                    <a href="party-1.php">
+                        <h2 class="ttl--big">' . $party['name_event'] . '</h2>
+                    </a>
+                    <a href="party-1.php"><img src="icones/dice20-50x50.svg" alt="Icône dé 20 Sérieux"></a>
+                    <div class="party__universe">
+                         <h3>' . $party['name_universe'] .
+                    '</div>
+                    <div class="party__players">
+                        <img src="./img/adventurer.svg" alt="Logo aventuriers, nombre de joueurs">
+                        <h4>' . $party['number_players'] .
+                    '</div>
+                </div>
+                <a href="party-1.php"><img class="party__img" src="img/party1.webp" alt="Image médiévale avec château"></a>
+            </section>';
+    }
+
+    return $partyContent;
+}
+
+function getUserMaster(PDO $dbCo){
+    $queryMaster = $dbCo->query("SELECT id_user, username, id_user_master FROM users JOIN party_users USING (id_user) JOIN party USING(id_party) WHERE id_user = id_user_master;");
+}
+
+// function defineRoleTypePlayer(array $parties){
+//     return 
+// }

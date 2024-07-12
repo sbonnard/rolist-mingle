@@ -10,6 +10,7 @@ require_once "./includes/components/_footer.php";
 
 generateToken();
 
+// var_dump($_SERVER['HTTP_REFERER']);
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +56,7 @@ generateToken();
                     <li class="nav__itm">
                         <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
-                    <li class="nav__itm">
+                    <li class="nav__itm" data-avatar="">
                         <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">

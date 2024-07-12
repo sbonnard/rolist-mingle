@@ -1,9 +1,12 @@
 <?php
-header('Content-Type: application/json');
-
 
 require_once './includes/_database.php'; 
 require_once './includes/_function.php';
+require_once './includes/_message.php';
+
+header('Content-Type: application/json');
+
+// Check CSRF
 
 try {
     $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';

@@ -20,6 +20,10 @@
         /* margin-top: 0.75rem; */
     }
 
+    &__avatar:hover {
+        border: 3px solid $primary;
+    }
+
     &__lnk--current {
         font-weight: bold;
         color: $primary;

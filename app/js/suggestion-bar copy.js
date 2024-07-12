@@ -89,11 +89,12 @@ function clearSuggestionsAndInput() {
 
 let allRPGData = [];
 
-suggestionsField.addEventListener('keyup', function (event) {
-    const inputText = suggestionsField.value.trim();
-    if (inputText !== '') {
-            fetchRPGData(inputText).then(data => {
-                allRPGData = data;
+fetchRPGData('').then(data => {
+    allRPGData = data;
+    const suggestionsField = document.getElementById('suggestionsField');
+    suggestionsField.addEventListener('keyup', function (event) {
+        const inputText = suggestionsField.value.trim();
+        if (inputText !== '') {
             const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = "";
             let suggestionList = getFilteredSuggestions(inputText, allRPGData);
@@ -101,9 +102,9 @@ suggestionsField.addEventListener('keyup', function (event) {
                 let newItem = createSuggestionItem(item);
                 suggestions.appendChild(newItem);
             });
-        });
         } else {
             const suggestions = document.getElementById('suggestions');
             suggestions.innerHTML = '';
         }
     });
+});

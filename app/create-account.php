@@ -4,6 +4,7 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
+// require_once './api_rpg.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
@@ -43,19 +44,19 @@ generateToken();
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.html" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.html" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.html" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
+                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.html" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="my-account.html" class="nav__lnk">Mon compte
+                        <a href="my-account.php" class="nav__lnk">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
@@ -68,14 +69,13 @@ generateToken();
     </header>
     
     <main>
-        <a href="index.html" class="hero-banner hero-banner--smaller">
+        <a href="index.php" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h2 class="logo__ttl logo__ttl--smaller">Rolist-Mingle</h1>
         </a>
         
         <?php
-         echo fetchRPG(); 
-         var_dump(getRPGArray($dbCo));
+        //  echo fetchRPG($dbCo) ; 
          ?>
         
         <div class="page-content">
@@ -132,11 +132,9 @@ generateToken();
                             </p>
                         </li>
 
-
-
                         <li class="form__itm form__itm--select">
                             <label class="input__label form__question" for="suggestionsField">
-                                Quelles sont tes univers de jeu préférés ?
+                                Quels sont tes univers de jeu préférés ?
                             </label>
                             <input class="input suggestions__input" type="text" id="suggestionsField" name="suggestionsField" placeholder="Tapez quelque chose..." aria-label="Entre le nom de ton JDR préféré et appuie sur 'entrée' pour valider ton choix">
                             <div class="suggestions__list">
@@ -144,8 +142,6 @@ generateToken();
                             </div>
                             <ul id="selectedItemsList"></ul>
                         </li>
-
-
 
                         <p class="input__required--txt" aria-hidden="true">Les champs marqués d’une <span class="input__required">*</span> sont obligatoires.
                         </p>
@@ -157,7 +153,7 @@ generateToken();
                     <template id="favourite-template">
                         <li class="favourites">
                             <button class="button--minus" data-favourite-minus=""></button>
-                            <p class="txt--bigger suggestions__txt" id="favourite-rpg">Patate</p>
+                            <p class="txt--bigger suggestions__txt" id="favourite-rpg" value="">Univers</p>
                         </li>
                     </template>
 
@@ -172,4 +168,7 @@ generateToken();
     </footer>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
+    <!-- <script type="module" src="js/full-front_suggestion-bar.js"></script> -->
+    <!-- <script type="module" src="js/working-suggestion-bar.js"></script> -->
+
 </body>

@@ -102,8 +102,7 @@ insert into event (id_event, name_event, description_) values (49, 'Parmeliaceae
 insert into event (id_event, name_event, description_) values (50, 'Cyperaceae', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.');
 insert into event (id_event, name_event, description_) values (51, 'Asteraceae', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.');
 insert into event (id_event, name_event, description_) values (52, 'Brassicaceae', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
-
-Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.');
+Morbi non lectus. Aliquam sit');
 insert into event (id_event, name_event, description_) values (53, 'Violaceae', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
 insert into event (id_event, name_event, description_) values (54, 'Rosaceae', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
 

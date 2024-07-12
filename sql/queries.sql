@@ -5,19 +5,18 @@ CREATE DATABASE rolist_mingle;
 
 -- TABLES
 
+CREATE TABLE region (
+    id_region SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    region_name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_region)
+);
+
 CREATE TABLE place (
     id_place SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     name_place VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id_place)
-);
-
-CREATE TABLE chat (
-    id_chat SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    txt_chat VARCHAR(255),
-    date_chat DATETIME NOT NULL,
-    id_user SMALLINT UNSIGNED NOT NULL,
-    PRIMARY KEY (id_chat),
-    FOREIGN KEY (id_user) REFERENCES users(id_user) -- Contact
+    id_region SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id_place),
+    FOREIGN KEY id_region REFERENCES region(id_region)
 );
 
 CREATE TABLE event (
@@ -114,6 +113,16 @@ CREATE TABLE friend (
     id_user SMALLINT UNSIGNED NOT NULL, -- User A
     FOREIGN KEY (id_user) REFERENCES users(id_user)
 );
+
+CREATE TABLE chat (
+    id_chat SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    txt_chat VARCHAR(255),
+    date_chat DATETIME NOT NULL,
+    id_user SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id_chat),
+    FOREIGN KEY (id_user) REFERENCES users(id_user) -- Contact
+);
+
 
 -- INSERT INTO
 
@@ -217,3 +226,6 @@ VALUES
 ("Cyberpunk 2020", 11),
 ("Terres du Milieu", 1)
 ;
+
+-- INSERT INTO region (region_name)
+-- VALUES ('Ain'), ('Aisne'), ('Allier'),('Alpes-de-Haute-Provence'), ('Hautes-Alpes'), ('Alpes-Maritimes'), ('Ardèche'), ('Ardennes'), ('Ariège'), ('Aube'), ('Aude'), ('Aveyron'), ('Bouches-du-Rhône'), ('Calvados'), ('Cantal'), ('Charente'), ('Charente-Maritime'), ('Cher'), ('Corrèze'), ('Corse-du-Sud'), ('Haute-Corse'), ("Côte-d'Or"), ("Côtes d'Armor"), ('Cruse'), ('Dordogne'), ('Doubs'), ('Drôme'),

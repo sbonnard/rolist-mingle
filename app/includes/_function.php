@@ -1,5 +1,10 @@
 <?php
 
+global $dbCo;
+
+$RPG = fetchRPG($dbCo);
+
+
 /**
  * Generates a random token for forms to prevent from CSRF. It also generate a new token after 15 minutes.
  *
@@ -67,39 +72,53 @@ function checkEnvironment(string $file)
     }
 }
 
-
-function fetchRPG(PDO $dbCo)
-{
-    $allRPG = "";
-    
-    $query = $dbCo->prepare("SELECT name_universe FROM universe;");
-
-    $query->execute();
-
-    $RPG = $query->fetchAll(PDO::FETCH_ASSOC);
-    
-    foreach ($RPG as $rpg) {
-    
-        if ($RPG) {
-            $allRPG .= '<li>' . htmlspecialchars($rpg['name_universe']) . '</li>';
-        }
-    }
-    
-    return $allRPG;
-}
-
 /**
- * Get RPG array from a query.
+ * Get RPG datas from a query.
  *
  * @param PDO $dbCo - The connection to database.
  * @return void
  */
-function getRPGArray (PDO $dbCo) {
+function fetchRPG(PDO $dbCo)
+{
     $query = $dbCo->prepare("SELECT name_universe FROM universe;");
 
     $query->execute();
 
     $RPG = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    var_dump($RPG);
+    return $RPG;
 }
+
+/**
+ * Retrieve universes from server based on RPG data.
+ *
+ * @param PDO $dbCo - The connection to database.
+ * @return array - Array of universes matching RPG data.
+ */
+function getResearcFromServer(PDO $dbCo, $userSearch)
+{
+    // Get RPG array thanks to my function.
+    $RPG = fetchRPG($dbCo);
+
+    if (is_array($RPG)) {
+        $likeConditions = [];
+        $bindValues = [];
+        foreach ($RPG as $index => $universe) {
+            $paramName = 'universe_' . $index;
+            $likeConditions[] = "name_universe LIKE :" . $paramName;
+            $bindValues[$paramName] = '%' . $userSearch . '%';
+        }
+
+        $querySearch = $dbCo->prepare("SELECT name_universe FROM universe WHERE " . implode(" OR ", $likeConditions));
+
+        $querySearch->execute($bindValues);
+
+        $results = $querySearch->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
+    } else {
+        return false;
+    }
+}
+
+// var_dump($RPG); 

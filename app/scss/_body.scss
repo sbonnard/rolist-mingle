@@ -6,3 +6,23 @@ body {
     font-family: 'roboto';
     font-size: 1rem;
 }
+
+body::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: $secondary; /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid $secondary; /* creates padding around scroll thumb */
+  }
+
+  /* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $primary $secondary;
+  }

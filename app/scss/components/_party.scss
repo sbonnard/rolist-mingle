@@ -7,8 +7,10 @@
     align-items: center;
     width: 100%;
     max-width: 20rem;
+    height: 14rem;
     border: 2px solid $primary;
     padding: 0.5rem;
+    background-color: $secondary;
 
     &__universe {
         font-size: 1rem;

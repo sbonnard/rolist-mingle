@@ -4,14 +4,10 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
-// require_once './api_rpg.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
-// $RPG = fetchRPG($dbCo);
-
-// var_dump($RPG);
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +80,7 @@ generateToken();
             <section class="container" aria-labelledby="#create-account">
                 <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>
 
-                <form method="post" action="actions.php" aria-label="Formulaire de création de compte" id="create-account-form">
+                <form method="post" action="actions.php" aria-label="Formulaire de création de compte" id="register-form">
                     <ul class="form__container">
                         <li class="form__itm">
                             <label class="input__label" for="username">Nom d'utilisateur <span class="input__required" aria-hidden="true">*</span></label>
@@ -170,7 +166,7 @@ generateToken();
     </footer>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
+    <script type="module" src="js/register.js"></script>
     <!-- <script type="module" src="js/full-front_suggestion-bar.js"></script> -->
-    <!-- <script type="module" src="js/working-suggestion-bar.js"></script> -->
 
 </body>

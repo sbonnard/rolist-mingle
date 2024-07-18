@@ -1,43 +1,50 @@
 <?php
 
-require_once "./_message.php";
-
 // PREVENT FROM CSRF 
 
 /**
- * Generates a random token for forms to prevent from CSRF. It also generate a new token after 15 minutes.
+ * Check fo referer
  *
- * @return void
+ * @return boolean Is the current referer valid ?
  */
-function generateToken()
+function isRefererOk(): bool
 {
-    if (
-        !isset($_SESSION['token'])
-        || !isset($_SESSION['tokenExpire'])
-        || $_SESSION['tokenExpire'] < time()
-    ) {
-        $_SESSION['token'] = md5(uniqid(mt_rand(), true));
-        $_SESSION['tokenExpire'] = time() + 60 * 15;
-    }
+    global $globalURL;
+    var_dump($globalURL);
+    return isset($_SERVER['HTTP_REFERER'])
+        && str_contains($_SERVER['HTTP_REFERER'], $globalURL);
 }
 
 
 /**
- * Prevents from CSRF by checking HTTP_REFERER in $_SERVER and checks if the random token from generateToken() matches in form.
+ * Check for CSRF token
+ *
+ * @param array|null $data Input data
+ * @return boolean Is there a valid toekn in user session ?
+ */
+function isTokenOk(?array $data = null): bool
+{
+    if (!is_array($data)) $data = $_REQUEST;
+
+    return isset($_SESSION['token'])
+        && isset($data['token'])
+        && $_SESSION['token'] === $data['token'];
+}
+
+/**
+ * Verify HTTP referer and token. Redirect with error message.
  *
  * @return void
  */
-function preventFromCSRFAPI($inputData): void
+function preventFromCSRF(string $redirectUrl = 'index.php'): void
 {
-    global $globalURL;
-
-    if (!isset($_SERVER['HTTP_REFERER']) || !str_contains($_SERVER['HTTP_REFERER'], $globalURL)) {
-        triggerError('referer');
+    if (!isRefererOk()) {
+        addError('referer');
+        redirectTo($redirectUrl);
     }
 
-    if (!isset($_SESSION['token']) || !isset($inputData['token']) || $_SESSION['token'] !== $inputData['token']) {
-        triggerError('csrf');
+    if (!isTokenOk()) {
+        addError('csrf');
+        redirectTo($redirectUrl);
     }
-
-    if (isset($error)) triggerError($error);
 }

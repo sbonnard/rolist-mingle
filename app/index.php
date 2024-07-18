@@ -78,6 +78,13 @@ generateToken();
             </a>
         </div>
 
+        <section>
+        <?php
+            echo getErrorMessage($errors);
+            echo getSuccessMessage($messages);
+            ?>
+        </section>
+
         <div class="page-content" id="content">
             <div class="container--desktop">
                 <section class="container grid-counter">

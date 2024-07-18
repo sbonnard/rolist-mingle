@@ -2,10 +2,9 @@
 
 global $dbCo;
 
-$RPG = fetchRPG($dbCo);
-$parties = getPartyDatas($dbCo);
+// $RPG = fetchRPG($dbCo);
+// $parties = getPartyDatas($dbCo);
 // $partiesDatas = getPartyDatasOnly($dbCo);
-
 
 /**
  * Generates a random token for forms to prevent from CSRF. It also generate a new token after 15 minutes.
@@ -239,36 +238,63 @@ function createNewAccount(PDO $dbCo)
 
         $errors = [];
 
+        // Validation des champs et ajout des erreurs éventuelles
+        if (!isset($_REQUEST['username']) || empty(trim($_REQUEST['username']))) {
+            $errors[] = "Username is required.";
+        }
+        if (!isset($_REQUEST['email']) || empty(trim($_REQUEST['email']))) {
+            $errors[] = "Email is required.";
+        }
+        if (!isset($_REQUEST['password']) || empty(trim($_REQUEST['password']))) {
+            $errors[] = "Password is required.";
+        }
+        if (!isset($_REQUEST['player-type']) || empty(trim($_REQUEST['player-type']))) {
+            $errors[] = "Player type is required.";
+        }
+        if (!isset($_REQUEST['locality']) || empty(trim($_REQUEST['locality']))) {
+            $errors[] = "Locality is required.";
+        }
+        if (!isset($_REQUEST['universes']) || !is_array($_REQUEST['universes']) || empty($_REQUEST['universes'])) {
+            $errors[] = "At least one universe must be selected.";
+        }
+
         if (!empty($errors)) {
             $_SESSION['errors'] = $errors;
             return false;
         }
 
         try {
+            $dbCo->beginTransaction();
+
             $mainQuery = $dbCo->prepare('
                 INSERT INTO users (username, email, password, id_role_type, id_place)
                 VALUES (:username, :email, :password, :role, :place);');
 
-            $universeQuery = $dbCo->prepare('
-            INSERT INTO selected_universe (id_universe, id_user) 
-            VALUES (:universe, :user);');
-
             $bindValuesMain = [
                 'username' => htmlspecialchars($_REQUEST['username']),
                 'email' => htmlspecialchars($_REQUEST['email']),
-                'password' => htmlspecialchars($_REQUEST['password']),
-                'role' => htmlspecialchars($_REQUEST['player-type']),
-                'place' => htmlspecialchars($_REQUEST['locality'])
+                'password' => password_hash(htmlspecialchars($_REQUEST['password']), PASSWORD_BCRYPT),
+                'role' => intval($_REQUEST['player-type']),
+                'place' => intval($_REQUEST['locality'])
             ];
 
-            $bindValuesUniverse = [
-                'universe' => intval('id_universe'),
-                'user' => intval('id_user')
-            ];
-
-            $isInsertOk = $mainQuery->execute($bindValuesMain) && $universeQuery->execute($bindValuesUniverse);
+            $isInsertOk = $mainQuery->execute($bindValuesMain);
 
             if ($isInsertOk) {
+                $userId = $dbCo->lastInsertId();
+
+                $universeQuery = $dbCo->prepare('
+                INSERT INTO selected_universe (id_universe, id_user) 
+                VALUES (:universe, :user);');
+
+                foreach ($_REQUEST['universes'] as $universeId) {
+                    $bindValuesUniverse = [
+                        'universe' => intval($universeId),
+                        'user' => intval($userId)
+                    ];
+                    $universeQuery->execute($bindValuesUniverse);
+                }
+
                 addMessage('create_ok');
             } else {
                 addError('create_ko');
@@ -278,7 +304,7 @@ function createNewAccount(PDO $dbCo)
             return $isInsertOk;
 
         } catch (Exception $error) {
-            $_SESSION['errors'] = "create_ko" . $error->getMessage();
+            $_SESSION['errors'] = "create_ko: " . $error->getMessage();
             $dbCo->rollBack();
             return false;
         }

@@ -22,18 +22,7 @@ preventFromCSRFAPI($inputData);
 
 if ($_REQUEST['action'] === 'create_account' && isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) {
 
-    $query = $dbCo->prepare("UPDATE product SET price = price * 1.1 WHERE ref_product = :id;");
-    $query = $dbCo->prepare('
-    INSERT INTO users (username, email, password, id_role_type, id_place)
-    VALUES (:username, :email, :password, :role, :place);');
 
-    $isInsertOk = $query->execute(['id' => intval($_REQUEST['id'])]);
-
-    if ($isInsertOk) {
-        addMessage('create_ok');
-    } else {
-        addError('create_ko');
-    }
 }
 
 

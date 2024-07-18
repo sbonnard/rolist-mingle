@@ -149,7 +149,7 @@ function getPartyDatas(PDO $dbCo): array
     $queryParty = $dbCo->query("
     SELECT DISTINCT(id_event) AS event_id, name_event, description_, number_players, id_user_master, id_universe, name_universe, username, id_user,
            u.id_role_type AS user_role, p.id_role_type AS party_type, ru.icon_URL AS user_icon_URL, rp.icon_URL AS party_icon_URL, 
-           r.id_role_type AS role, image
+           ru.name_role AS user_alt, rp.name_role AS party_alt, r.id_role_type AS role, image
     FROM event 
     JOIN party p USING (id_event) 
     JOIN universe USING (id_universe) 
@@ -168,7 +168,13 @@ function getPartyDatas(PDO $dbCo): array
     return $datas;
 }
 
-function displayParties(array $parties)
+/**
+ * Displays party datas into parties.php.
+ *
+ * @param array $parties - The array containing every party datas.
+ * @return string - HTML template filled with datas.
+ */
+function displayParties(array $parties):string
 {
     $partyContent = "";
     foreach ($parties as $party) {
@@ -178,16 +184,16 @@ function displayParties(array $parties)
                     <picture>
                         <img class="avatar ' . defineRoleTypePlayer($party) . '" src="' . $party['image'] . '" alt="Avatar de ' . $party['username'] . '">
                     </picture>
-                    <a class="lnk" href="user-'. $party['id_user'] .'.php">
+                    <a class="lnk" href="user-' . $party['id_user'] . '.php">
                         <h3 class="ttl--big">' . $party['username'] . '</h3>
                     </a>
-                    <img class="rolist-icon" src="' . $party['user_icon_URL'] . '" alt="Icône dé 20 Sérieux">
+                    <img class="rolist-icon" src="' . $party['user_icon_URL'] . '" alt="'. $party['user_alt'] .'">
                 </div>
                 <div class="party">
-                    <a class="lnk" href="party-'. $party['event_id'] .'.php">
+                    <a class="lnk" href="party-' . $party['event_id'] . '.php">
                         <h2 class="ttl--big party__ttl">' . $party['name_event'] . '</h2>
                     </a>
-                    <a href="party-'. $party['event_id'] .'.php"><img src="' . $party['party_icon_URL'] . '" alt="Icône dé 20 Sérieux"></a>
+                    <a href="party-' . $party['event_id'] . '.php"><img src="' . $party['party_icon_URL'] . '" alt="'. $party['party_alt'] .'"></a>
                     <div class="party__universe">
                          <h3>' . $party['name_universe'] . '</h3>
             </div>
@@ -196,7 +202,7 @@ function displayParties(array $parties)
                         <h4>' . $party['number_players'] .
             '</div>
                 </div>
-                <a href="party-'. $party['event_id'] .'.php"">
+                <a href="party-' . $party['event_id'] . '.php"">
                     <img class="party__img" src="img/party1.webp" alt="Image médiévale avec château">
                 </a>
             </section>';
@@ -205,8 +211,12 @@ function displayParties(array $parties)
     return $partyContent;
 }
 
-// var_dump($parties);
-
+/**
+ * Defines player role and attributes it his/her avatar color.
+ *
+ * @param array $parties - The array containing every party datas.
+ * @return string - A string corresponding to a CSS class.
+ */
 function defineRoleTypePlayer(array $parties): string
 {
     if ($parties['user_role'] === 1) {
@@ -219,5 +229,58 @@ function defineRoleTypePlayer(array $parties): string
         return 'avatar--dice8';
     } else if ($parties['user_role'] === 5) {
         return 'avatar--dice4';
+    }
+}
+
+function createNewAccount(PDO $dbCo)
+{
+    global $errors;
+    if (!empty($_REQUEST)) {
+
+        $errors = [];
+
+        if (!empty($errors)) {
+            $_SESSION['errors'] = $errors;
+            return false;
+        }
+
+        try {
+            $mainQuery = $dbCo->prepare('
+                INSERT INTO users (username, email, password, id_role_type, id_place)
+                VALUES (:username, :email, :password, :role, :place);');
+
+            $universeQuery = $dbCo->prepare('
+            INSERT INTO selected_universe (id_universe, id_user) 
+            VALUES (:universe, :user);');
+
+            $bindValuesMain = [
+                'username' => htmlspecialchars($_REQUEST['username']),
+                'email' => htmlspecialchars($_REQUEST['email']),
+                'password' => htmlspecialchars($_REQUEST['password']),
+                'role' => htmlspecialchars($_REQUEST['player-type']),
+                'place' => htmlspecialchars($_REQUEST['locality'])
+            ];
+
+            $bindValuesUniverse = [
+                'universe' => intval('id_universe'),
+                'user' => intval('id_user')
+            ];
+
+            $isInsertOk = $mainQuery->execute($bindValuesMain) && $universeQuery->execute($bindValuesUniverse);
+
+            if ($isInsertOk) {
+                addMessage('create_ok');
+            } else {
+                addError('create_ko');
+            }
+
+            $dbCo->commit();
+            return $isInsertOk;
+
+        } catch (Exception $error) {
+            $_SESSION['errors'] = "create_ko" . $error->getMessage();
+            $dbCo->rollBack();
+            return false;
+        }
     }
 }

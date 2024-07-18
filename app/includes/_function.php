@@ -82,7 +82,7 @@ function checkEnvironment(string $file)
  */
 function fetchRPG(PDO $dbCo)
 {
-    $query = $dbCo->prepare("SELECT name_universe FROM universe;");
+    $query = $dbCo->prepare("SELECT name_universe, id_universe FROM universe;");
 
     $query->execute();
 

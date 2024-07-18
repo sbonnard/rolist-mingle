@@ -9,8 +9,9 @@ require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
+// $RPG = fetchRPG($dbCo);
 
-// var_dump($_SERVER['HTTP_REFERER']);
+// var_dump($RPG);
 ?>
 
 <!DOCTYPE html>
@@ -153,8 +154,8 @@ generateToken();
 
                     <template id="favourite-template">
                         <li class="favourites">
-                            <button class="button--minus" data-favourite-minus=""></button>
-                            <p class="txt--bigger suggestions__txt" id="favourite-rpg" value="">Univers</p>
+                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="">
+                            <label class="txt--bigger suggestions__txt" id="favourite-rpg" value="">Univers</label>
                         </li>
                     </template>
 

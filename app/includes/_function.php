@@ -25,6 +25,21 @@ function generateToken()
 }
 
 /**
+ * Redirect to the given URL.
+ *
+ * @param string $url
+ * @return void
+ */
+function redirectTo(string $url): void
+{
+    // var_dump('REDIRECT ' . $url);
+    header('Location: ' . $url);
+    exit;
+}
+
+
+
+/**
  * Get HTML script to load front-end assets defined in the manifest.json file for entry points given.
  *
  * @param array $entries - A list of JS files to load.

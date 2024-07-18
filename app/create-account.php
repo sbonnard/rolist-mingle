@@ -84,7 +84,7 @@ generateToken();
             <section class="container" aria-labelledby="#create-account">
                 <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>
 
-                <form method="post" action="create_account" aria-label="Formulaire de création de compte" id="create-account-form">
+                <form method="post" action="actions.php" aria-label="Formulaire de création de compte" id="create-account-form">
                     <ul class="form__container">
                         <li class="form__itm">
                             <label class="input__label" for="username">Nom d'utilisateur <span class="input__required" aria-hidden="true">*</span></label>
@@ -106,27 +106,27 @@ generateToken();
                             <p class="form__question" for="ideal">Déterminons ensemble ton profil de rôliste <span class="input__required" aria-hidden="true">*</span> :</p>
                             <p class="form__itm">
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice1" name="player-type" value="MJ Dé 100">
+                                <input class="form__radio" type="radio" id="choice1" name="player-type" value="1">
                                 <label for="choice1">Moi, MJ, dominant mes joueurs par ma toute puissance
                                     sadique!</label>
                             </div>
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice2" name="player-type" value="Sérieux Dé 20">
+                                <input class="form__radio" type="radio" id="choice2" name="player-type" value="2">
                                 <label for="choice2">Recherche une relation de jeu durable pour une histoire sans
                                     fin.</label>
                             </div>
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice4" name="player-type" value="MJ">
+                                <input class="form__radio" type="radio" id="choice4" name="player-type" value="3">
                                 <label for="choice4">Plan jeu régulier, pour s’amuser quelques soirées ensemble.</label>
                             </div>
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice5" name="player-type" value="MJ">
+                                <input class="form__radio" type="radio" id="choice5" name="player-type" value="4">
                                 <label for="choice5">
                                     Une histoire de JDR courte, deux ou trois soirs, plus si affinité.
                                 </label>
                             </div>
                             <div class="form__itm--box">
-                                <input class="form__radio" type="radio" id="choice3" name="player-type" value="MJ">
+                                <input class="form__radio" type="radio" id="choice3" name="player-type" value="5">
                                 <label for="choice3">
                                     JDR sans lendemain, une partie “quickie”. Je joue le premier soir.
                                 </label>

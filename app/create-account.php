@@ -150,8 +150,8 @@ generateToken();
 
                     <template id="favourite-template">
                         <li class="favourites">
-                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="">
-                            <label class="txt--bigger suggestions__txt" id="favourite-rpg" value="">Univers</label>
+                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="" value="<?php fetchUniverses($dbCo) ?> ">
+                            <label class="txt--bigger suggestions__txt" id="favourite-rpg">Univers</label>
                         </li>
                     </template>
 

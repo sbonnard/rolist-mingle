@@ -173,7 +173,7 @@ function getPartyDatas(PDO $dbCo): array
  * @param array $parties - The array containing every party datas.
  * @return string - HTML template filled with datas.
  */
-function displayParties(array $parties):string
+function displayParties(array $parties): string
 {
     $partyContent = "";
     foreach ($parties as $party) {
@@ -186,13 +186,13 @@ function displayParties(array $parties):string
                     <a class="lnk" href="user-' . $party['id_user'] . '.php">
                         <h3 class="ttl--big">' . $party['username'] . '</h3>
                     </a>
-                    <img class="rolist-icon" src="' . $party['user_icon_URL'] . '" alt="'. $party['user_alt'] .'">
+                    <img class="rolist-icon" src="' . $party['user_icon_URL'] . '" alt="' . $party['user_alt'] . '">
                 </div>
                 <div class="party">
                     <a class="lnk" href="party-' . $party['event_id'] . '.php">
                         <h2 class="ttl--big party__ttl">' . $party['name_event'] . '</h2>
                     </a>
-                    <a href="party-' . $party['event_id'] . '.php"><img src="' . $party['party_icon_URL'] . '" alt="'. $party['party_alt'] .'"></a>
+                    <a href="party-' . $party['event_id'] . '.php"><img src="' . $party['party_icon_URL'] . '" alt="' . $party['party_alt'] . '"></a>
                     <div class="party__universe">
                          <h3>' . $party['name_universe'] . '</h3>
             </div>
@@ -302,11 +302,19 @@ function createNewAccount(PDO $dbCo)
 
             $dbCo->commit();
             return $isInsertOk;
-
         } catch (Exception $error) {
             $_SESSION['errors'] = "create_ko: " . $error->getMessage();
             $dbCo->rollBack();
             return false;
         }
     }
+}
+
+function fetchUniverses($dbCo)
+{
+    $query = $dbCo->prepare('SELECT id_universe, name_universe FROM universe');
+    $query->execute();
+    $universes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    return $universes;
 }

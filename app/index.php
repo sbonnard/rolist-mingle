@@ -77,13 +77,13 @@ generateToken();
                 <img src="img/angle-down.svg" alt="Bouton vers contenu principal">
             </a>
         </div>
-
+<!-- 
         <section>
         <?php
-            echo getErrorMessage($errors);
-            echo getSuccessMessage($messages);
+            // // echo getErrorMessage($errors);
+            // echo getSuccessMessage($messages);
             ?>
-        </section>
+        </section> -->
 
         <div class="page-content" id="content">
             <div class="container--desktop">

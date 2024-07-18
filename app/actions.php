@@ -9,14 +9,12 @@ require_once 'includes/_security.php';
 
 // header('Content-type:application/json');
 
-// if (!isset($_POST['action'])) {
-//     triggerError('no_action');
-// }
+if (!isset($_POST['action'])) {
+    triggerError('no_action');
+}
 
 // Check CSRF
 preventFromCSRF('create-account.php');
-
-
 // Create Account action 
 if ($_POST['action'] === 'create_account') {
     if (!empty($_POST)) {
@@ -43,18 +41,19 @@ if ($_POST['action'] === 'create_account') {
             $errors[] = "At least one universe must be selected.";
         }
 
+        
         if (!empty($errors)) {
             $_SESSION['errors'] = $errors;
             return false;
         }
-
+        
         try {
             $dbCo->beginTransaction();
-
+            
             $mainQuery = $dbCo->prepare('
-                INSERT INTO users (username, email, password, id_role_type, id_place)
-                VALUES (:username, :email, :password, :role, :place);');
-
+            INSERT INTO users (username, email, password, id_role_type, id_place)
+            VALUES (:username, :email, :password, :role, :place);');
+            
             $bindValuesMain = [
                 'username' => htmlspecialchars($_POST['username']),
                 'email' => htmlspecialchars($_POST['email']),
@@ -63,10 +62,14 @@ if ($_POST['action'] === 'create_account') {
                 'place' => intval($_POST['locality'])
             ];
 
-            $isInsertOk = $mainQuery->execute($bindValuesMain);
+            var_dump($bindValuesMain); // Débogage
 
+            
+            var_dump('no error for first query');
+            $isInsertOk = $mainQuery->execute($bindValuesMain);
             if ($isInsertOk) {
                 $userId = $dbCo->lastInsertId();
+                var_dump("no error for now");
 
                 $universeQuery = $dbCo->prepare('
                 INSERT INTO selected_universe (id_universe, id_user) 
@@ -77,6 +80,9 @@ if ($_POST['action'] === 'create_account') {
                         'universe' => intval($universeId),
                         'user' => intval($userId)
                     ];
+
+            var_dump($bindValuesUniverse); // Débogage
+
                     $universeQuery->execute($bindValuesUniverse);
                 }
 
@@ -88,9 +94,7 @@ if ($_POST['action'] === 'create_account') {
             $dbCo->commit();
             
         } catch (Exception $error) {
-
             var_dump('Raté');
-            var_dump($errors);
             $_SESSION['errors'] = "create_ko: " . $error->getMessage();
             $dbCo->rollBack();
             return false;

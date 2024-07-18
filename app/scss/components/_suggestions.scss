@@ -10,13 +10,24 @@
     border-left: 1px solid $primary;
     cursor: pointer;
 
-
+    &__itm {
+        width: 100%;
+        font-size: 1rem;
+        text-align: left;
+        color: $white;
+        padding: 0.5rem;
+    }
 
     &__input {
         position: relative;
     }
 
     &__itm:hover {
+        background-color: $primary;
+        color: $secondary;
+    }
+
+    &__itm:focus {
         background-color: $primary;
         color: $secondary;
     }

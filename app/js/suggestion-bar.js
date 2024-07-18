@@ -52,7 +52,7 @@ function getFilteredSuggestions(input, rpgList) {
  * @returns {Element} - The item in the DOM as a RPG suggestion.
  */
 function createSuggestionItem(item) {
-    let newItem = document.createElement('div');
+    let newItem = document.createElement('button');
     newItem.classList.add('js-suggestion', 'suggestions__itm');
     newItem.setAttribute('id', item.id);
     newItem.addEventListener('click', function () {

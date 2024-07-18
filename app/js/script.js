@@ -15,10 +15,19 @@ burgerMenu.addEventListener('click', function () {
 
 // Responsive avatar link //
 
-const myAccountLink = document.querySelectorAll('[data-avatar]');
+const myAccountLi = document.querySelector('[data-avatar]');
+const myAccountLink = document.querySelector('.js-link-hover');
+const myAccountAvatar = document.querySelector('.js-avatar-hover');
 
+console.log(myAccountLi);
 console.log(myAccountLink);
 
-myAccountLink.addEventListener('mouseover', function(){
-    myAccountLink.classList.toggle('nav__account-link');
+myAccountLi.addEventListener('mouseover', function(e){
+        myAccountLink.classList.toggle('nav__account-link');
+        myAccountAvatar.classList.toggle('nav__account-avatar');
+})
+
+myAccountLi.addEventListener('mouseout', function(e){
+        myAccountLink.classList.remove('nav__account-link');
+        myAccountAvatar.classList.remove('nav__account-avatar');
 })

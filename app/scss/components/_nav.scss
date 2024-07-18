@@ -42,5 +42,13 @@
         &__lnk:hover {
             color: $primary;
         }
+
+        &__account-link {
+            color: $primary;
+        }
+
+        &__account-avatar {
+            border: 4px solid $primary;
+        }
     }
 }

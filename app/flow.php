@@ -42,11 +42,11 @@ require "./includes/components/_footer.php";
                     <li class="nav__itm">
                         <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
-                    <li class="nav__itm">
-                        <a href="my-account.php" class="nav__lnk">Mon compte
+                    <li class="nav__itm" data-avatar="">
+                        <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
-                                <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles">
+                                <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
                             </picture>
                         </a>
                     </li>

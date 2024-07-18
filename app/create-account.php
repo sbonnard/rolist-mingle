@@ -57,10 +57,10 @@ generateToken();
                         <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm" data-avatar="">
-                        <a href="my-account.php" class="nav__lnk" data-avatar="">Mon compte
-                            <picture data-avatar="">
-                                <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)" data-avatar="">
-                                <img class="nav__avatar" src="img/avatar.webp" alt="icones personnelles" data-avatar="">
+                        <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte
+                            <picture>
+                                <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
+                                <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
                             </picture>
                         </a>
                     </li>

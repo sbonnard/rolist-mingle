@@ -132,7 +132,7 @@ function getResearcFromServer(PDO $dbCo, $userSearch)
 function getPartyDatas(PDO $dbCo): array
 {
     $queryParty = $dbCo->query("
-    SELECT DISTINCT(id_event) AS event_id, name_event, description_, number_players, id_user_master, id_universe, name_universe, username, 
+    SELECT DISTINCT(id_event) AS event_id, name_event, description_, number_players, id_user_master, id_universe, name_universe, username, id_user,
            u.id_role_type AS user_role, p.id_role_type AS party_type, ru.icon_URL AS user_icon_URL, rp.icon_URL AS party_icon_URL, 
            r.id_role_type AS role, image
     FROM event 
@@ -163,14 +163,16 @@ function displayParties(array $parties)
                     <picture>
                         <img class="avatar ' . defineRoleTypePlayer($party) . '" src="' . $party['image'] . '" alt="Avatar de ' . $party['username'] . '">
                     </picture>
-                    <h3 class="ttl--big">' . $party['username'] . '</h3>
+                    <a class="lnk" href="user-'. $party['id_user'] .'.php">
+                        <h3 class="ttl--big">' . $party['username'] . '</h3>
+                    </a>
                     <img class="rolist-icon" src="' . $party['user_icon_URL'] . '" alt="Icône dé 20 Sérieux">
                 </div>
                 <div class="party">
-                    <a href="party-1.php">
+                    <a class="lnk" href="party-'. $party['event_id'] .'.php">
                         <h2 class="ttl--big party__ttl">' . $party['name_event'] . '</h2>
                     </a>
-                    <a href="party-1.php"><img src="' . $party['party_icon_URL'] . '" alt="Icône dé 20 Sérieux"></a>
+                    <a href="party-'. $party['event_id'] .'.php"><img src="' . $party['party_icon_URL'] . '" alt="Icône dé 20 Sérieux"></a>
                     <div class="party__universe">
                          <h3>' . $party['name_universe'] . '</h3>
             </div>
@@ -179,7 +181,9 @@ function displayParties(array $parties)
                         <h4>' . $party['number_players'] .
             '</div>
                 </div>
-                <a href="party-1.php"><img class="party__img" src="img/party1.webp" alt="Image médiévale avec château"></a>
+                <a href="party-'. $party['event_id'] .'.php"">
+                    <img class="party__img" src="img/party1.webp" alt="Image médiévale avec château">
+                </a>
             </section>';
     }
 

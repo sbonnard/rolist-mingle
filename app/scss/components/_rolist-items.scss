@@ -29,9 +29,21 @@
         border: 4px solid $dice4;
     }
 
+    &__lnk {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        margin: 0 6rem;
+    }
+
     @media screen and (min-width: 768px) {
         & {
             width: 3rem;
+        }
+
+        &__lnk:hover {
+            color: $primary;
         }
     }
 }

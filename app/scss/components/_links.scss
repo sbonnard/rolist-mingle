@@ -1,6 +1,10 @@
 /* Links */
 
 .lnk {
+    &:hover {
+        color: $primary;
+    }
+
     &--underlined {
         border-bottom: 1px solid $white;
     }

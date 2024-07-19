@@ -80,8 +80,8 @@ generateToken();
 
         <section>
         <?php
-            echo getErrorMessage($errors);
-            echo getSuccessMessage($messages);
+            // echo getErrorMessage($errors);
+            // echo getSuccessMessage($messages);
             ?>
         </section>
 

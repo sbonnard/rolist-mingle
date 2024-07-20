@@ -4,10 +4,12 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
+require_once './includes/_datas.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
+
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +152,7 @@ generateToken();
 
                     <template id="favourite-template">
                         <li class="favourites">
-                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="" value="<?php fetchUniverses($dbCo) ?> ">
+                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="" value="<?= $RPG['id_universe'] ?> ">
                             <label class="txt--bigger suggestions__txt" id="favourite-rpg">Univers</label>
                         </li>
                     </template>
@@ -162,7 +164,7 @@ generateToken();
     </main>
 
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter() ?>
     </footer>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>

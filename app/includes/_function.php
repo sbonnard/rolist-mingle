@@ -92,9 +92,9 @@ function checkEnvironment(string $file)
  * Get RPG datas from a query.
  *
  * @param PDO $dbCo - The connection to database.
- * @return void
+ * @return array
  */
-function fetchRPG(PDO $dbCo)
+function fetchRPG(PDO $dbCo):array
 {
     $query = $dbCo->prepare("SELECT name_universe, id_universe FROM universe;");
 
@@ -310,11 +310,11 @@ function createNewAccount(PDO $dbCo)
     }
 }
 
-function fetchUniverses($dbCo)
-{
-    $query = $dbCo->prepare('SELECT id_universe, name_universe FROM universe');
-    $query->execute();
-    $universes = $query->fetchAll(PDO::FETCH_ASSOC);
+// function fetchUniverses($dbCo)
+// {
+//     $query = $dbCo->prepare('SELECT id_universe, name_universe FROM universe');
+//     $query->execute();
+//     $universes = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    return $universes;
-}
+//     return $universes;
+// }

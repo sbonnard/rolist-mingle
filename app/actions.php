@@ -56,7 +56,7 @@ if ($_POST['action'] === 'create_account') {
             
             $bindValuesMain = [
                 'username' => htmlspecialchars($_POST['username']),
-                'email' => htmlspecialchars($_POST['email']),
+                'email' => strip_tags($_POST['email']),
                 'password' => password_hash(htmlspecialchars($_POST['password']), PASSWORD_BCRYPT),
                 'role' => intval($_POST['player-type']),
                 'place' => intval($_POST['locality'])

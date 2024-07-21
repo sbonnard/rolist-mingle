@@ -14,12 +14,12 @@ generateToken();
 
 <!DOCTYPE html>
 <html lang="fr">
-    
+
 <head>
-    <?php 
-     if ($_ENV['ENV_TYPE'] === 'dev') {
-         // Developement integration for vite with run dev
-         echo fetchHead('Rolist-Mingle');
+    <?php
+    if ($_ENV['ENV_TYPE'] === 'dev') {
+        // Developement integration for vite with run dev
+        echo fetchHead('Rolist-Mingle');
     } else if ($_ENV['ENV_TYPE'] === 'prod') {
         // Production integration for vite with run build
         echo loadAssets([$file]);
@@ -67,17 +67,17 @@ generateToken();
             </nav>
         </div>
     </header>
-    
+
     <main>
         <a href="index.php" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h2 class="logo__ttl logo__ttl--smaller">Rolist-Mingle</h1>
         </a>
-        
+
         <?php
         //  echo fetchRPG($dbCo) ; 
-         ?>
-        
+        ?>
+
         <div class="page-content">
             <section class="container" aria-labelledby="#create-account">
                 <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>
@@ -92,10 +92,10 @@ generateToken();
                             <label class="input__label" for="email">Ton Email <span class="input__required" aria-hidden="true">*</span></label>
                             <input class="input" type="email" name="email" id="email" placeholder="exemple@email.com" aria-label="Renseigne l'email lié à ton compte" autocomplete="email" required>
                         </li>
-                        <li class="form__itm">
+                        <!-- <li class="form__itm">
                             <label class="input__label" for="locality">Localité</label>
                             <input class="input" type="text" name="locality" id="locality" placeholder="CAEN" autocapitalize="" autocomplete="address-level2">
-                        </li>
+                        </li> -->
                         <li class="form__itm">
                             <label class="input__label" for="password">Mot de passe <span class="input__required" aria-hidden="true">*</span></label>
                             <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required>
@@ -152,7 +152,7 @@ generateToken();
 
                     <template id="favourite-template">
                         <li class="favourites">
-                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="" value="<?= $RPG['id_universe'] ?> ">
+                            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="favourite-checkbox" data-favourite-minus="" value="">
                             <label class="txt--bigger suggestions__txt" id="favourite-rpg">Univers</label>
                         </li>
                     </template>

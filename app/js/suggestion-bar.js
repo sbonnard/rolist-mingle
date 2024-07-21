@@ -27,7 +27,8 @@ async function fetchRPGData(searchTerm) {
 
         const data = await response.json();
 
-        return data.map(rpg => ({ name: rpg.name_universe }));
+        console.log(data.map(rpg => ({ id: rpg.id_universe, name: rpg.name_universe })));
+        return data.map(rpg => ({ id: rpg.id_universe, name: rpg.name_universe }));
     } catch (error) {
         console.error('Failed to fetch RPG data:', error);
         return [];
@@ -54,7 +55,7 @@ function getFilteredSuggestions(input, rpgList) {
 function createSuggestionItem(item) {
     let newItem = document.createElement('button');
     newItem.classList.add('js-suggestion', 'suggestions__itm');
-    newItem.setAttribute('id', item.id);
+    newItem.setAttribute('value', item.id);
     newItem.addEventListener('click', function () {
         addItemToSelectedList(item);
         clearSuggestionsAndInput();
@@ -70,12 +71,23 @@ function createSuggestionItem(item) {
  */
 function addItemToSelectedList(item) {
     selectedRPG.push(item);
-    template.content.getElementById('favourite-rpg').innerHTML = item.name;
-    let clone = document.importNode(template.content, true);
-    clone.querySelector('.button--minus').addEventListener('click', function (event) {
+    const clone = document.importNode(template.content, true);
+    
+    const checkbox = clone.querySelector('.button--minus');
+    checkbox.value = item.id;  // Assigner id_universe à la valeur de la checkbox
+
+    const label = clone.querySelector('#favourite-rpg');
+    label.textContent = item.name;
+
+    checkbox.addEventListener('click', function (event) {
+        const index = selectedRPG.findIndex(rpg => rpg.id === item.id);
+        if (index !== -1) {
+            selectedRPG.splice(index, 1);
+        }
         event.target.parentNode.remove();
         suggestions.innerHTML = '';
     });
+
     selectedItemsList.appendChild(clone);
 }
 
@@ -99,6 +111,7 @@ suggestionsField.addEventListener('keyup', function (event) {
             let suggestionList = getFilteredSuggestions(inputText, allRPGData);
             suggestionList.forEach(item => {
                 let newItem = createSuggestionItem(item);
+                newItem.setAttribute('value', item.id);
                 suggestions.appendChild(newItem);
             });
         });

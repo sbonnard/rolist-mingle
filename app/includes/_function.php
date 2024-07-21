@@ -125,7 +125,7 @@ function getResearcFromServer(PDO $dbCo, $userSearch)
             $bindValues[$paramName] = '%' . $userSearch . '%';
         }
 
-        $querySearch = $dbCo->prepare("SELECT name_universe FROM universe WHERE " . implode(" OR ", $likeConditions));
+        $querySearch = $dbCo->prepare("SELECT id_universe, name_universe FROM universe WHERE " . implode(" OR ", $likeConditions));
 
         $querySearch->execute($bindValues);
 

@@ -19,8 +19,6 @@ const myAccountLi = document.querySelector('[data-avatar]');
 const myAccountLink = document.querySelector('.js-link-hover');
 const myAccountAvatar = document.querySelector('.js-avatar-hover');
 
-console.log(myAccountLi);
-console.log(myAccountLink);
 
 myAccountLi.addEventListener('mouseover', function(e){
         myAccountLink.classList.toggle('nav__account-link');

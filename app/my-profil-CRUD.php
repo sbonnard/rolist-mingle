@@ -9,8 +9,9 @@ require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
-
-var_dump(fetchUser8Datas($dbCo));
+// var_dump(fetchUser8Datas($dbCo));
+$userDatas = fetchUser8Datas($dbCo);
+var_dump($userDatas);
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +66,11 @@ var_dump(fetchUser8Datas($dbCo));
 
                 <section class="container my-infos" aria-labelledby="my-infos">
                     <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
-                    <img src="img/avatar-seon.svg" alt="Mon image de profil">
-                    <h2 class="ttl--big user__name">SeonPrim</h2>
+                    <img src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
+                    <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>
                     <button class="button--pen"></button>
-                    <img class="user__profil-dice" src="icones/dé100.webp" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
+                    <p>Email : <?= $userDatas[0]['email'] ?> </p>
+                    <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
                 </section>
 
                 <form class="container" action="actions.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">

@@ -1,0 +1,11 @@
+.notif {
+    font-size: 1.25rem;
+
+    &--error {
+        color: $zinzolin;
+    }
+
+    &--success {
+        color: $gnome;
+    }
+}

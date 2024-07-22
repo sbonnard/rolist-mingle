@@ -2,7 +2,10 @@
 
 $messages = [
     'insert_ok' => 'JDR ajoutée.',
-    'create_ok' => 'Réussite critique lors de la création de compte !'
+    'create_ok' => 'Réussite critique lors de la création de compte !',
+    'update_ok_bio' => 'Réussite critique lors de la mise à jour de la bio !',
+    'update_ok_pwd' => 'Réussite critique lors de la mise à jour du mot de passe !',
+    'update_ok_favourites' => 'Réussite critique lors de la modification d\'univers favoris !'
 ];
 
 $errors = [
@@ -10,7 +13,10 @@ $errors = [
     'referer' => 'D\'où venez vous ?',
     'no_action' => 'Aucune action détectée.',
     'no_search' => 'La recherche n\'a rien donné.',
-    'create_ko' => 'Échec critique lors de la création de compte !'
+    'create_ko' => 'Échec critique lors de la création de compte !',
+    'update_ko_bio' => 'Échec critique lors de la mise à jour de la bio !',
+    'update_ko_pwd' => 'Échec critique lors de la mise à jour du mot de passe !',
+    'update_ko_favourites' => 'Échec critique lors de la modification d\'univers favoris !'
 ];
 
 

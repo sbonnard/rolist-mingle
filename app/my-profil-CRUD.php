@@ -66,7 +66,7 @@ var_dump($userDatas);
 
                 <section class="container my-infos" aria-labelledby="my-infos">
                     <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
-                    <img src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
+                    <img class="avatar user__avatar avatar--dice12" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
                     <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>
                     <button class="button--pen"></button>
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>

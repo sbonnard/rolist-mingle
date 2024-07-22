@@ -60,12 +60,12 @@ generateToken();
         <div class="page-content">
             <div class="container--desktop container--column">
 
-                <section class="container" aria-labelledby="my-infos">
+                <section class="container my-infos" aria-labelledby="my-infos">
                     <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
                     <img src="img/avatar-seon.svg" alt="Mon image de profil">
-                    <h2 class="ttl--big">SeonPrim</h2>
+                    <h2 class="ttl--big user__name">SeonPrim</h2>
                     <button class="button--pen"></button>
-                    <img src="icones/dé100.webp" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
+                    <img class="user__profil-dice" src="icones/dé100.webp" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
                 </section>
 
                 <form class="container" action="get" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">

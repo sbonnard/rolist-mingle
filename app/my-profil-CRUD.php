@@ -11,7 +11,7 @@ require_once "./includes/components/_footer.php";
 generateToken();
 // var_dump(fetchUser8Datas($dbCo));
 $userDatas = fetchUser8Datas($dbCo);
-var_dump($userDatas);
+// var_dump($userDatas);
 ?>
 
 <!DOCTYPE html>
@@ -73,47 +73,71 @@ var_dump($userDatas);
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
                 </section>
 
-                <form class="container" action="actions.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                <section class="container">
+                    <h3 class="ttl ttl--primary ttl--CRUD">Modifier</h3>
+                    <div class="container--links">
+                        <a class="lnk" href="?action=modify-bio">Ma bio</a>
+                        <span> | </span>
+                        <a class="lnk" href="?action=modify-pwd">Mon Mot de Passe</a>
+                        <span> | </span>
+                        <a class="lnk" href="?action=modify-favourites">Mes Univers Favoris</a>
+                    </div>
+                </section>
+
+                <?php
+                if (empty($_GET) || $_GET["action"] === "modify-bio") {
+                    echo
+                    '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <h3 id="my-bio" class="ttl--big">Ma bio</h3>
                     <ul class="form__container">
                         <li class="form__itm">
                             <textarea class="input input__text-area" name="bio" id="bio" placeholder="Ma petite vie..."></textarea>
                         </li>
                         <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
-                        <input type="hidden" name="action" value="save_account">
-                    </ul>
-                </form>
+                        <input type="hidden" name="action" value="modify-bio">
+                        </ul>
+                    </form>';
+                }
 
-                <form class="container" action="actions.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
-                    <ul class="form__container">
-                        <li class="form__itm">
-                            <label for="password" class="input__label">Changer le mot de passe</label>
-                            <input type="password" class="input" name="password" placeholder="•••••••••••">
-                        </li>
+                if (!empty($_GET) && $_GET["action"] === "modify-pwd") {
+                    echo
+                    '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                        <ul class="form__container">
+                            <li class="form__itm">
+                                <label for="password" class="input__label">Changer le mot de passe</label>
+                                <input type="password" class="input" name="password" placeholder="•••••••••••">
+                            </li>
+                            <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
+                            <input type="hidden" name="action" value="modify-pwd">
+                        </ul>
+                    </form>';
+                }
 
-                        <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
-                        <input type="hidden" name="action" value="save_password">
-                    </ul>
-
-                </form>
-
-                <form class="container" action="actions.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                if (!empty($_GET) && $_GET["action"] === "modify-favourites") {
+                    echo
+                    '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
                         <li class="form__itm form__itm--select">
                             <label class="input__label form__question" for="suggestionsField">
                                 Quelles sont tes univers de jeu préférés ?
                             </label>
-                            <input class="input suggestions__input" type="text" id="suggestionsField" name="suggestionsField" placeholder="Tapez quelque chose..." aria-label="Entre le nom de ton JDR préféré et appuie sur 'entrée' pour valider ton choix">
+                            <input class="input suggestions__input" type="text" id="suggestionsField" name="suggestionsField" placeholder="Tapez quelque chose..." aria-label="Entre le nom de ton JDR préféré et appuie sur \'entrée\' pour valider ton choix">
                             <div class="suggestions__list">
                                 <div class="suggestions" id="suggestions"></div>
                             </div>
                             <ul id="selectedItemsList"></ul>
                         </li>
-                        
-                                        <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
-                                        <input type="hidden" name="action" value="save_universe">
+
+                        <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
+                        <input type="hidden" name="action" value="save_universe">
                     </ul>
-                </form>
+                </form>';
+                }
+                ?>
+
+
+
+                
                 </ul>
 
 

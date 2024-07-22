@@ -36,6 +36,12 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    &--pen {
+        background-image: url(../../img/feather.svg);
+        width: 2rem;
+        aspect-ratio: 1;
+    }
 }
 
 

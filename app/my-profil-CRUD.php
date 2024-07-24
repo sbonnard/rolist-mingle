@@ -5,12 +5,15 @@ require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
 require_once './includes/_profilCRUD.php';
+require_once './includes/_message.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
 // var_dump(fetchUser8Datas($dbCo));
 $userDatas = fetchUser8Datas($dbCo);
+$favourites = fetchUser8Favourites($dbCo);
+$rpg = fetchRPG($dbCo);
 // var_dump($userDatas);
 ?>
 
@@ -36,19 +39,19 @@ $userDatas = fetchUser8Datas($dbCo);
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm">
-                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="#" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="#" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
+                        <a href="#" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
+                        <a href="#" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm" data-avatar="">
-                        <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte
+                        <a href="#" class="nav__lnk js-link-hover">Mon compte
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
@@ -68,12 +71,17 @@ $userDatas = fetchUser8Datas($dbCo);
                     <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
                     <img class="avatar user__avatar avatar--dice12" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
                     <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>
-                    <button class="button--pen"></button>
+                    <!-- <button class="button--pen"></button> -->
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
                 </section>
 
+
                 <section class="container">
+                    <?php
+                   echo getSuccessMessage($messages);
+                   echo getErrorMessage($errors);
+                    ?>
                     <h3 class="ttl ttl--primary ttl--CRUD">Modifier</h3>
                     <div class="container--links">
                         <a class="lnk" href="?action=modify-bio">Ma bio</a>
@@ -85,13 +93,13 @@ $userDatas = fetchUser8Datas($dbCo);
                 </section>
 
                 <?php
-                if (empty($_GET) || $_GET["action"] === "modify-bio") {
+                if (!empty($_GET) && $_GET["action"] === "modify-bio") {
                     echo
                     '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <h3 id="my-bio" class="ttl--big">Ma bio</h3>
                     <ul class="form__container">
                         <li class="form__itm">
-                            <textarea class="input input__text-area" name="bio" id="bio" placeholder="Ma petite vie..."></textarea>
+                            <textarea class="input input__text-area" name="bio" id="bio" placeholder="Ma petite vie..." >'.$userDatas[0]['bio'].'</textarea>
                         </li>
                         <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="modify-bio">
@@ -113,7 +121,7 @@ $userDatas = fetchUser8Datas($dbCo);
                     </form>';
                 }
 
-                if (!empty($_GET) && $_GET["action"] === "modify-favourites") {
+                if (empty($_GET) || $_GET["action"] === "modify-favourites") {
                     echo
                     '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
@@ -125,7 +133,9 @@ $userDatas = fetchUser8Datas($dbCo);
                             <div class="suggestions__list">
                                 <div class="suggestions" id="suggestions"></div>
                             </div>
-                            <ul id="selectedItemsList"></ul>
+                            <ul id="selectedItemsList">'
+                            . getFavourites($favourites) . 
+                            '</ul>
                         </li>
 
                         <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
@@ -134,10 +144,6 @@ $userDatas = fetchUser8Datas($dbCo);
                 </form>';
                 }
                 ?>
-
-
-
-                
                 </ul>
 
 
@@ -145,8 +151,8 @@ $userDatas = fetchUser8Datas($dbCo);
 
                 <template id="favourite-template">
                     <li class="favourites">
-                        <button class="button--minus" data-favourite-minus=""></button>
-                        <p class="txt--bigger" id="favourite-rpg">Patate</p>
+                        <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="favourite-checkbox" data-favourite-minus="" data-delete-task-id=""  value="">
+                        <label class="txt--bigger suggestions__txt" id="favourite-rpg">Univers</label>
                     </li>
                 </template>
 
@@ -164,8 +170,8 @@ $userDatas = fetchUser8Datas($dbCo);
     </footer>
 
     <script type="module" src="js/script.js"></script>
-    <!-- <script type="module" src="js/suggestion-bar.js"></script> -->
-    <script type="module" src="js/full-front_suggestion-bar.js"></script>
+    <script type="module" src="js/suggestion-bar.js"></script>
+    <script type="module" src="js/async/CRUD.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
 function isRefererOk(): bool
 {
     global $globalURL;
-    var_dump($globalURL);
+    // var_dump($globalURL);
     return isset($_SERVER['HTTP_REFERER'])
         && str_contains($_SERVER['HTTP_REFERER'], $globalURL);
 }
@@ -36,15 +36,35 @@ function isTokenOk(?array $data = null): bool
  *
  * @return void
  */
-function preventFromCSRF(string $redirectUrl = 'index.php'): void
+function preventFromCSRF(): void
 {
     if (!isRefererOk()) {
         addError('referer');
-        redirectTo($redirectUrl);
+        exit;
     }
 
     if (!isTokenOk()) {
         addError('csrf');
-        redirectTo($redirectUrl);
+        exit;
     }
+}
+
+/**
+ * Prevents from CSRF by checking HTTP_REFERER in $_SERVER and checks if the random token from generateToken() matches in form.
+ *
+ * @return void
+ */
+function preventFromCSRFAPI($inputData): void
+{
+    global $globalURL;
+
+    if (!isset($_SERVER['HTTP_REFERER']) || !str_contains($_SERVER['HTTP_REFERER'], $globalURL)) {
+        triggerError('referer');
+    }
+
+    if (!isset($_SESSION['token']) || !isset($inputData['token']) || $_SESSION['token'] !== $inputData['token']) {
+        triggerError('csrf');
+    }
+
+    if (isset($error)) triggerError($error);
 }

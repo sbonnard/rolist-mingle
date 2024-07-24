@@ -16,6 +16,8 @@ To build images and run all containers and volumes
 docker-compose up -d
 ```
 
+To display examples datas, you can launch PhP myAdmin and import sql/rolist_mingle export.sql
+
 ## NPM
 
 ```sh

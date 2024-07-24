@@ -5,7 +5,8 @@ $messages = [
     'create_ok' => 'Réussite critique lors de la création de compte !',
     'update_ok_bio' => 'Réussite critique lors de la mise à jour de la bio !',
     'update_ok_pwd' => 'Réussite critique lors de la mise à jour du mot de passe !',
-    'update_ok_favourites' => 'Réussite critique lors de la modification d\'univers favoris !'
+    'update_ok_favourites' => 'Réussite critique lors de la modification d\'univers favoris !',
+    'delete_ok' => 'L\'univers a été supprimé.'
 ];
 
 $errors = [

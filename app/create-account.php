@@ -30,7 +30,7 @@ generateToken();
 </head>
 
 <body>
-    <header class="header">
+<header class="header">
         <div class="container__header">
             <img class="header__img" src="logo/logo-rolist-mingle.svg" alt="logo de rolist-mingle représentant un dé 20 de JDR">
             <a href="#">
@@ -44,7 +44,7 @@ generateToken();
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.php" class="nav__lnk">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="flow.php" class="nav__lnk" aria-current="page">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
                         <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>

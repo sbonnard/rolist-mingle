@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (this.checked === false) {
                 const universeId = this.getAttribute('data-delete-rpg-id');
 
+                const token = "<?php echo $_SESSION['token']; ?>";
+
                 fetch('api-CRUD.php', {
                     method: 'DELETE',
                     headers: {
@@ -13,25 +15,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                     body: JSON.stringify({
                         action: 'delete',
-                        id: universeId
+                        id: universeId,
+                        token: token
                     })
                 })
-                    .then(response => {
-                        console.log('Raw response:', response);
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        console.log('Parsed response:', data);
-                        if (data.success) {
-                            this.closest('.favourites').remove();
-                        } else {
-                            console.error('Failed to delete favourite:', data.message);
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        this.closest('.favourites').remove();
+                    } else {
+                        console.error('Failed to delete favourite:', data.message);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
             }
         });
     });

@@ -10,11 +10,9 @@ require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
-// var_dump(fetchUser8Datas($dbCo));
 $userDatas = fetchUser8Datas($dbCo);
 $favourites = fetchUser8Favourites($dbCo);
 $rpg = fetchRPG($dbCo);
-// var_dump($userDatas);
 ?>
 
 <!DOCTYPE html>

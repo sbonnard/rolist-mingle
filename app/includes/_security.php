@@ -54,17 +54,19 @@ function preventFromCSRF(): void
  *
  * @return void
  */
-function preventFromCSRFAPI($inputData): void
+function preventFromCSRFAPI(array $inputData): void
 {
     global $globalURL;
 
     if (!isset($_SERVER['HTTP_REFERER']) || !str_contains($_SERVER['HTTP_REFERER'], $globalURL)) {
-        triggerError('referer');
+        addError('referer');
+        echo json_encode(['success' => false, 'message' => $GLOBALS['errors']['referer']]);
+        exit;
     }
 
     if (!isset($_SESSION['token']) || !isset($inputData['token']) || $_SESSION['token'] !== $inputData['token']) {
-        triggerError('csrf');
+        addError('csrf');
+        echo json_encode(['success' => false, 'message' => $GLOBALS['errors']['csrf']]);
+        exit;
     }
-
-    if (isset($error)) triggerError($error);
 }

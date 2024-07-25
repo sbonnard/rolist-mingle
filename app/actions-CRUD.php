@@ -62,7 +62,7 @@ if (!empty($_POST)) {
 
                 $checkQuery = $dbCo->prepare('
                     SELECT COUNT(*) FROM selected_universe 
-                    WHERE id_universe = :universe AND id_user = :user
+                    WHERE id_universe = :universe AND id_user =:user
                 ');
 
                 $checkQuery->execute(['universe' => $universeId, 'user' => $userId]);

@@ -65,7 +65,7 @@ $rpg = fetchRPG($dbCo);
         <div class="page-content">
             <div class="container--desktop container--column">
 
-                <section class="container my-infos" aria-labelledby="my-infos">
+                <section class="container user__infos" aria-labelledby="my-infos">
                     <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
                     <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
                     <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>

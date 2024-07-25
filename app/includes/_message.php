@@ -17,7 +17,10 @@ $errors = [
     'create_ko' => 'Échec critique lors de la création de compte !',
     'update_ko_bio' => 'Échec critique lors de la mise à jour de la bio !',
     'update_ko_pwd' => 'Échec critique lors de la mise à jour du mot de passe !',
-    'update_ko_favourites' => 'Échec critique lors de la modification d\'univers favoris !'
+    'update_ko_favourites' => 'Échec critique lors de la modification d\'univers favoris !',
+    'email_ko' => 'Merci d\'entrer votre mot de passe',
+    'password_ko' => 'Merci de saisir votre mot de passe',
+    'login_ko' => 'Échec critique lors de la saisie du mot de passe ou de l\'email !'
 ];
 
 

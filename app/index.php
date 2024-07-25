@@ -4,6 +4,8 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
+require_once './includes/_message.php';
+require_once './includes/_security.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
@@ -151,7 +153,7 @@ generateToken();
 
                 <section class="container" aria-labelledby="connexion grid-form">
                     <h2 class="ttl ttl--primary" id="connexion">connexion</h2>
-                    <form action="" method="get" aria-label="Formulaire de connexion">
+                    <form action="actions-login.php" method="post" aria-label="Formulaire de connexion">
                         <ul class="form__container">
                             <li class="form__itm">
                                 <label class="input__label" for="username">email</label>
@@ -164,11 +166,20 @@ generateToken();
                                     <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
                                 </div>
                             </li>
+                            <?php
+                            // var_dump($_SERVER['HTTP_REFERER']);
+                            // var_dump($globalURL);
+                            // var_dump($referer);
+                            echo getSuccessMessage($messages);
+                            echo getErrorMessage($errors);
+                            ?>
+                            <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
+                            <input class="button" type="submit" value="Se connecter">
+                            <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                            <input type="hidden" name="action" value="log-in">
                         </ul>
                     </form>
                     <div class="form__container">
-                        <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
-                        <input class="button" type="submit" value="Se connecter">
                         <p>Pas encore de compte ?</p>
                         <div class="button__txt"><a class="button button--empty" href="create-account.php">Créer un compte</a></div>
                     </div>

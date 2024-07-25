@@ -111,11 +111,8 @@ var_dump('aucune erreur');
         }
     }
 }   
-    // if (!createNewAccount($dbCo)) triggerError('create_ko');
-    
-    // echo json_encode([
-        //     'isOk' => $isInserteOk && $isQuery2Ok,
-        // ]);
+
+
 
     redirectTo('index.php');
     

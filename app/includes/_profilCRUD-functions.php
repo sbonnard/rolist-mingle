@@ -6,31 +6,40 @@
  * @param [type] $dbCo - The connection to database.
  * @return void
  */
-function fetchUser8Datas(PDO $dbCo)
+function fetchUserDatas(PDO $dbCo, int $idUser)
 {
-    $query = $dbCo->query('
+    $query = $dbCo->prepare('
     SELECT id_user, username, email, password, avatar, us.id_role_type AS user_role, ro.id_role_type AS role_id, icon_URL, bio
     FROM users us
     JOIN role_type ro USING (id_role_type)
-    WHERE id_user = 8;');
+    WHERE id_user = :id_user;');
 
-    $profil = $query->execute();
+    $bindValues = [
+        "id_user" => $idUser
+    ];
+
+    $profil = $query->execute($bindValues);
 
     $userDatas = $query->fetchAll(PDO::FETCH_ASSOC);
 
     return $userDatas;
 }
 
-function fetchUser8Favourites(PDO $dbCo)
+function fetchUserFavourites(PDO $dbCo, int $idUser)
 {
-    $query = $dbCo->query('
+    $query = $dbCo->prepare('
     SELECT id_user, name_universe, su.id_universe
     FROM users us
     JOIN selected_universe su USING (id_user)
     JOIN universe USING (id_universe)
-    WHERE id_user = 8;');
+    WHERE id_user = :id_user;');
 
-    $datas = $query->execute();
+    $bindValues = [
+        "id_user" => $idUser
+    ];
+
+
+    $datas = $query->execute($bindValues);
 
     $favourites = $query->fetchAll(PDO::FETCH_ASSOC);
 

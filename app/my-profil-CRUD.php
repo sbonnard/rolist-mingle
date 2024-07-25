@@ -4,14 +4,14 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
-require_once './includes/_profilCRUD.php';
+require_once './includes/_profilCRUD-functions.php';
 require_once './includes/_message.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
-$userDatas = fetchUser8Datas($dbCo);
-$favourites = fetchUser8Favourites($dbCo);
+$userDatas = fetchUserDatas($dbCo, 8);
+$favourites = fetchUserFavourites($dbCo, 8);
 $rpg = fetchRPG($dbCo);
 ?>
 

@@ -77,12 +77,12 @@ generateToken();
                 <img src="img/angle-down.svg" alt="Bouton vers contenu principal">
             </a>
         </div>
-<!-- 
+        <!-- 
         <section>
         <?php
-            // echo getErrorMessage($errors);
-            // echo getSuccessMessage($messages);
-            ?>
+        // echo getErrorMessage($errors);
+        // echo getSuccessMessage($messages);
+        ?>
         </section> -->
 
         <div class="page-content" id="content">
@@ -134,7 +134,8 @@ generateToken();
                         <h4 class="ttl" id="dice8">Dé 8</h4>
                         <img src="icones/dé8.webp" alt="dé 8 de JDR">
                         <p class="concept-dice__txt">Cherche JDR court
-                            <br>voire très court</p>
+                            <br>voire très court
+                        </p>
                         <h5 class="ttl concept-dice__sub-ttl">Plus si affinité</h5>
                     </section>
 
@@ -153,12 +154,15 @@ generateToken();
                     <form action="" method="get" aria-label="Formulaire de connexion">
                         <ul class="form__container">
                             <li class="form__itm">
-                                <label class="input__label" for="username">Nom d'utilisateur</label>
-                                <input class="input" type="text" name="username" id="username" placeholder="Nom d'utilisateur" required aria-label="Entrez votre nom d'utilisateur">
+                                <label class="input__label" for="username">email</label>
+                                <input class="input" type="text" name="email" id="email" placeholder="rôliste@rolist-mingle.fr" required aria-label="Entrez votre email">
                             </li>
                             <li class="form__itm">
                                 <label class="input__label" for="password">Mot de passe</label>
-                                <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
+                                <div class="input--password">
+                                    <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
+                                    <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                                </div>
                             </li>
                         </ul>
                     </form>
@@ -179,6 +183,7 @@ generateToken();
 
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/password.js"></script>
 </body>
 
 </html>

@@ -40,7 +40,7 @@ CREATE TABLE larp_type (
 CREATE TABLE role_type (
     id_role_type SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     name_role VARCHAR(50) NOT NULL,
-    -- icone_role VARBINARY NOT NULL,
+    icon_URL VARCHAR(50) NOT NULL,
     PRIMARY KEY (id_role_type)
 );
 
@@ -67,6 +67,7 @@ CREATE TABLE users (
     admin BOOLEAN DEFAULT NULL,
     id_role_type SMALLINT UNSIGNED NOT NULL,
     id_place SMALLINT UNSIGNED NOT NULL,
+    bio VARCHAR(255) DEFAULT NULL,
     PRIMARY KEY (id_user),
     FOREIGN KEY (id_role_type) REFERENCES role_type(id_role_type),
     FOREIGN KEY (id_place) REFERENCES place(id_place)

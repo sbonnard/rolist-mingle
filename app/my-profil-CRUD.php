@@ -116,7 +116,10 @@ $rpg = fetchRPG($dbCo);
                     <ul class="form__container">
                         <li class="form__itm">
                             <label for="password" class="input__label">Changer le mot de passe</label>
-                            <input type="password" class="input" name="password" placeholder="•••••••••••">
+                            <div class="input--password">
+                                <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
+                                <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                            </div>
                         </li>
                         <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="modify-pwd">
@@ -175,6 +178,7 @@ $rpg = fetchRPG($dbCo);
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
     <script type="module" src="js/async/CRUD.js"></script>
+    <script type="module" src="js/password.js"></script>
 </body>
 
 </html>

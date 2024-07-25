@@ -28,7 +28,7 @@
     &__txt {
         color: $primary;
     }
-    
+
     &--minus {
         width: 1rem;
         height: 1rem;
@@ -56,6 +56,24 @@
     &--CRUD:hover {
         color: $primary;
     }
+
+    &--eye {
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 1.75rem;
+        height: 2rem;
+        right: 3%;
+        top: 22%;
+
+        &--inactive {
+            background-image: url(../../img/eye-inactive.svg);
+        }
+
+        &--active {
+            background-image: url(../../img/eye-active.svg);
+            filter: drop-shadow(0 0 0.75rem $primary);
+        }
+    }
+
 }
-
-

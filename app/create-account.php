@@ -98,7 +98,10 @@ generateToken();
                         </li> -->
                         <li class="form__itm">
                             <label class="input__label" for="password">Mot de passe <span class="input__required" aria-hidden="true">*</span></label>
-                            <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required>
+                            <div class="input--password">
+                                <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
+                                <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                            </div>
                         </li>
                         <li class="form__question">
                             <p class="form__question" for="ideal">Déterminons ensemble ton profil de rôliste <span class="input__required" aria-hidden="true">*</span> :</p>
@@ -169,6 +172,5 @@ generateToken();
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
     <script type="module" src="js/register.js"></script>
-    <!-- <script type="module" src="js/full-front_suggestion-bar.js"></script> -->
-
+    <script type="module" src="js/password.js"></script>
 </body>

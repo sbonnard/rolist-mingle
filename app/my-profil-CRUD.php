@@ -90,7 +90,7 @@ $rpg = fetchRPG($dbCo);
                         <button class="button--CRUD" id="button-pwd">Mon Mot de Passe</button>
                         <span class="separator--vertical"> | </span>
                         <span class="separator--horizontal">_</span>
-                        <button class="button--CRUD" id="button-rpg">Mes Univers Favoris</button>
+                        <button class="button--CRUD button--CRUD--active" id="button-rpg">Mes Univers Favoris</button>
                     </div>
                 </section>
 

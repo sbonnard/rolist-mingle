@@ -58,48 +58,54 @@ console.log(formBio, formPWD, formRPG);
 // LISTENERS
 
 // BIO
-buttonBio.addEventListener('click', function(){
+buttonBio.addEventListener('click', function () {
     // BIO FORM AND BUTTON
-    buttonBio.classList.toggle('button--CRUD--active');
-    formBio.classList.toggle('hidden');
+    if (!buttonBio.classList.contains('button--CRUD--active')) {
+        buttonBio.classList.toggle('button--CRUD--active');
+        formBio.classList.toggle('hidden');
 
-    // PASSWORD FORM AND BUTTON
-    buttonPWD.classList.remove('button--CRUD--active');
-    formPWD.classList.add('hidden');
+        // PASSWORD FORM AND BUTTON
+        buttonPWD.classList.remove('button--CRUD--active');
+        formPWD.classList.add('hidden');
 
-    // RPG FORM AND BUTTON
-    buttonRPG.classList.remove('button--CRUD--active');
-    formRPG.classList.add('hidden');
+        // RPG FORM AND BUTTON
+        buttonRPG.classList.remove('button--CRUD--active');
+        formRPG.classList.add('hidden');
+    }
 })
 
 
 // PASSWORD
-buttonPWD.addEventListener('click', function(){
+buttonPWD.addEventListener('click', function () {
     // PASSWORD FORM AND BUTTON
-    buttonPWD.classList.toggle('button--CRUD--active');
-    formPWD.classList.toggle('hidden');
+    if (!buttonPWD.classList.contains('button--CRUD--active')) {
+        buttonPWD.classList.toggle('button--CRUD--active');
+        formPWD.classList.toggle('hidden');
 
-    // PASSWORD FORM AND BUTTON
-    buttonBio.classList.remove('button--CRUD--active');
-    formBio.classList.add('hidden');
+        // PASSWORD FORM AND BUTTON
+        buttonBio.classList.remove('button--CRUD--active');
+        formBio.classList.add('hidden');
 
-    // RPG FORM AND BUTTON
-    buttonRPG.classList.remove('button--CRUD--active');
-    formRPG.classList.add('hidden');
+        // RPG FORM AND BUTTON
+        buttonRPG.classList.remove('button--CRUD--active');
+        formRPG.classList.add('hidden');
+    }
 })
 
 
 // RPG
-buttonRPG.addEventListener('click', function(){
+buttonRPG.addEventListener('click', function () {
     // RPG FORM AND BUTTON
-    buttonRPG.classList.toggle('button--CRUD--active');
-    formRPG.classList.toggle('hidden');
+    if (!buttonRPG.classList.contains('button--CRUD--active')) {
+        buttonRPG.classList.toggle('button--CRUD--active');
+        formRPG.classList.toggle('hidden');
 
-    // PASSWORD FORM AND BUTTON
-    buttonPWD.classList.remove('button--CRUD--active');
-    formPWD.classList.add('hidden');
+        // PASSWORD FORM AND BUTTON
+        buttonPWD.classList.remove('button--CRUD--active');
+        formPWD.classList.add('hidden');
 
-    // BIO FORM AND BUTTON
-    buttonBio.classList.remove('button--CRUD--active');
-    formBio.classList.add('hidden');
+        // BIO FORM AND BUTTON
+        buttonBio.classList.remove('button--CRUD--active');
+        formBio.classList.add('hidden');
+    }
 })

@@ -11,13 +11,13 @@ require_once 'includes/_profilCRUD.php';
 header('Content-type:application/json');
 
 
-if (!isset($_POST['action'])) {
-    triggerError('no_action');
+if (!isset($_REQUEST['action'])) {
+    redirectTo('my-profil-CRUD.php');
 }
 
 // Check CSRF
-// preventFromCSRF();
- 
+preventFromCSRF();
+
 
 
 if (!empty($_POST)) {
@@ -35,6 +35,7 @@ if (!empty($_POST)) {
             $_SESSION['msg'] = "update_ok_bio";
         } else {
             $_SESSION['msg'] = "update_ko_bio";
+            redirectTo('my-profil-CRUD.php');
         }
     }
     if ($_POST['action'] === 'modify-pwd') {

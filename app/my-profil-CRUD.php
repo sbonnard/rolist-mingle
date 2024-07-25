@@ -104,6 +104,7 @@ $rpg = fetchRPG($dbCo);
                         </li>
                         <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="modify-bio">
+                        <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
                     </ul>
                 </form>'
                 ?>
@@ -117,6 +118,8 @@ $rpg = fetchRPG($dbCo);
                         </li>
                         <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="modify-pwd">
+                        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+
                     </ul>
                 </form>
 
@@ -138,6 +141,7 @@ $rpg = fetchRPG($dbCo);
                         </li>
                         <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="save_universe">
+                        <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
                     </ul>
                 </form>';
 
@@ -160,7 +164,6 @@ $rpg = fetchRPG($dbCo);
 
         </div>
 
-        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
     </main>
 
     <footer class="footer">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mer. 24 juil. 2024 à 07:28
+-- Généré le : jeu. 25 juil. 2024 à 08:24
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -2313,7 +2313,6 @@ INSERT INTO `selected_universe` (`id_universe`, `id_user`) VALUES
 (1, 73),
 (21, 185),
 (24, 418),
-(16, 8),
 (13, 304),
 (37, 517),
 (15, 898),
@@ -3085,7 +3084,8 @@ INSERT INTO `selected_universe` (`id_universe`, `id_user`) VALUES
 (42, 95),
 (39, 754),
 (41, 726),
-(18, 312);
+(18, 312),
+(32, 8);
 
 -- --------------------------------------------------------
 
@@ -3214,7 +3214,7 @@ INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `avatar`, `admi
 (5, 'Merlina', 'mveljes4@godaddy.com', '$2a$04$T/hCNagoiaAznS1cRzT2VOHe9p3OQuXtgRYvGBVAvUpsgsoJLCOW.', 'https://robohash.org/illumquiadoloribus.png?size=50x50&set=set1', 0, 5, 12, NULL),
 (6, 'Frannie', 'fgoldin5@dropbox.com', '$2a$04$VaLPMOIVQsjA8d/SVxLcw.W4RSvXIw5xd90XAc/1YbjtWo9bIf92W', 'https://robohash.org/fugiateumquis.png?size=50x50&set=set1', 0, 3, 30, NULL),
 (7, 'Bob', 'bhuguenet6@yolasite.com', '$2a$04$ktNncfH5NAiBs2TUQmg98OTUx5a.h6EqeyZxh1n255GgK6p27Y/B6', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', 0, 4, 139, NULL),
-(8, 'Charlie', 'charthorne@netscape.com', '$2y$10$jtKO97ULhlIWEZmokR4oJOfb9hUvyiU9XcDuCw9qbm12KKfmSN9qK', 'https://robohash.org/Charlie\n\n', 0, 3, 46, NULL),
+(8, 'Charlie', 'charthorne@netscape.com', '$2y$10$ZA3SrLqVxoRauyOlz/YVJulcxomnWvSj6BRYOvq06VexT7fHqBG12', 'img/charlie-avatar.webp\n', 0, 3, 46, 'J\'aime le JDR et les huîtres avec du vin blanc sur le port.'),
 (9, 'Donal', 'damanger8@vkontakte.ru', '$2a$04$pm8lfSaxFh5YW85E54uWtOmK2mKorXuTWnZ6WoORhpUrgJBq/achW', 'https://robohash.org/impeditrerumcupiditate.png?size=50x50&set=set1', 0, 3, 47, NULL),
 (10, 'Vinnie', 'vedwardson9@360.cn', '$2a$04$J8Ft7Qta8rJIeVOLk4Oj2uBLz.vIu.GElOdT.1dqzh9/YD49F4yMW', 'https://robohash.org/praesentiumeumvelit.png?size=50x50&set=set1', 0, 2, 110, NULL),
 (11, 'Barnie', 'bmccarneya@dailymail.co.uk', '$2a$04$Te5ZJYSaasJjq0x7jZiBKO3GP4/6.FOXbfT/Si3DQ5gSDbIM.S60u', 'https://robohash.org/aperiametdelectus.png?size=50x50&set=set1', 0, 2, 124, NULL),

@@ -8,7 +8,7 @@
     width: 4rem;
     aspect-ratio: 1;
     border-radius: 100%;
-    
+
     &--dice100 {
         border: 4px solid $dice100;
     }
@@ -71,5 +71,12 @@
     &__avatar {
         width: 8.5rem;
         background-color: $secondary;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        &__infos {
+            margin-top: 5rem;
+        }
     }
 }

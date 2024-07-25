@@ -79,51 +79,50 @@ $rpg = fetchRPG($dbCo);
 
                 <section class="container">
                     <?php
-                   echo getSuccessMessage($messages);
-                   echo getErrorMessage($errors);
+                    echo getSuccessMessage($messages);
+                    echo getErrorMessage($errors);
                     ?>
                     <h3 class="ttl ttl--primary ttl--CRUD">Modifier</h3>
                     <div class="container--links">
-                        <a class="lnk" href="?action=modify-bio">Ma bio</a>
-                        <span> | </span>
-                        <a class="lnk" href="?action=modify-pwd">Mon Mot de Passe</a>
-                        <span> | </span>
-                        <a class="lnk" href="?action=modify-favourites">Mes Univers Favoris</a>
+                        <button class="button--CRUD" id="button-bio">Ma bio</button>
+                        <span class="separator--vertical"> | </span>
+                        <span class="separator--horizontal">_</span>
+                        <button class="button--CRUD" id="button-pwd">Mon Mot de Passe</button>
+                        <span class="separator--vertical"> | </span>
+                        <span class="separator--horizontal">_</span>
+                        <button class="button--CRUD" id="button-rpg">Mes Univers Favoris</button>
                     </div>
                 </section>
 
                 <?php
-                if (!empty($_GET) && $_GET["action"] === "modify-bio") {
-                    echo
-                    '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                echo
+                '<form id="form-bio" class="container hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <h3 id="my-bio" class="ttl--big">Ma bio</h3>
                     <ul class="form__container">
                         <li class="form__itm">
-                            <textarea class="input input__text-area" name="bio" id="bio" placeholder="Ma petite vie..." >'.$userDatas[0]['bio'].'</textarea>
+                            <textarea class="input input__text-area" name="bio" id="bio" placeholder="Ma petite vie...">' . $userDatas[0]['bio'] . '</textarea>
                         </li>
-                        <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
+                        <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="modify-bio">
-                        </ul>
-                    </form>';
-                }
+                    </ul>
+                </form>'
+                ?>
 
-                if (!empty($_GET) && $_GET["action"] === "modify-pwd") {
-                    echo
-                    '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
-                        <ul class="form__container">
-                            <li class="form__itm">
-                                <label for="password" class="input__label">Changer le mot de passe</label>
-                                <input type="password" class="input" name="password" placeholder="•••••••••••">
-                            </li>
-                            <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
-                            <input type="hidden" name="action" value="modify-pwd">
-                        </ul>
-                    </form>';
-                }
 
-                if (empty($_GET) || $_GET["action"] === "modify-favourites") {
-                    echo
-                    '<form class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                <form id="form-pwd" class="container hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                    <ul class="form__container">
+                        <li class="form__itm">
+                            <label for="password" class="input__label">Changer le mot de passe</label>
+                            <input type="password" class="input" name="password" placeholder="•••••••••••">
+                        </li>
+                        <input class="button" type="submit" value="Enregistrer">
+                        <input type="hidden" name="action" value="modify-pwd">
+                    </ul>
+                </form>
+
+                <?php
+                echo
+                '<form id="form-rpg" class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
                         <li class="form__itm form__itm--select">
                             <label class="input__label form__question" for="suggestionsField">
@@ -134,15 +133,14 @@ $rpg = fetchRPG($dbCo);
                                 <div class="suggestions" id="suggestions"></div>
                             </div>
                             <ul id="selectedItemsList">'
-                            . getFavourites($favourites) . 
-                            '</ul>
+                    . getFavourites($favourites) .
+                    '</ul>
                         </li>
-
-                        <input class="button" id="create-account-btn" type="submit" value="Enregistrer">
+                        <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="save_universe">
                     </ul>
                 </form>';
-                }
+
                 ?>
                 </ul>
 
@@ -151,7 +149,7 @@ $rpg = fetchRPG($dbCo);
 
                 <template id="favourite-template">
                     <li class="favourites">
-                        <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="favourite-checkbox" data-favourite-minus="" data-delete-task-id=""  value="">
+                        <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="favourite-checkbox" data-favourite-minus="" data-delete-task-id="" value="">
                         <label class="txt--bigger suggestions__txt" id="favourite-rpg">Univers</label>
                     </li>
                 </template>

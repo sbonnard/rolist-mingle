@@ -43,19 +43,9 @@ function getFavourites(array $favourites)
     foreach ($favourites as $favourite) {
         $favouritesHTML .=
             '<li class="favourites">
-            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="favourite-checkbox" data-favourite-minus="" data-delete-rpg-id="' . $favourite['id_universe'] . '" value="' . $favourite['id_universe'] . '">
+            <input class="button--minus" type="checkbox" name="universes[]" checked="yes" id="" data-favourite-minus="" data-delete-rpg-id="' . $favourite['id_universe'] . '" value="' . $favourite['id_universe'] . '">
             <label class="txt--bigger suggestions__txt" id="favourite-rpg"> ' . $favourite['name_universe'] . '</label>
         </li>';
     }
     return $favouritesHTML;
 }
-
-// function deleteRPG($dbCo) {
-//     $deleteFromRPG = $dbCo->prepare("DELETE FROM selected_universe WHERE id_universe = :id_universe AND id_user = 8;");
-    
-//     $bindValues = [
-//         'id_universe' => intval($inputData['id_universe'])
-//     ];
-
-//     $deleteFromRPG->execute($bindValues);
-// }

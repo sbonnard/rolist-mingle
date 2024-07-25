@@ -72,7 +72,10 @@ $rpg = fetchRPG($dbCo);
                     <!-- <button class="button--pen"></button> -->
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
-                    
+                    <div class="user__bio-container">
+                        <h3 class="ttl ttl--no-padding-top ttl--primary">Bio</h3>
+                        <p class="user__bio"><?= $userDatas[0]['bio'] ?></p>
+                    </div>
                 </section>
 
 

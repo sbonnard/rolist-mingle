@@ -6,7 +6,8 @@ require_once 'includes/_function.php';
 require_once 'includes/_database.php';
 require_once 'includes/_message.php';
 require_once 'includes/_security.php';
-require_once 'includes/_profilCRUD.php';
+require_once './includes/_profilCRUD-functions.php';
+
 
 header('Content-type:application/json');
 

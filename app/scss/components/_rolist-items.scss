@@ -11,22 +11,27 @@
 
     &--dice100 {
         border: 4px solid $dice100;
+        filter: drop-shadow(0 0 0.75rem $dice100);
     }
 
     &--dice20 {
         border: 4px solid $dice20;
+        filter: drop-shadow(0 0 0.75rem $dice20);
     }
 
     &--dice12 {
         border: 4px solid $dice12;
+        filter: drop-shadow(0 0 0.75rem $dice12);
     }
 
     &--dice8 {
         border: 4px solid $dice8;
+        filter: drop-shadow(0 0 0.75rem $dice8);
     }
 
     &--dice4 {
         border: 4px solid $dice4;
+        filter: drop-shadow(0 0 0.75rem $dice4);
     }
 
     &__lnk {

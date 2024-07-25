@@ -67,11 +67,11 @@ $rpg = fetchRPG($dbCo);
 
                 <section class="container my-infos" aria-labelledby="my-infos">
                     <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
-                    <img class="avatar user__avatar avatar--dice12" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
+                    <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
                     <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>
                     <!-- <button class="button--pen"></button> -->
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>
-                    <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="Icône rôliste Dé 100 'Dominateur' Maître du Jeu">
+                    <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
                 </section>
 
 

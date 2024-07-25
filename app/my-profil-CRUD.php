@@ -21,7 +21,7 @@ $rpg = fetchRPG($dbCo);
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Mon compte | Rolist-Mingle"); ?>
+    <? echo fetchHead("Compte Rôliste | Rolist-Mingle"); ?>
 </head>
 
 <body>

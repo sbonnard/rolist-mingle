@@ -37,16 +37,16 @@ function defineProfilColour(array $userDatas):string {
         return 'avatar--dice100';
     }
     if ($userDatas[0]['user_role'] === 2) {
-        return 'avatar--dice100';
+        return 'avatar--dice20';
     }
-    if ($userDatas[0]['user_role'] === 1) {
-        return 'avatar--dice100';
+    if ($userDatas[0]['user_role'] === 3) {
+        return 'avatar--dice12';
     }
-    if ($userDatas[0]['user_role'] === 1) {
-        return 'avatar--dice100';
+    if ($userDatas[0]['user_role'] === 4) {
+        return 'avatar--dice8';
     }
-    if ($userDatas[0]['user_role'] === 1) {
-        return 'avatar--dice100';
+    if ($userDatas[0]['user_role'] === 5) {
+        return 'avatar--dice4';
     }
 }
 

@@ -72,6 +72,10 @@ $rpg = fetchRPG($dbCo);
                     <!-- <button class="button--pen"></button> -->
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
+                    <div class="user__bio-container">
+                        <h3 class="ttl ttl--no-padding-top ttl--primary">Bio</h3>
+                        <p class="user__bio"><?= $userDatas[0]['bio'] ?></p>
+                    </div>
                 </section>
 
 
@@ -94,7 +98,7 @@ $rpg = fetchRPG($dbCo);
 
                 <?php
                 echo
-                '<form id="form-bio" class="container hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                '<form id="form-bio" class="container hidden" action="actions-CRUD-user1.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <h3 id="my-bio" class="ttl--big">Ma bio</h3>
                     <ul class="form__container">
                         <li class="form__itm">
@@ -108,7 +112,7 @@ $rpg = fetchRPG($dbCo);
                 ?>
 
 
-                <form id="form-pwd" class="container hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                <form id="form-pwd" class="container hidden" action="actions-CRUD-user1.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
                         <li class="form__itm">
                             <label for="password" class="input__label">Changer le mot de passe</label>
@@ -123,7 +127,7 @@ $rpg = fetchRPG($dbCo);
 
                 <?php
                 echo
-                '<form id="form-rpg" class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                '<form id="form-rpg" class="container" action="actions-CRUD-user1.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
                         <li class="form__itm form__itm--select">
                             <label class="input__label form__question" for="suggestionsField">
@@ -170,7 +174,7 @@ $rpg = fetchRPG($dbCo);
 
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
-    <script type="module" src="js/async/CRUD.js"></script>
+    <script type="module" src="js/async/CRUD-user1.js"></script>
 </body>
 
 </html>

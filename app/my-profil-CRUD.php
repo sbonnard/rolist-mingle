@@ -72,6 +72,7 @@ $rpg = fetchRPG($dbCo);
                     <!-- <button class="button--pen"></button> -->
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
+                    
                 </section>
 
 

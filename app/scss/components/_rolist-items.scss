@@ -78,6 +78,19 @@
         background-color: $secondary;
     }
 
+    &__bio {
+        text-align: left;
+
+        &-container {
+            justify-content: flex-start;
+            max-width: 40rem;
+            background-color: $secondary;
+            padding: 2rem;
+            filter: drop-shadow(0 0 0.75rem $primary);
+        }
+
+    }
+
     @media screen and (max-width: 768px) {
 
         &__infos {

@@ -7,9 +7,8 @@ require_once 'includes/_database.php';
 require_once 'includes/_message.php';
 require_once 'includes/_security.php';
 
-// header('Content-type:application/json');
+header('Content-type:application/json');
 
-var_dump('1');
 
 if (!isset($_POST['action'])) {
     triggerError('no_action');
@@ -18,18 +17,15 @@ if (!isset($_POST['action'])) {
 // Check CSRF
 preventFromCSRF('create-account.php');
 
-var_dump('2');
 
 // Create Account action 
 if ($_POST['action'] === 'create_account') {
     if (!empty($_POST)) {
 
 
-var_dump('POST n est pas vide');
 
         $errors = [];
 
-        // Validation des champs et ajout des erreurs éventuelles
         if (!isset($_POST['username']) || empty(trim($_POST['username']))) {
             $errors[] = "Username is required.";
         }
@@ -42,44 +38,30 @@ var_dump('POST n est pas vide');
         if (!isset($_POST['player-type']) || empty(trim($_POST['player-type']))) {
             $errors[] = "Player type is required.";
         }
-        // if (!isset($_POST['locality']) || empty(trim($_POST['locality']))) {
-        //     $errors[] = "Locality is required.";
-        // }
-        // if (!isset($_POST['universes']) || !is_array($_POST['universes']) || empty($_POST['universes'])) {
-        //     $errors[] = "At least one universe must be selected.";
-        // }
 
-        
+
         if (!empty($errors)) {
             $_SESSION['errors'] = $errors;
             return false;
         }
 
-var_dump('aucune erreur');
 
-        
         try {
             $dbCo->beginTransaction();
-            
+
             $mainQuery = $dbCo->prepare('
             INSERT INTO users (username, email, password, id_role_type)
             VALUES (:username, :email, :password, :role);');
-            
+
             $bindValuesMain = [
                 'username' => htmlspecialchars($_POST['username']),
                 'email' => strip_tags($_POST['email']),
                 'password' => password_hash(htmlspecialchars($_POST['password']), PASSWORD_BCRYPT),
                 'role' => intval($_POST['player-type'])
-                // 'place' => intval($_POST['locality'])
             ];
 
-            var_dump($bindValuesMain); // Débogage
-
-            
             $isInsertOk = $mainQuery->execute($bindValuesMain);
-            var_dump('no error for first query');
             $userId = $dbCo->lastInsertId();
-            var_dump($userId);
             if ($isInsertOk) {
 
                 $universeQuery = $dbCo->prepare('
@@ -92,29 +74,21 @@ var_dump('aucune erreur');
                         'user' => intval($userId)
                     ];
 
-            var_dump($bindValuesUniverse); // Débogage
-
                     $universeQuery->execute($bindValuesUniverse);
                 }
 
                 addMessage('create_ok');
-                
             }
             $dbCo->commit();
-        }
-            
-         catch (Exception $error) {
-            var_dump('Raté');
+        } catch (Exception $error) {
+            var_dump('PDO exception: ' . $error->getMessage());
             $_SESSION['errors'] = "create_ko: " . $error->getMessage();
             $dbCo->rollBack();
             return false;
         }
     }
-}   
+}
 
 
 
-    redirectTo('index.php');
-    
-    
-    
+redirectTo('index.php');

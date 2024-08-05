@@ -20,7 +20,9 @@ $errors = [
     'update_ko_favourites' => 'Échec critique lors de la modification d\'univers favoris !',
     'email_ko' => 'Merci d\'entrer votre mot de passe',
     'password_ko' => 'Merci de saisir votre mot de passe',
-    'login_ko' => 'Échec critique lors de la saisie du mot de passe ou de l\'email !'
+    'login_ko' => 'Échec critique lors de la saisie du mot de passe ou de l\'email !',
+    'mdp_no_match' => 'Les mots de passes entrés ne correspondent pas.',
+    'please_connect' => 'Merci de vous connecter pour consulter cette page'
 ];
 
 
@@ -47,12 +49,9 @@ function triggerError(string $error): void
  * @param string $errorMsg - Error message to display
  * @return void
  */
-function addError(string $errorMsg): void
+function addError(string $errors): void
 {
-    if (!isset($_SESSION['errorsList'])) {
-        $_SESSION['errorsList'] = [];
-    }
-    $_SESSION['errorsList'][] = $errorMsg;
+    $_SESSION['error'] = $errors;
 }
 
 

@@ -44,24 +44,33 @@ generateToken();
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.php" class="nav__lnk" aria-current="page">Accueil <img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="flow.php" class="nav__lnk" aria-current="page">Accueil</a>
+                        <a href="flow.php"><img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties <img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
+                        <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="messages.php" class="nav__lnk">Messagerie <img src="icones/messages.svg" alt="icone messagerie"></a>
+                        <a href="messages.php" class="nav__lnk">Messagerie</a>
+                        <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
                     </li>
                     <li class="nav__itm">
-                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs <img src="icones/agenda.svg" alt="icone agenda"></a>
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
+                        <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm" data-avatar="">
-                        <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte
+                        <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte</a>
+                        <a href="my-account.php">
                             <picture>
                                 <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
                                 <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
                             </picture>
                         </a>
+                    </li>
+                    <li class="nav__itm">
+                        <a class="nav__lnk" href="logout.php">Déconnexion</a>
+                        <img src="icones/logout.svg" alt="icône déconexion">
                     </li>
                 </ul>
             </nav>
@@ -72,6 +81,10 @@ generateToken();
 
 
         <div class="hero-banner">
+            <?php
+            echo getSuccessMessage($messages);
+            echo getErrorMessage($errors);
+            ?>
             <img class="hero-banner__img" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
             <h1 class="logo__ttl">Rolist-Mingle</h1>
             <h2 class="logo__tagline">Don't Roll Single</h2>
@@ -79,13 +92,6 @@ generateToken();
                 <img src="img/angle-down.svg" alt="Bouton vers contenu principal">
             </a>
         </div>
-        <!-- 
-        <section>
-        <?php
-        // echo getErrorMessage($errors);
-        // echo getSuccessMessage($messages);
-        ?>
-        </section> -->
 
         <div class="page-content" id="content">
             <div class="container--desktop">
@@ -153,7 +159,7 @@ generateToken();
 
                 <section class="container" aria-labelledby="connexion grid-form">
                     <h2 class="ttl ttl--primary" id="connexion">connexion</h2>
-                    <form action="actions-login.php" method="post" aria-label="Formulaire de connexion">
+                    <form action="login.php" method="post" aria-label="Formulaire de connexion">
                         <ul class="form__container">
                             <li class="form__itm">
                                 <label class="input__label" for="username">email</label>
@@ -166,13 +172,6 @@ generateToken();
                                     <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
                                 </div>
                             </li>
-                            <?php
-                            // var_dump($_SERVER['HTTP_REFERER']);
-                            // var_dump($globalURL);
-                            // var_dump($referer);
-                            echo getSuccessMessage($messages);
-                            echo getErrorMessage($errors);
-                            ?>
                             <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
                             <input class="button" type="submit" value="Se connecter">
                             <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">

@@ -29,14 +29,23 @@ if ($_POST['action'] === 'create_account') {
         if (!isset($_POST['username']) || empty(trim($_POST['username']))) {
             $errors[] = "Username is required.";
         }
+
         if (!isset($_POST['email']) || empty(trim($_POST['email']))) {
             $errors[] = "Email is required.";
         }
+
         if (!isset($_POST['password']) || empty(trim($_POST['password']))) {
             $errors[] = "Password is required.";
         }
+
         if (!isset($_POST['player-type']) || empty(trim($_POST['player-type']))) {
             $errors[] = "Player type is required.";
+        }
+
+        if ($_POST['password'] !== $_POST['check-password']) {
+            $errors[] = "Les mots de passe ne correspondent pas.";
+            addError('mdp_no_match');
+            redirectTo();
         }
 
 

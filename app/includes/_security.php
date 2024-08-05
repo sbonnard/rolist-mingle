@@ -70,3 +70,17 @@ function preventFromCSRFAPI(array $inputData): void
         exit;
     }
 }
+
+/**
+ * Checks iof a user is connected or redirects toi login page.
+ *
+ * @param array $session - $_SESSION super global.
+ * @return void
+ */
+function checkConnection (array $session) {
+    if (!isset($session['email'])) {
+        redirectTo('index.php');
+        addError('please_connect');
+        exit();
+    }
+}

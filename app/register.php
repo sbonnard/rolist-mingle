@@ -85,12 +85,11 @@ generateToken();
             <h2 class="logo__ttl logo__ttl--smaller">Rolist-Mingle</h1>
         </a>
 
-        <?php
-        echo getSuccessMessage($messages);
-        echo getErrorMessage($errors);
-        ?>
-
         <div class="page-content">
+        <?php
+            echo getSuccessMessage($messages);
+            echo getErrorMessage($errors);
+            ?>
             <section class="container" aria-labelledby="#create-account">
                 <h1 id="create-account" class="ttl ttl--big">Créer ton compte</h1>
 

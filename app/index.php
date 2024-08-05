@@ -180,7 +180,7 @@ generateToken();
                     </form>
                     <div class="form__container">
                         <p>Pas encore de compte ?</p>
-                        <div class="button__txt"><a class="button button--empty" href="create-account.php">Créer un compte</a></div>
+                        <div class="button__txt"><a class="button button--empty" href="register.php">Créer un compte</a></div>
                     </div>
                 </section>
             </div>

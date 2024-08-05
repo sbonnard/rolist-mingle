@@ -1,9 +1,11 @@
 <?php
-require "./includes/_config.php";
-require "./includes/_database.php";
-include 'includes/_function.php';
-require "./includes/components/_head.php";
-require "./includes/components/_footer.php";
+require_once "./includes/_config.php";
+require_once "./includes/_database.php";
+require_once './includes/_function.php';
+require_once './includes/_message.php';
+require_once './includes/_security.php';
+require_once "./includes/components/_head.php";
+require_once "./includes/components/_footer.php";
 
 ?>
 

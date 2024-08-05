@@ -4,12 +4,12 @@ session_start();
 require_once "./includes/_config.php";
 require_once "./includes/_database.php";
 require_once './includes/_function.php';
+require_once './includes/_message.php';
+require_once './includes/_security.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
 
 generateToken();
-
-// var_dump(getPartyDatas($dbCo));
 
 ?>
 

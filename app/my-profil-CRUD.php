@@ -12,7 +12,7 @@ require_once "./includes/components/_footer.php";
 
 checkConnection($_SESSION);
 
-var_dump($_SESSION['email']);
+// var_dump($_SESSION['email']);
 
 generateToken();
 $userDatas = fetchUserDatas($dbCo, $_SESSION);

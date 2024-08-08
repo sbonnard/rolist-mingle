@@ -12,7 +12,7 @@ require_once "./includes/components/_footer.php";
 
 checkConnection($_SESSION);
 
-var_dump($_SESSION['id_user']);
+var_dump($_SESSION['email']);
 
 generateToken();
 $userDatas = fetchUserDatas($dbCo, $_SESSION);
@@ -161,6 +161,7 @@ $rpg = fetchRPG($dbCo);
                         <input class="button" type="submit" value="Enregistrer">
                         <input type="hidden" name="action" value="save_universe">
                         <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
+                        <input type="hidden" name="id_user" value="' . $userDatas[0]['id_user'] . '">
                     </ul>
                 </form>';
 

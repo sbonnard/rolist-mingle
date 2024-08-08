@@ -19,7 +19,6 @@ if (!isset($_REQUEST['action'])) {
 preventFromCSRF();
 
 
-
 if (!empty($_POST)) {
     if ($_POST['action'] === 'modify-bio') {
         $queryBio = $dbCo->prepare('UPDATE users SET bio = :bio WHERE email = :email;');
@@ -58,7 +57,7 @@ if (!empty($_POST)) {
         foreach ($_POST['universes'] as $universeId) {
             if ($universeId) {
                 $universeId = intval($universeId);
-                $userId = intval($_SESSION['id_user']);
+                $userId = intval($_POST['id_user']);
 
                 $checkQuery = $dbCo->prepare('
                     SELECT COUNT(*) FROM selected_universe 

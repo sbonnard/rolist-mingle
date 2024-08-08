@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'log-in') {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['password'] = $user['password'];
         $_SESSION['email'] = $user['email'];
-        $_SESSION['id_user'] = $userDatas[0]['id_user'];
         redirectTo('my-profil-CRUD.php');
         exit();
     } else {

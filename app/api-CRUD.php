@@ -9,6 +9,8 @@ require_once 'includes/_security.php';
 require_once './includes/_profilCRUD-functions.php';
 
 
+$userDatas = fetchUserDatas($dbCo, $_SESSION);
+
 header('Content-type:application/json');
 
 $inputData = json_decode(file_get_contents('php://input'), true);
@@ -19,16 +21,18 @@ if (!isset($inputData['action'])) {
     exit;
 }
 
+
 // preventFromCSRFAPI($inputData);
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $inputData = json_decode(file_get_contents('php://input'), true);
 
     if (isset($inputData['action']) && $inputData['action'] === 'delete' && isset($inputData['id']) && is_numeric($inputData['id'])) {
-        $deleteFromRPG = $dbCo->prepare("DELETE FROM selected_universe WHERE id_universe = :id_universe AND id_user = 8;");
+        $deleteFromRPG = $dbCo->prepare("DELETE FROM selected_universe WHERE id_universe = :id_universe AND id_user = :id_user;");
         
         $bindValues = [
-            'id_universe' => intval($inputData['id'])
+            'id_universe' => intval($inputData['id']),
+            'id_user' => intval($userDatas[0]['id_user'])
         ];
 
         if ($deleteFromRPG->execute($bindValues)) {

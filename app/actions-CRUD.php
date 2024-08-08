@@ -22,11 +22,11 @@ preventFromCSRF();
 
 if (!empty($_POST)) {
     if ($_POST['action'] === 'modify-bio') {
-        $queryBio = $dbCo->prepare('UPDATE users SET bio = :bio WHERE id_user = :id_user;');
+        $queryBio = $dbCo->prepare('UPDATE users SET bio = :bio WHERE email = :email;');
 
         $bindValues = [
             'bio' => strip_tags($_POST['bio']),
-            'id_user' => intval(8)
+            'email' => strip_tags($_SESSION['email'])
         ];
 
         $isUpdateOk = $queryBio->execute($bindValues);
@@ -39,11 +39,11 @@ if (!empty($_POST)) {
         }
     }
     if ($_POST['action'] === 'modify-pwd') {
-        $queryPWD = $dbCo->prepare('UPDATE users SET password = :password WHERE id_user = :id_user;');
+        $queryPWD = $dbCo->prepare('UPDATE users SET password = :password WHERE email = :email;');
 
         $bindValues = [
             'password' => password_hash(strip_tags($_POST['password']), PASSWORD_BCRYPT),
-            'id_user' => intval(8)
+            'email' => strip_tags($_SESSION['email'])
         ];
 
         $isUpdateOk = $queryPWD->execute($bindValues);
@@ -58,7 +58,7 @@ if (!empty($_POST)) {
         foreach ($_POST['universes'] as $universeId) {
             if ($universeId) {
                 $universeId = intval($universeId);
-                $userId = intval(8);
+                $userId = intval($_SESSION['id_user']);
 
                 $checkQuery = $dbCo->prepare('
                     SELECT COUNT(*) FROM selected_universe 

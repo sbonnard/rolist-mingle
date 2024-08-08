@@ -8,8 +8,11 @@ require_once './includes/_message.php';
 require_once './includes/_security.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_footer.php";
+require_once './includes/_profilCRUD-functions.php';
 
 generateToken();
+
+$userDatas = fetchUserDatas($dbCo, $_SESSION);
 
 ?>
 
@@ -54,8 +57,8 @@ generateToken();
                         <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte</a>
                         <a href="my-account.php">
                             <picture>
-                                <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
-                                <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
+                                <source class="avatar" srcset="<?= $userDatas[0]['avatar'] ?>" media="(min-width: 768px)">
+                                <img class="nav__avatar js-avatar-hover" src="<?= $userDatas[0]['avatar'] ?>" alt="icones personnelles">
                             </picture>
                         </a>
                     </li>

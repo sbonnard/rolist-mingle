@@ -59,7 +59,7 @@ generateToken();
                         <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                         <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
-                    <li class="nav__itm" data-avatar="">
+                    <!-- <li class="nav__itm" data-avatar="">
                         <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte</a>
                         <a href="my-account.php">
                             <picture>
@@ -67,7 +67,7 @@ generateToken();
                                 <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
                             </picture>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav__itm">
                         <a class="nav__lnk" href="logout.php">Déconnexion</a>
                         <img src="icones/logout.svg" alt="icône déconexion">

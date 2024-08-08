@@ -6,16 +6,16 @@
  * @param [type] $dbCo - The connection to database.
  * @return array
  */
-function fetchUserDatas(PDO $dbCo, int $idUser):array
+function fetchUserDatas(PDO $dbCo, array $session):array
 {
     $query = $dbCo->prepare('
     SELECT id_user, username, email, password, avatar, us.id_role_type AS user_role, ro.id_role_type AS role_id, icon_URL, bio, name_role
     FROM users us
     JOIN role_type ro USING (id_role_type)
-    WHERE id_user = :id_user;');
+    WHERE email = :email;');
 
     $bindValues = [
-        "id_user" => $idUser
+        "email" => strip_tags($session['email'])
     ];
 
     $profil = $query->execute($bindValues);
@@ -58,17 +58,17 @@ function defineProfilColour(array $userDatas):string {
  * @param integer $idUser - User's ID you want the datas from.
  * @return array - An array containing user's favourite RPGs.
  */
-function fetchUserFavourites(PDO $dbCo, int $idUser):array
+function fetchUserFavourites(PDO $dbCo, array $session):array
 {
     $query = $dbCo->prepare('
-    SELECT id_user, name_universe, su.id_universe
+    SELECT id_user, email, name_universe, su.id_universe
     FROM users us
     JOIN selected_universe su USING (id_user)
     JOIN universe USING (id_universe)
-    WHERE id_user = :id_user;');
+    WHERE email = :email;');
 
     $bindValues = [
-        "id_user" => $idUser
+        "email" => strip_tags($session['email'])
     ];
 
 

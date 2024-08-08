@@ -58,8 +58,8 @@ $rpg = fetchRPG($dbCo);
                         <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
                     </li>
                     <li class="nav__itm nav__lnk--current" data-avatar="">
-                        <a href="my-account.php" class="nav__lnk js-link-hover" aria-current="page">Mon compte</a>
-                        <a href="my-account.php">
+                        <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover" aria-current="page">Mon compte</a>
+                        <a href="my-profil-CRUD.php">
                             <picture>
                                 <source class="avatar" srcset="<?= $userDatas[0]['avatar'] ?>" media="(min-width: 768px)">
                                 <img class="nav__avatar js-avatar-hover" src="<?= $userDatas[0]['avatar'] ?>" alt="icones personnelles">

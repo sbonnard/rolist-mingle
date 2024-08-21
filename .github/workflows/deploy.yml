@@ -16,6 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        cd app
         # Installer les dépendances PHP
         composer install --no-dev --optimize-autoloader
         

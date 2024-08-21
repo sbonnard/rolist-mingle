@@ -40,7 +40,7 @@ jobs:
     - name: Test application
       run: |
         docker run --name test-container -d -p 8080:80 ${{ env.IMAGE_NAME }}
-        sleep 5
+        sleep 10
         curl http://localhost:8080 | grep "Rolist-Mingle"
         docker stop test-container
 

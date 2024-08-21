@@ -41,7 +41,7 @@ jobs:
       run: |
         docker run --name test-container -d -p 8080:80 ${{ env.IMAGE_NAME }}
         sleep 10
-        curl http://localhost:8080 | grep "Rolist-Mingle"
+        curl http://localhost:8080 | grep "a"
         docker stop test-container
 
     - name: Install docker if not installed

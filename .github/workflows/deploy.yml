@@ -74,7 +74,16 @@ jobs:
           sudo docker info
           sudo docker images
           sudo docker pull ${{ env.IMAGE_NAME }}
+          
+          # Stop and remove old containers
           sudo docker stop rolist-mingle || true
           sudo docker rm rolist-mingle || true
+          sudo docker stop phpmyadmin || true
+          sudo docker rm phpmyadmin || true
+          
+          # Run new Rolist-Mingle container
           sudo docker run -d --name rolist-mingle -p 80:80 ${{ env.IMAGE_NAME }}
+          
+          # Run PHPMyAdmin container
+          sudo docker run -d --name phpmyadmin -e PMA_HOST=mysql_host -p 8081:80 phpmyadmin/phpmyadmin
         EOF

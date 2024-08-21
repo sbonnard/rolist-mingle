@@ -1,12 +1,20 @@
 ### Documentation de Déploiement pour l'Application Web Rolist-Mingle
 
-Ce document décrit le processus de déploiement de l'application web **Rolist-Mingle** en utilisant **GitHub Actions** pour déployer l'application sur **Oracle Cloud**. Le déploiement inclut la construction et le déploiement d'une image Docker ainsi que la gestion des dépendances du projet.
+Ce document destiné aux développeurs et développeurs opérationnels décrit le processus de déploiement de l'application web **Rolist-Mingle** en utilisant **GitHub Actions** pour déployer l'application sur **Oracle Cloud**. Le déploiement inclut la construction et le déploiement d'une image Docker ainsi que la gestion des dépendances du projet.
+Ce document ne couvre pas le développement de nouvelles fonctionnalités ou lesm odifications majeures d'architecture du projet.
 
+#### Langages de programmation
+
+1. HTML 5
+2. CSS 3 et SCSS
+3. JavaScript
+4. PHP
+5. MySQL
 
 #### Prérequis
 
 1. **Oracle Cloud** : Un serveur Oracle Cloud configuré avec un accès SSH.
-2. **GitHub** : Un repository contenant le code source de l'application.
+2. **GitHub** : Le repository contenant le code source de l'application : https://github.com/sbonnard/rolist-mingle.
 3. **Docker Hub** : Un compte Docker Hub pour stocker les images Docker.
 4. **Secrets GitHub** : Les variables d'environnement suivantes doivent être configurées dans les secrets du repository GitHub :
    - `DOCKER_HUB_USERNAME` : Nom d'utilisateur Docker Hub.
@@ -14,10 +22,13 @@ Ce document décrit le processus de déploiement de l'application web **Rolist-M
    - `ORACLE_PRIVATE_KEY` : Clé privée SSH pour accéder à Oracle Cloud.
    - `ORACLE_HOST` : Adresse IP ou DNS du serveur Oracle Cloud.
    - `ORACLE_USER` : Nom d'utilisateur pour SSH sur Oracle Cloud.
+5. **PHPMyAdmin** : Pour gérer les données en base.
+6. **MySQL** : Assurez-vous que MySQL soit bien installé sur la VM oracle.
+7. **Node.js** : Installer en version 10.7.0.
 
 #### Structure du Projet
 
-L'application Rolist-Mingle utilise les technologies suivantes :
+L'application Rolist-Mingle utilise les dépendances suivantes :
 - **Composer** : Gestionnaire de dépendances pour PHP.
 - **Vite** : Outil de construction pour les projets front-end.
 - **Sass** : Préprocesseur CSS.
@@ -30,6 +41,30 @@ Le code source est organisé avec les dossiers suivants :
 #### Déploiement Automatisé via GitHub Actions
 
 Le processus de déploiement est automatisé via un fichier YAML situé dans `.github/workflows/deploy.yml`. Voici une explication détaillée du fichier utilisé pour déployer l'application.
+
+##### Le déploiement doit comprendre les éléments suivants :
+
+1. Préparation de l'environnement
+    ● Vérification des prérequis (versions des outils, dépendances)
+    ● Configuration des variables d'environnement
+2. Récupération du code source
+    ● Clonage du dépôt Git ou téléchargement des fichiers
+3. Installation des dépendances
+    ● Exécution des commandes d'installation (npm install, composer install,
+etc.)
+4. Configuration de l'application
+    ● Copie et modification des fichiers de configuration
+5. Construction de l'application
+    ● Compilation, minification, bundling (npm run build, etc.)
+6. Tests
+    ● Exécution des tests unitaires et d'intégration
+7. Déploiement
+    ● Copie des fichiers sur le serveur de production
+    ● Mise à jour de la base de données si nécessaire
+8. Redémarrage des services
+    ● Redémarrage du serveur web, des conteneurs Docker, etc.
+9. Vérification post-déploiement
+    ● Tests de bon fonctionnement de l'application en production
 
 ```yaml
 name: Deploy to Oracle Cloud

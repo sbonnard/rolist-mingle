@@ -14,7 +14,7 @@ Ce document ne couvre pas le développement de nouvelles fonctionnalités ou les
 #### Prérequis
 
 1. **Oracle Cloud** : Un serveur Oracle Cloud configuré avec un accès SSH.
-2. **GitHub** : Le repository contenant le code source de l'application : https://github.com/sbonnard/rolist-mingle.
+2. **GitHub** : Le repository à cloner (git clone) contenant le code source de l'application : https://github.com/sbonnard/rolist-mingle.
 3. **Docker Hub** : Un compte Docker Hub pour stocker les images Docker.
 4. **Secrets GitHub** : Les variables d'environnement suivantes doivent être configurées dans les secrets du repository GitHub :
    - `DOCKER_HUB_USERNAME` : Nom d'utilisateur Docker Hub.

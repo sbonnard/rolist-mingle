@@ -77,7 +77,7 @@ function preventFromCSRFAPI(array $inputData): void
  * @param array $session - $_SESSION super global.
  * @return void
  */
-function checkConnection (array $session) {
+function checkConnection(array $session) {
     if (!isset($session['email'])) {
         redirectTo('index.php');
         addError('please_connect');

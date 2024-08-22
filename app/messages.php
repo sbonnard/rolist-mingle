@@ -39,8 +39,8 @@ $userDatas = fetchUserDatas($dbCo, $_SESSION);
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm">
-                        <a href="flow.php" class="nav__lnk">Accueil</a>
-                        <a href="flow.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="index.php" class="nav__lnk">Accueil</a>
+                        <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
                         <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>

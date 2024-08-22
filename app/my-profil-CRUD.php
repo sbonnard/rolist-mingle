@@ -42,8 +42,8 @@ $rpg = fetchRPG($dbCo);
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm">
-                        <a href="flow.php" class="nav__lnk">Accueil</a>
-                        <a href="flow.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="index.php" class="nav__lnk">Accueil</a>
+                        <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
                     </li>
                     <li class="nav__itm">
                         <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
@@ -88,7 +88,15 @@ $rpg = fetchRPG($dbCo);
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
                     <div class="user__bio-container">
                         <h3 class="ttl ttl--no-padding-top ttl--primary">Bio</h3>
-                        <p class="user__bio"><?= $userDatas[0]['bio'] ?></p>
+                        <p class="user__bio">
+                            <?php
+                            if($userDatas[0]['bio'] === NULL) {
+                                echo 'Salut ! Je suis ' . $userDatas[0]['username'] . ' !';
+                            }
+
+                            echo $userDatas[0]['bio'];
+                            ?>
+                        </p>
                     </div>
                 </section>
 

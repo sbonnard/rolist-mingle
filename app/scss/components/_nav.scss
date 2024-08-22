@@ -10,7 +10,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
-        margin-left: 7rem;
+        margin-right: 7rem;
     }
 
     &__avatar {
@@ -30,7 +30,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        margin: 0 0 0 6rem;
+        gap: 2rem;
     }
 
     @media screen and (min-width: 768px) {
@@ -41,7 +42,7 @@
         }
 
         &__lnk {
-            margin: 0 2rem;
+            margin: 0 2rem 0 0.5rem;
         }
 
         &__lnk:hover {

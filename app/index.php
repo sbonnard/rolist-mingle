@@ -44,34 +44,42 @@ generateToken();
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm nav__lnk--current">
-                        <a href="flow.php" class="nav__lnk" aria-current="page">Accueil</a>
-                        <a href="flow.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="index.php" class="nav__lnk" aria-current="page">Accueil</a>
                     </li>
                     <li class="nav__itm">
-                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
                         <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
                     </li>
+                    <?php
+                    if (isset($session['email'])) {
+                        echo
+                        '<li class="nav__itm">
+                            <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
+                            <a href="messages.php" class="nav__lnk">Messagerie</a>
+                        </li>';
+                    }
+                    ?>
                     <li class="nav__itm">
-                        <a href="messages.php" class="nav__lnk">Messagerie</a>
-                        <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
-                    </li>
-                    <li class="nav__itm">
-                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                         <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                     </li>
-                    <!-- <li class="nav__itm" data-avatar="">
-                        <a href="my-account.php" class="nav__lnk js-link-hover">Mon compte</a>
-                        <a href="my-account.php">
-                            <picture>
-                                <source class="avatar" srcset="img/avatar-m.webp" media="(min-width: 768px)">
-                                <img class="nav__avatar js-avatar-hover" src="img/avatar.webp" alt="icones personnelles">
-                            </picture>
-                        </a>
-                    </li> -->
-                    <li class="nav__itm">
-                        <a class="nav__lnk" href="logout.php">Déconnexion</a>
-                        <img src="icones/logout.svg" alt="icône déconexion">
-                    </li>
+                    <?php if (isset($session['email'])) {
+                        echo '<li class="nav__itm" data-avatar="">
+                            <a href="my-profil-CRUD.php">
+                                <picture>
+                                    <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
+                                    <img class="nav__avatar js-avatar-hover" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
+                                </picture>
+                            </a>
+                            <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover">Mon compte</a>
+                        </li>
+                        <li class="nav__itm">
+                            <img src="icones/logout.svg" alt="icône déconnexion">
+                            <a class="nav__lnk" href="logout.php">Déconnexion</a>
+                        </li>';
+                    }
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -102,11 +110,11 @@ generateToken();
 
                     <section class="grid-concept" aria-labelledby="concept">
                         <h2 class="ttl ttl--primary">Le concept</h2>
-                        <p>Rolist-Mingle a pour vocation d'aider à la rencontre de rôlistes, confirmés ou non. Pour tout
+                        <p>Rolist-Mingle a pour vocation d'aider à la rencontre de rôlistes, confirmés ou non. Pour tous
                             ceux qui souhaiteraient jouer plus ou se lancer dans le Jeu de Rôle sur table ou à distance,
                             Rolist-Mingle se veut un lieu d'échanges et de rencontres entre rôlistes avec les mêmes
-                            envies. A ton
-                            inscription, tu pourras définir ton profil de rôliste symbolisé par différents dés de JDR et
+                            envies. <br>
+                            A ton inscription, tu pourras définir ton profil de rôliste symbolisé par différents dés de JDR et
                             retrouver ton ou tes
                             "moitiés" pour jouer plus souvent !</p>
                     </section>

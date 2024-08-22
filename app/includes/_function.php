@@ -64,7 +64,7 @@ function loadAssets(array $entries): string
         if (isset($assets[$entry]['css']) && is_array($assets[$entry]['css'])) {
             $html .= implode(
                 array_map(
-                    fn ($file) => '<link rel="stylesheet" href="' . $file . '">',
+                    fn($file) => '<link rel="stylesheet" href="' . $file . '">',
                     $assets[$entry]['css']
                 )
             );
@@ -100,7 +100,7 @@ function checkEnvironment(string $file)
  * @param PDO $dbCo - The connection to database.
  * @return array
  */
-function fetchRPG(PDO $dbCo):array
+function fetchRPG(PDO $dbCo): array
 {
     $query = $dbCo->prepare("SELECT name_universe, id_universe FROM universe;");
 
@@ -324,3 +324,42 @@ function createNewAccount(PDO $dbCo)
 
 //     return $universes;
 // }
+
+/**
+ * Get LARPs DATAS
+ *
+ * @param PDO $dbCo - Connection to database.
+ * @return array - The array containing LARP infos.
+ */
+function fetchLARPDatas(PDO $dbCo): array
+{
+    $query = $dbCo->query(
+        'SELECT e.id_event, e.name_event, e.image, e.id_universe, e.id_place, date_start, date_end, name_place, id_region
+        FROM event e
+            JOIN place USING (id_place)
+            JOIN larp USING (id_event)
+        WHERE is_larp = 1;'
+    );
+
+    $isFetchOK = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    return $isFetchOK;
+}
+
+function getLarpDatasAsHTMLList(PDO $dbCo)
+{
+    $datas = fetchLARPDatas($dbCo);
+    $larpContent = "";
+
+    foreach ($datas as $data) {
+        $larpContent .=
+            '<li class="larp__itm">
+            <h2>' . $data['name_event'] . '</h2>
+            <p>Du ' . $data['date_start'] . ' au ' . $data['date_end'] . '</p>
+            <p>' . $data['name_place'] . ' (' . $data['id_region'] . ')</p>
+            <img class="larp__img" src="img/'. $data['image'] . '" alt="Photo d\'illustration du GN ' . $data['name_event'] .'"
+        </li>';
+    }
+
+    return $larpContent;
+}

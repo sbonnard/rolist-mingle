@@ -62,7 +62,7 @@ if (isset($_SESSION['email'])) {
                             <a href="my-profil-CRUD.php">
                                 <picture>
                                     <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
-                                    <img class="nav__avatar js-avatar-hover  '. $profilColour .'" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
+                                    <img class="nav__avatar js-avatar-hover  ' . $profilColour . '" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
                                 </picture>
                             </a>
                             <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover">Mon compte</a>
@@ -91,6 +91,12 @@ if (isset($_SESSION['email'])) {
             <div class="container">
                 <button class="filter txt--bigger txt--primary">Filtrer par préférences</button>
             </div>
+
+            <ul class="larp">
+                <?php
+                echo getLarpDatasAsHTMLList($dbCo);
+                ?>
+            </ul>
 
 
         </div>

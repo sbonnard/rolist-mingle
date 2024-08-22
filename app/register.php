@@ -130,7 +130,7 @@ if (isset($_SESSION['email'])) {
                             <label class="input__label" for="check-password">Entrez de nouveau le mot de passe <span class="input__required" aria-hidden="true">*</span></label>
                             <div class="input--password">
                                 <input class="input" type="password" name="check-password" id="check-password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe pour vérification.">
-                                <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                                <button class="button--eye button--eye--inactive" id="eye-button-bis" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
                             </div>
                         </li>
                         <li class="form__question">

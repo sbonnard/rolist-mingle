@@ -1,4 +1,5 @@
 const eyeButton = document.getElementById('eye-button');
+const eyeButtonBis = document.getElementById('eye-button-bis');
 const passwordInput = document.getElementById('password');
 
 eyeButton.addEventListener('click', function(e) {

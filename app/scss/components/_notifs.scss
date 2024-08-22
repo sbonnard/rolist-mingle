@@ -3,7 +3,9 @@
     padding: 2rem;
 
     &--error {
-        color: $zinzolin;
+        display: flex;
+        justify-content: center;
+        color: $primary;
     }
 
     &--success {

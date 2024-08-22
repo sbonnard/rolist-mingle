@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : jeu. 25 juil. 2024 à 08:24
+-- Généré le : jeu. 22 août 2024 à 13:50
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -3085,7 +3085,32 @@ INSERT INTO `selected_universe` (`id_universe`, `id_user`) VALUES
 (39, 754),
 (41, 726),
 (18, 312),
-(32, 8);
+(16, 8),
+(15, 8),
+(23, 8),
+(1, 8),
+(26, 1),
+(16, 1),
+(41, 8),
+(12, 1001),
+(9, 1001),
+(1, 1002),
+(16, 1002),
+(4, 1002),
+(1, 1003),
+(23, 1003),
+(1, 1004),
+(2, 1004),
+(1, 1005),
+(26, 1005),
+(26, 1006),
+(1, 1006),
+(16, 1006),
+(40, 1007),
+(23, 1007),
+(43, 1007),
+(2, 1008),
+(37, 1008);
 
 -- --------------------------------------------------------
 
@@ -3195,10 +3220,10 @@ CREATE TABLE `users` (
   `username` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `avatar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1',
+  `avatar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'img/first-avatar.webp',
   `admin` tinyint(1) DEFAULT NULL,
   `id_role_type` smallint UNSIGNED NOT NULL,
-  `id_place` smallint UNSIGNED NOT NULL,
+  `id_place` smallint UNSIGNED DEFAULT NULL,
   `bio` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -3207,14 +3232,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `avatar`, `admin`, `id_role_type`, `id_place`, `bio`) VALUES
-(1, 'SeonPrim', 'mpynner0@bloomberg.com', '$2a$04$Hk2nRYpGywkDgX0K50rjv.TIFsu2kEIevmhDalBX.XGamlrMYUq6G', 'avatar-seon.svg', 1, 2, 1, NULL),
+(1, 'SeonPrim', 'searyus@gmail.com', '$2y$10$rw5TzFscQeuAqAk1WhGVp.nVJ5JAU79we1G1DQ6WYKxiW.5b1tT.G', 'img/avatar-seon.svg', 1, 1, 1, 'Je suis Searyus et j\'aime le JDR ! RANDY SAVAGE THE MACHO MAN OUH YEAG DIGGIT !'),
 (2, 'Sunshine', 'slummus1@mtv.com', '$2a$04$Q.x05A.lYEKvimLNNze/lu45GPwTdXEZU2UO0mawvI1t3M8MzyGOa', 'https://robohash.org/aliassuntdignissimos.png?size=50x50&set=set1', 0, 2, 38, NULL),
 (3, 'Kalinda', 'kbowery2@pcworld.com', '$2a$04$ugqM2.00w1Ng1XCl.j2KH.f1dJVfdfCyvR5MZUYt8ikQ6G1Ysda82', 'https://robohash.org/aspernaturvoluptatemlabore.png?size=50x50&set=set1', 0, 3, 177, NULL),
 (4, 'Zenia', 'zmcdermottrow3@arizona.edu', '$2a$04$b2r.wDaOsG9tP2XpU.gr6.5uvxzFp2B/mtycMpvyBSthhZhq3xjUK', 'https://robohash.org/suntadipisciest.png?size=50x50&set=set1', 0, 1, 172, NULL),
 (5, 'Merlina', 'mveljes4@godaddy.com', '$2a$04$T/hCNagoiaAznS1cRzT2VOHe9p3OQuXtgRYvGBVAvUpsgsoJLCOW.', 'https://robohash.org/illumquiadoloribus.png?size=50x50&set=set1', 0, 5, 12, NULL),
 (6, 'Frannie', 'fgoldin5@dropbox.com', '$2a$04$VaLPMOIVQsjA8d/SVxLcw.W4RSvXIw5xd90XAc/1YbjtWo9bIf92W', 'https://robohash.org/fugiateumquis.png?size=50x50&set=set1', 0, 3, 30, NULL),
 (7, 'Bob', 'bhuguenet6@yolasite.com', '$2a$04$ktNncfH5NAiBs2TUQmg98OTUx5a.h6EqeyZxh1n255GgK6p27Y/B6', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', 0, 4, 139, NULL),
-(8, 'Charlie', 'charthorne@netscape.com', '$2y$10$ZA3SrLqVxoRauyOlz/YVJulcxomnWvSj6BRYOvq06VexT7fHqBG12', 'img/charlie-avatar.webp\n', 0, 3, 46, 'J\'aime le JDR et les huîtres avec du vin blanc sur le port.'),
+(8, 'Charlie', 'charthorne@netscape.com', '$2y$10$yRwQPvNOhwcuKT5JZFPKauYzckig.oFRTLJVT5k/0Vm0XeTPMzAca', 'img/charlie-avatar.webp\n', 0, 3, 46, 'Je suis Searyus'),
 (9, 'Donal', 'damanger8@vkontakte.ru', '$2a$04$pm8lfSaxFh5YW85E54uWtOmK2mKorXuTWnZ6WoORhpUrgJBq/achW', 'https://robohash.org/impeditrerumcupiditate.png?size=50x50&set=set1', 0, 3, 47, NULL),
 (10, 'Vinnie', 'vedwardson9@360.cn', '$2a$04$J8Ft7Qta8rJIeVOLk4Oj2uBLz.vIu.GElOdT.1dqzh9/YD49F4yMW', 'https://robohash.org/praesentiumeumvelit.png?size=50x50&set=set1', 0, 2, 110, NULL),
 (11, 'Barnie', 'bmccarneya@dailymail.co.uk', '$2a$04$Te5ZJYSaasJjq0x7jZiBKO3GP4/6.FOXbfT/Si3DQ5gSDbIM.S60u', 'https://robohash.org/aperiametdelectus.png?size=50x50&set=set1', 0, 2, 124, NULL),
@@ -4209,7 +4234,15 @@ INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `avatar`, `admi
 (997, 'Ronny', 'rboldersonro@ifeng.com', '$2a$04$73wFUzOTmOC6TsWPEF.JPuJiW2VojztlwqzMJjhknTGuqzknseOUm', 'https://robohash.org/utullamest.png?size=50x50&set=set1', 0, 2, 43, NULL),
 (998, 'Clive', 'chehlrp@smh.com.au', '$2a$04$LxrryrxPB0dG4CdzPUNmLOS2EkamJKhv3uMcITv4KsxLyZAbaem0O', 'https://robohash.org/sedfugitplaceat.png?size=50x50&set=set1', 0, 3, 110, NULL),
 (999, 'Lucy', 'laldrenrq@nba.com', '$2a$04$LEOBCnIrMNP/EQ6BvojjfeImycFxnbiY4XrrjaoebLYwJQnqDD7Du', 'https://robohash.org/corruptitotamitaque.png?size=50x50&set=set1', 0, 1, 64, NULL),
-(1000, 'Rosabelle', 'rszachniewiczrr@facebook.com', '$2a$04$4JniEWrQ.RJqnhFpcg9TtOndWODnaL1M9.nTTZvl.x5z2xs11gLPi', 'https://robohash.org/velquibusdamconsequatur.png?size=50x50&set=set1', 0, 4, 86, NULL);
+(1000, 'Rosabelle', 'rszachniewiczrr@facebook.com', '$2a$04$4JniEWrQ.RJqnhFpcg9TtOndWODnaL1M9.nTTZvl.x5z2xs11gLPi', 'https://robohash.org/velquibusdamconsequatur.png?size=50x50&set=set1', 0, 4, 86, NULL),
+(1001, 'Gradouble', 'gradouble@gradouble.com', '$2y$10$kNSuzMXXhN23T7GzArbbOO9s0XvPL77f8W2avcPJQH6lVSBsGkw.S', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', NULL, 1, NULL, NULL),
+(1002, 'Bergueau', 'bergueau@monjdr.com', '$2y$10$7Ry2anfAReJqQuyN3RuiT.ZA34Gnd85Ecs8f067FivJUasqQQ6lry', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', NULL, 2, NULL, 'J\'aime les barbecues entre amis.'),
+(1003, 'Edreen', 'edreen@mon-jdr.com', '$2y$10$wXlYTm07g5LKB0f0YWSz9u92AJIxqB1J8die..7GxF7Bz0L0LYSMu', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', NULL, 2, NULL, 'J\'aime la viande bien saignante !'),
+(1004, 'slike', 'slike@mon-jdr.com', '$2y$10$uQ/0PrRG10XWgp.HRCpZ/uEWGyVnAr69feZCmFqGZ7ULkGtr9KbAq', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', NULL, 4, NULL, NULL),
+(1005, 'canas', 'canas@monjdr.com', '$2y$10$0UGpmeFJK3VBRyfik99FDe2RB8E4KZS5u.oawgevldquN3dBVk1oK', 'https://robohash.org/eaquesitveritatis.png?size=50x50&set=set1', NULL, 2, NULL, NULL),
+(1006, 'Searyus', 'searyus@monjdr.com', '$2y$10$phTvWUrq8rvGsxRwiKrxDugN14HfsrhApsed5bcr/5Q4U.qCceTju', 'img/first-avatar.webp', NULL, 1, NULL, 'Je suis Searyus et j\'aime le JDR ! RANDY SAVAGE THE MACHO MAN OUH YEAH DIGGIT SUCKA !'),
+(1007, 'cacahuète', 'cacahuete@cacahuete.com', '$2y$10$NrptPDozMhqxk2OoRCikg.RJR2vxc8I1TI6GlQweqM5JOkw9FXd22', 'img/first-avatar.webp', NULL, 4, NULL, NULL),
+(1008, 'cacahuète', 'cacahuete@cacahuete.fr', '$2y$10$XgRhzgOgx5Ptfh9euW.LMuKUphPqfO4poPZyuDjPBR06o74dRI47W', 'img/first-avatar.webp', NULL, 4, NULL, 'roliste debutant');
 
 --
 -- Index pour les tables déchargées
@@ -4313,6 +4346,7 @@ ALTER TABLE `universe_genre`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `email` (`email`),
   ADD KEY `id_role_type` (`id_role_type`),
   ADD KEY `id_place` (`id_place`);
 
@@ -4372,7 +4406,7 @@ ALTER TABLE `universe_genre`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` smallint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  MODIFY `id_user` smallint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
 
 --
 -- Contraintes pour les tables déchargées

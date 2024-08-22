@@ -12,6 +12,10 @@ require_once "./includes/components/_footer.php";
 
 generateToken();
 
+if (isset($_SESSION['email'])) {
+    $userDatas = fetchUserDatas($dbCo, $_SESSION);
+    $profilColour = defineProfilColour($userDatas);
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +58,7 @@ generateToken();
                             <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
                         </li>
                         <?php 
-                        if(isset($session['email'])) {
+                        if(isset($_SESSION['email'])) {
                             echo
                        '<li class="nav__itm">
                             <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
@@ -66,12 +70,12 @@ generateToken();
                             <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
                             <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                         </li>
-                        <?php if(isset($session['email'])) {
+                        <?php if(isset($_SESSION['email'])) {
                             echo '<li class="nav__itm" data-avatar="">
                             <a href="my-profil-CRUD.php">
                                 <picture>
                                     <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
-                                    <img class="nav__avatar js-avatar-hover" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
+                                    <img class="nav__avatar js-avatar-hover  '. $profilColour .'" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
                                 </picture>
                             </a>
                             <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover">Mon compte</a>

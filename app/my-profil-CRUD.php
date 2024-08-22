@@ -16,8 +16,9 @@ checkConnection($_SESSION);
 
 generateToken();
 $userDatas = fetchUserDatas($dbCo, $_SESSION);
-$favourites = fetchUserFavourites($dbCo , $_SESSION);
+$favourites = fetchUserFavourites($dbCo, $_SESSION);
 $rpg = fetchRPG($dbCo);
+$profilColour = defineProfilColour($userDatas);
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ $rpg = fetchRPG($dbCo);
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <div class="container__header">
             <img class="header__img" src="logo/logo-rolist-mingle.svg" alt="logo de rolist-mingle représentant un dé 20 de JDR">
             <a href="#">
@@ -42,34 +43,42 @@ $rpg = fetchRPG($dbCo);
             <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
                 <ul class="nav__lst" id="nav-list">
                     <li class="nav__itm">
-                        <a href="index.php" class="nav__lnk">Accueil</a>
                         <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                        <a href="index.php" class="nav__lnk">Accueil</a>
                     </li>
-                    <li class="nav__itm">
-                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
+                    <li class="nav__itm nav__lnk--current">
                         <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle" aria-current="page">Parties</a>
                     </li>
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        echo
+                        '<li class="nav__itm">
+                            <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
+                            <a href="messages.php" class="nav__lnk">Messagerie</a>
+                        </li>';
+                    }
+                    ?>
                     <li class="nav__itm">
-                        <a href="messages.php" class="nav__lnk">Messagerie</a>
-                        <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
-                    </li>
-                    <li class="nav__itm">
-                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                         <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
+                        <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                     </li>
-                    <li class="nav__itm nav__lnk--current" data-avatar="">
-                        <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover" aria-current="page">Mon compte</a>
-                        <a href="my-profil-CRUD.php">
-                            <picture>
-                                <source class="avatar" srcset="<?= $userDatas[0]['avatar'] ?>" media="(min-width: 768px)">
-                                <img class="nav__avatar js-avatar-hover" src="<?= $userDatas[0]['avatar'] ?>" alt="icones personnelles">
-                            </picture>
-                        </a>
-                    </li>
-                    <li class="nav__itm">
-                        <a class="nav__lnk" href="logout.php">Déconnexion</a>
-                        <img src="icones/logout.svg" alt="icône déconexion">
-                    </li>
+                    <?php if (isset($_SESSION['email'])) {
+                        echo '<li class="nav__itm" data-avatar="">
+                            <a href="my-profil-CRUD.php">
+                                <picture>
+                                    <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
+                                    <img class="nav__avatar ' . $profilColour . ' js-avatar-hover" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
+                                </picture>
+                            </a>
+                            <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover">Mon compte</a>
+                        </li>
+                        <li class="nav__itm">
+                            <img src="icones/logout.svg" alt="icône déconnexion">
+                            <a class="nav__lnk" href="logout.php">Déconnexion</a>
+                        </li>';
+                    }
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -87,10 +96,10 @@ $rpg = fetchRPG($dbCo);
                     <p>Email : <?= $userDatas[0]['email'] ?> </p>
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
                     <div class="user__bio-container">
-                        <h3 class="ttl ttl--no-padding-top ttl--primary">Bio</h3>
+                        <h3 class="ttl ttl--no-padding-top ttl--primary">Qui suis-je ?</h3>
                         <p class="user__bio">
                             <?php
-                            if($userDatas[0]['bio'] === NULL) {
+                            if ($userDatas[0]['bio'] === NULL) {
                                 echo 'Salut ! Je suis ' . $userDatas[0]['username'] . ' !';
                             }
 

@@ -39,10 +39,16 @@
         &__lst {
             display: flex;
             align-items: center;
+            gap: 2rem;
+        }
+
+        &__itm {
+            margin: 0;
+            gap: 0.5rem;
         }
 
         &__lnk {
-            margin: 0 2rem 0 0.5rem;
+            margin: 0;
         }
 
         &__lnk:hover {

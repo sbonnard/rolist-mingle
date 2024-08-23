@@ -46,9 +46,9 @@ $profilColour = defineProfilColour($userDatas);
                         <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
                         <a href="index.php" class="nav__lnk">Accueil</a>
                     </li>
-                    <li class="nav__itm nav__lnk--current">
+                    <li class="nav__itm">
                         <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
-                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle" aria-current="page">Parties</a>
+                        <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
                     </li>
                     <?php
                     if (isset($_SESSION['email'])) {
@@ -64,14 +64,14 @@ $profilColour = defineProfilColour($userDatas);
                         <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
                     </li>
                     <?php if (isset($_SESSION['email'])) {
-                        echo '<li class="nav__itm" data-avatar="">
+                        echo '<li class="nav__itm  nav__lnk--current" data-avatar="">
                             <a href="my-profil-CRUD.php">
                                 <picture>
                                     <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
                                     <img class="nav__avatar ' . $profilColour . ' js-avatar-hover" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
                                 </picture>
                             </a>
-                            <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover">Mon compte</a>
+                            <a href="my-profil-CRUD.php" class="nav__lnk js-link-hover" aria-current="page">Mon compte</a>
                         </li>
                         <li class="nav__itm">
                             <img src="icones/logout.svg" alt="icône déconnexion">

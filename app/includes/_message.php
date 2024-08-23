@@ -22,7 +22,8 @@ $errors = [
     'password_ko' => 'Merci de saisir votre mot de passe',
     'login_ko' => 'Échec critique lors de la saisie du mot de passe ou de l\'email !',
     'mdp_no_match' => 'Les mots de passes entrés ne correspondent pas.',
-    'please_connect' => 'Merci de vous connecter pour consulter cette page'
+    'please_connect' => 'Merci de vous connecter pour consulter cette page',
+    'login_fail' => 'Identifiants ou mot de passe incorrects'
 ];
 
 

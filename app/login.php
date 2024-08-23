@@ -31,8 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'log-in') {
         redirectTo('my-profil-CRUD.php');
         exit();
     } else {
-        echo "Identifiants incorrects. Veuillez réessayer.";
+        addError('login_fail');
+        redirectTo('index.php');
     }
 }
-
-redirectTo('my-profil-CRUD.php');

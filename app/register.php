@@ -201,6 +201,6 @@ if (isset($_SESSION['email'])) {
     </footer>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
-    <script type="module" src="js/register.js"></script>
     <script type="module" src="js/password.js"></script>
+    <!-- <script type="module" src="js/register.js"></script> -->
 </body>

@@ -1,15 +1,11 @@
 // import JDR from "./jdr.json" with {type: "json"}
 // import * from "./"
-
 // Favourite Universe
-
 const suggestionsField = document.getElementById('suggestionsField');
 const selectedItemsList = document.getElementById('selectedItemsList');
 const template = document.getElementById("favourite-template");
 const suggestions = document.getElementById('suggestions');
-
 let selectedRPG = [];
-
 /**
  * Fetch RPG data from the server.
  * @param {string} searchTerm - The search term to filter RPGs.
@@ -18,15 +14,12 @@ let selectedRPG = [];
 async function fetchRPGData(searchTerm) {
     try {
         const url = `../api_rpg.php?search=${encodeURIComponent(searchTerm)}`;
-
         const response = await fetch(url);
-
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
         const data = await response.json();
-
         console.log(data.map(rpg => ({ id: rpg.id_universe, name: rpg.name_universe })));
         return data.map(rpg => ({ id: rpg.id_universe, name: rpg.name_universe }));
     } catch (error) {
@@ -34,7 +27,6 @@ async function fetchRPGData(searchTerm) {
         return [];
     }
 }
-
 /**
  * Get filtered suggestions from suggestions field.
  * @param {string} input - The suggestion field you have to write in to get suggestions.
@@ -46,7 +38,6 @@ function getFilteredSuggestions(input, rpgList) {
         .sort((a, b) => a.name.localeCompare(b.name))
         .slice(0, 10);
 }
-
 /**
  * Creates a suggestion item in the DOM.
  * @param {Object} item - The item you want to create.
@@ -64,7 +55,6 @@ function createSuggestionItem(item) {
     newItem.appendChild(document.createTextNode(item.name));
     return newItem;
 }
-
 /**
  * Adds an item to selected list RPG. Adds an addeventlistener to button--minus to remove the item from selected list.
  * @param {Object} item - The item you want to add to selected list in the DOM.
@@ -72,7 +62,7 @@ function createSuggestionItem(item) {
 function addItemToSelectedList(item) {
     selectedRPG.push(item);
     const clone = document.importNode(template.content, true);
-    
+
     const checkbox = clone.querySelector('.button--minus');
     checkbox.value = item.id;  // Assigner id_universe à la valeur de la checkbox
 
@@ -98,9 +88,7 @@ function clearSuggestionsAndInput() {
     suggestions.innerHTML = '';
     suggestionsField.value = '';
 }
-
 let allRPGData = [];
-
 suggestionsField.addEventListener('keyup', function (event) {
     const inputText = suggestionsField.value.trim();
     if (inputText !== '') {

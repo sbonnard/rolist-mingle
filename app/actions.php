@@ -7,7 +7,7 @@ require_once 'includes/_database.php';
 require_once 'includes/_message.php';
 require_once 'includes/_security.php';
 
-header('Content-type:application/json');
+// header('Content-type:application/json');
 
 
 if (!isset($_POST['action'])) {
@@ -15,7 +15,7 @@ if (!isset($_POST['action'])) {
 }
 
 // Check CSRF
-preventFromCSRF('create-account.php');
+preventFromCSRF('register.php');
 
 
 // Create Account action 
@@ -97,7 +97,5 @@ if ($_POST['action'] === 'create_account') {
         }
     }
 }
-
-
 
 redirectTo('index.php');

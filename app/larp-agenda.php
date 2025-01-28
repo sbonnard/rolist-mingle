@@ -79,13 +79,13 @@ if (isset($_SESSION['email'])) {
     </header>
 
     <main>
+        <!-- THINK TO REMOVE CONNECTION BAR IF USER IS CONNECTER -->
+        <div class="connection-bar">
+            <p>Connecte-toi !</p>
+            <a href="index.php"><button class="button connection-bar__button">Se connecter</button></a>
+        </div>
         <div class="page-content">
-            <!-- THINK TO REMOVE CONNECTION BAR IF USER IS CONNECTER -->
-            <div class="connection-bar">
-                <p>Connecte-toi !</p>
-                <a href="index.php"><button class="button connection-bar__button">Se connecter</button></a>
-            </div>
-
+        
             <h1 class="ttl ttl--big">Agenda GN</h1>
 
             <div class="container">

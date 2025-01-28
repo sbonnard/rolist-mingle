@@ -28,6 +28,12 @@
     background-attachment: fixed;
     letter-spacing: 0.10rem;
     padding-bottom: 4rem;
+
+    @media screen and (max-width: 768px) {
+        & {
+            margin: 1rem;
+        }
+}
 }
 
 .content-position {

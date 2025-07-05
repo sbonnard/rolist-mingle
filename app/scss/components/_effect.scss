@@ -1,0 +1,22 @@
+.bg-blur {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+@keyframes rollDice {
+    0% {
+      transform: translateY(0) rotate(0deg); /* Position de départ sans inclinaison */
+    }
+    25% {
+      transform: translateY(-20px) rotate(-10deg); /* Premier bond (vers le haut) avec inclinaison */
+    }
+    50% {
+      transform: translateY(0) rotate(0deg); /* Retour à la position de départ, droit */
+    }
+    75% {
+      transform: translateY(-10px) rotate(10deg); /* Deuxième bond plus petit avec une légère inclinaison de l'autre côté */
+    }
+    100% {
+      transform: translateY(0) rotate(0deg); /* Retour final à la position droite */
+    }
+  }

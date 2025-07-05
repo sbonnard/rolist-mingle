@@ -82,3 +82,24 @@
 .grid-dices {
     grid-area: dices;
 }
+
+.container--dice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 84.375rem;
+    margin: auto;
+    gap: 5rem;
+    padding: 3rem 1rem;
+    // position: relative;
+    // z-index: -1;
+
+    @media screen and (min-width: 768px) {
+        &--grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: flex-start;
+        }
+    }
+}

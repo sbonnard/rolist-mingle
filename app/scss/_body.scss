@@ -1,10 +1,16 @@
+@use 'var';
 // BODY //
 
 body {
-  color: $white;
-  background-color: $secondary;
-  font-family: 'roboto';
+  // font-family: 'roboto';
+  font-family: 'english';
   font-size: 1rem;
+  background-color: $black90;
+  background-image: url(/img/background.webp);
+  background-position: top, left;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $white;
 }
 
 body::-webkit-scrollbar {

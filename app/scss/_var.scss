@@ -1,12 +1,19 @@
 /* Colours */
 
+$black20: rgba(0, 0, 0, 0.2);
+$black90: rgba(0, 0, 0, 0.90);
+
+$gold: #FFE03F;
+$zinzolin: #C62148;
+$electric: #08ceff;
+
 $primary: #FFD95C;
 $secondary: #0B0B0B;
 $white: #F8F8F8;
 $deep-black: #11110E;
 $light-grey: #979797;
 $black75: rgb(37, 36, 31, 0.75);
-$zinzolin: #A72E47;
+// $zinzolin: #A72E47;
 $gnome: #BFFF8C;
 
 // PROFIL COLOURS
@@ -16,3 +23,5 @@ $dice20: #884DAC;
 $dice12: #4DDC7B;
 $dice8: #D98A46;
 $dice4: #DC8CAE;
+
+$background : url(../img/background.webp);

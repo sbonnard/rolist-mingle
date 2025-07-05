@@ -1,8 +1,10 @@
+@use '../var' as var;
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $black20;
+    background-color: var.$black20;
     padding: 1.5rem;
     position: sticky;
     top: 0;

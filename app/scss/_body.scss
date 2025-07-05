@@ -1,16 +1,16 @@
-@use 'var';
+@use 'var' as var;
 // BODY //
 
 body {
   // font-family: 'roboto';
   font-family: 'english';
   font-size: 1rem;
-  background-color: $black90;
+  background-color: var.$black90;
   background-image: url(/img/background.webp);
   background-position: top, left;
   background-size: cover;
   background-attachment: fixed;
-  color: $white;
+  color: var.$white;
 }
 
 body::-webkit-scrollbar {
@@ -19,34 +19,34 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: $secondary;
+  background: var.$secondary;
   /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $primary;
+  background-color: var.$electric;
   border-radius: 20px;
   /* roundness of the scroll thumb */
-  border: 3px solid $secondary;
+  border: 3px solid var.$secondary;
   /* creates padding around scroll thumb */
 }
 
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: $primary $secondary;
+  scrollbar-color: var.$electric var.$secondary;
 }
 
 // @media screen and (max-width: 768px) {
 //   body::-webkit-scrollbar-track {
-//     background: $secondary;
+//     background: var.$secondary;
 //   }
 
 //   body::-webkit-scrollbar-thumb {
-//     background-color: $secondary;
+//     background-color: var.$secondary;
 //   }
 
 // * {
-//   scrollbar-color: $secondary $secondary;
+//   scrollbar-color: var.$secondary var.$secondary;
 // }
 // }

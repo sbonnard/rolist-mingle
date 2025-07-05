@@ -1,9 +1,11 @@
+@use '../var' as var;
+
 /* Filter */
 
 .filter {
     text-align: left;
     font-family: 'roboto';
-    border: 2px solid $primary;
+    border: 2px solid var.$primary;
     top: 40%;
     width: 100%;
     padding: 1.5rem;

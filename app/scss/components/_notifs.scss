@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 .notif {
     font-size: 1.75rem;
     padding: 2rem;
@@ -5,10 +7,10 @@
     &--error {
         display: flex;
         justify-content: center;
-        color: $primary;
+        color: var.$electric;
     }
 
     &--success {
-        color: $gnome;
+        color: var.$gnome;
     }
 }

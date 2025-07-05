@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Logo */
 
 .logo {
@@ -6,7 +8,7 @@
         font-size: 2rem;
         text-transform: uppercase;
         margin-top: -1rem;
-        color: $white;
+        color: var.$white;
     }
 
     &__ttl--smaller {

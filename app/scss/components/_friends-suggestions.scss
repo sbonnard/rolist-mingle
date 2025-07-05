@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Friend suggestion */
 
 .friend-suggestion {
@@ -5,8 +7,8 @@
     gap: 1rem;
     padding: 0.75rem;
     text-align: center;
-    background-color: $deep-black;
-    border: 2px solid $primary;
+    background-color: var.$deep-black;
+    border: 2px solid var.$primary;
     margin: 2rem 0;
 
     &__users {

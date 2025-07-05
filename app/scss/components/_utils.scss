@@ -1,9 +1,11 @@
+@use '../var' as var;
+
 /* Utils */
 
 .users-counter {
     font-size: 1.25rem;
-    color: $white;
-    border: 2px solid $primary;
+    color: var.$white;
+    border: 2px solid var.$primary;
     padding: 0.5rem;
 
     &__img {
@@ -15,16 +17,16 @@
 .txt {
     &--bigger {
         font-size: 1.25rem;
-        color: $white;
+        color: var.$white;
     }
 
     &--primary {
-        color: $primary;
+        color: var.$primary;
     }
 }
 
 .page-content {
-    background-image: url(/img/background-img-clearer.webp);
+    // background-image: url(/img/background-img-clearer.webp);
     background-attachment: fixed;
     letter-spacing: 0.10rem;
     padding-bottom: 4rem;

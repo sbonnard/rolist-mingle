@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -13,7 +15,7 @@
         transition: all 0.25s ease-in-out;
 
         &:hover {
-            text-shadow: 0 0 10px $electric, 0 0 12px $electric;
+            text-shadow: 0 0 10px var.$electric, 0 0 12px var.$electric;
         }
     }
 }

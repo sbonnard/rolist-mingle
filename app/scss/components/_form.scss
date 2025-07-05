@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Forms */
 
 .form {
@@ -27,12 +29,12 @@
     }
 
     &__radio:hover {
-        filter: drop-shadow(0 0 0.75rem $primary);
+        filter: drop-shadow(0 0 0.75rem var.$electric);
     }
 
     &__radio:checked {
         content: url(/img/radiobox-checked.svg);
-        filter: drop-shadow(0 0 0.75rem $primary);
+        filter: drop-shadow(0 0 0.75rem var.$electric);
     }
 
     &__question {

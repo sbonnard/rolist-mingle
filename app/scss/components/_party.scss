@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Party */
 
 .party {
@@ -8,14 +10,14 @@
     width: 100%;
     max-width: 20rem;
     height: 14rem;
-    border: 2px solid $primary;
+    border: 2px solid var.$electric;
     padding: 0.5rem;
-    background-color: $secondary;
+    background-color: var.$secondary;
 
     &__universe {
         font-size: 1rem;
         width: 100%;
-        color: $primary;
+        color: var.$electric;
     }
 
     &__players {
@@ -29,7 +31,7 @@
     &__img {
         width: 20rem;
         height: 50vh;
-        border: 2px solid $primary;
+        border: 2px solid var.$electric;
     }
 
     &__ttl {

@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Hero-Banner */
 
 .hero-banner {
@@ -12,14 +14,14 @@
     background-size: cover;
     background-attachment: fixed;
     padding-top: 7rem;
-    border-bottom: 2px solid $primary;
+    border-bottom: 2px solid var.$electric;
 
     &--smaller {
         height: 50vh;
     }
 
     &__img {
-        width: min(100vmin, 300px);
+        // width: min(100vmin, 300px);
         margin-top: -3rem;
     }
 
@@ -29,7 +31,7 @@
     }
 
     &__btn {
-        background-color: $primary;
+        background-color: var.$electric;
         font-size: 5rem;
         font-weight: 900;
         width: 3.5rem;
@@ -45,8 +47,8 @@
 
 
     &__btn:hover {
-        background-color: $white;
-        filter: drop-shadow(0 0 1rem $primary);
+        background-color: var.$white;
+        filter: drop-shadow(0 0 1rem var.$electric);
     }
 
     @media screen and (min-width: 768px) {
@@ -61,7 +63,7 @@
 
     @media screen and (min-width: 1824px) {
         &__img {
-            width: min(100vmin, 600px);
+
         }
     }
 }

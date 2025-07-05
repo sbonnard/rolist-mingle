@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Rolist Items */
 
 .rolist-icon {
@@ -10,28 +12,28 @@
     border-radius: 100%;
 
     &--dice100 {
-        border: 4px solid $dice100;
-        filter: drop-shadow(0 0 0.75rem $dice100);
+        border: 4px solid var.$dice100;
+        filter: drop-shadow(0 0 0.75rem var.$dice100);
     }
 
     &--dice20 {
-        border: 4px solid $dice20;
-        filter: drop-shadow(0 0 0.75rem $dice20);
+        border: 4px solid var.$dice20;
+        filter: drop-shadow(0 0 0.75rem var.$dice20);
     }
 
     &--dice12 {
-        border: 4px solid $dice12;
-        filter: drop-shadow(0 0 0.75rem $dice12);
+        border: 4px solid var.$dice12;
+        filter: drop-shadow(0 0 0.75rem var.$dice12);
     }
 
     &--dice8 {
-        border: 4px solid $dice8;
-        filter: drop-shadow(0 0 0.75rem $dice8);
+        border: 4px solid var.$dice8;
+        filter: drop-shadow(0 0 0.75rem var.$dice8);
     }
 
     &--dice4 {
-        border: 4px solid $dice4;
-        filter: drop-shadow(0 0 0.75rem $dice4);
+        border: 4px solid var.$dice4;
+        filter: drop-shadow(0 0 0.75rem var.$dice4);
     }
 
     &__lnk {
@@ -50,7 +52,7 @@
         }
 
         &__lnk:hover {
-            color: $primary;
+            color: var.$electric;
         }
     }
 }
@@ -76,7 +78,7 @@
 
     &__avatar {
         width: 8.5rem;
-        background-color: $secondary;
+        background-color: var.$secondary;
     }
 
     &__bio {
@@ -85,10 +87,10 @@
         &-container {
             justify-content: flex-start;
             max-width: 40rem;
-            background-color: $secondary;
+            background-color: var.$secondary;
             padding: 2rem;
             margin: 2rem 0;
-            filter: drop-shadow(0 0 0.75rem $primary);
+            filter: drop-shadow(0 0 0.75rem var.$electric);
         }
 
     }

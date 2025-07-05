@@ -1,20 +1,22 @@
+@use '../var' as var;
+
 /* Suggestions */
 
 .suggestions {
     position: absolute;
     z-index: 1;
     width: 20.5rem;
-    background-color: $black75;
-    border-bottom: 1px solid $primary;
-    border-right: 1px solid $primary;
-    border-left: 1px solid $primary;
+    background-color: var.$black75;
+    border-bottom: 1px solid var.$electric;
+    border-right: 1px solid var.$electric;
+    border-left: 1px solid var.$electric;
     cursor: pointer;
 
     &__itm {
         width: 100%;
         font-size: 1rem;
         text-align: left;
-        color: $white;
+        color: var.$white;
         padding: 0.5rem;
     }
 
@@ -23,13 +25,13 @@
     }
 
     &__itm:hover {
-        background-color: $primary;
-        color: $secondary;
+        background-color: var.$electric;
+        color: var.$secondary;
     }
 
     &__itm:focus {
-        background-color: $primary;
-        color: $secondary;
+        background-color: var.$electric;
+        color: var.$secondary;
     }
 
     &__list {

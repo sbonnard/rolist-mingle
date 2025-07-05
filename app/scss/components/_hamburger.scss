@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 /* Hamburger */
 
 .hamburger {
@@ -24,7 +26,7 @@
         &__menu.overlay {
             visibility: visible;
             opacity: 1;
-            background: $black90;
+            background: var.$black90;
             line-height: 4;
         }
     }

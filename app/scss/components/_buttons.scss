@@ -1,3 +1,4 @@
+@use '../var' as var;
 /* Buttons */
 
 .button {
@@ -6,27 +7,27 @@
     font-size: 1.25rem;
     font-family: 'roboto';
     border-radius: 1.25rem;
-    background-color: $primary;
-    border: 1px solid $secondary;
-    color: $secondary;
+    background-color: var.$electric;
+    border: 1px solid var.$secondary;
+    color: var.$secondary;
     cursor: pointer;
     transition: all 300ms ease-in-out;
 
     &:hover {
-        filter: drop-shadow(0 0 0.75rem $primary);
-        border-color: $primary;
+        filter: drop-shadow(0 0 0.75rem var.$electric);
+        border-color: var.$electric;
     }
 
     &--empty {
         display: inline-block;
-        background-color: $secondary;
-        border: 1px solid $primary;
-        color: $primary;
+        background-color: var.$secondary;
+        border: 1px solid var.$electric;
+        color: var.$electric;
         text-align: center;
     }
 
     &__txt {
-        color: $primary;
+        color: var.$electric;
     }
 
     &--minus {
@@ -44,17 +45,17 @@
     }
 
     &--CRUD {
-        color: $white;
+        color: var.$white;
         width: 8rem;
     }
 
     &--CRUD--active {
-        color: $primary;
-        filter: drop-shadow(0 0 0.75rem $primary);
+        color: var.$electric;
+        filter: drop-shadow(0 0 0.75rem var.$electric);
     }
 
     &--CRUD:hover {
-        color: $primary;
+        color: var.$electric;
     }
 
     &--eye {
@@ -72,7 +73,7 @@
 
         &--active {
             background-image: url(../../img/eye-active.svg);
-            filter: drop-shadow(0 0 0.75rem $primary);
+            filter: drop-shadow(0 0 0.75rem var.$electric);
         }
     }
 

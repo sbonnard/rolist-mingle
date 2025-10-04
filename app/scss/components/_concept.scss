@@ -5,12 +5,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
     padding: 2rem;
     margin: 2rem;
     border-radius: 1rem;
 
+    @media screen and (max-width: 768px) {
+        & {
+            margin: 0;
+        }
+    }
+
     &__para {
-        padding: 1rem 1rem;
         text-align: left;
         width: 75%;
         font-size: 1.5rem;
@@ -20,25 +26,26 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1rem;
         cursor: pointer;
 
         &__txt {
             text-align: center;
-            padding-top: 1.5rem;
         }
 
         &__sub-ttl {
-            padding-top: 1.5rem;
+            font-size: 1.25rem;
         }
 
         @media screen and (min-width: 768px) {
             &__container {
                 display: flex;
+                flex-direction: row;
                 align-items: baseline;
                 justify-content: center;
                 gap: 8rem;
-                width: 84.375rem;
-                margin: auto;
+                //     width: 84.375rem;
+                //     margin: auto;
             }
         }
     }

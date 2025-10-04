@@ -105,48 +105,40 @@ if (isset($_SESSION['email'])) {
 
                 </section> -->
 
-            <div class="concept-dice__container grid-dices" aria-label="Présentation des différents profils de rôlistes">
+            <div class="concept-dice__container" aria-label="Présentation des différents profils de rôlistes">
                 <section class="container concept-dice js-concept-dice" data-concept-dice="100" aria-labelledby="dice100" aria-label="Présentation des profils de rôlistes types.">
                     <h4 class="ttl" id="dice100">Dé 100</h4>
                     <img src="icones/dé100.webp" alt="dé 100 de JDR">
-                    <p class="concept-dice__txt">Maître du Jeu<br>cherche joueurs</p>
-                    <h5 class="ttl concept-dice__sub-ttl">Dominateur</h5>
+                    <p class="concept-dice__txt">Maître du Jeu cherche joueurs</p>
+                    <h5 class="concept-dice__sub-ttl">Dominateur</h5>
                 </section>
 
                 <section class="container concept-dice" data-concept-dice="20" aria-labelledby="dice20" aria-label="Présentation des profils de rôlistes types.">
                     <h4 class="ttl" id="dice20">Dé 20</h4>
                     <img src="icones/dé20.webp" alt="dé 20 de JDR">
-                    <p class="concept-dice__txt">Cherche
-                        <br>sa moitié
-                    </p>
-                    <h5 class="ttl concept-dice__sub-ttl">Sérieux</h5>
+                    <p class="concept-dice__txt">Cherche sa moitié</p>
+                    <h5 class="concept-dice__sub-ttl">Sérieux</h5>
                 </section>
 
                 <section class="container concept-dice" data-concept-dice="12" aria-labelledby="dice12" aria-label="Présentation des profils de rôlistes types.">
                     <h4 class="ttl" id="dice12">Dé 12</h4>
                     <img src="icones/dé12.webp" alt="dé 12 de JDR">
-                    <p class="concept-dice__txt">Cherche plan
-                        <br>JDR régulier
-                    </p>
-                    <h5 class="ttl concept-dice__sub-ttl">Veut s'amuser</h5>
+                    <p class="concept-dice__txt">Cherche plan JDR régulier</p>
+                    <h5 class="concept-dice__sub-ttl">Veut s'amuser</h5>
                 </section>
 
                 <section class="container concept-dice" data-concept-dice="8" aria-labelledby="dice8" aria-label="Présentation des profils de rôlistes types.">
                     <h4 class="ttl" id="dice8">Dé 8</h4>
                     <img src="icones/dé8.webp" alt="dé 8 de JDR">
-                    <p class="concept-dice__txt">Cherche JDR court
-                        <br>voire très court
-                    </p>
-                    <h5 class="ttl concept-dice__sub-ttl">Plus si affinité</h5>
+                    <p class="concept-dice__txt">Cherche JDR sans lendemain</p>
+                    <h5 class="concept-dice__sub-ttl">Plus si affinité</h5>
                 </section>
 
                 <section class="container concept-dice" data-concept-dice="4" aria-labelledby="dice4" aria-label="Présentation des profils de rôlistes types.">
                     <h4 class="ttl" id="dice4">Dé 4</h4>
                     <img src="icones/dé4.webp" alt="dé 4 de JDR">
-                    <p class="concept-dice__txt">Juste pour un soir
-                        <br>en one-shot
-                    </p>
-                    <h5 class="ttl concept-dice__sub-ttl">JDR sans lendemain</h5>
+                    <p class="concept-dice__txt">Petit nouveau cherche expérience</p>
+                    <h5 class="concept-dice__sub-ttl">Je débute en douceur</h5>
                 </section>
             </div>
 

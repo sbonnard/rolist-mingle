@@ -21,7 +21,7 @@ return
             </ul>
         </nav>
         <nav aria-label="navigation vers mentions légales du site">
-            <ul class="footer-legal">
+            <ul class="footer__legal">
                 <li class="footer-legal__lnk"><a href="#privacy-policy">Privacy Policy</a></li>
                 <div>|</div>
                 <li class="footer-legal__lnk"><a href="#cookies">Cookies</a></li>

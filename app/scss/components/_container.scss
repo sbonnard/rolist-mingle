@@ -42,17 +42,17 @@
     }
 
     @media screen and (min-width: 768px) {
-        &--desktop {
-            display: grid;
-            grid-template:
-                "counter form"
-                "concept form"
-                "dices dices"
-                / 1fr 1fr;
-            width: 84.375rem;
-            margin: auto;
-            gap: 2rem;
-        }
+        // &--desktop {
+        //     display: grid;
+        //     grid-template:
+        //         "counter form"
+        //         "concept form"
+        //         "dices dices"
+        //         / 1fr 1fr;
+        //     width: 84.375rem;
+        //     margin: auto;
+        //     gap: 2rem;
+        // }
 
         &--column {
             display: flex;

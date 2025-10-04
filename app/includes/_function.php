@@ -222,7 +222,7 @@ function displayParties(array $parties): string
  * @param array $parties - The array containing every party datas.
  * @return string - A string corresponding to a CSS class.
  */
-function defineRoleTypePlayer(array $parties): string
+function defineRoleTypePlayer(array $parties)
 {
     if ($parties['user_role'] === 1) {
         return 'avatar--dice100';
@@ -363,3 +363,11 @@ function getLarpDatasAsHTMLList(PDO $dbCo)
 
     return $larpContent;
 }
+
+
+
+function getCustomCursor() {
+    return '<div class="cursor-dot-outline" style="top: 443px; left: 1678px;"></div>
+    <div class="cursor-dot" style="top: 549px; left: 1677px;"></div>';
+}
+  

@@ -1,10 +1,11 @@
 @use '../var' as var;
+@use '../fonts' as fonts;
 
 /* Logo */
 
 .logo {
     &__ttl {
-        font-family: 'khyay';
+        // font-family: 'khyay';
         font-size: 2rem;
         text-transform: uppercase;
         margin-top: -1rem;
@@ -16,7 +17,7 @@
     }
 
     &__tagline {
-        font-family: 'oooh-baby';
+        // font-family: 'oooh-baby';
         font-size: 1.5rem;
     }
 

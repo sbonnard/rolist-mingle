@@ -2,68 +2,73 @@
 
 /* Hero-Banner */
 
-.hero-banner {
-    height: 100vh;
+.hero {
     display: flex;
+    // grid-template-columns: 1fr 1fr;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
-    background-image: url(/img/hero-banner-texture.webp);
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    padding-top: 7rem;
-    border-bottom: 2px solid var.$electric;
+    gap: 1rem;
+    width: 100%;
+            width: 100%;
+        background-image: url(/img/hero-banner-texture.webp);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        border-bottom: 2px solid var.$electric;
 
-    &--smaller {
-        height: 50vh;
-    }
-
-    &__img {
-        // width: min(100vmin, 300px);
-        margin-top: -3rem;
-    }
-
-    &__img--smaller {
-        width: min(40vmin);
-        margin-top: -2.5rem;
-    }
-
-    &__btn {
-        background-color: var.$electric;
-        font-size: 5rem;
-        font-weight: 900;
-        width: 3.5rem;
-        aspect-ratio: 1/1;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 1rem;
-        transition: all 300ms ease-in-out;
-    }
-
-
-    &__btn:hover {
-        background-color: var.$white;
-        filter: drop-shadow(0 0 1rem var.$electric);
-    }
-
-    @media screen and (min-width: 768px) {
-        &__img {
-            width: min(50vmin, 500px);
+     @media screen and (max-width: 768px) {
+        & {
+            flex-direction: column-reverse;
         }
+     }
+
+    &-banner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        // background-image: url(/img/hero-banner-texture.webp);
+        // background-position: left;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-attachment: fixed;
+        border-radius: 1rem;
 
         &--smaller {
-            height: 60vh;
+            height: 50vh;
         }
-    }
 
-    @media screen and (min-width: 1824px) {
         &__img {
-
+            width: 25rem;
         }
+
+        &__img--smaller {
+            width: 20rem;
+        }
+
+        &__btn {
+            background-color: var.$electric;
+            font-size: 5rem;
+            font-weight: 900;
+            width: 3.5rem;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 1rem;
+            transition: all 300ms ease-in-out;
+        }
+
+
+        &__btn:hover {
+            background-color: var.$white;
+            filter: drop-shadow(0 0 1rem var.$electric);
+        }
+
     }
 }

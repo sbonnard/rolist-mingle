@@ -1,0 +1,73 @@
+@use '../var' as var;
+
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+    border-radius: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var.$white;
+    transition: width 0.2s, height 0.2s, opacity 0.2s;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(138, 43, 226, 0.1);
+    box-shadow: 0 0 15px rgba(8, 206, 255, 0.5);
+    transition: transform 0.15s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
+
+     @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+/* Effet hover */
+.hover-effect .cursor-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var.$white;
+}
+
+.hover-effect .cursor-dot-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(8, 206, 255, 0.3);
+}
+
+/* Effet clic */
+.click-effect .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: var.$white;
+}
+
+.click-effect .cursor-dot-outline {
+    transform: translate(-50%, -50%) scale(1.2);
+    background-color: rgba(8, 206, 255, 0.4);
+    opacity: 0.5;
+}
+
+/* Traînée lumineuse du curseur */
+.cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(8, 206, 255, 0.4);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    box-shadow: 0 0 10px rgba(8, 206, 255, 0.8);
+}

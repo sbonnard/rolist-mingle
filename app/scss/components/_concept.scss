@@ -1,28 +1,45 @@
 /* Concept */
 
-.concept-dice {
+.concept {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    cursor: pointer;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
 
-    &__txt {
-        text-align: center;
-        padding-top: 1.5rem;
+    &__para {
+        padding: 1rem 1rem;
+        text-align: left;
+        width: 75%;
+        font-size: 1.5rem;
     }
-    
-    &__sub-ttl {
-        padding-top: 1.5rem;
-    }
-    
-    @media screen and (min-width: 768px) {
-        &__container {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 8rem;
-            width: 84.375rem;
-            margin: auto;
+
+    &-dice {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+
+        &__txt {
+            text-align: center;
+            padding-top: 1.5rem;
+        }
+
+        &__sub-ttl {
+            padding-top: 1.5rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            &__container {
+                display: flex;
+                align-items: baseline;
+                justify-content: center;
+                gap: 8rem;
+                width: 84.375rem;
+                margin: auto;
+            }
         }
     }
 }

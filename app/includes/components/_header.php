@@ -22,11 +22,15 @@ function fetchHeader(array $session, array $userDatas = [], string $profilColour
         </div>
         <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
             <ul class="nav" id="nav-list">
-                <li class="nav__itm nav__lnk--current">
-                    <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
-                    <a href="index.php" class="nav__lnk" aria-current="page">Accueil</a>
-                </li>
-                <li class="nav__itm">
+            <li class="nav__itm nav__lnk--current">
+                <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                <a href="index.php" class="nav__lnk" aria-current="page">Accueil</a>
+            </li>
+             <li class="nav__itm nav__lnk--current">
+                <a href="index.php"><img src="icones/home.svg" alt="icone accueil"></a>
+                <a href="diceroller.php" class="nav__lnk" aria-current="page">Dés</a>
+            </li>
+            <li class="nav__itm">
                     <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
                     <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
                 </li>';

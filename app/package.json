@@ -12,6 +12,10 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "devDependencies": {
     "rollup": "^4.22.5",
     "sass": "^1.77.3",

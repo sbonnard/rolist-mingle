@@ -1,61 +1,63 @@
 <?php
 session_start();
 
-require_once 'includes/components/_footer.php';
-require_once 'includes/components/_header.php';
-require_once 'includes/components/_dice.php';
+require_once "./includes/_config.php";
+require_once "./includes/_database.php";
+require_once './includes/_function.php';
+require_once './includes/_message.php';
+require_once './includes/_security.php';
+require_once './includes/_datas.php';
+require_once './includes/_profilCRUD-functions.php';
+require_once "./includes/components/_head.php";
+require_once "./includes/components/_header.php";
+require_once "./includes/components/_footer.php";
+require_once './includes/components/_dice.php';
+
+generateToken();
+
+if (isset($_SESSION['email'])) {
+    $userDatas = fetchUserDatas($dbCo, $_SESSION);
+    $profilColour = defineProfilColour($userDatas);
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don't Roll Single</title>
     <link rel="stylesheet" href="scss/style.scss">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <!-- if development -->
     <!-- <script type="module" src="http://localhost:5173/@vite/client"></script>
     <script type="module" src="http://localhost:5173/js/script.js"></script> -->
 
     <!-- Production -->
-    <link rel="stylesheet" href="assets/assets/script-BzxqH_86.css">
-    <script type="module" src="assets/assets/script-CtvaXMUD.js"></script>
+    <!-- <link rel="stylesheet" href="assets/assets/script-BzxqH_86.css">
+    <script type="module" src="assets/assets/script-CtvaXMUD.js"></script> -->
 
     <!-- RPG DICES 3D -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r136/three.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r136/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon-es/0.20.0/cannon-es.min.js"></script>
-    <script src="rollingTheDices.js"></script>
-
+    <script src="rollingTheDices.js"></script>-->
+    <?php
+    if ($_ENV['ENV_TYPE'] === 'dev') {
+        // Developement integration for vite with run dev
+        echo fetchHead('Rolist-Mingle');
+    } else if ($_ENV['ENV_TYPE'] === 'prod') {
+        // Production integration for vite with run build
+        echo loadAssets([$file]);
+        // Try this way to load assets from manifest.json
+        // https://github.com/andrefelipe/vite-php-setup
+    }
+    ?>
 </head>
 
 <body>
 
-    <header class="header bg-blur">
-
-        <a href="index.php">
-            <h1 class="ttl ttl--main">Don't Roll Single</h1>
-        </a>
-        <div class="hamburger">
-            <a href="#menu" id="hamburger-menu-icon">
-                <img src="img/hamburger.svg" alt="Menu Hamburger">
-            </a>
-        </div>
-        <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
-            <ul class="nav" id="nav-list">
-                <!-- <li class="nav__itm">
-                    <a href="index.php" class="nav__lnk">Accueil</a>
-                </li> -->
-                <!-- <li class="nav__itm">
-                    <a href="worldmap.php" class="nav__lnk">Carte du Monde</a>
-                </li> -->
-                <!-- <li class="nav__itm">
-                    <a href="" class="nav__lnk">Se connecter</a>
-                </li> -->
-            </ul>
-        </nav>
-    </header>
+<?= fetchHeader($_SESSION); ?>
 
     <main class="container--dice container--dice--grid">
 

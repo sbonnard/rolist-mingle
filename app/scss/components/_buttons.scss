@@ -77,19 +77,42 @@
         }
     }
 
-    &--character {
-        position: fixed;
-        right: 0%;
+    &--character, &--dice {
+        position: absolute;
+        top: 0;
         width: 5rem;
         height: 3rem;
-        border-radius: 6rem;
-        border: 2px solid var.$electric;
-        filter: drop-shadow(0 0 0.75rem var.$electric);
-        background-image: url(../../img/character.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: top;
+        border-top: 2px solid var.$electric;
+        border-bottom: 2px solid var.$electric;
         cursor: pointer;
         padding: 1rem;
+        background-color: var.$secondary;
+
+        &:hover {
+            filter: drop-shadow(0 0 0.75rem var.$electric);
+        }
+
+        &-icon {
+            margin-top: -1rem;
+            width: 2.75rem;
+            aspect-ratio: 1;
+        }
+    }
+
+    &--character {
+        left: -16%;
+        border-right: none;
+        border-left: 2px solid var.$electric;
+        border-top-left-radius: 1rem;
+        right: 0;
+        top: 0;
+    }
+
+    &--dice {
+        border-right: 2px solid var.$electric;
+        border-left: none;
+        border-bottom-right-radius: 1rem;
+        left: 0;
+        top: 0;
     }
 }

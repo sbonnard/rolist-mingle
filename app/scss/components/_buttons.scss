@@ -77,4 +77,19 @@
         }
     }
 
+    &--character {
+        position: fixed;
+        right: 0%;
+        width: 5rem;
+        height: 3rem;
+        border-radius: 6rem;
+        border: 2px solid var.$electric;
+        filter: drop-shadow(0 0 0.75rem var.$electric);
+        background-image: url(../../img/character.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        cursor: pointer;
+        padding: 1rem;
+    }
 }

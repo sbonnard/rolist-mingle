@@ -57,9 +57,12 @@ if (isset($_SESSION['email'])) {
 
 <body>
 
-<?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($_SESSION); ?>
+    <?= getCustomCursor() ?>
 
     <main class="container--dice container--dice--grid">
+
+        <button class="button--character"></button>
 
         <section class="dice__section" aria-labelledby="ttlbody">
             <div class="dice__banner" data-banner="body" id="bannerbody">Aïe</div>
@@ -85,7 +88,10 @@ if (isset($_SESSION['email'])) {
 
 </body>
 
+<script type="module" src="js/script.js"></script>
+<script type="module" src="js/index.js"></script>
 <script type="module" src="js/dices.js"></script>
+<script type="module" src="js/cursor.js"></script>
 <!-- <script type="module" src="js/3d.js"></script> -->
 
 </html>

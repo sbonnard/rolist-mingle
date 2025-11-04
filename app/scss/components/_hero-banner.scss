@@ -9,19 +9,20 @@
     justify-content: center;
     gap: 1rem;
     width: 100%;
-            width: 100%;
-        background-image: url(/img/hero-banner-texture.webp);
-        background-position: left;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        border-bottom: 2px solid var.$electric;
+    width: 100%;
+    background-image: url(/img/hero-banner-texture.webp);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: 2px solid var.$electric;
 
-     @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         & {
             flex-direction: column-reverse;
+            padding: 1rem 1rem 5rem 1rem;
         }
-     }
+    }
 
     &-banner {
         display: flex;

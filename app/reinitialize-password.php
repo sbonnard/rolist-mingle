@@ -7,6 +7,7 @@ require_once './includes/_function.php';
 require_once './includes/_message.php';
 require_once './includes/_security.php';
 require_once "./includes/components/_head.php";
+require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
 ?>
 
@@ -14,11 +15,12 @@ require_once "./includes/components/_footer.php";
 <html lang="fr">
 
 <head>
-<? echo fetchHead("Réinitialisation Mot de Passe | Rolist-Mingle");?>
+    <? echo fetchHead("Réinitialisation Mot de Passe | Rolist-Mingle"); ?>
 </head>
 
 <body>
-
+    <?= fetchHeader($_SESSION); ?>
+    <?= getCustomCursor() ?>
     <main>
         <a href="index.php" class="hero-banner hero-banner--smaller">
             <img class="hero-banner__img--smaller" src="logo/logo-rolist-mingle.svg"
@@ -59,6 +61,7 @@ require_once "./includes/components/_footer.php";
     <footer class="footer">
         <? echo fetchFooter() ?>
     </footer>
-    
-    <script src="js/script.js"></script>
+
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/cursor.js"></script>
 </body>

@@ -36,6 +36,10 @@ function fetchHeader(array $session, array $userDatas = [], string $profilColour
                 </li>';
 
     if (isset($session['email'])) {
+        $header .= '<li class="nav__itm">
+                            <a href="character.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
+                            <a href="character.php" class="nav__lnk">Personnages</a>
+                        </li>';
 
         $header .= '<li class="nav__itm">
                             <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>

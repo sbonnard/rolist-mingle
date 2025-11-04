@@ -77,18 +77,30 @@ if (isset($_SESSION['email'])) {
             </form>
             <img class="character-sheet__img" src="img/avatar-seon.svg" alt="Fiche de personnage">
             <h2 class="character-sheet__name">Seon</h2>
-            <div id="health-bar">
-                <h3>Points de vie</h3>
-                <div class="character-sheet__bar character-sheet__health">
-                    <p class="character-sheet__number">100</p>
+            <section class="character-sheet__stats">
+                <div id="health-bar">
+                    <h3>Points de vie</h3>
+                    <div class="character-sheet__stats__points">
+                        <p class="character-sheet__stats--pv">100</p>
+                        <p>/</p>
+                        <p>100</p>
+                    </div>
+                    <!-- <div class="character-sheet__bar character-sheet__health">
+                       <p class="character-sheet__number">100</p>
+                   </div> -->
                 </div>
-            </div>
-            <div id="mana-bar">
-                <h3>Points de mana</h3>
-                <div class="character-sheet__bar character-sheet__mana">
-                    <p class="character-sheet__number">100</p>
+                <div id="mana-bar">
+                    <h3>Points de mana</h3>
+                    <div class="character-sheet__stats__points">
+                        <p class="character-sheet__stats--mana">100</p>
+                        <p>/</p>
+                        <p>100</p>
+                    </div>
+                    <!-- <div class="character-sheet__bar character-sheet__mana">
+                       <p class="character-sheet__number">100</p>
+                   </div> -->
                 </div>
-            </div>
+            </section>
         </section>
 
         <section class="dice__section" aria-labelledby="ttlbody">

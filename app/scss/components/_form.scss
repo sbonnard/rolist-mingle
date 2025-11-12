@@ -3,6 +3,11 @@
 /* Forms */
 
 .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
     &--connection {
         width: 100%;
         height: 100%;
@@ -22,6 +27,7 @@
     &__itm {
         display: flex;
         flex-direction: column;
+        gap: 0.5rem;
     }
 
     &__itm--box {

@@ -11,12 +11,15 @@ require_once './includes/_profilCRUD-functions.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
+require_once "./includes/classes/_character.php";
 
 generateToken();
 
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);
+} else {
+    redirectTo('index.php');
 }
 ?>
 
@@ -45,6 +48,8 @@ if (isset($_SESSION['email'])) {
 
         <div class="page-content" id="content">
             <a href="character-form" class="button">Nouveau personnage</a>
+
+            <?= getCharactersSheetsList($charactersDatas) ?>
         </div>
 
     </main>

@@ -11,7 +11,8 @@
     cursor: pointer;
 
     &__label {
-        padding: 0 0.75rem 0.75rem 0.75rem;
+        font-family: 'roboto';
+        font-size: 1.25rem;
     }
 
     &__required {

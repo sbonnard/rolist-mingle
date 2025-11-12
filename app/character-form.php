@@ -44,7 +44,30 @@ if (isset($_SESSION['email'])) {
     <main>
 
         <div class="page-content" id="content">
-
+            <h1 class="ttl ttl--big">Créer un personnage</h1>
+            <form class="form" action="actions.php">
+                <ul class="form__container">
+                    <li class="form__itm">
+                        <label class="input__label" for="characterName">Nom complet de personnage</label>
+                        <input class="input" type="text" name="characterName" id="characterName" placeholder="Sullivan Graham Erelion" required aria-label="Nom du personnage">
+                    </li>
+                    <li class="form__itm">
+                        <label class="input__label" for="characterHP">Nombre de PVs maximal</label>
+                        <input class="input" type="text" name="characterHP" id="characterHP" placeholder="100" required aria-label="Nombre maximal de PVs du perosnnage">
+                    </li>
+                    <li class="form__itm">
+                        <label class="input__label" for="characterMana">Nombre de Manas maximal</label>
+                        <input class="input" type="text" name="characterMana" id="characterMana" placeholder="100" required aria-label="Nombre maximal de manas du perosnnage">
+                    </li>
+                    <li class="form__itm">
+                        <label class="input__label" for="attachment">Illustration du personnage</label>
+                        <input type="file" name="attachment" id="attachment" accept=".png, .jpeg, .jpg, .webp">
+                    </li>
+                </ul>
+                <input class="button" type="submit" value="Créer personnage">
+                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                <input type="hidden" name="action" value="createCharacter">
+            </form>
         </div>
 
     </main>

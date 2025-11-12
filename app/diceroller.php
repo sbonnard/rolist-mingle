@@ -101,6 +101,23 @@ if (isset($_SESSION['email'])) {
                    </div> -->
                 </div>
             </section>
+            <div class="bg-blur character-sheet__wallet-container">
+                <h3 class="ttl ttl--small">Bourse</h3>
+                <section class="character-sheet__wallet">
+                    <div class="character-sheet__coins">
+                        <img class="coin" src="img/gold.png" alt="Icône de pièce d\'or">
+                        <p class="character-sheet__coins--amount">' . $character['gold'] . '</p>
+                    </div>
+                    <div class="character-sheet__coins">
+                        <img class="coin" src="img/silver.png" alt="Icône de pièce d\'argent">
+                        <p class="character-sheet__coins--amount">' . $character['silver'] . '</p>
+                    </div>
+                    <div class="character-sheet__coins">
+                        <img class="coin" src="img/copper.png" alt="Icône de pièce de cuivre">
+                        <p class="character-sheet__coins--amount">' . $character['copper'] . '</p>
+                    </div>
+                </section>
+            </div>
         </section>
 
         <section class="dice__section" aria-labelledby="ttlbody">

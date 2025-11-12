@@ -21,6 +21,7 @@ if (isset($_SESSION['email'])) {
 } else {
     redirectTo('index.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -45,9 +46,12 @@ if (isset($_SESSION['email'])) {
     <?= getCustomCursor() ?>
 
     <main>
-
+        <?php
+        echo getSuccessMessage($messages);
+        echo getErrorMessage($errors);
+        ?>
         <div class="page-content" id="content">
-            <a href="character-form" class="button">Nouveau personnage</a>
+            <a href="character-form.php" class="button">Nouveau personnage</a>
 
             <?= getCharactersSheetsList($charactersDatas) ?>
         </div>

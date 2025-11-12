@@ -42,10 +42,13 @@ if (isset($_SESSION['email'])) {
     <?= getCustomCursor() ?>
 
     <main>
-
+        <?php
+        echo getSuccessMessage($messages);
+        echo getErrorMessage($errors);
+        ?>
         <div class="page-content" id="content">
-            <h1 class="ttl ttl--big">Créer un personnage</h1>
-            <form class="form" action="actions.php">
+            <h1 class="ttl ttl--big ttl--center">Créer un personnage</h1>
+            <form class="form" method="post" action="actions.php" enctype="multipart/form-data">
                 <ul class="form__container">
                     <li class="form__itm">
                         <label class="input__label" for="characterName">Nom complet de personnage</label>

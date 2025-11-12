@@ -22,24 +22,24 @@ function getCharactersSheetsList(array $characterDatas)
     } else {
         foreach ($characterDatas as $character) {
             $charactersList .= '
-             <section class="character-sheet" id="character-sheet">
-                <img class="character-sheet__img" src="img/' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
+             <section class="character" id="character-sheet">
+                <img class="character-sheet__img" src="' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
                 <h2 class="character-sheet__name">' . $character['name'] . '</h2>
                 <section class="character-sheet__stats">
                     <div id="health-bar">
-                        <h3>Points de vie</h3>
+                        <h3>PV</h3>
                         <div class="character-sheet__stats__points">
                             <p class="character-sheet__stats--pv">' . $character['hp'] . '</p>
                             <p>/</p>
-                            <p>100</p>
+                            <p>' . $character['maxHP'] . '</p>
                         </div>
                     </div>
                     <div id="mana-bar">
-                        <h3>Points de mana</h3>
+                        <h3>Mana</h3>
                         <div class="character-sheet__stats__points">
                             <p class="character-sheet__stats--mana">' . $character['mana'] . '</p>
                             <p>/</p>
-                            <p>100</p>
+                            <p>' . $character['maxMana'] . '</p>
                         </div>
                     </div>
                 </section>

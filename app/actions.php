@@ -22,8 +22,6 @@ preventFromCSRF('register.php');
 if ($_POST['action'] === 'create_account') {
     if (!empty($_POST)) {
 
-
-
         $errors = [];
 
         if (!isset($_POST['username']) || empty(trim($_POST['username']))) {
@@ -94,6 +92,72 @@ if ($_POST['action'] === 'create_account') {
             $_SESSION['errors'] = "create_ko: " . $error->getMessage();
             $dbCo->rollBack();
             return false;
+        }
+    }
+} else if ($_POST['action'] === 'createCharacter') {
+    $error = '';
+    if (!isset($_POST['characterName'])) {
+        triggerError('characterName_error');
+    }
+
+    if (!isset($_POST['characterHP'])) {
+        triggerError('characterHP_error');
+    }
+
+    if (!isset($_POST['characterMana'])) {
+        triggerError('characterMana_error');
+    }
+
+    $attachmentFileName = '';
+
+    // Gestion du fichier image
+    if (isset($_FILES['attachment']) && !empty($_FILES['attachment']['name'])) {
+        $uploadDir = __DIR__ . '/avatars/'; // Dossier physique de destination
+
+        // Création du dossier si inexistant
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        // Infos sur le fichier
+        $fileName = pathinfo($_FILES['attachment']['name'], PATHINFO_FILENAME);
+        $fileExtension = pathinfo($_FILES['attachment']['name'], PATHINFO_EXTENSION);
+        $uniqueFileName = $fileName . '_' . time() . '.' . $fileExtension;
+        $uploadFile = $uploadDir . $uniqueFileName;
+
+        if ($_FILES['attachment']['error'] === UPLOAD_ERR_OK) {
+            $allowedTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/webp'];
+            $fileType = mime_content_type($_FILES['attachment']['tmp_name']);
+
+            if (in_array($fileType, $allowedTypes)) {
+                if (move_uploaded_file($_FILES['attachment']['tmp_name'], $uploadFile)) {
+                    $attachmentFileName = 'avatars/' . htmlspecialchars($uniqueFileName);
+                }
+            }
+        }
+        $queryCreateCharacter = $dbCo->prepare('
+        INSERT INTO characters (name, hp, mana, id_user, imgUrl, maxHP, maxMana)
+        VALUES (:name, :hp, :mana, :user, :imgUrl, :maxHP, :maxMana);
+    ');
+
+        $bindValuesCreateCharacter = [
+            'name' => $_POST['characterName'],
+            'hp' => $_POST['characterHP'],
+            'mana' => $_POST['characterMana'],
+            'user' => $_SESSION['id_user'],
+            'maxHP' => $_POST['characterHP'],
+            'maxMana' => $_POST['characterMana'],
+            'imgUrl' => $attachmentFileName
+        ];
+
+        $isInsertOk = $queryCreateCharacter->execute($bindValuesCreateCharacter);
+
+        if ($isInsertOk) {
+            addMessage('create_character_ok');
+            redirectTo('character.php');
+        } else {
+            addMessage('create_character_ko');
+            redirectTo();
         }
     }
 }

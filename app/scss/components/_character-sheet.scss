@@ -52,6 +52,11 @@
         text-transform: uppercase;
     }
 
+    &__img {
+        max-width: 8rem;
+        aspect-ratio: 1;
+    }
+
     &__stats {
         display: flex;
         flex-direction: row;

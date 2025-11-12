@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Fetch user datas with id_user = 8.
  *
@@ -49,6 +48,7 @@ function defineProfilColour(array $userDatas):string {
     if ($userDatas[0]['user_role'] === 5) {
         return 'avatar--dice4';
     }
+
     return '';
 }
 

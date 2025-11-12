@@ -6,7 +6,8 @@ $messages = [
     'update_ok_bio' => 'Réussite critique lors de la mise à jour de la bio !',
     'update_ok_pwd' => 'Réussite critique lors de la mise à jour du mot de passe !',
     'update_ok_favourites' => 'Réussite critique lors de la modification d\'univers favoris !',
-    'delete_ok' => 'L\'univers a été supprimé.'
+    'delete_ok' => 'L\'univers a été supprimé.',
+    'create_character_ok' => 'Votre personnage a bien été créé.'
 ];
 
 $errors = [
@@ -23,7 +24,11 @@ $errors = [
     'login_ko' => 'Échec critique lors de la saisie du mot de passe ou de l\'email !',
     'mdp_no_match' => 'Les mots de passes entrés ne correspondent pas.',
     'please_connect' => 'Merci de vous connecter pour consulter cette page',
-    'login_fail' => 'Identifiants ou mot de passe incorrects'
+    'login_fail' => 'Identifiants ou mot de passe incorrects',
+    'characterName_error' => 'Merci d\'entrer un nom de personnage',
+    'characterHP_error' => 'Merci d\'entrer des points de vie',
+    'characterMana_error' => 'Merci d\'entrer des points de mana',
+    'create_character_ko' => 'Erreur lors de la création de votre personnage.'
 ];
 
 

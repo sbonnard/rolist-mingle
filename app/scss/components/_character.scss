@@ -1,6 +1,23 @@
 @use '../var' as var;
 
 .character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var.$secondary;
+      box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
+    /* Ombre légère par défaut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px var.$electri50;
+        /* Ombre forte lors du survol */
+    }
+
     &__list {
         display: flex;
         flex-direction: row;
@@ -38,6 +55,12 @@
             top: 0;
             right: 0;
             cursor: pointer;
+        }
+
+        &__img {
+            width: 15rem;
+            aspect-ratio: 1;
+            border-radius: 4rem;
         }
 
         &__bar {
@@ -98,7 +121,7 @@
             align-items: center;
             justify-content: center;
             gap: 2rem;
-            
+
             &-container {
                 display: flex;
                 flex-direction: column;

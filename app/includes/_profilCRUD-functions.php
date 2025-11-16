@@ -9,6 +9,10 @@
  */
 function fetchUserDatas(PDO $dbCo, array $session):array
 {
+    if (!isset($session['email'])) {
+        return [];
+    }
+    
     $query = $dbCo->prepare('
     SELECT id_user, username, email, password, avatar, us.id_role_type AS user_role, ro.id_role_type AS role_id, icon_URL, bio, name_role
     FROM users us

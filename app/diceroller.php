@@ -19,6 +19,8 @@ if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);
 }
+
+var_dump($_SESSION)
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +63,9 @@ if (isset($_SESSION['email'])) {
     <?= getCustomCursor() ?>
 
     <main class="container--dice container--dice--grid">
-
+        <?php // if (isset($_SESSION['id_character'])) {
+           // echo renderCharacterSelect($charactersDatas, $_SESSION['token']);
+       // } ?>
         <?= getCharacterSheet($_SESSION, $charactersDatas, true); ?>
 
         <section class="dice__section" aria-labelledby="ttlbody">
@@ -92,6 +96,7 @@ if (isset($_SESSION['email'])) {
 <script type="module" src="js/index.js"></script>
 <script type="module" src="js/dices.js"></script>
 <script type="module" src="js/cursor.js"></script>
+<script type="module" src="js/selectCharacter.js"></script>
 <!-- <script type="module" src="js/3d.js"></script> -->
 
 </html>

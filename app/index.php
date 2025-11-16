@@ -17,6 +17,7 @@ generateToken();
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);
+    redirectTo('diceroller.php');
 }
 ?>
 

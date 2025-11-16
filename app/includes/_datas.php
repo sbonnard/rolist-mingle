@@ -18,5 +18,13 @@ $profilColor = '';
 // ----------------------
 if (isset($_SESSION['id_user'])) {
     $charactersDatas = getCharacterDatas($dbCo, $_SESSION['id_user']);
+    if(empty($charactersDatas)) {
+        $_SESSION['characterFound'] = false;
+    } else {
+        $_SESSION['characterFound'] = true;
+    }
 }
 
+if (isset($_SESSION['id_character'])) {
+    $selectedCharacterDatas = getSelectedCharacterDatas($dbCo, $_SESSION['id_user'], $_SESSION['id_character']);
+}

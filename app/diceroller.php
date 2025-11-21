@@ -20,7 +20,7 @@ if (isset($_SESSION['email'])) {
     $profilColour = defineProfilColour($userDatas);
 }
 
-var_dump($_SESSION)
+// var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -66,23 +66,23 @@ var_dump($_SESSION)
         <?php // if (isset($_SESSION['id_character'])) {
            // echo renderCharacterSelect($charactersDatas, $_SESSION['token']);
        // } ?>
-        <?= getCharacterSheet($_SESSION, $charactersDatas, true); ?>
-
-        <section class="dice__section" aria-labelledby="ttlbody">
-            <div class="dice__banner" data-banner="body" id="bannerbody">Aïe</div>
-            <h2 class="ttl dice__word" id="ttlbody">Dé <span class="number">Ciblage</span></h2>
-            <button id="bodyDice">
-                <img class="dice--body" src="img/body.png" alt="Dé corps de JDR">
-            </button>
-        </section>
-
-        <?= getDice(100); ?>
-        <?= getDice(20); ?>
-        <?= getDice(12); ?>
-        <?= getDice(10); ?>
-        <?= getDice(8); ?>
-        <?= getDice(6); ?>
-        <?= getDice(4); ?>
+           <?= getCharacterSheet($_SESSION, $charactersDatas, true); ?>
+   
+           <section class="dice__section" aria-labelledby="ttlbody">
+               <div class="dice__banner" data-banner="body" id="bannerbody">Aïe</div>
+               <h2 class="ttl dice__word" id="ttlbody">Dé <span class="number">Ciblage</span></h2>
+               <button id="bodyDice">
+                   <img class="dice--body" src="img/body.png" alt="Dé corps de JDR">
+               </button>
+           </section>
+   
+           <?= getDice(100); ?>
+           <?= getDice(20); ?>
+           <?= getDice(12); ?>
+           <?= getDice(10); ?>
+           <?= getDice(8); ?>
+           <?= getDice(6); ?>
+           <?= getDice(4); ?>
 
     </main>
 

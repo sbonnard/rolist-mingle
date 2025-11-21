@@ -23,8 +23,12 @@ if (isset($_SESSION['id_user'])) {
     } else {
         $_SESSION['characterFound'] = true;
     }
+} else {
+    $charactersDatas = [];
 }
 
 if (isset($_SESSION['id_character'])) {
     $selectedCharacterDatas = getSelectedCharacterDatas($dbCo, $_SESSION['id_user'], $_SESSION['id_character']);
+} else {
+    $selectedCharacterDatas = [];
 }

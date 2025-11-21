@@ -117,3 +117,47 @@
         top: 0;
     }
 }
+
+
+
+.button {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.6rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+
+    // Couleurs par défaut
+    background-color: var.$black90;
+    color: var.$white;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    &--primary {
+        background-color: var.$gnome;
+        color: var.$white;
+
+       
+    }
+
+    &--danger {
+        background-color: var.$zinzolin;
+        color: var.$white;
+       
+    }
+}

@@ -24,6 +24,7 @@ $errors = [
     'login_ko' => 'Échec critique lors de la saisie du mot de passe ou de l\'email !',
     'mdp_no_match' => 'Les mots de passes entrés ne correspondent pas.',
     'please_connect' => 'Merci de vous connecter pour consulter cette page',
+    'please_connect_character' => 'Merci de vous connecter pour créer un personnage',
     'login_fail' => 'Identifiants ou mot de passe incorrects',
     'characterName_error' => 'Merci d\'entrer un nom de personnage',
     'characterHP_error' => 'Merci d\'entrer des points de vie',
@@ -77,12 +78,16 @@ function addMessage(string $message): void
  *
  * @return string The error message.
  */
-function getErrorMessage(array $errors) :string
+function getErrorMessage(array $errors): string
 {
     if (isset($_SESSION['error'])) {
         $e = ($_SESSION['error']);
         unset($_SESSION['error']);
-        return '<p class="notif notif--error">' . $errors[$e] . '</p>';
+        return '
+        <div class="notif notif--error notif__container" id="error-message">
+            <p class="">' . $errors[$e] . '</p>
+            <button class="notif__close" id="message-close">X</button>
+        </div>';
     }
     return '';
 }
@@ -92,12 +97,16 @@ function getErrorMessage(array $errors) :string
  *
  * @return string The success message.
  */
-function getSuccessMessage(array $messages) :string
+function getSuccessMessage(array $messages): string
 {
     if (isset($_SESSION['msg'])) {
-        $m = ($_SESSION['msg']);
+        $m = $_SESSION['msg'];
         unset($_SESSION['msg']);
-        return '<p class="notif notif--success">' . $messages[$m] . '</p>';
+        return '
+        <div class="notif notif--success notif__container" id="success-message">
+            <p>' . $messages[$m] . '</p>
+            <button class="notif__close" id="message-close">X</button>
+        </div>';
     }
     return '';
 }

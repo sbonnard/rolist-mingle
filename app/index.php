@@ -43,13 +43,12 @@ if (isset($_SESSION['email'])) {
     <?= getCustomCursor() ?>
 
     <main>
-
+        <?php
+        echo getSuccessMessage($messages);
+        echo getErrorMessage($errors);
+        ?>
         <section class="hero">
             <div class="hero-banner">
-                <?php
-                echo getSuccessMessage($messages);
-                echo getErrorMessage($errors);
-                ?>
                 <img class="hero-banner__img" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
                 <h1 class="logo__ttl">Rolist-Mingle</h1>
                 <h2 class="logo__tagline">Don't Roll Single</h2>
@@ -81,7 +80,7 @@ if (isset($_SESSION['email'])) {
                 </form>
                 <div class="form__container">
                     <p>Pas encore de compte ?</p>
-                    <div class="button__txt"><a class="button button--empty" href="register.php">Créer un compte</a></div>
+                    <div class="button__txt"><a class="button button--electric" href="register.php">Créer un compte</a></div>
                 </div>
             </section>
 
@@ -155,6 +154,8 @@ if (isset($_SESSION['email'])) {
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/password.js"></script>
     <script type="module" src="js/cursor.js"></script>
+    <script type="module" src="js/notifs.js"></script>
+
 </body>
 
 </html>

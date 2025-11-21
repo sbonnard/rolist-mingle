@@ -128,19 +128,22 @@ function renderCharacterSelect(array $charactersList, string $token): string
     return ob_get_clean();
 }
 
-function renderCharacterSheet(array $character, string $characterForm): string
+function renderCharacterSheet(array $character, string $characterForm, bool $dicerollerPage): string
 {
     $character = '';
 
     if (!isset($session['id_character'])) {
-        $character .= ' <section class="character" id="character-sheet">
+        $character .= ' <section class="character character-sheet" id="character-sheet">
                             <h2>Sélectionne un personnage</h2>
                             ' . $characterForm . '
                         </section>';
         return $character;
     } else {
-        $character .= '
-             <section class="character" id="character-sheet">';
+        if($dicerollerPage) {
+            $character .= '<section class="character--sheet" id="character-sheet">';
+        } else {
+            $character .= '<section class="character" id="character-sheet">';            
+        }
 
         $character .= $characterForm;
 
@@ -189,10 +192,12 @@ function renderCharacterSheet(array $character, string $characterForm): string
 
 function getCharacterSheet(array $session, array $charactersList, bool $dicerollerPage): string
 {
-    if (empty($charactersList)) {
-        return '<p>Aucun personnage trouvé</p>
-                <a href="character-form.php" class="button">Créer personnage</a>';
-    }
+     if (empty($charactersList)) {
+        return '<section class="character" id="character-sheet">
+                    <p>Aucun personnage trouvé</p>
+                    <a href="character-form.php" class="button">Créer personnage</a>
+                </section>';
+    } 
 
     $characterForm = $dicerollerPage
         ? renderCharacterSelect($charactersList, $session['token'])
@@ -211,7 +216,7 @@ function getCharacterSheet(array $session, array $charactersList, bool $diceroll
         return '<p>Personnage introuvable</p>';
     }
 
-    return renderCharacterSheet($selectedCharacter, $characterForm);
+    return renderCharacterSheet($selectedCharacter, $characterForm, $dicerollerPage);
 }
 
 // function getCharacterSheet(array $session, array $charactersList, bool $dicerollerPage): string

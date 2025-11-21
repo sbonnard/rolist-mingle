@@ -3,14 +3,53 @@
 .notif {
     font-size: 1.75rem;
     padding: 2rem;
+    position: fixed; // fixed plutôt qu'absolute pour rester visible même si la page scroll
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%); // centrer horizontalement
+    background-color: var.$black90;
+    text-align: center;
+    z-index: 100;
+    width: auto; // ne pas prendre toute la largeur
+    min-width: 300px;
+    max-width: 90vw;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
 
     &--error {
         display: flex;
         justify-content: center;
-        color: var.$electric;
+        color: var.$zinzolin;
+        border-left: 5px solid var.$zinzolin; // accentuer l'erreur
     }
 
     &--success {
         color: var.$gnome;
+        border-left: 5px solid var.$gnome; // accentuer le succès
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__close {
+        color: var.$white;
+        font-size: 1rem;
+        border: 1px solid var.$white;
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        background: rgba(255,255,255,0.1);
+        transition: background 0.3s ease;
+        
+        &:hover {
+            background: rgba(255,255,255,0.3);
+        }
     }
 }

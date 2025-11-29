@@ -66,6 +66,7 @@ if (isset($_SESSION['email'])) {
         <?php // if (isset($_SESSION['id_character'])) {
            // echo renderCharacterSelect($charactersDatas, $_SESSION['token']);
        // } ?>
+            <!-- Character sheet will be displayed like a burger menu I think -->
            <?= getCharacterSheet($_SESSION, $charactersDatas, true); ?>
    
            <section class="dice__section" aria-labelledby="ttlbody">

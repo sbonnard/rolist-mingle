@@ -25,10 +25,10 @@
     width: 40px;
     height: 40px;
     background-color: rgba(138, 43, 226, 0.1);
-    box-shadow: 0 0 15px rgba(8, 206, 255, 0.5);
+    box-shadow: 0 0 15px var.$electric50;
     transition: transform 0.15s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
 
-     @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         display: none;
     }
 }
@@ -43,7 +43,7 @@
 .hover-effect .cursor-dot-outline {
     width: 60px;
     height: 60px;
-    background-color: rgb(8, 206, 255, 0.3);
+    background-color: var.$electric30;
 }
 
 /* Effet clic */
@@ -54,7 +54,7 @@
 
 .click-effect .cursor-dot-outline {
     transform: translate(-50%, -50%) scale(1.2);
-    background-color: rgba(8, 206, 255, 0.4);
+    background-color: var.$electric40;
     opacity: 0.5;
 }
 
@@ -64,10 +64,10 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: rgba(8, 206, 255, 0.4);
+    background-color: var.$electric40;
     pointer-events: none;
     z-index: 9998;
     opacity: 0;
     transition: opacity 0.5s ease;
-    box-shadow: 0 0 10px rgba(8, 206, 255, 0.8);
+    box-shadow: 0 0 10px var.$electric80;
 }

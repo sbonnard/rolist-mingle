@@ -8,13 +8,13 @@
     gap: 1rem;
     padding: 2rem;
     background-color: var.$secondary;
-      box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 4px 6px var.$black50;
     /* Ombre légère par défaut */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px var.$electri50;
+        box-shadow: 0 10px 20px var.$electric50;
         /* Ombre forte lors du survol */
     }
 
@@ -38,11 +38,12 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        z-index: 100;
+        z-index: 5;
         padding: 2rem;
         top: 5.5rem;
         background-color: var.$secondary;
         width: 30rem;
+        right: -35%;
 
         @media screen and (max-width: 768px) {
             & {
@@ -80,7 +81,7 @@
         }
 
         &__mana {
-            background-color: var.$electric;
+            background-color: var.$electricBlue;
         }
 
         &__name {
@@ -111,7 +112,7 @@
             }
 
             &--mana {
-                color: var.$electric;
+                color: var.$electricBlue;
             }
         }
 

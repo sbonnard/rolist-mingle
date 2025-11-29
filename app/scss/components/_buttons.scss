@@ -161,3 +161,14 @@
        
     }
 }
+
+a.button,
+a.button:visited {
+    color: var.$white;
+}
+
+a.button,
+a.button:hover {
+    border-right: 1px solid var.$electric;
+    border-bottom: 1px solid var.$electric;
+}

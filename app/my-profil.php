@@ -26,7 +26,7 @@ $profilColour = defineProfilColour($userDatas);
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Compte Rôliste | Rolist-Mingle"); ?>
+    <?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>

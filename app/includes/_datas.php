@@ -4,6 +4,9 @@ require_once "_function.php";
 require_once "classes/_character.php";
 require_once "_profilCRUD-functions.php";
 
+$javascriptLink = '<script src="./js/main.js"></script>';
+$cssLink = '<script src="./js/main.js"></script>';
+
 $RPG = fetchRPG($dbCo);
 
 // Call a function to fetch user datas instead of []

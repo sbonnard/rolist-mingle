@@ -44,17 +44,7 @@ if (isset($_SESSION['email'])) {
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r136/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon-es/0.20.0/cannon-es.min.js"></script>
     <script src="rollingTheDices.js"></script>-->
-    <?php
-    if ($_ENV['ENV_TYPE'] === 'dev') {
-        // Developement integration for vite with run dev
-        echo fetchHead('Rolist-Mingle');
-    } else if ($_ENV['ENV_TYPE'] === 'prod') {
-        // Production integration for vite with run build
-        echo loadAssets([$file]);
-        // Try this way to load assets from manifest.json
-        // https://github.com/andrefelipe/vite-php-setup
-    }
-    ?>
+<?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>

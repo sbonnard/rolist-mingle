@@ -15,7 +15,7 @@ require_once "./includes/components/_footer.php";
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Réinitialisation Mot de Passe | Rolist-Mingle"); ?>
+    <?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>

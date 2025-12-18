@@ -2,24 +2,7 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JDR Fratrie</title>
-    <link rel="stylesheet" href="scss/style.scss">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- if development -->
-    <!-- <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173/js/script.js"></script> -->
-
-    <!-- Production -->
-    <link rel="stylesheet" href="assets/assets/script-BW4HPhpW.css">
-    <script type="module" src="assets/assets/script-pK4JEM7c.js"></script>
-
-    <!-- RPG DICES 3D -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r136/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon-es/0.20.0/cannon-es.min.js"></script>
-    <script src="rollingTheDices.js"></script>
-
+    <?= fetchHead($javascriptLink, $cssLink); ?>    
 </head>
 
 <body>

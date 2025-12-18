@@ -22,7 +22,7 @@ if (isset($_SESSION['email'])) {
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Parties | Rolist-Mingle"); ?>
+    <?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>

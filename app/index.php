@@ -25,17 +25,7 @@ if (isset($_SESSION['email'])) {
 <html lang="fr">
 
 <head>
-    <?php
-    if ($_ENV['ENV_TYPE'] === 'dev') {
-        // Developement integration for vite with run dev
-        echo fetchHead('Rolist-Mingle');
-    } else if ($_ENV['ENV_TYPE'] === 'prod') {
-        // Production integration for vite with run build
-        echo loadAssets([$file]);
-        // Try this way to load assets from manifest.json
-        // https://github.com/andrefelipe/vite-php-setup
-    }
-    ?>
+    <?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>
@@ -43,10 +33,9 @@ if (isset($_SESSION['email'])) {
     <?= getCustomCursor() ?>
 
     <main>
-        <?php
-        echo getSuccessMessage($messages);
-        echo getErrorMessage($errors);
-        ?>
+        <?= getSuccessMessage($messages); ?>
+        <?= getErrorMessage($errors); ?>
+        
         <section class="hero">
             <div class="hero-banner">
                 <img class="hero-banner__img" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">

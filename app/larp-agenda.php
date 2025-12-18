@@ -21,7 +21,7 @@ if (isset($_SESSION['email'])) {
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Agenda GN | Rolist-Mingle"); ?>
+    <? echo fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>

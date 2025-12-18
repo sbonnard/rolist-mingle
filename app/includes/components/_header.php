@@ -62,7 +62,7 @@ function fetchHeader(array $session, array $userDatas = [], string $profilColour
                         //             <img class="nav__avatar js-avatar-hover  ' . $profilColour . '" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
                         //         </picture>
                         //    </a>
-                    $header .=       '<a href="my-profil-CRUD.php" class="nav__lnk js-link-hover">Mon compte</a>
+                    $header .=       '<a href="my-profil.php" class="nav__lnk js-link-hover">Mon compte</a>
                         </li>
                         <li class="nav__itm">
                         

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'log-in') {
         $_SESSION['password'] = $user['password'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['id_user'] = $user['id_user'];
-        redirectTo('diceroller.php');
+        redirectTo();
         exit();
     } else {
         addError('login_fail');

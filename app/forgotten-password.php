@@ -14,7 +14,7 @@ require_once "./includes/components/_footer.php";
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Mot de passe oublié | Rolist-Mingle"); ?>
+    <?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 <body>

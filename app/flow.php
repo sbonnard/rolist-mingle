@@ -21,7 +21,7 @@ if (isset($_SESSION['email'])) {
 <html lang="fr">
 
 <head>
-    <? echo fetchHead("Flux | Rolist-Mingle"); ?>
+    <?= fetchHead($javascriptLink, $cssLink); ?>
 </head>
 
 

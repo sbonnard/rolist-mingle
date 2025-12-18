@@ -8,12 +8,21 @@ $black20: rgba(0, 0, 0, 0.2);
 $gold: #FFE03F;
 $zinzolin: #C62148;
 // $electric: #08ceff;
-$electric: #ff08f0;
-$electric80: rgba(255, 8, 240, 0.8);
-$electric50: rgba(255, 8, 240, 0.5);
-$electric40: rgba(255, 8, 240, 0.4);
-$electric30: rgba(255, 8, 240, 0.4);
-// $electri50: rgba(8, 206, 255, 0.5);
+// Magenta a little too purple
+// $electric: #ff08f0;
+// $electric80: rgba(255, 8, 240, 0.8);
+// $electric50: rgba(255, 8, 240, 0.5);
+// $electric40: rgba(255, 8, 240, 0.4);
+// $electric30: rgba(255, 8, 240, 0.4);
+
+// Magenta lighter, nicer
+$electric: #FF33CC;
+$electric80: rgba(255, 51, 204, 0.8);
+$electric60: rgba(255, 51, 204, 0.6);
+$electric50: rgba(255, 51, 204, 0.5);
+$electric40: rgba(255, 51, 204, 0.4);
+$electric30: rgba(255, 51, 204, 0.4);
+
 $electricBlue: #08ceff;
 // $primary: #FFD95C;
 $secondary: #0B0B0B;

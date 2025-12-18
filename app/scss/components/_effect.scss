@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 .bg-blur {
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
@@ -20,3 +22,91 @@
       transform: translateY(0) rotate(0deg); /* Retour final à la position droite */
     }
   }
+
+
+
+  @keyframes shivering {
+    0%, 100% {
+    text-shadow:
+      0 0 4px var.$electric,
+      0 0 10px var.$electric,
+      0 0 20px var.$electric60,
+      0 0 30px var.$electric40;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  25% {
+    text-shadow:
+      0 0 5px var.$electric,
+      0 0 12px var.$electric80,
+      0 0 22px var.$electric60,
+      0 0 35px var.$electric40;
+    transform: translate(-1px, 0);
+    opacity: 0.95;
+  }
+
+  50% {
+    text-shadow:
+      0 0 4px var.$electric,
+      0 0 10px var.$electric80,
+      0 0 20px var.$electric50,
+      0 0 30px var.$electric30;
+    transform: translate(1px, 0);
+    opacity: 0.9;
+  }
+
+  75% {
+    text-shadow:
+      0 0 5px var.$electric,
+      0 0 12px var.$electric80,
+      0 0 22px var.$electric60,
+      0 0 35px var.$electric40;
+    transform: translate(-1px, 0);
+    opacity: 0.95;
+  }
+}
+
+
+@keyframes glitching {
+  0%, 50%, 100% {
+    text-shadow:
+      0 0 4px var.$electric,
+      0 0 10px var.$electric80;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  10% {
+    transform: translate(-1px, 1px);
+    text-shadow:
+      1px -1px 4px var.$electric80,
+      0 0 12px var.$electric;
+  }
+
+  20% {
+    transform: translate(1px, -1px);
+    text-shadow:
+      -1px 1px 4px var.$electric50,
+      0 0 14px var.$electric;
+  }
+
+  30% {
+    transform: translate(-2px, 0);
+    text-shadow:
+      2px 0 5px var.$electric80,
+      0 0 16px var.$electric50;
+  }
+
+  40% {
+    transform: translate(1px, 2px);
+    text-shadow:
+      -1px -1px 4px var.$electric50,
+      0 0 12px var.$electric30;
+  }
+
+  60% { transform: translate(2px, -1px); }
+  70% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, 0); }
+  90% { transform: translate(-1px, -2px); }
+}

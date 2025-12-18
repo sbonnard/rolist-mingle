@@ -1,3 +1,5 @@
+@use '../var' as var;
+
 .ttl {
     font-family: 'english';
     font-size: 2rem;
@@ -9,7 +11,7 @@
         text-transform: capitalize;
 
         &:hover {
-            text-shadow: 0 0 10px #ff08f0, 0 0 12px #ff08f0;
+            text-shadow: 0 0 10px var.$electric, 0 0 12px var.$electric;
         }
     }
 

@@ -193,10 +193,11 @@ function renderCharacterSheet(array $character, string $characterForm, bool $dic
 function getCharacterSheet(array $session, array $charactersList, bool $dicerollerPage): string
 {
      if (empty($charactersList)) {
-        return '<section class="character" id="character-sheet">
-                    <p>Aucun personnage trouvé</p>
-                    <a href="character-form.php" class="button">Créer personnage</a>
-                </section>';
+        // return '<section class="character" id="character-sheet">
+        //             <p>Aucun personnage trouvé</p>
+        //             <a href="character-form.php" class="button">Créer personnage</a>
+        //         </section>';
+        return '';
     } 
 
     $characterForm = $dicerollerPage

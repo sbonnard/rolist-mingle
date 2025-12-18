@@ -12,12 +12,42 @@
         gap: 1rem;
     }
 
+    &__itm {
+        &--shivering {
+            animation: shivering 1s infinite;
+        }
+
+        &--glitching {
+            animation: glitching 1s infinite;
+        }
+    }
+
     &__lnk {
         font-size: 1.5rem;
+        position: relative; // nécessaire pour ::after
+        text-decoration: none;
         transition: all 0.25s ease-in-out;
 
         &:hover {
             text-shadow: 0 0 10px var.$electric, 0 0 12px var.$electric;
         }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var.$electric, var.$electric80);
+            box-shadow: 0 0 8px var.$electric, 0 0 12px var.$electric80;
+            border-radius: 2px;
+            transition: width 1s cubic-bezier(0.19, 1, 0.22, 1); 
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+
     }
 }

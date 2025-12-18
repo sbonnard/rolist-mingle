@@ -14,7 +14,7 @@ require_once "./includes/components/_footer.php";
 
 generateToken();
 
-isLocked();
+// isLocked();
 
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);

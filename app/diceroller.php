@@ -21,6 +21,7 @@ if (isset($_SESSION['email'])) {
 }
 
 // var_dump($_SESSION);
+
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +58,7 @@ if (isset($_SESSION['email'])) {
            // echo renderCharacterSelect($charactersDatas, $_SESSION['token']);
        // } ?>
             <!-- Character sheet will be displayed like a burger menu I think -->
-           <?= getCharacterSheet($_SESSION, $charactersDatas, true); ?>
+           <?= '';//    getCharacterSheet($_SESSION, $charactersDatas, true); // ?>
    
            <section class="dice__section" aria-labelledby="ttlbody">
                <div class="dice__banner" data-banner="body" id="bannerbody">Aïe</div>

@@ -15,15 +15,13 @@ require_once "./includes/classes/_character.php";
 
 generateToken();
 
-isLocked();
-
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);
 } else {
     redirectTo('index.php');
 }
-
+// var_dump($charactersList);
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +41,7 @@ if (isset($_SESSION['email'])) {
         echo getErrorMessage($errors);
         ?>
         <div class="page-content" id="content">
-            <a href="character-form.php" class="button">Nouveau personnage</a>
+            <a href="character-form.php" class="button__lnk button__lnk--shivering">Nouveau personnage</a>
 
             <?= getCharactersSheetsList($charactersDatas) ?>
         </div>

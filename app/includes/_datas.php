@@ -4,6 +4,8 @@ require_once "_function.php";
 require_once "classes/_character.php";
 require_once "_profilCRUD-functions.php";
 
+$isLocked = true;
+
 $javascriptLink = '<script src="./js/main.js"></script>';
 $cssLink = '<script src="./js/main.js"></script>';
 

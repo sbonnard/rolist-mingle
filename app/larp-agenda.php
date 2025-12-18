@@ -11,6 +11,8 @@ require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
 require_once './includes/_profilCRUD-functions.php';
 
+isLocked();
+
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);

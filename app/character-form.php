@@ -14,6 +14,8 @@ require_once "./includes/components/_footer.php";
 
 generateToken();
 
+isLocked();
+
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);

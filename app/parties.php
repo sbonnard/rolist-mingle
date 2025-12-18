@@ -13,6 +13,8 @@ require_once './includes/_profilCRUD-functions.php';
 
 generateToken();
 
+isLocked();
+
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);

@@ -15,6 +15,8 @@ require_once "./includes/classes/_character.php";
 
 generateToken();
 
+isLocked();
+
 if (isset($_SESSION['email'])) {
     $userDatas = fetchUserDatas($dbCo, $_SESSION);
     $profilColour = defineProfilColour($userDatas);

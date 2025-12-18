@@ -81,6 +81,23 @@ function checkConnection(array $session) {
     if (!isset($session['email'])) {
         redirectTo('index.php');
         addError('please_connect');
-        exit();
+        exit;
+    }
+}
+
+
+/**
+ * Redirects to dicersoller.php if $isLocked is true.
+ * Locks pages that are not ready yet.
+ *
+ * @param bool $isLocked - If true, redirects to dicersoller.php
+ * @return void
+ */
+function isLocked(bool $isLocked = true):void {
+    if($isLocked) {
+        redirectTo('diceroller.php');
+        exit;
+    } else {
+        // Fine
     }
 }

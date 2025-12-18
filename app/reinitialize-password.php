@@ -9,6 +9,8 @@ require_once './includes/_security.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
+
+isLocked();
 ?>
 
 <!DOCTYPE html>

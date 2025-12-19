@@ -9,8 +9,15 @@
     padding: 2rem;
     background-color: var.$secondary;
     box-shadow: 3px 4px 6px var.$black50;
+    border-radius: 0.5rem;
     /* Ombre légère par défaut */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @media screen and (max-width: 768px) {
+        & {
+            padding: 1rem;
+        }
+    }
 
     &:hover {
         transform: translateY(-5px);

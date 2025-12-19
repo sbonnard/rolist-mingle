@@ -80,6 +80,7 @@ if (isset($_SESSION['email'])) {
 
     <footer class="footer">
         <p>Pas par là !</p>
+        <?=  fetchFooter(); ?>
     </footer>
 
 </body>

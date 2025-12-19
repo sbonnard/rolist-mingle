@@ -47,7 +47,8 @@
 
     &--CRUD {
         color: var.$white;
-        width: 8rem;
+        width: 25rem;
+        font-size: 1.5rem;
     }
 
     &--CRUD--active {
@@ -165,6 +166,9 @@
         font-size: 1.5rem;
         position: relative; // nécessaire pour ::after
         text-decoration: none;
+        // padding: 1rem;
+        // border: 1px solid var.$electric;
+        // border-radius: 0.5rem;
         transition: all 0.25s ease-in-out;
 
         &:hover {

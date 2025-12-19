@@ -8,6 +8,7 @@ require_once './includes/_profilCRUD-functions.php';
 require_once './includes/_message.php';
 require_once './includes/_security.php';
 require_once './includes/_datas.php';
+// require_once "./includes/classes/_user.php";
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
@@ -44,10 +45,10 @@ $profilColour = defineProfilColour($userDatas);
                     <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
                     <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>
                     <!-- <button class="button--pen"></button> -->
-                    <p>Email : <?= $userDatas[0]['email'] ?> </p>
+                
                     <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
                     <div class="user__bio-container">
-                        <h3 class="ttl ttl--no-padding-top ttl--primary">Qui suis-je ?</h3>
+                        <h3 class="user__bio__ttl">Qui suis-je ?</h3>
                         <p class="user__bio">
                             <?php
                             if ($userDatas[0]['bio'] === NULL) {
@@ -80,7 +81,7 @@ $profilColour = defineProfilColour($userDatas);
 
                 <?php
                 echo
-                '<form id="form-bio" class="container hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                '<form id="form-bio" class="container container--profile hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <h3 id="my-bio" class="ttl--big">Ma bio</h3>
                     <ul class="form__container">
                         <li class="form__itm">
@@ -94,7 +95,7 @@ $profilColour = defineProfilColour($userDatas);
                 ?>
 
 
-                <form id="form-pwd" class="container hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                <form id="form-pwd" class="container container--profile hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
                         <li class="form__itm">
                             <label for="password" class="input__label">Changer le mot de passe</label>
@@ -112,7 +113,7 @@ $profilColour = defineProfilColour($userDatas);
 
                 <?php
                 echo
-                '<form id="form-rpg" class="container" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
+                '<form id="form-rpg" class="container container--profile" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
                     <ul class="form__container">
                         <li class="form__itm form__itm--select">
                             <label class="input__label form__question" for="suggestionsField">

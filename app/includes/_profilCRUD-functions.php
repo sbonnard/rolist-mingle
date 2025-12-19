@@ -105,3 +105,10 @@ function getFavourites(array $favourites):string
     return $favouritesHTML;
 }
 
+function displayEmailIfMyAccount(array $session, array $userDatas):string {
+    if (isset($session['id_user']) && $userDatas['id_user'] === $session['id_user']) {
+        return '<p>Email : ' . $session['email'] . ' (visible uniquement pour vous)</p>';
+    } else {
+        return '';
+    }
+}

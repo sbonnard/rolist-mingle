@@ -83,6 +83,18 @@
 
     &__bio {
         text-align: left;
+        padding: 1rem;
+
+        &__ttl {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+
+            @media screen and (max-width: 768px) {
+                & {
+                    text-align: center;
+                }
+            }
+        }
 
         &-container {
             justify-content: flex-start;
@@ -91,6 +103,13 @@
             padding: 2rem;
             margin: 2rem 0;
             filter: drop-shadow(0 0 0.75rem var.$electric);
+
+            @media screen and (max-width: 768px) {
+                & {
+                    padding: 1rem;
+                    max-width: 95vw;
+                }
+            }
         }
 
     }

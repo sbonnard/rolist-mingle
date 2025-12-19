@@ -101,3 +101,19 @@ function getFavourites(array $favourites):string
     return $favouritesHTML;
 }
 
+
+// /**
+//  * Displays the email of the user if the user is currently logged in and it is his own account.
+//  *
+//  * @param array $session - The current user's session data.
+//  * @param array $userDatas - The user's profile data, including avatar and other info.
+//  * @return string - A string containing the user's email if it is his own account, otherwise an empty string.
+//  */
+
+// function displayEmailIfMyAccount(array $session, array $userDatas):string {
+//     if (isset($session['id_user']) && $userDatas['id_user'] === $session['id_user']) {
+//         return '<p>Email : ' . $session['email'] . ' (visible uniquement pour vous)</p>';
+//     } else {
+//         return '';
+//     }
+// }

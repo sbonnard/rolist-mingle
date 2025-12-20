@@ -5,3 +5,6 @@
 
 // AT HOME 
 $globalURL = 'http://localhost:8282';
+
+// En prod =   
+// $globalURL = 'https://dontrollsingle.fr';

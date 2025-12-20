@@ -29,7 +29,7 @@ function getCharactersSheetsList(array $characterDatas)
     } else {
         foreach ($characterDatas as $character) {
             $charactersList .= '
-             <section class="character" id="character-sheet">
+             <section class="character" id="character-sheet" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-out">
                 <img class="character-sheet__img" src="' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
                 <h2 class="character-sheet__name">' . $character['name'] . '</h2>
                 <section class="character-sheet__stats">

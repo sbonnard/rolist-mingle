@@ -27,7 +27,7 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($globalURL, $_SESSION); ?>
     <?= getCustomCursor() ?>
 
     <main>
@@ -37,7 +37,7 @@ if (isset($_SESSION['email'])) {
             <a href="index.php"><button class="button connection-bar__button">Se connecter</button></a>
         </div>
         <div class="page-content">
-        
+
             <h1 class="ttl ttl--big">Agenda GN</h1>
 
             <div class="container">
@@ -55,8 +55,12 @@ if (isset($_SESSION['email'])) {
     </main>
 
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
+
+    <script>
+        AOS.init();
+    </script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/password.js"></script>

@@ -50,7 +50,7 @@ if (isset($_SESSION['email'])) {
 
 <body>
 
-    <?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($globalURL, $_SESSION); ?>
     <?= getCustomCursor() ?>
 
     <main class="container--dice container--dice--grid">
@@ -60,7 +60,7 @@ if (isset($_SESSION['email'])) {
             <!-- Character sheet will be displayed like a burger menu I think -->
            <?= '';//    getCharacterSheet($_SESSION, $charactersDatas, true); // ?>
    
-           <section class="dice__section" aria-labelledby="ttlbody">
+           <section class="dice__section" aria-labelledby="ttlbody" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-out">
                <div class="dice__banner" data-banner="body" id="bannerbody">Aïe</div>
                <h2 class="ttl dice__word" id="ttlbody">Dé <span class="target">Ciblage</span></h2>
                <button id="bodyDice">
@@ -80,11 +80,14 @@ if (isset($_SESSION['email'])) {
 
     <footer class="footer">
         <p>Pas par là !</p>
-        <?=  fetchFooter(); ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
 
 </body>
 
+<script>
+    AOS.init();
+</script>
 <script type="module" src="js/script.js"></script>
 <script type="module" src="js/index.js"></script>
 <script type="module" src="js/dices.js"></script>

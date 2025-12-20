@@ -29,18 +29,18 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($globalURL, $_SESSION); ?>
     <?= getCustomCursor() ?>
 
     <main>
         <?= getSuccessMessage($messages); ?>
         <?= getErrorMessage($errors); ?>
-        
+
         <section class="hero">
             <div class="hero-banner">
                 <img class="hero-banner__img" src="logo/logo-rolist-mingle.svg" alt="Logo Rolist-Mingle, dé de Jeu de Rôle">
-                <h1 class="logo__ttl">Rolist-Mingle</h1>
-                <h2 class="logo__tagline">Don't Roll Single</h2>
+                <h1 class="logo__ttl">Don't Roll Single</h1>
+                <!-- <h2 class="logo__tagline">Don't Roll Single</h2> -->
                 <!-- <a href="#content" class="hero-banner__btn">
                     <img src="img/angle-down.svg" alt="Bouton vers contenu principal">
                 </a> -->
@@ -77,7 +77,7 @@ if (isset($_SESSION['email'])) {
 
         <div class="page-content" id="content">
             <section class="concept bg-blur" aria-labelledby="concept">
-                <h2 class="ttl ttl--primary">Le concept</h2>
+                <h2 class="ttl ttl--primary">Le projet à venir</h2>
                 <p class="concept__para">Rolist-Mingle a pour vocation d'aider à la rencontre de rôlistes, confirmés ou non. Pour tous
                     ceux qui souhaiteraient jouer plus ou se lancer dans le Jeu de Rôle sur table ou à distance,
                     Rolist-Mingle se veut un lieu d'échanges et de rencontres entre rôlistes avec les mêmes
@@ -136,9 +136,12 @@ if (isset($_SESSION['email'])) {
 
     </main>
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
 
+    <script>
+        AOS.init();
+    </script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/password.js"></script>

@@ -34,18 +34,18 @@ $profilColour = defineProfilColour($userDatas);
 
 <body>
 
-    <?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($globalURL, $_SESSION); ?>
     <?= getCustomCursor() ?>
 
-    <main>
+    <main id="higher-main-profile">
         <div class="page-content">
             <div class="container--desktop container--column">
 
-            <section class="user__main-infos">
-                <h1 class="ttl--big user__name" data-aos="fade-down"><?= $userDatas[0]['username'] ?></h1>
-                <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
-            </section>
-                
+                <section class="user__main-infos">
+                    <h1 class="ttl--big user__name" data-aos="fade-down"><?= $userDatas[0]['username'] ?></h1>
+                    <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
+                </section>
+
                 <section class="container user__infos" aria-labelledby="my-infos">
                     <div class="user__main-infos">
                         <!-- <button class="button--pen"></button> -->
@@ -132,9 +132,12 @@ $profilColour = defineProfilColour($userDatas);
     </main>
 
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
 
+    <script>
+        AOS.init();
+    </script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
     <script type="module" src="js/async/CRUD.js"></script>

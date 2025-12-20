@@ -9,7 +9,7 @@
 function getDice(int $dice): string
 {
     return '
-        <section class="dice__section" aria-labelledby="ttl' . $dice . '">
+        <section class="dice__section" aria-labelledby="ttl' . $dice . '" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-out">
             <div class="dice__banner" data-banner="' . $dice . '" id="banner' . $dice . '">' . $dice . '</div>
             <h2 class="ttl dice__word" id="ttl' . $dice . '">Dé <span class="number">' . $dice . '</span></h2>
             <button id="dice' . $dice . '" data-dice="' . $dice . '">

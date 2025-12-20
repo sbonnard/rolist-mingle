@@ -49,8 +49,11 @@ isLocked();
     </main>
 
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
+    <script>
+        AOS.init();
+    </script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/password.js"></script>
     <script type="module" src="js/cursor.js"></script>

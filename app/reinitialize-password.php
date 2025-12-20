@@ -21,7 +21,7 @@ isLocked();
 </head>
 
 <body>
-    <?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($globalURL, $_SESSION); ?>
     <?= getCustomCursor() ?>
     <main>
         <a href="index.php" class="hero-banner hero-banner--smaller">
@@ -61,7 +61,7 @@ isLocked();
     </main>
 
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
 
     <script type="module" src="js/script.js"></script>

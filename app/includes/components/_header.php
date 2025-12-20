@@ -8,32 +8,32 @@
  * @param string $profilColour - (Optional) A CSS class for the user's avatar border color.
  * @return string - The HTML content of the header.
  */
-function fetchHeader(array $session, array $userDatas = [], string $profilColour = ''): string
+function fetchHeader(string $globalUrl, array $session, array $userDatas = [], string $profilColour = ''): string
 {
-    $header = '<header class="header bg-blur">
+    $header = '<header class="header bg-blur" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
 
-        <a href="index.php">
+        <a href="' . $globalUrl . '/index.php">
             <h1 class="ttl ttl--main">Don\'t Roll Single</h1>
         </a>
         <div class="hamburger">
             <a href="#menu" id="hamburger-menu-icon">
-                <img src="img/hamburger.svg" alt="Menu Hamburger">
+                <img src="' . $globalUrl . '/img/hamburger.svg" alt="Menu Hamburger">
             </a>
         </div>
         <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
             <ul class="nav" id="nav-list">
             
             <li class="nav__itm nav__lnk--current">
-                <a href="index.php" class="nav__lnk" aria-current="page">Accueil</a>
+                <a href="' . $globalUrl . '/index.php" class="nav__lnk" aria-current="page">Accueil</a>
             </li>
              <li class="nav__itm nav__lnk--current">
               
-                <a href="diceroller.php" class="nav__lnk" aria-current="page">Dés</a>
+                <a href="' . $globalUrl . '/diceroller.php" class="nav__lnk" aria-current="page">Dés</a>
             </li>';
 
-    if (!isset($session['email']) || (isset($session['email']) && $_SESSION['characterFound'] === false)) {
+    if (!isset($session['email']) || (isset($session['email']) && $session['characterFound'] === false)) {
         $header .= '<li class="nav__itm nav__itm--shivering">
-            <a href="character-form.php" class="nav__lnk">Créer personnage</a>
+            <a href="' . $globalUrl . '/character-form.php" class="nav__lnk">Créer personnage</a>
         </li>';
     }
     // <li class="nav__itm">
@@ -44,7 +44,7 @@ function fetchHeader(array $session, array $userDatas = [], string $profilColour
     if (isset($session['email'])) {
         $header .= '<li class="nav__itm">
                           
-                            <a href="character.php" class="nav__lnk">Personnages</a>
+                            <a href="' . $globalUrl . '/character.php" class="nav__lnk">Personnages</a>
                         </li>';
 
         // $header .= '<li class="nav__itm">
@@ -68,11 +68,11 @@ function fetchHeader(array $session, array $userDatas = [], string $profilColour
         //             <img class="nav__avatar js-avatar-hover  ' . $profilColour . '" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
         //         </picture>
         //    </a>
-        $header .=       '<a href="my-profil.php" class="nav__lnk js-link-hover">Mon compte</a>
+        $header .=       '<a href="' . $globalUrl . '/my-profil.php" class="nav__lnk js-link-hover">Mon compte</a>
                         </li>
                         <li class="nav__itm">
                         
-                          <a class="nav__lnk" href="logout.php">Déconnexion</a>
+                          <a class="nav__lnk" href="' . $globalUrl . '/logout.php">Déconnexion</a>
                         </li>';
     }
 
@@ -82,6 +82,7 @@ function fetchHeader(array $session, array $userDatas = [], string $profilColour
 
     return $header;
 }
+
 
 /**
  * Generates the HTML header section of the page.

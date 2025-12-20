@@ -29,7 +29,7 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <?= fetchHeader($_SESSION); ?>
+    <?= fetchHeader($globalURL, $_SESSION); ?>
     <?= getCustomCursor() ?>
 
     <main>
@@ -37,9 +37,12 @@ if (isset($_SESSION['email'])) {
     </main>
 
     <footer class="footer">
-        <? echo fetchFooter() ?>
+        <?= fetchFooter($globalURL); ?>
     </footer>
 
+<script>
+    AOS.init();
+</script>
 <script type="module" src="js/script.js"></script>
 <script type="module" src="js/cursor.js"></script>
 

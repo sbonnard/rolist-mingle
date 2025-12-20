@@ -11,6 +11,8 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: var.$white;
+  cursor: default;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

@@ -69,3 +69,12 @@
 #bodyDice {
     position: relative;
 }
+
+.number {
+    font-size: 3rem;
+}
+
+.number, .target {
+    animation: shivering 1s infinite;
+}
+

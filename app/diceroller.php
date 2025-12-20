@@ -62,7 +62,7 @@ if (isset($_SESSION['email'])) {
    
            <section class="dice__section" aria-labelledby="ttlbody">
                <div class="dice__banner" data-banner="body" id="bannerbody">Aïe</div>
-               <h2 class="ttl dice__word" id="ttlbody">Dé <span class="number">Ciblage</span></h2>
+               <h2 class="ttl dice__word" id="ttlbody">Dé <span class="target">Ciblage</span></h2>
                <button id="bodyDice">
                    <img class="dice--body" src="img/body.png" alt="Dé corps de JDR">
                </button>

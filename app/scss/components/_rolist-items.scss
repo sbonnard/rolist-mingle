@@ -67,18 +67,26 @@
     padding: 0.5rem;
 
     &__name {
-        padding: 1.5rem;
         text-transform: uppercase;
+        text-align: center;
+        animation: shivering 1s infinite;
     }
 
     &__profil-dice {
-        padding: 1.5rem 0;
         width: 6.5rem;
     }
 
     &__avatar {
         width: 8.5rem;
         background-color: var.$secondary;
+    }
+
+    &__main-infos {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
     }
 
     &__bio {
@@ -101,7 +109,6 @@
             max-width: 40rem;
             background-color: var.$secondary;
             padding: 2rem;
-            margin: 2rem 0;
             filter: drop-shadow(0 0 0.75rem var.$electric);
 
             @media screen and (max-width: 768px) {
@@ -114,10 +121,29 @@
 
     }
 
-    @media screen and (max-width: 768px) {
+    &__infos {
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 0;
+    }
 
+    @media screen and (max-width: 768px) {
         &__infos {
-            margin-top: 5rem;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__link-section {
+        padding: 2rem 0;
+        @media screen and (max-width: 768px) {
+            & {
+            }
         }
     }
 }

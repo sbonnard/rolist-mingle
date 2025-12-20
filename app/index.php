@@ -51,24 +51,24 @@ if (isset($_SESSION['email'])) {
                 <form action="login.php" method="post" aria-label="Formulaire de connexion">
                     <ul class="form__container">
                         <li class="form__itm">
-                            <label class="input__label" for="username">email</label>
+                            <label class="input__label" for="username">Email</label>
                             <input class="input" type="text" name="email" id="email" placeholder="rôliste@rolist-mingle.fr" required aria-label="Entrez votre email">
                         </li>
                         <li class="form__itm">
                             <label class="input__label" for="password">Mot de passe</label>
                             <div class="input--password">
                                 <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
-                                <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                                <button type="button" class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
                             </div>
                         </li>
-                        <p class="lnk--underlined"><a href="forgotten-password.php">Mot de passe oublié ?</a></p>
+                        <!-- <p class="button__lnk"><a href="forgotten-password.php">Mot de passe oublié ?</a></p> -->
                         <input class="button" type="submit" value="Se connecter">
                         <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
                         <input type="hidden" name="action" value="log-in">
                     </ul>
                 </form>
                 <div class="form__container">
-                    <p>Pas encore de compte ?</p>
+                    <p class="txt txt--shivering txt--bigger">Pas encore de compte ?</p>
                     <div class="button__txt"><a class="button button--electric" href="register.php">Créer un compte</a></div>
                 </div>
             </section>

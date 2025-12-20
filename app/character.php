@@ -35,7 +35,7 @@ if (isset($_SESSION['email'])) {
     <?= fetchHeader($_SESSION); ?>
     <?= getCustomCursor() ?>
 
-    <main>
+    <main id="higher-main">
         <?php
         echo getSuccessMessage($messages);
         echo getErrorMessage($errors);

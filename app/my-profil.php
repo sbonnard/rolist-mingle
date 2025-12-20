@@ -12,6 +12,7 @@ require_once './includes/_datas.php';
 require_once "./includes/components/_head.php";
 require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
+require_once "./includes/components/_forms.php";
 
 checkConnection($_SESSION);
 
@@ -32,7 +33,7 @@ $profilColour = defineProfilColour($userDatas);
 </head>
 
 <body>
-    
+
     <?= fetchHeader($_SESSION); ?>
     <?= getCustomCursor() ?>
 
@@ -40,13 +41,16 @@ $profilColour = defineProfilColour($userDatas);
         <div class="page-content">
             <div class="container--desktop container--column">
 
-                <section class="container user__infos" aria-labelledby="my-infos">
-                    <h1 id="my-infos" class="ttl ttl--big">Mon Profil</h1>
-                    <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
-                    <h2 class="ttl--big user__name"> <?= $userDatas[0]['username'] ?></h2>
-                    <!-- <button class="button--pen"></button> -->
+            <section class="user__main-infos">
+                <h1 class="ttl--big user__name" data-aos="fade-down"><?= $userDatas[0]['username'] ?></h1>
+                <img class="avatar user__avatar <?= defineProfilColour($userDatas) ?>" src="<?= $userDatas[0]['avatar'] ?>" alt="Mon image de profil">
+            </section>
                 
-                    <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
+                <section class="container user__infos" aria-labelledby="my-infos">
+                    <div class="user__main-infos">
+                        <!-- <button class="button--pen"></button> -->
+                        <img class="user__profil-dice" src="<?= $userDatas[0]['icon_URL'] ?>" alt="<?= $userDatas[0]['name_role'] ?>">
+                    </div>
                     <div class="user__bio-container">
                         <h3 class="user__bio__ttl">Qui suis-je ?</h3>
                         <p class="user__bio">
@@ -62,7 +66,7 @@ $profilColour = defineProfilColour($userDatas);
                 </section>
 
 
-                <section class="container">
+                <section class="container user__link-section">
                     <?php
                     echo getSuccessMessage($messages);
                     echo getErrorMessage($errors);
@@ -79,37 +83,9 @@ $profilColour = defineProfilColour($userDatas);
                     </div>
                 </section>
 
-                <?php
-                echo
-                '<form id="form-bio" class="container container--profile hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
-                    <h3 id="my-bio" class="ttl--big">Ma bio</h3>
-                    <ul class="form__container">
-                        <li class="form__itm">
-                            <textarea class="input input__text-area" name="bio" id="bio" placeholder="Ma petite vie...">' . $userDatas[0]['bio'] . '</textarea>
-                        </li>
-                        <input class="button" type="submit" value="Enregistrer">
-                        <input type="hidden" name="action" value="modify-bio">
-                        <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
-                    </ul>
-                </form>'
-                ?>
+                <?= getBioForm($_SESSION, $userDatas) ?>
 
-
-                <form id="form-pwd" class="container container--profile hidden" action="actions-CRUD.php" method="post" aria-labelledby="my-bio" aria-label="Modifier les informations de mon compte">
-                    <ul class="form__container">
-                        <li class="form__itm">
-                            <label for="password" class="input__label">Changer le mot de passe</label>
-                            <div class="input--password">
-                                <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
-                                <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
-                            </div>
-                        </li>
-                        <input class="button" type="submit" value="Enregistrer">
-                        <input type="hidden" name="action" value="modify-pwd">
-                        <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
-
-                    </ul>
-                </form>
+                <?= getPasswordForm($_SESSION, $userDatas) ?>
 
                 <?php
                 echo

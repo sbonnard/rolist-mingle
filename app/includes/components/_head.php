@@ -40,8 +40,8 @@ function fetchHead(string $javascriptLink, string $cssLink, string $headTitle = 
         <script type="module" src="http://localhost:5173/js/script.js"></script>
         
          <!-- Production -->
-        <!-- <link rel="stylesheet" href="build/assets/script-' . $cssLink . '.css">
-        <script type="module" src="build/assets/script-' . $javascriptLink . ' .js"></script>
+        <!-- <link rel="stylesheet" href="assets/assets/' . $cssLink . '.css">
+        <script type="module" src="assets/assets/' . $javascriptLink . ' .js"></script>
         <script type="module" src="https://dontrollsingle.fr/js/script.js"></script> -->
         
         <!-- AOS -->

@@ -26,9 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'log-in') {
     $user = $query->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['password'] = $user['password'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['id_user'] = $user['id_user'];
+        $_SESSION['admin'] = $user['admin'];
+        $_SESSION['overlord'] = $user['overlord'];
         redirectTo();
         exit();
     } else {

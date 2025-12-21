@@ -10,7 +10,8 @@
  */
 function fetchHeader(string $globalUrl, array $session, array $userDatas = [], string $profilColour = ''): string
 {
-    $header = '<header class="header bg-blur" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
+    if (isset($session['email']) && isset($session['id_user']) && isset($session['admin']) && $session['admin'] === 1 && isset($session['overlord']) && $session['overlord'] === 1) {
+        $header = '<header class="header bg-blur" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
 
         <a href="' . $globalUrl . '/index.php">
             <h1 class="ttl ttl--main">Don\'t Roll Single</h1>
@@ -31,54 +32,61 @@ function fetchHeader(string $globalUrl, array $session, array $userDatas = [], s
                 <a href="' . $globalUrl . '/diceroller.php" class="nav__lnk" aria-current="page">Dés</a>
             </li>';
 
-    if (!isset($session['email']) || (isset($session['email']) && $session['characterFound'] === false)) {
-        $header .= '<li class="nav__itm nav__itm--shivering">
+        if (!isset($session['email']) || (isset($session['email']) && $session['characterFound'] === false)) {
+            $header .= '<li class="nav__itm nav__itm--shivering">
             <a href="' . $globalUrl . '/character-form.php" class="nav__lnk">Créer personnage</a>
         </li>';
-    }
-    // <li class="nav__itm">
-    //         <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
-    //         <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
-    //     </li>';
+        }
+        // <li class="nav__itm">
+        //         <a href="parties.php"><img src="icones/parties.svg" alt="icone parties dés de JDR"></a>
+        //         <a href="parties.php" class="nav__lnk" aria-label="Parties de Jeu de Rôle">Parties</a>
+        //     </li>';
 
-    if (isset($session['email'])) {
-        $header .= '<li class="nav__itm">
+        if (isset($session['email'])) {
+            $header .= '<li class="nav__itm">
                           
                             <a href="' . $globalUrl . '/character.php" class="nav__lnk">Personnages</a>
                         </li>';
 
+            // $header .= '<li class="nav__itm">
+            //                     <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
+            //                     <a href="messages.php" class="nav__lnk">Messagerie</a>
+            //                 </li>';
+        }
+
+
         // $header .= '<li class="nav__itm">
-        //                     <a href="messages.php"><img src="icones/messages.svg" alt="icone messagerie"></a>
-        //                     <a href="messages.php" class="nav__lnk">Messagerie</a>
-        //                 </li>';
-    }
+        //                 <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
+        //                 <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
+        //             </li>';
 
 
-    // $header .= '<li class="nav__itm">
-    //                 <a href="larp-agenda.php"><img src="icones/agenda.svg" alt="icone agenda"></a>
-    //                 <a href="larp-agenda.php" class="nav__lnk" aria-label="Agenda des Jeux de Rôle Grandeur Nature">Agenda GNs</a>
-    //             </li>';
-
-
-    if (isset($session['email'])) {
-        $header .= '<li class="nav__itm" data-avatar="">';
-        //      <a href="my-profil-CRUD.php">
-        //          <picture>
-        //              <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
-        //             <img class="nav__avatar js-avatar-hover  ' . $profilColour . '" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
-        //         </picture>
-        //    </a>
-        $header .=       '<a href="' . $globalUrl . '/my-profil.php" class="nav__lnk js-link-hover">Mon compte</a>
+        if (isset($session['email'])) {
+            $header .= '<li class="nav__itm" data-avatar="">';
+            //      <a href="my-profil-CRUD.php">
+            //          <picture>
+            //              <source class="avatar" srcset="' . $userDatas[0]['avatar'] . '" media="(min-width: 768px)">
+            //             <img class="nav__avatar js-avatar-hover  ' . $profilColour . '" src="' . $userDatas[0]['avatar'] . '" alt="icones personnelles">
+            //         </picture>
+            //    </a>
+            $header .=       '<a href="' . $globalUrl . '/my-profil.php" class="nav__lnk js-link-hover">Mon compte</a>
                         </li>
                         <li class="nav__itm">
                         
                           <a class="nav__lnk" href="' . $globalUrl . '/logout.php">Déconnexion</a>
                         </li>';
-    }
+        }
 
-    $header .= '</ul>
+        $header .= '</ul>
         </nav>
     </header>';
+    } else {
+        $header = '<header class="header bg-blur" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
+    <a href="' . $globalUrl . '/index.php">
+    <h1 class="ttl ttl--main">Don\'t Roll Single</h1>
+    </a>
+    </header>';
+    }
 
     return $header;
 }

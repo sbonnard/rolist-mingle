@@ -1,3 +1,10 @@
+// ⛔ Stoppe complètement le script en dessous de 768px
+if (window.matchMedia("(max-width: 768px)").matches) {
+    // Optionnel : remettre le curseur natif si besoin
+    document.documentElement.style.cursor = "auto";
+    throw new Error("Custom cursor disabled on mobile");
+}
+
 // Script pour le curseur personnalisé
 document.addEventListener('DOMContentLoaded', () => {
     const cursorDot = document.querySelector('.cursor-dot');

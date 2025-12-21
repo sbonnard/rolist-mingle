@@ -7,8 +7,8 @@ require_once "_profilCRUD-functions.php";
 $isLocked = true;
 
 // Links for head
-$javascriptLink = 'script-CW9wHOZC';
-$cssLink = 'script-9W0MGPJ00';
+$javascriptLink = 'script-D0mLbryQ';
+$cssLink = 'script-U5taGnUK';
 
 $RPG = fetchRPG($dbCo);
 

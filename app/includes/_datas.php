@@ -8,7 +8,7 @@ $isLocked = true;
 
 // Links for head
 $javascriptLink = 'script-CW9wHOZC';
-$cssLink = 'script-9W0MGPJ0';
+$cssLink = 'script-9W0MGPJ00';
 
 $RPG = fetchRPG($dbCo);
 

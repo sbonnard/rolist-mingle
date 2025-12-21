@@ -41,7 +41,7 @@ function fetchHead(string $javascriptLink, string $cssLink, string $headTitle = 
         
          <!-- Production -->
         <!-- <link rel="stylesheet" href="assets/assets/' . $cssLink . '.css">
-        <script type="module" src="assets/assets/' . $javascriptLink . ' .js"></script>
+        <script type="module" src="assets/assets/' . $javascriptLink . '.js"></script>
         <script type="module" src="https://dontrollsingle.fr/js/script.js"></script> -->
         
         <!-- AOS -->

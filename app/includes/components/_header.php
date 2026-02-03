@@ -80,11 +80,52 @@ function fetchHeader(string $globalUrl, array $session, array $userDatas = [], s
         $header .= '</ul>
         </nav>
     </header>';
+    } else if (isset($session['email'])) {
+        $header = '<header class="header bg-blur" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
+    <a href="' . $globalUrl . '/index.php">
+            <h1 class="ttl ttl--main">Don\'t Roll Single</h1>
+        </a>
+        <div class="hamburger">
+            <a href="#menu" id="hamburger-menu-icon">
+                <img src="' . $globalUrl . '/img/hamburger.svg" alt="Menu Hamburger">
+            </a>
+        </div>
+        <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
+            <ul class="nav" id="nav-list">
+            
+            <li class="nav__itm nav__lnk--current">
+                <a href="' . $globalUrl . '/index.php" class="nav__lnk" aria-current="page">Accueil</a>
+            </li>
+             <li class="nav__itm nav__lnk--current">
+              
+                <a href="' . $globalUrl . '/diceroller.php" class="nav__lnk" aria-current="page">Dés</a>
+            </li>
+            <li class="nav__itm">
+                <a href="' . $globalUrl . '/my-profil.php" class="nav__lnk js-link-hover">Mon compte</a>
+            </li>
+            <li class="nav__itm">
+                 <a class="nav__lnk" href="' . $globalUrl . '/logout.php">Déconnexion</a>
+            </li>
+    </header>';
     } else {
         $header = '<header class="header bg-blur" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">
     <a href="' . $globalUrl . '/index.php">
-    <h1 class="ttl ttl--main">Don\'t Roll Single</h1>
-    </a>
+            <h1 class="ttl ttl--main">Don\'t Roll Single</h1>
+        </a>
+        <div class="hamburger">
+            <a href="#menu" id="hamburger-menu-icon">
+                <img src="' . $globalUrl . '/img/hamburger.svg" alt="Menu Hamburger">
+            </a>
+        </div>
+        <nav class="nav hamburger__menu" id="menu" aria-label="Navigation principale du site">
+            <ul class="nav" id="nav-list">
+            
+            <li class="nav__itm nav__lnk--current">
+                <a href="' . $globalUrl . '/index.php" class="nav__lnk" aria-current="page">Accueil</a>
+            </li>
+             <li class="nav__itm nav__lnk--current">
+                <a href="' . $globalUrl . '/diceroller.php" class="nav__lnk" aria-current="page">Dés</a>
+            </li>
     </header>';
     }
 

@@ -10,6 +10,12 @@
     padding: 1rem;
     cursor: pointer;
 
+     @media screen and (max-width: 768px) {
+        & {
+            width: 100%;
+        }
+    }
+
     &__label {
         font-family: 'roboto';
         font-size: 1.25rem;

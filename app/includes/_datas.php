@@ -7,14 +7,14 @@ require_once "_profilCRUD-functions.php";
 $isLocked = true;
 
 // Links for head
-$javascriptLink = 'script-D0mLbryQ';
-$cssLink = 'script-U5taGnUK';
+$javascriptLink = 'script-BEwUcXip';
+$cssLink = 'script-BIH6tRty';
 
 $RPG = fetchRPG($dbCo);
 
 // Call a function to fetch user datas instead of []
 // -------------------------------------------------
-$userdatas = fetchUserDatas($dbCo, $_SESSION);
+$userdatas = fetchUserDatas($dbCo, $_SESSION, $_GET);
 
 // Define color by fetching it from database later
 // -----------------------------------------------

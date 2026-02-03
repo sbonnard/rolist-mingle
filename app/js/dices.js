@@ -24,6 +24,7 @@ allDices.forEach(dice => {
 
         // Ajoute la classe pour l'animation du dé
         dice.classList.add('dice__rolling');
+        dice.classList.add('dice__shadow');
 
         const diceValue = parseInt(dice.getAttribute('data-dice')); // Conversion en nombre
 

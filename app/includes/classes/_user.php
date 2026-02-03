@@ -12,10 +12,10 @@ function fetchUserDatas(PDO $dbCo, array $session):array
     SELECT id_user, username, email, password, avatar, us.id_role_type AS user_role, ro.id_role_type AS role_id, icon_URL, bio, name_role
     FROM users us
     JOIN role_type ro USING (id_role_type)
-    WHERE email = :email;');
+    WHERE id_user = :id_user;');
 
     $bindValues = [
-        "email" => strip_tags($session['email'])
+        "id_user" => strip_tags($session['id_user'])
     ];
 
     $profil = $query->execute($bindValues);
@@ -67,10 +67,10 @@ function fetchUserFavourites(PDO $dbCo, array $session):array
     FROM users us
     JOIN selected_universe su USING (id_user)
     JOIN universe USING (id_universe)
-    WHERE email = :email;');
+    WHERE id_user = :id_user;');
 
     $bindValues = [
-        "email" => strip_tags($session['email'])
+        "id_user" => strip_tags($session['id_user'])
     ];
 
 

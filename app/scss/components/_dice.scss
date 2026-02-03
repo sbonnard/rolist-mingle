@@ -50,7 +50,9 @@
     }
 
     &__rolling {
-        animation: rollDice 1.5s linear;
+        animation:
+            rollDice 900ms cubic-bezier(.22, 1.2, .36, 1) forwards,
+            settleDice 400ms ease-out 900ms forwards;
     }
 
     &--crit {
@@ -74,7 +76,7 @@
     font-size: 3rem;
 }
 
-.number, .target {
+.number,
+.target {
     animation: shivering 1s infinite;
 }
-

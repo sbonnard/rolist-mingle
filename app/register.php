@@ -62,14 +62,14 @@ if (isset($_SESSION['email'])) {
                             <label class="input__label" for="password">Mot de passe <span class="input__required" aria-hidden="true">*</span></label>
                             <div class="input--password">
                                 <input class="input" type="password" name="password" id="password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe">
-                                <button class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                                <button type="button" class="button--eye button--eye--inactive" id="eye-button" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
                             </div>
                         </li>
                         <li class="form__itm">
                             <label class="input__label" for="check-password">Entrez de nouveau le mot de passe <span class="input__required" aria-hidden="true">*</span></label>
                             <div class="input--password">
                                 <input class="input" type="password" name="check-password" id="check-password" placeholder="•••••••••••" required aria-label="Merci d'entrer votre mot de passe pour vérification.">
-                                <button class="button--eye button--eye--inactive" id="eye-button-bis" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
+                                <button type="button" class="button--eye button--eye--inactive" id="eye-button-bis" aria-label="Montrer le mot de passe en clair dans le champs de saisie"></button>
                             </div>
                         </li>
                         <li class="form__question">
@@ -144,7 +144,7 @@ if (isset($_SESSION['email'])) {
     </script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/suggestion-bar.js"></script>
-    <script type="module" src="js/password.js"></script>
+    <script type="module" src="js/password-register.js"></script>
     <script type="module" src="js/cursor.js"></script>
     <!-- <script type="module" src="js/register.js"></script> -->
 </body>

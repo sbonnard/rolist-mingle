@@ -1,32 +1,126 @@
 @use '../var' as var;
 
 .bg-blur {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
 }
 
+// @keyframes rollDice {
+//   0% {
+//     transform: translateY(0) rotate(0deg);
+//     /* Position de départ sans inclinaison */
+//   }
+
+//   25% {
+//     transform: translateY(-20px) rotate(-10deg);
+//     /* Premier bond (vers le haut) avec inclinaison */
+//   }
+
+//   50% {
+//     transform: translateY(0) rotate(0deg);
+//     /* Retour à la position de départ, droit */
+//   }
+
+//   75% {
+//     transform: translateY(-10px) rotate(10deg);
+//     /* Deuxième bond plus petit avec une légère inclinaison de l'autre côté */
+//   }
+
+//   100% {
+//     transform: translateY(0) rotate(0deg);
+//     /* Retour final à la position droite */
+//   }
+// }
+
 @keyframes rollDice {
-    0% {
-      transform: translateY(0) rotate(0deg); /* Position de départ sans inclinaison */
-    }
-    25% {
-      transform: translateY(-20px) rotate(-10deg); /* Premier bond (vers le haut) avec inclinaison */
-    }
-    50% {
-      transform: translateY(0) rotate(0deg); /* Retour à la position de départ, droit */
-    }
-    75% {
-      transform: translateY(-10px) rotate(10deg); /* Deuxième bond plus petit avec une légère inclinaison de l'autre côté */
-    }
-    100% {
-      transform: translateY(0) rotate(0deg); /* Retour final à la position droite */
-    }
+
+  /* posé au sol */
+  0% {
+    transform: translateY(0) scale(1.02, 0.98) rotate(0deg);
   }
 
+  /* petite impulsion (quasi invisible) */
+  10% {
+    transform: translateY(0) scale(0.97, 1.03) rotate(-6deg);
+  }
 
+  /* gros bond */
+  32% {
+    transform: translateY(-85px) scale(1, 1) rotate(130deg);
+  }
 
-  @keyframes shivering {
-    0%, 100% {
+  /* impact */
+  48% {
+    transform: translateY(0) scale(1.04, 0.96) rotate(220deg);
+  }
+
+  /* rebond moyen */
+  63% {
+    transform: translateY(-30px) scale(1, 1) rotate(270deg);
+  }
+
+  /* second impact */
+  76% {
+    transform: translateY(0) scale(1.02, 0.98) rotate(310deg);
+  }
+
+  /* micro rebond */
+  88% {
+    transform: translateY(-8px) rotate(330deg);
+  }
+
+  /* stop */
+  100% {
+    transform: translateY(0) scale(1, 1) rotate(360deg);
+  }
+}
+
+@keyframes settleDice {
+  0% {
+    transform: translateX(0) rotate(360deg);
+  }
+
+  100% {
+    transform: translateX(6px) rotate(365deg);
+  }
+}
+
+@keyframes shadowBounce {
+  0% {
+    transform: scale(1);
+    opacity: .35;
+  }
+
+  32% {
+    transform: scale(.6);
+    opacity: .15;
+  }
+
+  48% {
+    transform: scale(1.1);
+    opacity: .4;
+  }
+
+  63% {
+    transform: scale(.75);
+    opacity: .2;
+  }
+
+  76% {
+    transform: scale(1.05);
+    opacity: .35;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: .3;
+  }
+}
+
+@keyframes shivering {
+
+  0%,
+  100% {
     text-shadow:
       0 0 4px var.$electric,
       0 0 10px var.$electric,
@@ -56,20 +150,15 @@
     opacity: 0.9;
   }
 
-  75% {
-    text-shadow:
-      0 0 5px var.$electric,
-      0 0 12px var.$electric80,
-      0 0 22px var.$electric60,
-      0 0 35px var.$electric40;
-    transform: translate(-1px, 0);
-    opacity: 0.95;
-  }
 }
 
 
+
 @keyframes glitching {
-  0%, 50%, 100% {
+
+  0%,
+  50%,
+  100% {
     text-shadow:
       0 0 4px var.$electric,
       0 0 10px var.$electric80;
@@ -105,8 +194,19 @@
       0 0 12px var.$electric30;
   }
 
-  60% { transform: translate(2px, -1px); }
-  70% { transform: translate(-1px, 1px); }
-  80% { transform: translate(1px, 0); }
-  90% { transform: translate(-1px, -2px); }
+  60% {
+    transform: translate(2px, -1px);
+  }
+
+  70% {
+    transform: translate(-1px, 1px);
+  }
+
+  80% {
+    transform: translate(1px, 0);
+  }
+
+  90% {
+    transform: translate(-1px, -2px);
+  }
 }

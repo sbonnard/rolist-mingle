@@ -19,8 +19,20 @@ checkConnection($_SESSION);
 // var_dump($_SESSION['email']);
 
 generateToken();
-$userDatas = fetchUserDatas($dbCo, $_SESSION);
-$favourites = fetchUserFavourites($dbCo, $_SESSION);
+
+if (isset($_GET['id_user']) && intval($_GET['id_user']) !== $_SESSION['id_user'] && isset($_SESSION['id_user']) && $_SESSION['overlord'] === 1) {
+    // Uniquely for overlord but wil be functionning soon
+    $userDatas = fetchUserDatas($dbCo, $_SESSION, $_GET);
+    $favourites = fetchUserFavourites($dbCo, $_GET);
+} else if (!isset($_GET['id_user']) || (isset($_GET['id_user']) && intval($_GET['id_user']) === $_SESSION['id_user']) && $_SESSION['overlord'] === 0) {
+    // See your profile
+    $userDatas = fetchUserDatas($dbCo, $_SESSION, $_GET);
+    $favourites = fetchUserFavourites($dbCo, $_SESSION);
+} else if (isset($_GET['id_user']) && intval($_GET['id_user']) !== $_SESSION['id_user']) {
+    // See your profile
+    $userDatas = fetchUserDatas($dbCo, $_SESSION, $_GET);
+    $favourites = fetchUserFavourites($dbCo, $_SESSION);
+}
 $rpg = fetchRPG($dbCo);
 $profilColour = defineProfilColour($userDatas);
 ?>

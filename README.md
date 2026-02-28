@@ -13,7 +13,9 @@ I want to deal with accessibilty issues on the whole project so it respects the 
 
     - Dice launcher from dice 4 to dice 100.
     - Hit location dice.
+    
     - Create a character
+    
     - Personnal profile :
         - Change password
         - Change bio

@@ -19,7 +19,7 @@ I want to deal with accessibilty issues on the whole project so it respects the 
     - Personnal profile :
         - Change password
         - Change bio
-        - Add universes to your preferences
+        - Add universes to your preferences 
 
 # LAMP ENVIRONMENT
 

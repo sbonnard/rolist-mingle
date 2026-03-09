@@ -79,7 +79,6 @@ if (isset($_SESSION['email'])) {
     </main>
 
     <footer class="footer">
-        <p>Pas par là !</p>
         <?= fetchFooter($globalURL); ?>
     </footer>
 

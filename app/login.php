@@ -30,6 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'log-in') {
         $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['admin'] = $user['admin'];
         $_SESSION['overlord'] = $user['overlord'];
+        
+        $queryLastConnection = $dbCo->prepare('UPDATE users SET lastConnection = Now() WHERE id_user = :id_user');
+        $bindValues = [
+            "id_user" => $_SESSION['id_user']
+            ];
+        $queryLastConnection->execute($bindValues);
+        
         redirectTo();
         exit();
     } else {

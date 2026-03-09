@@ -10,10 +10,8 @@ function fetchFooter(string $globalURL): string
     return
         '<nav aria-label="navigation vers réseaux sociaux de Rolist-Mingle">
             <ul class="footer__social">
-                <li class="footer__social-link"><a href="https://www.instagram.com/" target="_blank"><img
+                <li class="footer__social-link"><a href="https://www.instagram.com/dontrollsingle" target="_blank"><img
                             src="' . $globalURL . '/img/instagram.svg" alt="icône instagram"></a></li>
-                <li class="footer__social-link"><a href="https://www.facebook.com/" target="_blank"><img
-                            src="' . $globalURL . '/img/facebook.svg" alt="icône facebook"></a></li>
                 <li class="footer__social-link"><a href="www.linkedin.com/in/sébastien-bonnard-72164a239/"
                         target="_blank"><img src="' . $globalURL . '/img/linkedin.svg" alt="icône linkedin"></a></li>
                 <li class="footer__social-link"><a href="https://github.com/sbonnard/" target="_blank"><img
@@ -21,6 +19,11 @@ function fetchFooter(string $globalURL): string
                 </li>
             </ul>
         </nav>
+          <ul class="footer__legal">
+                <li class="footer-legal__lnk nav__itm">©2026 Sébastien Bonnard</li>
+                <div>|</div>
+                <li class="footer-legal__lnk nav__itm"><a href="https://sebastien-bonnard-hero.dontrollsingle.fr/index" target="_blank">Portfolio développeur</a></li>
+            </ul>
         <nav aria-label="navigation vers mentions légales du site">
            <!-- <ul class="footer__legal">
                 <li class="footer-legal__lnk nav__itm"><a href="#privacy-policy">Privacy Policy</a></li>

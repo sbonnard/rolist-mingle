@@ -83,7 +83,7 @@ allDices.forEach(dice => {
 function getRandomNumber(min, max) {
     let minValue = Math.ceil(min);
     let maxValue = Math.floor(max);
-    return Math.floor(Math.random() * ((maxValue + 1) - minValue) + 1);
+    return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 }
 
 

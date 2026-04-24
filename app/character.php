@@ -51,13 +51,26 @@ if (isset($_SESSION['email'])) {
         <?= fetchFooter($globalURL); ?>
     </footer>
 
+    <div class="drawer-overlay" id="drawer-overlay">
+        <div class="drawer" id="drawer">
+            <div class="drawer-handle"></div>
+            <p class="drawer-title" id="drawer-title">Modifier</p>
+            <div id="drawer-fields"></div>
+            <div class="drawer-actions">
+                <button class="btn-cancel" id="drawer-cancel">Annuler</button>
+                <button class="btn-confirm" id="drawer-confirm">Valider</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         AOS.init();
     </script>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/index.js"></script>
-    <script type="module" src="js/password.js"></script>
-    <script type="module" src="js/cursor.js"></script>
+    <!-- <script type="module" src="js/password.js"></script> -->
+    <!-- <script type="module" src="js/cursor.js"></script> -->
+    <script type="module" src="js/character.js"></script>
 </body>
 
 </html>

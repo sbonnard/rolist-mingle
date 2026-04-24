@@ -33,7 +33,7 @@ function getCharactersSheetsList(array $characterDatas)
                 <img class="character-sheet__img" src="' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
                 <h2 class="character-sheet__name">' . $character['name'] . '</h2>
                 <section class="character-sheet__stats">
-                    <div id="health-bar">
+                    <div id="health-bar" data-health-bar="' . $character['id_character'] . '">
                         <h3>PV</h3>
                         <div class="character-sheet__stats__points">
                             <p class="character-sheet__stats--pv">' . $character['hp'] . '</p>
@@ -41,7 +41,7 @@ function getCharactersSheetsList(array $characterDatas)
                             <p>' . $character['maxHP'] . '</p>
                         </div>
                     </div>
-                    <div id="mana-bar">
+                    <div id="mana-bar" data-mana-bar="' . $character['id_character'] . '">
                         <h3>Mana</h3>
                         <div class="character-sheet__stats__points">
                             <p class="character-sheet__stats--mana">' . $character['mana'] . '</p>
@@ -53,15 +53,15 @@ function getCharactersSheetsList(array $characterDatas)
                 <div class="bg-blur character-sheet__wallet-container">
                     <h3 class="ttl ttl--small">Bourse</h3>
                     <section class="character-sheet__wallet">
-                        <div class="character-sheet__coins">
+                        <div class="character-sheet__coins" data-gold="' . $character['id_character'] . '">
                             <img class="coin" src="img/gold.png" alt="Icône de pièce d\'or">
                             <p class="character-sheet__coins--amount">' . $character['gold'] . '</p>
                         </div>
-                        <div class="character-sheet__coins">
+                        <div class="character-sheet__coins" data-silver="' . $character['id_character'] . '">
                             <img class="coin" src="img/silver.png" alt="Icône de pièce d\'argent">
                             <p class="character-sheet__coins--amount">' . $character['silver'] . '</p>
                         </div>
-                        <div class="character-sheet__coins">
+                        <div class="character-sheet__coins" data-copper="' . $character['id_character'] . '">
                             <img class="coin" src="img/copper.png" alt="Icône de pièce de cuivre">
                             <p class="character-sheet__coins--amount">' . $character['copper'] . '</p>
                         </div>
@@ -139,10 +139,10 @@ function renderCharacterSheet(array $character, string $characterForm, bool $dic
                         </section>';
         return $character;
     } else {
-        if($dicerollerPage) {
+        if ($dicerollerPage) {
             $character .= '<section class="character--sheet" id="character-sheet">';
         } else {
-            $character .= '<section class="character" id="character-sheet">';            
+            $character .= '<section class="character" id="character-sheet">';
         }
 
         $character .= $characterForm;
@@ -192,13 +192,13 @@ function renderCharacterSheet(array $character, string $characterForm, bool $dic
 
 function getCharacterSheet(array $session, array $charactersList, bool $dicerollerPage): string
 {
-     if (empty($charactersList)) {
+    if (empty($charactersList)) {
         // return '<section class="character" id="character-sheet">
         //             <p>Aucun personnage trouvé</p>
         //             <a href="character-form.php" class="button">Créer personnage</a>
         //         </section>';
         return '';
-    } 
+    }
 
     $characterForm = $dicerollerPage
         ? renderCharacterSelect($charactersList, $session['token'])

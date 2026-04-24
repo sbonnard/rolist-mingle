@@ -1,0 +1,102 @@
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.drawer {
+  width: 100%;
+  background: #1a1520; /* adapte à ta charte */
+  border-top: 1px solid #3a2e50;
+  border-radius: 18px 18px 0 0;
+  padding: 12px 20px 32px;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.drawer-overlay.open .drawer {
+  transform: translateY(0);
+}
+
+.drawer-handle {
+  width: 36px;
+  height: 4px;
+  background: #3a2e50;
+  border-radius: 99px;
+  margin: 0 auto 16px;
+}
+
+.drawer-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e8d8ff;
+  margin: 0 0 16px;
+}
+
+.drawer-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.drawer-row label {
+  font-size: 13px;
+  color: #7a6090;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.drawer-row input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 15px;
+  background: #12101a;
+  border: 1px solid #3a2e50;
+  border-radius: 8px;
+  color: #e8d8ff;
+  outline: none;
+}
+
+.drawer-row input:focus {
+  border-color: #5a4080;
+}
+
+.drawer-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cancel,
+.btn-confirm {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #3a2e50;
+  font-weight: 500;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: #7a6090;
+}
+
+.btn-confirm {
+  background: #5a4080;
+  color: #e8d8ff;
+  border-color: #7a60a0;
+}

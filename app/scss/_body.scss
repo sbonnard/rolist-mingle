@@ -13,6 +13,11 @@ body {
   color: var.$white;
   cursor: default;
   overflow-x: hidden;
+  
+  @media screen and (max-width: 768px) {
+    background-image: url(/img/background-mobile.webp);
+    background-position: center;
+  }
 }
 
 body::-webkit-scrollbar {

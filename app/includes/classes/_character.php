@@ -30,7 +30,7 @@ function getCharactersSheetsList(array $characterDatas)
         foreach ($characterDatas as $character) {
             $charactersList .= '
              <section class="character" id="character-sheet" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-out">
-                <img class="character-sheet__img" src="' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
+                <img class="character-sheet__img" loading="lazy" src="' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
                 <h2 class="character-sheet__name">' . $character['name'] . '</h2>
                 <section class="character-sheet__stats">
                     <div id="health-bar" data-health-bar="' . $character['id_character'] . '">
@@ -54,15 +54,15 @@ function getCharactersSheetsList(array $characterDatas)
                     <h3 class="ttl ttl--small">Bourse</h3>
                     <section class="character-sheet__wallet">
                         <div class="character-sheet__coins" data-gold="' . $character['id_character'] . '">
-                            <img class="coin" src="img/gold.png" alt="Icône de pièce d\'or">
+                            <img class="coin" src="img/gold.png" alt="Icône de pièce d\'or" loading="lazy">
                             <p class="character-sheet__coins--amount">' . $character['gold'] . '</p>
                         </div>
                         <div class="character-sheet__coins" data-silver="' . $character['id_character'] . '">
-                            <img class="coin" src="img/silver.png" alt="Icône de pièce d\'argent">
+                            <img class="coin" src="img/silver.png" alt="Icône de pièce d\'argent" loading="lazy">
                             <p class="character-sheet__coins--amount">' . $character['silver'] . '</p>
                         </div>
                         <div class="character-sheet__coins" data-copper="' . $character['id_character'] . '">
-                            <img class="coin" src="img/copper.png" alt="Icône de pièce de cuivre">
+                            <img class="coin" src="img/copper.png" alt="Icône de pièce de cuivre" loading="lazy">
                             <p class="character-sheet__coins--amount">' . $character['copper'] . '</p>
                         </div>
                     </section>

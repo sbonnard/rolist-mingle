@@ -31,7 +31,7 @@ function getCharactersSheetsList(array $characterDatas)
             $charactersList .= '
              <section class="character" id="character-sheet" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-out">
                 <img class="character-sheet__img" loading="lazy" src="' . $character['imgUrl'] . '" alt="Image de personnage ' . $character['name'] . '">
-                <h2 class="character-sheet__name">' . $character['name'] . '</h2>
+                <h2 class="character-sheet__name" data-character-Name="' . $character['id_character'] . '">' . $character['name'] . '</h2>
                 <section class="character-sheet__stats">
                     <div id="health-bar" data-health-bar="' . $character['id_character'] . '">
                         <h3>PV</h3>

@@ -8,7 +8,9 @@ require_once "./includes/components/_head.php";
 require_once "./includes/components/_header.php";
 require_once "./includes/components/_footer.php";
 
-isLocked();
+if(!isset($_SESSION['id_user']) & $_SESSION['overlord'] === 0) {
+    isLocked();
+}
 ?>
 
 <!DOCTYPE html>

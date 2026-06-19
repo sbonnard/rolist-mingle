@@ -20,7 +20,7 @@ function fetchFooter(string $globalURL): string
             </ul>
         </nav>
           <ul class="footer__legal">
-                <li class="footer-legal__lnk nav__itm">©2026 Sébastien Bonnard</li>
+                <li class="footer-legal__lnk nav__itm">©2025-2026 Sébastien Bonnard</li>
                 <div>|</div>
                 <li class="footer-legal__lnk nav__itm"><a href="https://sebastien-bonnard-hero.dontrollsingle.fr/index" target="_blank">Portfolio développeur</a></li>
             </ul>
